@@ -1,106 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>7 Small Living Room Decor Ideas</title>
-<meta name="description" content="Premium small living room decor ideas that make your space modern and elegant.">
+<title>Elevate Living | Small Living Room Decor</title>
+<meta name="description" content="Premium small living room decor ideas that elevate your space.">
 
 <style>
 
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f4f3f1;
-  color: #1a1a1a;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.wrapper {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 0 20px;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #f8f6f3 0%, #eae7e2 40%, #ddd9d3 100%);
+  color: #1a1a1a;
+  min-height: 100vh;
 }
+
+/* Ambient Backlight */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
+  top: -200px;
+  right: -200px;
+  filter: blur(120px);
+  z-index: -1;
+}
+
+/* HERO SECTION */
 
 .hero {
-  background: #ffffff;
-  border-radius: 30px;
-  padding: 60px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-  margin-bottom: 50px;
+  padding: 120px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  max-width: 600px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 60px;
+  line-height: 1.1;
   margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 20px;
   color: #555;
+  margin-bottom: 30px;
 }
 
-.product-card {
-  display: flex;
-  gap: 40px;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 25px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-  margin-bottom: 40px;
-  align-items: center;
-  transition: 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-}
-
-.product-card img {
-  width: 300px;
-  border-radius: 20px;
-}
-
-.product-content h2 {
-  margin-top: 0;
-  font-size: 24px;
-}
-
-.product-content p {
-  color: #666;
-  line-height: 1.6;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
+.hero-btn {
+  padding: 15px 30px;
   background: #111;
-  color: #fff;
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
   font-weight: 500;
   transition: 0.3s;
 }
 
-.button:hover {
+.hero-btn:hover {
   background: #444;
 }
 
+/* GRID SECTION */
+
+.section {
+  padding: 80px 8%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+}
+
+/* GLASS CARD */
+
+.card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.08),
+    0 0 60px rgba(255,255,255,0.6) inset;
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.12),
+    0 0 80px rgba(255,255,255,0.8) inset;
+}
+
+/* Image floating */
+
+.card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.card a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #111;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.card a:hover {
+  background: #444;
+}
+
+/* FOOTER */
+
 .footer {
-  margin-top: 60px;
+  padding: 60px 8%;
   text-align: center;
   font-size: 14px;
-  color: #777;
+  color: #666;
 }
 
 @media (max-width: 900px) {
-  .product-card {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .product-card img {
-    width: 100%;
-  }
+.hero {
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
 }
 
 </style>
@@ -108,67 +165,57 @@ body {
 
 <body>
 
-<div class="wrapper">
+<section class="hero">
+  <div class="hero-text">
+    <h1>Elevate Your Small Living Room Into a Premium Space</h1>
+    <p>Curated decor pieces that bring warmth, depth, and modern elegance to compact living spaces.</p>
+    <a class="hero-btn" href="#products">Explore Collection</a>
+  </div>
+</section>
 
-<div class="hero">
-<h1>7 Small Living Room Decor Ideas That Instantly Upgrade Your Space</h1>
-<p>Transform your small living room into a premium, modern space using smart styling techniques and curated decor pieces.</p>
-</div>
+<section class="section" id="products">
+  <div class="grid">
 
-<!-- Floating Shelves -->
-<div class="product-card">
-<img src="https://m.media-amazon.com/images/I/71Tzq3pGqzL._AC_SL1500_.jpg" alt="Floating Shelves">
-<div class="product-content">
-<h2>Floating Wall Shelves</h2>
-<p>Use vertical storage to reduce clutter while keeping your space visually light and elegant.</p>
-<a class="button" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
-</div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71Tzq3pGqzL._AC_SL1500_.jpg">
+      <h2>Floating Wall Shelves</h2>
+      <p>Minimalist vertical storage that keeps your living room open and refined.</p>
+      <a href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View Product</a>
+    </div>
 
-<!-- Mirror -->
-<div class="product-card">
-<img src="https://m.media-amazon.com/images/I/71XkIuLrPJL._AC_SL1500_.jpg" alt="Decorative Mirror">
-<div class="product-content">
-<h2>Irregular Decorative Mirror</h2>
-<p>Reflect light and visually expand your living room with this modern asymmetrical design.</p>
-<a class="button" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
-</div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71XkIuLrPJL._AC_SL1500_.jpg">
+      <h2>Irregular Decorative Mirror</h2>
+      <p>Reflect light and visually expand your living space with designer curves.</p>
+      <a href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View Product</a>
+    </div>
 
-<!-- Floor Lamp -->
-<div class="product-card">
-<img src="https://m.media-amazon.com/images/I/61hXzA+R3VL._AC_SL1500_.jpg" alt="Smart Floor Lamp">
-<div class="product-content">
-<h2>Smart RGB Floor Lamp</h2>
-<p>Create cozy, customizable lighting that instantly upgrades the mood of your space.</p>
-<a class="button" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
-</div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/61hXzA+R3VL._AC_SL1500_.jpg">
+      <h2>Smart RGB Floor Lamp</h2>
+      <p>Adjust ambiance instantly with soft modern lighting tones.</p>
+      <a href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View Product</a>
+    </div>
 
-<!-- Plant Stand -->
-<div class="product-card">
-<img src="https://m.media-amazon.com/images/I/71W0XqXQWQL._AC_SL1500_.jpg" alt="Plant Stand">
-<div class="product-content">
-<h2>Mid-Century Plant Stand</h2>
-<p>Add greenery at eye level without cluttering the floor space.</p>
-<a class="button" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
-</div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71W0XqXQWQL._AC_SL1500_.jpg">
+      <h2>Mid-Century Plant Stand</h2>
+      <p>Add greenery without cluttering the floor — elegance meets function.</p>
+      <a href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View Product</a>
+    </div>
 
-<!-- Pillow Covers -->
-<div class="product-card">
-<img src="https://m.media-amazon.com/images/I/71D0zK1pLrL._AC_SL1500_.jpg" alt="Throw Pillow Covers">
-<div class="product-content">
-<h2>Neutral Throw Pillow Covers</h2>
-<p>Layer soft textures to create warmth and a premium living room aesthetic.</p>
-<a class="button" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
-</div>
+    <div class="card">
+      <img src="https://m.media-amazon.com/images/I/71D0zK1pLrL._AC_SL1500_.jpg">
+      <h2>Neutral Throw Pillow Covers</h2>
+      <p>Layer textures and create a warm, inviting atmosphere instantly.</p>
+      <a href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
+    </div>
+
+  </div>
+</section>
 
 <div class="footer">
 Disclosure: As an Amazon Associate, I earn from qualifying purchases.
-</div>
-
 </div>
 
 </body>
