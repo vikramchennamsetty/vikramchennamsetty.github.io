@@ -1,222 +1,284 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Elevate Living | Small Living Room Decor</title>
-<meta name="description" content="Premium small living room decor ideas that elevate your space.">
+<meta charset="UTF-8">
+<title>ElevateLivingCo | Premium Decor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at 20% 20%, #f8f6f3 0%, #eae7e2 40%, #ddd9d3 100%);
+  background: #f4f3f1;
   color: #1a1a1a;
-  min-height: 100vh;
 }
 
-/* Ambient Backlight */
-body::before {
-  content: "";
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
-  top: -200px;
-  right: -200px;
-  filter: blur(120px);
-  z-index: -1;
+/* NAVBAR */
+.navbar {
+  padding: 25px 60px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-/* HERO SECTION */
+/* WRAPPER */
+.wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
+/* HERO */
 .hero {
-  padding: 120px 8%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.hero-text {
-  max-width: 600px;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 60px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  margin-bottom: 60px;
 }
 
 .hero h1 {
-  font-size: 60px;
-  line-height: 1.1;
-  margin-bottom: 20px;
+  font-size: 40px;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 20px;
+  font-size: 18px;
   color: #555;
-  margin-bottom: 30px;
 }
 
-.hero-btn {
-  padding: 15px 30px;
+/* GRID */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* CARD */
+.product-card {
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+/* IMAGE SLIDER */
+.image-slider {
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.slider-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-track img {
+  min-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  scroll-snap-align: start;
+}
+
+/* DOTS */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bbb;
+  transition: 0.3s;
+}
+
+.dot.active {
   background: #111;
-  color: white;
+  transform: scale(1.4);
+}
+
+/* TEXT */
+.product-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 15px;
+  color: #666;
+  flex-grow: 1;
+}
+
+/* BUTTON */
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 40px;
+  background: #111;
+  color: #fff;
   font-weight: 500;
   transition: 0.3s;
 }
 
-.hero-btn:hover {
-  background: #444;
-}
-
-/* GRID SECTION */
-
-.section {
-  padding: 80px 8%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 40px;
-}
-
-/* GLASS CARD */
-
-.card {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(20px);
-  border-radius: 30px;
-  padding: 40px;
-  box-shadow: 
-    0 30px 60px rgba(0,0,0,0.08),
-    0 0 60px rgba(255,255,255,0.6) inset;
-  transition: 0.4s ease;
-  position: relative;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.12),
-    0 0 80px rgba(255,255,255,0.8) inset;
-}
-
-/* Image floating */
-
-.card img {
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.card h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-
-.card p {
-  color: #555;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.card a {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #111;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.card a:hover {
+.button:hover {
   background: #444;
 }
 
 /* FOOTER */
-
 .footer {
-  padding: 60px 8%;
+  margin-top: 80px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #777;
 }
 
+/* MOBILE */
 @media (max-width: 900px) {
-
-.hero {
-  flex-direction: column;
-  text-align: center;
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-.hero h1 {
-  font-size: 42px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Elevate Your Small Living Room Into a Premium Space</h1>
-    <p>Curated decor pieces that bring warmth, depth, and modern elegance to compact living spaces.</p>
-    <a class="hero-btn" href="#products">Explore Collection</a>
+<div class="navbar">ElevateLivingCo</div>
+
+<div class="wrapper">
+
+<div class="hero">
+<h1>Premium Small Living Room Decor Picks</h1>
+<p>Curated decor pieces designed to elevate compact spaces with elegance and style.</p>
+</div>
+
+<div class="products-grid">
+
+<!-- NEWEST FIRST -->
+
+<div class="product-card">
+  <div class="image-slider">
+    <div class="slider-track">
+      <img src="assets/img/pillow1.jpg">
+      <img src="assets/img/pillow2.jpg">
+      <img src="assets/img/pillow3.jpg">
+    </div>
+    <div class="dots"></div>
   </div>
-</section>
+  <h2>Neutral Throw Pillow Covers</h2>
+  <p>Layer soft textures to instantly create warmth and a designer aesthetic.</p>
+  <a class="button" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
+</div>
 
-<section class="section" id="products">
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71Tzq3pGqzL._AC_SL1500_.jpg">
-      <h2>Floating Wall Shelves</h2>
-      <p>Minimalist vertical storage that keeps your living room open and refined.</p>
-      <a href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View Product</a>
+<div class="product-card">
+  <div class="image-slider">
+    <div class="slider-track">
+      <img src="assets/img/plant1.jpg">
+      <img src="assets/img/plant2.jpg">
+      <img src="assets/img/plant3.jpg">
     </div>
-
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71XkIuLrPJL._AC_SL1500_.jpg">
-      <h2>Irregular Decorative Mirror</h2>
-      <p>Reflect light and visually expand your living space with designer curves.</p>
-      <a href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View Product</a>
-    </div>
-
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61hXzA+R3VL._AC_SL1500_.jpg">
-      <h2>Smart RGB Floor Lamp</h2>
-      <p>Adjust ambiance instantly with soft modern lighting tones.</p>
-      <a href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View Product</a>
-    </div>
-
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71W0XqXQWQL._AC_SL1500_.jpg">
-      <h2>Mid-Century Plant Stand</h2>
-      <p>Add greenery without cluttering the floor — elegance meets function.</p>
-      <a href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View Product</a>
-    </div>
-
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71D0zK1pLrL._AC_SL1500_.jpg">
-      <h2>Neutral Throw Pillow Covers</h2>
-      <p>Layer textures and create a warm, inviting atmosphere instantly.</p>
-      <a href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
-    </div>
-
+    <div class="dots"></div>
   </div>
-</section>
+  <h2>Mid-Century Plant Stand</h2>
+  <p>Add greenery without cluttering the floor space.</p>
+  <a class="button" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View Product</a>
+</div>
+
+<div class="product-card">
+  <div class="image-slider">
+    <div class="slider-track">
+      <img src="assets/img/lamp1.jpg">
+      <img src="assets/img/lamp2.jpg">
+      <img src="assets/img/lamp3.jpg">
+    </div>
+    <div class="dots"></div>
+  </div>
+  <h2>Smart RGB Floor Lamp</h2>
+  <p>Create cozy, customizable lighting that upgrades your space instantly.</p>
+  <a class="button" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View Product</a>
+</div>
+
+<div class="product-card">
+  <div class="image-slider">
+    <div class="slider-track">
+      <img src="assets/img/mirror1.jpg">
+      <img src="assets/img/mirror2.jpg">
+      <img src="assets/img/mirror3.jpg">
+    </div>
+    <div class="dots"></div>
+  </div>
+  <h2>Irregular Decorative Mirror</h2>
+  <p>Reflect light and visually expand your living room.</p>
+  <a class="button" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View Product</a>
+</div>
+
+<div class="product-card">
+  <div class="image-slider">
+    <div class="slider-track">
+      <img src="assets/img/shelves1.jpg">
+      <img src="assets/img/shelves2.jpg">
+      <img src="assets/img/shelves3.jpg">
+    </div>
+    <div class="dots"></div>
+  </div>
+  <h2>Floating Wall Shelves</h2>
+  <p>Minimal vertical storage for modern compact spaces.</p>
+  <a class="button" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View Product</a>
+</div>
+
+</div>
 
 <div class="footer">
 Disclosure: As an Amazon Associate, I earn from qualifying purchases.
 </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.image-slider').forEach(slider => {
+
+  const track = slider.querySelector('.slider-track');
+  const dotsContainer = slider.querySelector('.dots');
+  const slides = track.querySelectorAll('img');
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if(i === 0) dot.classList.add('active');
+    dotsContainer.appendChild(dot);
+  });
+
+  track.addEventListener('scroll', () => {
+    const index = Math.round(track.scrollLeft / track.clientWidth);
+    dotsContainer.querySelectorAll('.dot').forEach((d,i)=>{
+      d.classList.toggle('active', i === index);
+    });
+  });
+
+});
+</script>
 
 </body>
 </html>
