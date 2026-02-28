@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>7 Small Living Room Decor Ideas</title>
-<meta name="description" content="Premium small living room decor ideas that make your space look modern and elegant.">
+<meta name="description" content="Premium small living room decor ideas that make your space modern and elegant.">
 
 <style>
 
@@ -24,11 +24,11 @@ body {
   border-radius: 30px;
   padding: 60px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
@@ -37,38 +37,41 @@ body {
   color: #555;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 30px;
-}
-
-.card {
+.product-card {
+  display: flex;
+  gap: 40px;
   background: #ffffff;
   padding: 40px;
   border-radius: 25px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  margin-bottom: 40px;
+  align-items: center;
   transition: 0.3s ease;
 }
 
-.card:hover {
+.product-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
-.card h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
+.product-card img {
+  width: 300px;
+  border-radius: 20px;
 }
 
-.card p {
+.product-content h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.product-content p {
   color: #666;
-  margin-bottom: 20px;
   line-height: 1.6;
 }
 
 .button {
   display: inline-block;
+  margin-top: 15px;
   padding: 12px 24px;
   border-radius: 30px;
   text-decoration: none;
@@ -89,6 +92,17 @@ body {
   color: #777;
 }
 
+@media (max-width: 900px) {
+  .product-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-card img {
+    width: 100%;
+  }
+}
+
 </style>
 </head>
 
@@ -101,38 +115,54 @@ body {
 <p>Transform your small living room into a premium, modern space using smart styling techniques and curated decor pieces.</p>
 </div>
 
-<div class="grid">
-
-<div class="card">
+<!-- Floating Shelves -->
+<div class="product-card">
+<img src="https://m.media-amazon.com/images/I/71Tzq3pGqzL._AC_SL1500_.jpg" alt="Floating Shelves">
+<div class="product-content">
 <h2>Floating Wall Shelves</h2>
-<p>Use vertical storage to reduce clutter while keeping the space visually light.</p>
+<p>Use vertical storage to reduce clutter while keeping your space visually light and elegant.</p>
 <a class="button" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View Product</a>
 </div>
+</div>
 
-<div class="card">
+<!-- Mirror -->
+<div class="product-card">
+<img src="https://m.media-amazon.com/images/I/71XkIuLrPJL._AC_SL1500_.jpg" alt="Decorative Mirror">
+<div class="product-content">
 <h2>Irregular Decorative Mirror</h2>
-<p>Reflect light and visually expand your room with asymmetrical modern mirrors.</p>
+<p>Reflect light and visually expand your living room with this modern asymmetrical design.</p>
 <a class="button" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View Product</a>
 </div>
+</div>
 
-<div class="card">
-<h2>Smart Ambient Floor Lamp</h2>
-<p>Create mood-based lighting with modern RGB floor lamps.</p>
+<!-- Floor Lamp -->
+<div class="product-card">
+<img src="https://m.media-amazon.com/images/I/61hXzA+R3VL._AC_SL1500_.jpg" alt="Smart Floor Lamp">
+<div class="product-content">
+<h2>Smart RGB Floor Lamp</h2>
+<p>Create cozy, customizable lighting that instantly upgrades the mood of your space.</p>
 <a class="button" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View Product</a>
 </div>
+</div>
 
-<div class="card">
+<!-- Plant Stand -->
+<div class="product-card">
+<img src="https://m.media-amazon.com/images/I/71W0XqXQWQL._AC_SL1500_.jpg" alt="Plant Stand">
+<div class="product-content">
 <h2>Mid-Century Plant Stand</h2>
-<p>Add height variation and greenery without crowding your floor.</p>
+<p>Add greenery at eye level without cluttering the floor space.</p>
 <a class="button" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View Product</a>
 </div>
-
-<div class="card">
-<h2>Neutral Throw Pillow Covers</h2>
-<p>Layer soft textures to make the room feel warm and premium.</p>
-<a class="button" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
 </div>
 
+<!-- Pillow Covers -->
+<div class="product-card">
+<img src="https://m.media-amazon.com/images/I/71D0zK1pLrL._AC_SL1500_.jpg" alt="Throw Pillow Covers">
+<div class="product-content">
+<h2>Neutral Throw Pillow Covers</h2>
+<p>Layer soft textures to create warmth and a premium living room aesthetic.</p>
+<a class="button" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
+</div>
 </div>
 
 <div class="footer">
