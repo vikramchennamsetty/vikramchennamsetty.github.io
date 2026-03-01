@@ -1,3 +1,12 @@
+---------3 or 4 pins should publsih for one article 
+20+ pins should publish in 7 days 
+make sure check avai the itam (should in stock )
+pin settings should seo optimised   -----------------------
+
+
+
+
+
 🔥 Strategic Order of Growth
 
 Phase 1 – Foundation (Now)
