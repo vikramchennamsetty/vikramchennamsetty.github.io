@@ -1,7 +1,25 @@
 ---------3 or 4 pins should publsih for one article  day 1 , 2, 4,6 principle
 20+ pins should publish in 7 days 
 make sure check avai the itam (should in stock )
-pin settings should seo optimised   -----------------------
+pin settings should seo optimised 
+
+🚨 Critical Rule
+
+Same article link.
+Different image file name.
+
+Example:
+antique-bar-cart-2026-v2.jpg
+antique-bar-cart-2026-v3.jpg
+
+Do NOT reuse identical image file name.
+
+🔥 Advanced Tip
+
+Change description slightly for each pin.
+Keep keywords but reorder phrasing.
+
+Avoid duplicate metadata.      -----------------------
 
 
 
