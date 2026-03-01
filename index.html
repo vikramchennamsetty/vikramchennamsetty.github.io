@@ -1,18 +1,166 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Elevate Living Co | Modern Home Decor Ideas</title>
-<meta name="description" content="Modern home decor ideas for small apartments and stylish living spaces.">
+<meta charset="UTF-8">
+<title>ElevateLivingCo | Modern Home Inspiration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#f4f3f1,#e9e7e4);
+  color:#111;
+  overflow-x:hidden;
+}
+
+/* BRAND */
+.brand{
+  font-size:40px;
+  font-weight:800;
+  padding:40px 6vw 20px 6vw;
+  letter-spacing:1px;
+}
+
+/* HERO SECTION */
+.hero{
+  padding:60px 6vw;
+  max-width:1100px;
+}
+
+.hero h1{
+  font-size:48px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:20px;
+  color:#555;
+  max-width:600px;
+}
+
+/* FLOATING ARTICLE GRID */
+.articles{
+  padding:40px 6vw 100px 6vw;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:50px;
+  perspective:1200px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.08);
+  transition:all .4s ease;
+  transform-style:preserve-3d;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:rotateX(6deg) rotateY(-6deg) translateY(-10px);
+  box-shadow:0 40px 90px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  border-radius:20px;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  margin-bottom:20px;
+  transition:.4s;
+}
+
+.card:hover img{
+  transform:scale(1.05);
+}
+
+/* CONTENT */
+.card h2{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:15px;
+  color:#666;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:30px;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#444;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:40px;
+  font-size:14px;
+  color:#777;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>Elevate Living Co</h1>
-<p>Helping you create a modern, stylish home on a budget.</p>
+<div class="brand">ElevateLivingCo</div>
 
-<h2>Featured Article</h2>
-<a href="small-living-room-decor-ideas.html">
-7 Small Living Room Decor Ideas That Instantly Upgrade Your Space
-</a>
+<div class="hero">
+  <h1>Create a Modern Home That Feels Premium</h1>
+  <p>Curated decor guides and handpicked product collections designed to elevate your living space effortlessly.</p>
+</div>
+
+<div class="articles">
+
+  <!-- ARTICLE CARD 1 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg">
+    <h2>7 Small Living Room Decor Ideas</h2>
+    <p>Transform compact spaces with floating shelves, lighting, mirrors and premium accents.</p>
+    <a class="btn" href="small-living-room-decor-ideas.html">Explore Article</a>
+  </div>
+
+  <!-- ARTICLE CARD 2 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg">
+    <h2>Modern Lighting for Cozy Homes</h2>
+    <p>Discover smart RGB lamps and ambient lighting that upgrade your room instantly.</p>
+    <a class="btn" href="#">Coming Soon</a>
+  </div>
+
+  <!-- ARTICLE CARD 3 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg">
+    <h2>Statement Mirrors That Expand Space</h2>
+    <p>Decorative mirrors that visually double your space and add a designer feel.</p>
+    <a class="btn" href="#">Coming Soon</a>
+  </div>
+
+</div>
+
+<div class="footer">
+© 2026 ElevateLivingCo | Designed for modern living
+</div>
 
 </body>
 </html>
