@@ -3,6 +3,12 @@
 use rafus ai in amazon
 web scraping
 
+Add every article page here sitmap.xml whenever you create one.
+
+Save.
+Commit.
+Push.
+
 
 Top Purchasing States: California, New York, Pennsylvania, Texas, and Florida dominate, with the NY/NJ area showing particularly high per-capita spending.
 Key Metropolitan Areas: Seattle, Los Angeles, Dallas, Chicago, and Miami are major, high-volume regions for Amazon purchases.
