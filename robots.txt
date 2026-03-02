@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vikramchennamsetty.github.io/sitemap.xml
