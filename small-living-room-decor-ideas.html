@@ -1,76 +1,368 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ElevateLivingCo | Premium Decor</title>
+<title>7 Small Living Room Decor Ideas That Make Any Space Feel Huge | ElevateLivingCo</title>
+<meta name="description" content="Transform your small living room with these 7 proven decor ideas. Floating shelves, statement mirrors, and smart lighting tricks that make compact spaces look expensive.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #f4f3f1;
   color: #1a1a1a;
 }
 
-/* LOGO */
 .brand-header {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
-  padding: 40px 5vw 10px 5vw;
+  padding: 36px 5vw 10px;
   letter-spacing: 1px;
 }
 
-/* CONTENT WRAPPER */
 .wrapper {
   width: 100%;
-  padding: 0 5vw 60px 5vw;
+  padding: 0 5vw 80px;
 }
 
 /* HERO */
 .hero {
-  background: #ffffff;
-  border-radius: 30px;
-  padding: 60px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-  margin-bottom: 60px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 52px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+  margin-bottom: 40px;
 }
 
-.hero h1 { font-size: 38px; margin-bottom: 15px; }
-.hero p  { font-size: 18px; color: #555; }
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c9a44a;
+  margin-bottom: 14px;
+}
 
-/* RESPONSIVE GRID */
-.products-grid {
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero .intro {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.75;
+}
+
+/* PAGE LAYOUT: article + sidebar */
+.page-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: start;
 }
 
-/* PRODUCT CARD */
-.product-card {
-  background: #ffffff;
-  border-radius: 25px;
-  padding: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-  transition: 0.3s ease;
+/* ARTICLE COL */
+.article-col {}
+
+.content-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 44px 48px;
+  box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  margin-bottom: 28px;
+}
+
+.content-card h2 {
+  font-size: 24px;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.content-card p {
+  font-size: 15.5px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.content-card ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.content-card ul li {
+  font-size: 15.5px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* TIP BLOCK = text left + product right */
+.tip-block {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.tip-inner {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+}
+
+.tip-text {
+  padding: 36px 40px;
+}
+
+.tip-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.tip-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px; min-width: 38px;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.tip-header h3 {
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.tip-text p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.tip-text p:last-child { margin-bottom: 0; }
+
+/* PRODUCT PANEL inside tip */
+.tip-product {
+  background: #f9f6f2;
+  border-left: 1px solid #ede8e0;
+  padding: 28px 22px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tip-product img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.tip-product .p-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.tip-product .p-desc {
+  font-size: 12.5px;
+  color: #777;
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.tip-product .p-btn {
+  display: block;
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.tip-product .p-btn:hover { background: #c9a44a; color: #1a1a1a; }
+
+/* no-product tip: full width */
+.tip-inner.full { grid-template-columns: 1fr; }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  background: #f9f5f0;
+  border-left: 4px solid #c9a44a;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 20px 0 0;
+}
+
+.highlight-box p {
+  font-size: 14.5px;
+  color: #666;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* EXPERT QUOTE */
+.expert-quote {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 26px 30px;
+  margin: 20px 0 0;
+}
+
+.expert-quote p {
+  font-size: 16px;
+  color: #f0e6d3;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.expert-quote span {
+  font-size: 12px;
+  color: #888;
+}
+
+/* CTA BOX */
+.cta-box {
+  background: linear-gradient(135deg, #2a2a2a, #444);
+  border-radius: 18px;
+  padding: 32px 36px;
+  text-align: center;
+  margin-top: 28px;
+}
+
+.cta-box h3 { font-size: 21px; color: #fff; margin-bottom: 10px; }
+.cta-box p  { font-size: 14.5px; color: #bbb; margin-bottom: 18px; line-height: 1.6; }
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #c9a44a;
+  color: #1a1a1a;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.cta-btn:hover { background: #e8c97a; }
+
+/* SIDEBAR */
+.sidebar {
+  position: sticky;
+  top: 24px;
+}
+
+.s-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 16px 44px rgba(0,0,0,0.07);
+  margin-bottom: 22px;
+}
+
+.s-card .s-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a44a;
+  margin-bottom: 12px;
+}
+
+.s-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.s-card .s-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.s-card .s-desc {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.s-card .s-btn {
+  display: block;
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 11px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.s-card .s-btn:hover { background: #c9a44a; color: #1a1a1a; }
+
+/* ALL PRODUCTS GRID */
+.all-products-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 48px 0 24px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+  margin-bottom: 48px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 26px 52px rgba(0,0,0,0.11);
 }
 
-/* IMAGE SLIDER - SQUARE */
 .image-slider {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
   overflow: hidden;
-  border-radius: 20px;
-  margin-bottom: 16px;
+  border-radius: 14px;
+  margin-bottom: 14px;
 }
 
 .slider-track {
@@ -81,9 +373,7 @@ body {
   scroll-behavior: smooth;
 }
 
-.slider-track::-webkit-scrollbar {
-  display: none;
-}
+.slider-track::-webkit-scrollbar { display: none; }
 
 .slider-track img {
   min-width: 100%;
@@ -92,191 +382,993 @@ body {
   scroll-snap-align: start;
 }
 
-/* DOTS */
 .dots {
   position: absolute;
-  bottom: 8px;
+  bottom: 7px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 6px;
+  gap: 5px;
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 6px; height: 6px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.55);
   transition: 0.3s;
 }
 
-.dot.active {
-  background: #111;
-  transform: scale(1.4);
-}
+.dot.active { background: #111; transform: scale(1.4); }
 
-/* PRODUCT TEXT */
-.product-card h2 { font-size: 20px; margin-bottom: 8px; }
-.product-card p  { font-size: 14px; color: #666; flex-grow: 1; }
+.product-card h2 { font-size: 17px; margin-bottom: 7px; }
+.product-card p  { font-size: 13.5px; color: #666; flex-grow: 1; line-height: 1.6; }
 
-/* BUTTON */
-.button {
-  display: inline-block;
+.btn {
+  display: block;
   margin-top: 12px;
-  padding: 12px 24px;
+  padding: 11px 18px;
   border-radius: 30px;
   background: #111;
   color: #fff;
   text-decoration: none;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 13px;
   transition: 0.3s;
 }
 
-.button:hover { background: #444; }
+.btn:hover { background: #c9a44a; color: #1a1a1a; }
 
-/* FOOTER */
 .footer {
-  margin-top: 80px;
+  margin-top: 60px;
   text-align: center;
-  font-size: 14px;
-  color: #777;
+  font-size: 13px;
+  color: #888;
+  line-height: 1.7;
 }
 
+/* CROSS LINK CARD */
+.crosslink-card {
+  display: flex;
+  gap: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #f0e8d8;
+  text-decoration: none;
+  margin-top: 28px;
+  transition: 0.25s;
+  background: #fff;
+}
+
+.crosslink-card:hover {
+  border-color: #c9a44a;
+  box-shadow: 0 12px 36px rgba(201,164,74,0.18);
+  transform: translateY(-2px);
+}
+
+.crosslink-img-wrap {
+  width: 130px;
+  min-width: 130px;
+  overflow: hidden;
+}
+
+.crosslink-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.crosslink-content {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.crosslink-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c9a44a;
+}
+
+.crosslink-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.crosslink-desc {
+  font-size: 12.5px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.crosslink-cta {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c9a44a;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .crosslink-card { flex-direction: column; }
+  .crosslink-img-wrap { width: 100%; min-width: unset; height: 160px; }
+}
+
+/* ══════════════════════════
+   QUIZ WIDGET
+══════════════════════════ */
+.quiz-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 26px 22px;
+  box-shadow: 0 16px 44px rgba(0,0,0,0.09);
+  border: 2px solid #f0e8d8;
+}
+
+.qz-progress-wrap {
+  background: #f0e8d8;
+  border-radius: 10px;
+  height: 5px;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.qz-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #c9a44a, #e8c97a);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.qz-step { }
+.qz-step.hidden { display: none; }
+
+.qz-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a44a;
+  margin-bottom: 8px;
+}
+
+.qz-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.qz-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* Image choices */
+.qz-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.qz-img-choice {
+  border: 2px solid #f0e8d8;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.qz-img-choice:hover {
+  border-color: #c9a44a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,164,74,0.2);
+}
+
+.qz-img-choice.selected {
+  border-color: #c9a44a;
+  box-shadow: 0 0 0 3px rgba(201,164,74,0.25);
+}
+
+.qz-img-choice img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+}
+
+.qz-img-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 6px;
+  color: #1a1a1a;
+  background: #faf7f2;
+}
+
+/* Pill choices */
+.qz-pill-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qz-pill {
+  background: #f9f6f2;
+  border: 2px solid #f0e8d8;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qz-pill:hover {
+  border-color: #c9a44a;
+  background: #fdf5e4;
+  transform: translateX(4px);
+}
+
+/* Checklist */
+.qz-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.qz-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px 14px;
+  background: #f9f6f2;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.qz-check-item:hover { border-color: #c9a44a; }
+
+.qz-check-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #c9a44a;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.qz-next-btn {
+  width: 100%;
+  padding: 13px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.qz-next-btn:hover { background: #c9a44a; color: #1a1a1a; }
+
+/* Result */
+.qz-result-badge {
+  background: linear-gradient(135deg, #c9a44a, #e8c97a);
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+
+.qz-score-ring {
+  font-size: 52px;
+  font-weight: 900;
+  text-align: center;
+  color: #1a1a1a;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.qz-score-label {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: #c9a44a;
+  margin-bottom: 16px;
+}
+
+.qz-result-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.qz-result-product {
+  background: #f9f6f2;
+  border: 2px solid #f0e8d8;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.qz-result-product img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.qz-result-product-info {
+  padding: 14px;
+}
+
+.qz-result-product-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.qz-result-product-reason {
+  font-size: 12.5px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.qz-result-product-btn {
+  display: block;
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.25s;
+}
+
+.qz-result-product-btn:hover { background: #c9a44a; color: #1a1a1a; }
+
+.qz-restart-btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #999;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.qz-restart-btn:hover { color: #1a1a1a; border-color: #1a1a1a; }
+
+/* ══════════════════════════
+   RESPONSIVE
+══════════════════════════ */
+@media (max-width: 980px) {
+  .page-layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static;
+    display: block; /* show quiz on mobile too */
+    order: -1; /* show quiz ABOVE article on mobile */
+  }
+  .tip-inner { grid-template-columns: 1fr 200px; }
+}
+
+@media (max-width: 640px) {
+  .brand-header { font-size: 24px; padding: 24px 5vw 8px; }
+  .hero { padding: 28px 20px; }
+  .hero h1 { font-size: 24px; }
+  .content-card { padding: 26px 20px; }
+  .tip-text { padding: 24px 18px; }
+
+  /* Stack product below text on mobile */
+  .tip-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-product {
+    border-left: none;
+    border-top: 1px solid #ede8e0;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+  }
+
+  .tip-product img {
+    width: 80px;
+    min-width: 80px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+  }
+
+  .tip-product .p-desc { display: none; }
+
+  .cta-box { padding: 24px 18px; }
+  .cta-box h3 { font-size: 18px; }
+}
 </style>
 </head>
-
 <body>
 
 <div class="brand-header">ElevateLivingCo</div>
 
 <div class="wrapper">
 
-<div class="hero">
-<h1>Premium Small Living Room Decor Picks</h1>
-<p>Curated decor pieces designed to elevate compact spaces with elegance and style.</p>
-</div>
-
-<div class="products-grid">
-
-<!-- PRODUCT 1 -->
-<div class="product-card">
-  <div class="image-slider">
-    <div class="slider-track">
-      <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/61fTwGy2yqL._AC_SL1001_.jpg">
-      <img src="https://m.media-amazon.com/images/I/71XCi9vwWzL._AC_SL1001_.jpg">
-    </div>
-    <div class="dots"></div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="section-label">Small Space Decor · Living Room Ideas · Budget Friendly</div>
+    <h1>7 Small Living Room Decor Ideas That Make Any Space Feel Huge</h1>
+    <p class="intro">You don't need more square footage — you need smarter styling. These 7 proven small living room decor tricks will make your compact space feel open, designer-worthy, and expensive without the price tag.</p>
   </div>
-  <h2>Neutral Throw Pillow Covers</h2>
-  <p>Layer soft textures to instantly create warmth and a designer aesthetic.</p>
-  <a class="button" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
 
-<!-- PRODUCT 2 -->
-<div class="product-card">
-  <div class="image-slider">
-    <div class="slider-track">
-      <img src="https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/61PPTTpCD7L._AC_SL1200_.jpg">
-      <img src="https://m.media-amazon.com/images/I/61aXIC6t-4L._AC_SL1200_.jpg">
-      <img src="https://m.media-amazon.com/images/I/71yRDRnpNbL._AC_SL1200_.jpg">
+  <!-- PAGE LAYOUT -->
+  <div class="page-layout">
+
+    <!-- ARTICLE COLUMN -->
+    <div class="article-col">
+
+      <!-- INTRO -->
+      <div class="content-card">
+        <h2>The Small Living Room Problem Nobody Talks About</h2>
+        <p>Most small living room advice tells you to "declutter" or "use light colors." That's not enough. Real small space transformation requires intentional design decisions — the kind interior designers use on every project.</p>
+        <p>The good news? You don't need to hire a designer. These 7 small living room decor ideas are proven to visually expand any space, whether you're in a studio apartment, a rented flat, or a cozy bungalow.</p>
+        <div class="highlight-box">
+          <p>💡 Studies in interior perception show that strategic mirror placement alone can make a room feel up to 40% larger — without moving a single wall.</p>
+        </div>
+        <div class="expert-quote" style="margin-top:20px;">
+          <p>"In a small space, every object has to earn its place. The best small room designs aren't minimal — they're intentional."</p>
+          <span>— Interior Design Principle, Small Space Styling</span>
+        </div>
+      </div>
+
+      <!-- TIP 1 -->
+      <div class="tip-block">
+        <div class="tip-inner">
+          <div class="tip-text">
+            <div class="tip-header">
+              <span class="tip-num">1</span>
+              <h3>Use a Large Statement Mirror to Double Your Space</h3>
+            </div>
+            <p>This is the single most powerful small living room trick available. A large round or arched mirror placed opposite a window bounces natural light across the room and creates the illusion of depth — your room instantly looks twice the size.</p>
+            <p>The key is going <em>bigger</em> than you think. In a small living room, an oversized mirror reads as art, not just a functional accessory.</p>
+          </div>
+          <div class="tip-product">
+            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Irregular Decorative Mirror">
+            <div class="p-name">Irregular Decorative Mirror</div>
+            <div class="p-desc">Reflects light and visually expands your room — the #1 small space upgrade.</div>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIP 2 -->
+      <div class="tip-block">
+        <div class="tip-inner">
+          <div class="tip-text">
+            <div class="tip-header">
+              <span class="tip-num">2</span>
+              <h3>Install Floating Wall Shelves to Free Up Floor Space</h3>
+            </div>
+            <p>Floor space is your most precious resource in a small room. Floating shelves move storage vertically — up the walls — leaving the floor open and the room feeling airy.</p>
+            <p>Style with a mix of books, plants, and decorative objects in sets of three at varying heights for a curated, editorial look.</p>
+          </div>
+          <div class="tip-product">
+            <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg" alt="Floating Wall Shelves">
+            <div class="p-name">Floating Wall Shelves</div>
+            <div class="p-desc">Minimal vertical storage. Frees your floor and elevates your walls instantly.</div>
+            <a class="p-btn" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIP 3 -->
+      <div class="tip-block">
+        <div class="tip-inner">
+          <div class="tip-text">
+            <div class="tip-header">
+              <span class="tip-num">3</span>
+              <h3>Layer Your Lighting for Depth and Warmth</h3>
+            </div>
+            <p>Overhead lighting alone flattens a small room. The secret designers use is layered lighting — combining a floor lamp, a table lamp, and warm-toned bulbs to create dimension and warmth.</p>
+            <p>This immediately makes the room feel larger, cozier, and more expensive — all at once.</p>
+          </div>
+          <div class="tip-product">
+            <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp">
+            <div class="p-name">Smart RGB Floor Lamp</div>
+            <div class="p-desc">Customizable warmth and color for perfect layered lighting.</div>
+            <a class="p-btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIP 4 — no product -->
+      <div class="tip-block">
+        <div class="tip-inner full">
+          <div class="tip-text">
+            <div class="tip-header">
+              <span class="tip-num">4</span>
+              <h3>Choose Furniture With Legs, Not Bases</h3>
+            </div>
+            <p>Furniture with visible legs allows light to flow underneath, visually lifting the piece and making the floor look larger. Even a small sofa on tapered mid-century legs feels more open than the same sofa on a solid base.</p>
+            <div class="highlight-box">
+              <p>💡 You can buy furniture leg replacement sets on Amazon and swap them onto an existing sofa — no new furniture needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIP 5 -->
+      <div class="tip-block">
+        <div class="tip-inner">
+          <div class="tip-text">
+            <div class="tip-header">
+              <span class="tip-num">5</span>
+              <h3>Add Neutral Throw Pillows to Layer Texture Without Clutter</h3>
+            </div>
+            <p>Color and pattern overwhelm small rooms. The proven alternative is texture layering — neutral tones (cream, sand, warm grey) across different materials (linen, boucle, velvet) create richness without visual noise.</p>
+            <p>Two or three premium throw pillows in coordinating neutrals will make a basic sofa look like a designer piece.</p>
+          </div>
+          <div class="tip-product">
+            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Neutral Throw Pillow Covers">
+            <div class="p-name">Neutral Throw Pillow Covers</div>
+            <div class="p-desc">Soft layered textures that add warmth and a designer aesthetic to any sofa.</div>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIP 6 -->
+      <div class="tip-block">
+        <div class="tip-inner">
+          <div class="tip-text">
+            <div class="tip-header">
+              <span class="tip-num">6</span>
+              <h3>Bring in Greenery With a Mid-Century Plant Stand</h3>
+            </div>
+            <p>Plants add life and organic texture — but placing them on the floor takes up precious space. A tall, slender plant stand elevates greenery to eye level, filling vertical space without crowding the floor.</p>
+            <p>Mid-century style stands in wood tones add warmth that balances neutral palettes beautifully.</p>
+          </div>
+          <div class="tip-product">
+            <img src="https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg" alt="Mid-Century Plant Stand">
+            <div class="p-name">Mid-Century Plant Stand</div>
+            <div class="p-desc">Elevate greenery at eye level without using precious floor space.</div>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIP 7 -->
+      <div class="tip-block">
+        <div class="tip-inner">
+          <div class="tip-text">
+            <div class="tip-header">
+              <span class="tip-num">7</span>
+              <h3>Use Smart RGB Lighting to Transform the Mood Instantly</h3>
+            </div>
+            <p>A smart RGB floor lamp gives you complete control over color temperature and intensity — from bright and energizing during the day to warm and cozy at night.</p>
+            <p>In a small room, lighting mood dramatically changes how large or intimate the space feels. A game-changer for renters who can't make structural changes.</p>
+          </div>
+          <div class="tip-product">
+            <img src="https://m.media-amazon.com/images/I/71os1uv07qL._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp Colors">
+            <div class="p-name">Smart RGB Floor Lamp</div>
+            <div class="p-desc">16 million colors, app-controlled. Transform your room's mood in seconds.</div>
+            <a class="p-btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONCLUSION -->
+      <div class="content-card">
+        <h2>You Don't Need a Bigger Space — You Need These 7 Ideas</h2>
+        <p>The best small living rooms aren't the ones with the most square footage. They're the ones where every decision was intentional — where mirrors, lighting, shelving and texture all work together to create the feeling of space and luxury.</p>
+        <ul style="margin: 14px 0;">
+          <li>✓ Pick one mirror upgrade — biggest visual impact, fastest result</li>
+          <li>✓ Add floating shelves to free up floor space</li>
+          <li>✓ Layer your lighting — at least one floor or table lamp</li>
+          <li>✓ Swap to neutral textured throw pillows</li>
+          <li>✓ Elevate your plants with a mid-century stand</li>
+        </ul>
+        <div class="cta-box">
+          <h3>Shop All Featured Products Below</h3>
+          <p>Every product is handpicked and linked directly. No searching, no guessing — just click and elevate.</p>
+          <a href="#all-products" class="cta-btn">Shop the Full Guide ↓</a>
+        </div>
+        <!-- CROSS LINK CARD -->
+        <a href="5-antique-bar-carts-2026.html" class="crosslink-card">
+          <div class="crosslink-img-wrap">
+            <img src="https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SL1500_.jpg" alt="Antique Bar Carts 2026">
+          </div>
+          <div class="crosslink-content">
+            <div class="crosslink-label">Up Next · Bar Cart Decor</div>
+            <div class="crosslink-title">5 Antique Bar Carts Designers Are Obsessed With in 2026</div>
+            <div class="crosslink-desc">Brass finishes, marble shelves and art deco curves — the ultimate neo deco statement piece.</div>
+            <div class="crosslink-cta">Read the Guide →</div>
+          </div>
+        </a>
+      </div>
+
+    </div><!-- end article-col -->
+
+    <!-- SIDEBAR: Combined Quiz A+B -->
+    <div class="sidebar">
+      <div class="quiz-card" id="quizWidget">
+
+        <!-- PROGRESS BAR -->
+        <div class="qz-progress-wrap">
+          <div class="qz-progress-bar" id="qzProgress" style="width:0%"></div>
+        </div>
+
+        <!-- STEP 1: Style Vibe -->
+        <div class="qz-step" id="step1">
+          <div class="qz-label">STYLE QUIZ · 3 QUICK QUESTIONS</div>
+          <div class="qz-title">What's your room vibe?</div>
+          <div class="qz-subtitle">Pick the image that feels most like your dream space</div>
+          <div class="qz-img-grid">
+            <div class="qz-img-choice" onclick="pickVibe('neo')" id="vibe-neo">
+              <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="Neo Deco Glam">
+              <div class="qz-img-label">Glam & Luxe</div>
+            </div>
+            <div class="qz-img-choice" onclick="pickVibe('minimal')" id="vibe-minimal">
+              <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Clean Minimal">
+              <div class="qz-img-label">Clean & Minimal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Priority -->
+        <div class="qz-step hidden" id="step2">
+          <div class="qz-label">STEP 2 OF 3</div>
+          <div class="qz-title">What's your #1 priority?</div>
+          <div class="qz-subtitle">What do you most want to improve?</div>
+          <div class="qz-pill-grid">
+            <div class="qz-pill" onclick="pickPriority('space')">🪞 More Space</div>
+            <div class="qz-pill" onclick="pickPriority('light')">💡 Better Lighting</div>
+            <div class="qz-pill" onclick="pickPriority('cozy')">🛋️ Cosier Feel</div>
+            <div class="qz-pill" onclick="pickPriority('green')">🌿 More Life & Greenery</div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Budget -->
+        <div class="qz-step hidden" id="step3">
+          <div class="qz-label">STEP 3 OF 3</div>
+          <div class="qz-title">What's your budget?</div>
+          <div class="qz-subtitle">For your next home upgrade</div>
+          <div class="qz-pill-grid">
+            <div class="qz-pill" onclick="pickBudget('low')">Under $50</div>
+            <div class="qz-pill" onclick="pickBudget('mid')">$50 – $100</div>
+            <div class="qz-pill" onclick="pickBudget('high')">No limit 💸</div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Score Checker -->
+        <div class="qz-step hidden" id="step4">
+          <div class="qz-label">YOUR ROOM SCORE</div>
+          <div class="qz-title">What do you already have?</div>
+          <div class="qz-subtitle">Tick everything in your room right now</div>
+          <div class="qz-checklist">
+            <label class="qz-check-item"><input type="checkbox" id="ck1"> <span>A statement mirror</span></label>
+            <label class="qz-check-item"><input type="checkbox" id="ck2"> <span>Floating wall shelves</span></label>
+            <label class="qz-check-item"><input type="checkbox" id="ck3"> <span>Layered lighting (2+ sources)</span></label>
+            <label class="qz-check-item"><input type="checkbox" id="ck4"> <span>Neutral throw pillows</span></label>
+            <label class="qz-check-item"><input type="checkbox" id="ck5"> <span>A plant or plant stand</span></label>
+          </div>
+          <button class="qz-next-btn" onclick="showResult()">See My Result →</button>
+        </div>
+
+        <!-- RESULT -->
+        <div class="qz-step hidden" id="stepResult">
+          <div class="qz-result-badge" id="qzStyleName"></div>
+          <div class="qz-score-ring" id="qzScoreRing"></div>
+          <div class="qz-score-label" id="qzScoreLabel"></div>
+          <div class="qz-result-text" id="qzResultText"></div>
+          <div class="qz-result-product" id="qzResultProduct"></div>
+          <button class="qz-restart-btn" onclick="restartQuiz()">↺ Retake Quiz</button>
+        </div>
+
+      </div><!-- end quiz-card -->
     </div>
-    <div class="dots"></div>
-  </div>
-  <h2>Mid-Century Plant Stand</h2>
-  <p>Add greenery without cluttering the floor space.</p>
-  <a class="button" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
 
-<!-- PRODUCT 3 -->
-<div class="product-card">
-  <div class="image-slider">
-    <div class="slider-track">
-      <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/71os1uv07qL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/61NuRaZ6NrL._AC_SL1500_.jpg">
+  </div><!-- end page-layout -->
+
+  <!-- ALL PRODUCTS -->
+  <div id="all-products">
+    <div class="all-products-title">Shop All 5 Featured Products</div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="image-slider">
+          <div class="slider-track">
+            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Neutral Throw Pillow Covers">
+            <img src="https://m.media-amazon.com/images/I/61fTwGy2yqL._AC_SL1001_.jpg" alt="Pillows on Sofa">
+            <img src="https://m.media-amazon.com/images/I/71XCi9vwWzL._AC_SL1001_.jpg" alt="Pillow Detail">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <h2>Neutral Throw Pillow Covers</h2>
+        <p>Layer soft textures to instantly create warmth and a designer aesthetic.</p>
+        <a class="btn" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank">View Product</a>
+      </div>
+
+      <div class="product-card">
+        <div class="image-slider">
+          <div class="slider-track">
+            <img src="https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg" alt="Mid-Century Plant Stand">
+            <img src="https://m.media-amazon.com/images/I/61PPTTpCD7L._AC_SL1200_.jpg" alt="Plant Stand Detail">
+            <img src="https://m.media-amazon.com/images/I/61aXIC6t-4L._AC_SL1200_.jpg" alt="Plant Stand Styled">
+            <img src="https://m.media-amazon.com/images/I/71yRDRnpNbL._AC_SL1200_.jpg" alt="Plant Stand Room">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <h2>Mid-Century Plant Stand</h2>
+        <p>Add greenery at eye level without cluttering the floor space.</p>
+        <a class="btn" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank">View Product</a>
+      </div>
+
+      <div class="product-card">
+        <div class="image-slider">
+          <div class="slider-track">
+            <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp">
+            <img src="https://m.media-amazon.com/images/I/71os1uv07qL._AC_SL1500_.jpg" alt="RGB Colors">
+            <img src="https://m.media-amazon.com/images/I/61NuRaZ6NrL._AC_SL1500_.jpg" alt="Lamp in Room">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <h2>Smart RGB Floor Lamp</h2>
+        <p>Create cozy, customizable lighting that upgrades your space instantly.</p>
+        <a class="btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View Product</a>
+      </div>
+
+      <div class="product-card">
+        <div class="image-slider">
+          <div class="slider-track">
+            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Irregular Decorative Mirror">
+            <img src="https://m.media-amazon.com/images/I/812jaP+5PQL._AC_SL1500_.jpg" alt="Mirror Detail">
+            <img src="https://m.media-amazon.com/images/I/81fhTUKGD4L._AC_SL1500_.jpg" alt="Mirror on Wall">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <h2>Irregular Decorative Mirror</h2>
+        <p>Reflect light and visually expand your living room instantly.</p>
+        <a class="btn" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View Product</a>
+      </div>
+
+      <div class="product-card">
+        <div class="image-slider">
+          <div class="slider-track">
+            <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg" alt="Floating Wall Shelves">
+            <img src="https://m.media-amazon.com/images/I/71CMLBLDChL._AC_SL1500_.jpg" alt="Shelves Installed">
+            <img src="https://m.media-amazon.com/images/I/61iRsEMCtTL._AC_SL1500_.jpg" alt="Shelves Styled">
+            <img src="https://m.media-amazon.com/images/I/71FxnWQ77TL._AC_SL1500_.jpg" alt="Shelves Room">
+          </div>
+          <div class="dots"></div>
+        </div>
+        <h2>Floating Wall Shelves</h2>
+        <p>Minimal vertical storage for modern compact spaces.</p>
+        <a class="btn" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View Product</a>
+      </div>
+
     </div>
-    <div class="dots"></div>
   </div>
-  <h2>Smart RGB Floor Lamp</h2>
-  <p>Create cozy, customizable lighting that upgrades your space instantly.</p>
-  <a class="button" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
 
-<!-- PRODUCT 4 -->
-<div class="product-card">
-  <div class="image-slider">
-    <div class="slider-track">
-      <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/812jaP+5PQL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/81fhTUKGD4L._AC_SL1500_.jpg">
-    </div>
-    <div class="dots"></div>
+  <div class="footer">
+    Disclosure: As an Amazon Associate, I earn from qualifying purchases. · © 2026 ElevateLivingCo
   </div>
-  <h2>Irregular Decorative Mirror</h2>
-  <p>Reflect light and visually expand your living room.</p>
-  <a class="button" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
-
-<!-- PRODUCT 5 -->
-<div class="product-card">
-  <div class="image-slider">
-    <div class="slider-track">
-      <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/71CMLBLDChL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/61iRsEMCtTL._AC_SL1500_.jpg">
-      <img src="https://m.media-amazon.com/images/I/71FxnWQ77TL._AC_SL1500_.jpg">
-    </div>
-    <div class="dots"></div>
-  </div>
-  <h2>Floating Wall Shelves</h2>
-  <p>Minimal vertical storage for modern compact spaces.</p>
-  <a class="button" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank">View Product</a>
-</div>
-
-</div>
-<hr style="margin:60px 0; opacity:.2;">
-
-<h3>Explore More Design Guides</h3>
-<p>
-<a href="5-antique-bar-carts-2026.html">
-5 Antique Bar Carts Designers Love in 2026
-</a>
-</p>
-
-
-
-  
-<div class="footer">
-Disclosure: As an Amazon Associate, I earn from qualifying purchases.
-</div>
 
 </div>
 
 <script>
 document.querySelectorAll('.image-slider').forEach(slider => {
-
   const track = slider.querySelector('.slider-track');
   const dotsContainer = slider.querySelector('.dots');
   const slides = track.querySelectorAll('img');
-
   slides.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
-    if(i === 0) dot.classList.add('active');
+    if (i === 0) dot.classList.add('active');
     dotsContainer.appendChild(dot);
   });
-
   track.addEventListener('scroll', () => {
     const index = Math.round(track.scrollLeft / track.clientWidth);
-    dotsContainer.querySelectorAll('.dot').forEach((d,i)=>{
+    dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
       d.classList.toggle('active', i === index);
     });
   });
-
 });
+
+// ── QUIZ LOGIC ──
+const quizState = { vibe: null, priority: null, budget: null };
+
+const products = {
+  mirror: {
+    name: 'Irregular Decorative Mirror',
+    reason: 'The #1 upgrade for your space — reflects light and visually doubles the room instantly.',
+    img: 'https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg',
+    url: 'https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20'
+  },
+  shelves: {
+    name: 'Floating Wall Shelves',
+    reason: 'Go vertical and free up your floor — the smartest storage upgrade for compact spaces.',
+    img: 'https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg',
+    url: 'https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20'
+  },
+  lamp: {
+    name: 'Smart RGB Floor Lamp',
+    reason: 'Transform your room\'s mood in seconds — 16M colors, app-controlled, no installation.',
+    img: 'https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg',
+    url: 'https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20'
+  },
+  pillows: {
+    name: 'Neutral Throw Pillow Covers',
+    reason: 'Highest-impact, lowest-cost upgrade. Instantly makes your sofa look designer.',
+    img: 'https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg',
+    url: 'https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20'
+  },
+  plantstand: {
+    name: 'Mid-Century Plant Stand',
+    reason: 'Add life and warmth to your space without using a single inch of floor space.',
+    img: 'https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg',
+    url: 'https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20'
+  },
+  // ── BAR CART PRODUCTS ──
+  brassBarCart: {
+    name: 'Vintage Brass & Mirror Bar Cart',
+    reason: 'Your room is already elevated — time for the ultimate statement piece. This brass and mirror cart is pure neo deco luxury.',
+    img: 'https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg',
+    url: 'https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20',
+    isBarCart: true
+  },
+  marbleBarCart: {
+    name: 'Marble Top Gold Bar Cart',
+    reason: 'For a glam interior with no budget limit — white marble shelves on a brass frame deliver timeless, instant luxury.',
+    img: 'https://m.media-amazon.com/images/I/71gNVBCtAhL._AC_SL1200_.jpg',
+    url: 'https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv00e-20',
+    isBarCart: true
+  },
+  artDecoCart: {
+    name: 'Art Deco Gold Serving Trolley',
+    reason: 'Bold geometric lines and polished gold — the perfect glam statement piece for your styled space.',
+    img: 'https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SL1500_.jpg',
+    url: 'https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv00e-20',
+    isBarCart: true
+  }
+};
+
+const styleNames = {
+  neo: { low: 'Budget Glam Stylist', mid: 'Neo Deco Enthusiast', high: 'Luxury Neo Deco Designer' },
+  minimal: { low: 'Smart Minimalist', mid: 'Elevated Minimalist', high: 'Premium Minimalist' }
+};
+
+function setProgress(pct) {
+  document.getElementById('qzProgress').style.width = pct + '%';
+}
+
+function showStep(id) {
+  document.querySelectorAll('.qz-step').forEach(s => s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+
+function pickVibe(vibe) {
+  quizState.vibe = vibe;
+  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
+  document.getElementById('vibe-' + vibe).classList.add('selected');
+  setTimeout(() => { setProgress(33); showStep('step2'); }, 300);
+}
+
+function pickPriority(p) {
+  quizState.priority = p;
+  setProgress(66);
+  showStep('step3');
+}
+
+function pickBudget(b) {
+  quizState.budget = b;
+  setProgress(85);
+  showStep('step4');
+}
+
+function showResult() {
+  const checks = ['ck1','ck2','ck3','ck4','ck5'];
+  const score = checks.filter(id => document.getElementById(id).checked).length;
+
+  let pick;
+
+  // ── BAR CART recommendations (Glam vibe + right conditions) ──
+  if (quizState.vibe === 'neo' && score === 5) {
+    // Perfect room, ready for ultimate statement piece
+    pick = products.brassBarCart;
+  } else if (quizState.vibe === 'neo' && quizState.budget === 'high' && score >= 3) {
+    // Glam + big budget + decent room = marble bar cart
+    pick = products.marbleBarCart;
+  } else if (quizState.vibe === 'neo' && quizState.budget === 'mid' && (quizState.priority === 'space' || quizState.priority === 'cozy') && score >= 3) {
+    // Glam + mid budget + space/cosy priority + good score = art deco cart
+    pick = products.artDecoCart;
+
+  // ── SMALL LIVING ROOM recommendations ──
+  } else if (quizState.priority === 'space') {
+    pick = score < 2 ? products.mirror : products.shelves;
+  } else if (quizState.priority === 'light') {
+    pick = products.lamp;
+  } else if (quizState.priority === 'cozy') {
+    pick = quizState.budget === 'low' ? products.pillows : products.lamp;
+  } else if (quizState.priority === 'green') {
+    pick = products.plantstand;
+  } else {
+    pick = products.mirror;
+  }
+
+  // Score label
+  let scoreLabel, scoreEmoji;
+  if (score <= 1) { scoreLabel = 'Your room needs a refresh — start here'; scoreEmoji = '🌱'; }
+  else if (score <= 3) { scoreLabel = 'Almost elevated — one upgrade away'; scoreEmoji = '⚡'; }
+  else { scoreLabel = 'Your room is already elevated!'; scoreEmoji = '🏆'; }
+
+  const styleName = styleNames[quizState.vibe]?.[quizState.budget] || 'Home Decor Enthusiast';
+
+  document.getElementById('qzStyleName').textContent = '✦ ' + styleName + ' ✦';
+  document.getElementById('qzScoreRing').textContent = scoreEmoji + ' ' + score + '/5';
+  document.getElementById('qzScoreLabel').textContent = scoreLabel;
+
+  // Personalised result text
+  const resultText = pick.isBarCart
+    ? 'Your room basics are sorted — you\'re ready for the ultimate neo deco statement piece:'
+    : 'Based on your style and priorities, here\'s the single best upgrade for your space right now:';
+
+  document.getElementById('qzResultText').textContent = resultText;
+
+  // Bar cart gets a special "from our bar cart guide" badge
+  const extraBadge = pick.isBarCart
+    ? `<div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c9a44a;margin-bottom:10px;">✦ From our Bar Cart Guide</div>`
+    : '';
+
+  document.getElementById('qzResultProduct').innerHTML = `
+    <img src="${pick.img}" alt="${pick.name}">
+    <div class="qz-result-product-info">
+      ${extraBadge}
+      <div class="qz-result-product-name">${pick.name}</div>
+      <div class="qz-result-product-reason">${pick.reason}</div>
+      <a class="qz-result-product-btn" href="${pick.url}" target="_blank">View on Amazon →</a>
+      ${pick.isBarCart ? `<a href="5-antique-bar-carts-2026.html" style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:600;">See all 5 bar carts →</a>` : ''}
+    </div>
+  `;
+
+  setProgress(100);
+  showStep('stepResult');
+}
+
+function restartQuiz() {
+  quizState.vibe = null; quizState.priority = null; quizState.budget = null;
+  ['ck1','ck2','ck3','ck4','ck5'].forEach(id => document.getElementById(id).checked = false);
+  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
+  setProgress(0);
+  showStep('step1');
+}
 </script>
 
 </body>
