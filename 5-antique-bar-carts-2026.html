@@ -110,69 +110,19 @@
 
 body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 
-/* ── STICKY MOBILE CTA ── */
-.sticky-cta{
-  display:none;
-  position:fixed;bottom:0;left:0;right:0;
-  background:var(--dark);
-  padding:12px 20px;
-  z-index:999;
-  text-align:center;
-}
-.sticky-cta a{
-  color:var(--gold);
-  text-decoration:none;
-  font-weight:700;
-  font-size:15px;
-  letter-spacing:0.02em;
-}
-@media(max-width:768px){.sticky-cta{display:block;}}
-
 /* ── BRAND HEADER ── */
 .brand-header{
   font-size:32px;font-weight:700;
   padding:36px 5vw 10px;letter-spacing:1px;
 }
 
-.wrapper{width:100%;padding:0 5vw 100px;}
-
-/* ── JUMP NAV ── */
-.jump-nav{
-  background:var(--white);
-  border-radius:16px;
-  padding:16px 24px;
-  margin-bottom:24px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.05);
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-}
-.jump-nav span{
-  font-size:11px;font-weight:700;
-  letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--gold);margin-right:4px;
-  white-space:nowrap;
-}
-.jump-nav a{
-  font-size:13px;font-weight:500;
-  color:var(--dark);text-decoration:none;
-  background:var(--cream);
-  border:1px solid var(--border);
-  border-radius:30px;
-  padding:5px 14px;
-  transition:0.2s;
-  white-space:nowrap;
-}
-.jump-nav a:hover{background:var(--gold);color:var(--white);border-color:var(--gold);}
-.jump-nav a.bonus-link{background:#fdf5e4;border-color:#e8c97a;color:#8a6a10;}
-.jump-nav a.bonus-link:hover{background:var(--gold);color:var(--white);}
+.wrapper{width:100%;padding:0 5vw 80px;}
 
 /* ── HERO ── */
 .hero{
   background:var(--white);border-radius:24px;
   padding:52px;box-shadow:0 20px 50px rgba(0,0,0,0.07);
-  margin-bottom:24px;
+  margin-bottom:40px;
 }
 .section-label{
   font-size:12px;font-weight:600;
@@ -439,8 +389,8 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 }
 .products-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;margin-bottom:48px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:26px;margin-bottom:48px;
 }
 .product-card{
   background:var(--white);border-radius:20px;
@@ -490,12 +440,12 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
   background:rgba(255,255,255,0.55);transition:0.3s;
 }
 .dot.active{background:#111;transform:scale(1.4);}
-.product-card h2{font-size:15px;margin-bottom:5px;line-height:1.3;}
+.product-card h2{font-size:17px;margin-bottom:7px;}
 .product-card .card-price{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:4px;}
 .product-card .card-price .card-was{font-size:12px;color:#999;text-decoration:line-through;font-weight:400;margin-left:4px;}
 .product-card .card-price .card-save{font-size:11px;font-weight:700;color:#c0392b;background:#fff0f0;padding:2px 7px;border-radius:20px;margin-left:4px;}
 .product-card .card-stars{font-size:12px;color:#888;margin-bottom:6px;}
-.product-card p{font-size:13px;color:#666;flex-grow:1;line-height:1.6;}
+.product-card p{font-size:13.5px;color:#666;flex-grow:1;line-height:1.6;}
 .btn{
   display:block;margin-top:12px;padding:11px 18px;
   border-radius:30px;background:#111;color:var(--white);
@@ -630,8 +580,8 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
   .tip-inner{grid-template-columns:1fr 200px;}
 }
 
-@media(max-width:768px){
-  .brand-header{font-size:24px;padding:20px 5vw 8px;}
+@media(max-width:640px){
+  .brand-header{font-size:24px;padding:24px 5vw 8px;}
   .hero{padding:28px 20px;}
   .hero h1{font-size:24px;}
   .content-card{padding:26px 20px;}
@@ -648,29 +598,19 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
   .tip-product .p-desc{display:none;}
   .cta-box{padding:24px 18px;}
   .cta-box h3{font-size:18px;}
-  .jump-nav{padding:12px 16px;gap:8px;}
-  .jump-nav span{display:none;}
-  .crosslink-card{flex-direction:row;}
-  .crosslink-img-wrap{width:100px;min-width:100px;}
 }
 
 @media(max-width:480px){
-  .hero h1{font-size:21px;}
-  .products-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
-  .product-card{padding:12px;}
-  .product-card h2{font-size:13px;}
+  .hero h1{font-size:24px;}
+  .products-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;}
+  .product-card{padding:18px;}
+  .product-card h2{font-size:17px;}
   .crosslink-card{flex-direction:column;}
-  .crosslink-img-wrap{width:100%;min-width:unset;height:140px;}
-  .tip-header h3{font-size:16px;}
+  .crosslink-img-wrap{width:100%;min-width:unset;height:160px;}
 }
 </style>
 </head>
 <body>
-
-<!-- Sticky mobile CTA -->
-<div class="sticky-cta">
-  <a href="#all-products">Shop All Bar Carts on Amazon ↓</a>
-</div>
 
 <div class="brand-header">ElevateLivingCo</div>
 
@@ -682,21 +622,6 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
     <h1>5 Best Antique & Custom Bar Carts for 2026 — Neo Deco Luxury Picks</h1>
     <p class="intro">The best custom bar carts of 2026 are no longer just drinks trolleys — they are the most powerful statement pieces in modern interior design. These 5 antique and marble top picks combine brass finishes, marble shelves, and art deco curves to instantly elevate any living space. Whether you want a gold neo deco showstopper under $72 or a luxury marble bar cart, this guide covers the best custom bar cart brands and makers of 2026 — plus a bonus marble top pick you need to see.</p>
   </div>
-
-  <!-- JUMP NAV -->
-  <nav class="jump-nav" aria-label="Article sections">
-    <span>Jump to:</span>
-    <a href="#pick1">Gold Glam</a>
-    <a href="#pick2">Chrome</a>
-    <a href="#pick3">Rustic Oak</a>
-    <a href="#pick4">Soft Glam</a>
-    <a href="#pick5">Moody Black</a>
-    <a href="#bonus">✦ Marble Bonus</a>
-    <a href="#comparison">Compare All</a>
-    <a href="#styling">Styling Guide</a>
-    <a href="#faq">FAQ</a>
-    <a href="#all-products">Shop All</a>
-  </nav>
 
   <!-- PAGE LAYOUT -->
   <div class="page-layout">
@@ -1248,7 +1173,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 
   <!-- ALL PRODUCTS -->
   <div id="all-products">
-    <div class="all-products-title">Shop All Bar Carts — 2026</div>
+    <div class="all-products-title">Shop All 5 Bar Carts</div>
     <div class="products-grid">
 
       <div class="product-card">
