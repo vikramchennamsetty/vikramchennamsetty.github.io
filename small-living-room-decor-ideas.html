@@ -11,21 +11,18 @@
   gtag('config', 'G-SSKL97RTQC');
 </script>
 <script>
-function trackAffiliate(label) {
-  gtag('event', 'affiliate_click', {
-    'event_category': 'affiliate',
-    'event_label': label,
-    'event_page': 'small-living-room-article'
-  });
-}
-</script>
-<script>
-function trackAffiliate(label) {
-  gtag('event', 'affiliate_click', {
-    'event_category': 'affiliate',
-    'event_label': label,
-    'event_page': 'small-living-room-article'
-  });
+function trackAffiliate(link, label, page) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'affiliate_click', {
+      event_category: 'affiliate',
+      event_label: label,
+      event_page: page,
+      transport_type: 'beacon'
+    });
+  }
+  setTimeout(() => {
+    window.open(link, '_blank');
+  }, 180);
 }
 </script>
 <meta charset="UTF-8">
@@ -304,6 +301,7 @@ body {
   font-weight: 700;
   box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .tip-product .p-btn:hover {
@@ -471,6 +469,7 @@ body {
   font-weight: 600;
   margin-top: 8px;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .arabic-section .p-btn-ar:hover { background: #c9a44a; color: #1a1a1a; }
@@ -529,6 +528,7 @@ body {
   font-size: 13px;
   font-weight: 600;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .s-card .s-btn:hover { background: #c9a44a; color: #1a1a1a; }
@@ -621,6 +621,7 @@ body {
   font-weight: 600;
   font-size: 13px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn:hover { background: #c9a44a; color: #1a1a1a; }
@@ -933,6 +934,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .qz-result-product-btn:hover { background: #c9a44a; color: #1a1a1a; }
@@ -1053,7 +1055,7 @@ body {
             <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Irregular Decorative Mirror for small living room" loading="lazy">
             <div class="p-name">Irregular Decorative Mirror</div>
             <div class="p-desc">Reflects light and visually expands your room — the #1 small space upgrade.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'irregular-mirror','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20','irregular-mirror','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1079,7 +1081,7 @@ body {
             <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg" alt="Floating Wall Shelves for small living room apartment" loading="lazy">
             <div class="p-name">Floating Wall Shelves</div>
             <div class="p-desc">Minimal vertical storage. Frees your floor and elevates your walls instantly.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'floating-shelves','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20','floating-shelves','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1105,7 +1107,7 @@ body {
             <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp for layered living room lighting" loading="lazy">
             <div class="p-name">Smart RGB Floor Lamp</div>
             <div class="p-desc">Customisable warmth and colour for perfect layered lighting in any room.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'rgb-floor-lamp','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20','rgb-floor-lamp','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1148,7 +1150,7 @@ body {
             <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Neutral Throw Pillow Covers for small living room" loading="lazy">
             <div class="p-name">Neutral Throw Pillow Covers</div>
             <div class="p-desc">Soft layered textures that add warmth and a designer aesthetic to any sofa.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'neutral-throw-pillows','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20','neutral-throw-pillows','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1174,7 +1176,7 @@ body {
             <img src="https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg" alt="Mid-Century Plant Stand for small living room" loading="lazy">
             <div class="p-name">Mid-Century Plant Stand</div>
             <div class="p-desc">Elevate greenery at eye level without using precious floor space.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'plant-stand','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20','plant-stand','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1197,7 +1199,7 @@ body {
             <img src="https://m.media-amazon.com/images/I/71os1uv07qL._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp for small apartment living room" loading="lazy">
             <div class="p-name">Smart RGB Floor Lamp</div>
             <div class="p-desc">16 million colours, app-controlled. Transform your room's mood in seconds.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'rgb-floor-lamp','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20','rgb-floor-lamp','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1328,7 +1330,7 @@ body {
         <h2>أفكار ديكور غرفة المعيشة الصغيرة لعام 2026</h2>
         <p>هل تبحث عن أفضل أفكار لتزيين غرفة المعيشة الصغيرة في شقتك لعام 2026؟ اخترنا لك 7 حيل تصميم داخلي فعّالة تجعل أي مساحة صغيرة تبدو فاخرة وواسعة — بدون ترميم أو نفقات كبيرة.</p>
         <p>أقوى خدعة واحدة: ضع مرآة كبيرة ذات شكل غير منتظم في مواجهة نافذتك الرئيسية — ستضاعف الإحساس بالمساحة فوراً. جميع المنتجات متاحة على أمازون مع الشحن السريع.</p>
-        <a class="p-btn-ar" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'irregular-mirror','event_page':'small-living-room-article'})">تسوق الآن على أمازون ←</a>
+        <a class="p-btn-ar" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20','irregular-mirror','small-living-room-article'); return false;">تسوق الآن على أمازون ←</a>
       </div>
 
     </div><!-- end article-col -->
@@ -1424,7 +1426,7 @@ body {
         </div>
         <h2>Neutral Throw Pillow Covers</h2>
         <p>Layer soft textures to instantly create warmth and a designer aesthetic.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'neutral-throw-pillows','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20','neutral-throw-pillows','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1439,7 +1441,7 @@ body {
         </div>
         <h2>Mid-Century Plant Stand</h2>
         <p>Add greenery at eye level without cluttering the floor space.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'plant-stand','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20','plant-stand','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1453,7 +1455,7 @@ body {
         </div>
         <h2>Smart RGB Floor Lamp</h2>
         <p>Create cosy, customisable lighting that upgrades your small living room instantly.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'rgb-floor-lamp','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20','rgb-floor-lamp','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1467,7 +1469,7 @@ body {
         </div>
         <h2>Irregular Decorative Mirror</h2>
         <p>Reflect light and visually expand your small living room or apartment instantly.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'irregular-mirror','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20','irregular-mirror','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1482,7 +1484,7 @@ body {
         </div>
         <h2>Floating Wall Shelves</h2>
         <p>Minimal vertical storage — frees your floor and elevates your walls in any apartment.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'floating-shelves','event_page':'small-living-room-article'})">Check Price & Availability on Amazon →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20','floating-shelves','small-living-room-article'); return false;">Check Price & Availability on Amazon →</a>
       </div>
 
     </div>
@@ -1540,37 +1542,43 @@ const products = {
     name: 'Irregular Decorative Mirror',
     reason: 'The #1 upgrade for your space — reflects light and visually doubles the room instantly.',
     img: 'https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20'
+    url: 'https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv00e-20',
+    label: 'irregular-mirror'
   },
   shelves: {
     name: 'Floating Wall Shelves',
     reason: 'Go vertical and free up your floor — the smartest storage upgrade for compact spaces.',
     img: 'https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20'
+    url: 'https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv00e-20',
+    label: 'floating-shelves'
   },
   lamp: {
     name: 'Smart RGB Floor Lamp',
     reason: 'Transform your room\'s mood in seconds — 16M colours, app-controlled, no installation.',
     img: 'https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20'
+    url: 'https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv00e-20',
+    label: 'rgb-floor-lamp'
   },
   pillows: {
     name: 'Neutral Throw Pillow Covers',
     reason: 'Highest-impact, lowest-cost upgrade. Instantly makes your sofa look designer.',
     img: 'https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20'
+    url: 'https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv00e-20',
+    label: 'neutral-throw-pillows'
   },
   plantstand: {
     name: 'Mid-Century Plant Stand',
     reason: 'Add life and warmth to your space without using a single inch of floor space.',
     img: 'https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20'
+    url: 'https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv00e-20',
+    label: 'plant-stand'
   },
   brassBarCart: {
     name: 'VASAGLE Gold Bar Cart',
     reason: 'Your room is already elevated — time for the ultimate statement piece. Gold frame, mirrored shelves, 1,977 reviews.',
     img: 'https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg',
     url: 'https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20',
+    label: 'vasagle-gold-bar-cart',
     isBarCart: true
   },
   marbleBarCart: {
@@ -1578,6 +1586,7 @@ const products = {
     reason: 'For a glam interior with no budget limit — gold frame, marbleized white finish, 4.7 stars.',
     img: 'https://m.media-amazon.com/images/I/71+UNmASy8L._AC_SL1200_.jpg',
     url: 'https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv00e-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl',
+    label: 'bon-augure-marble-bar-cart',
     isBarCart: true
   }
 };
@@ -1650,7 +1659,7 @@ function showResult() {
       ${extraBadge}
       <div class="qz-result-product-name">${pick.name}</div>
       <div class="qz-result-product-reason">${pick.reason}</div>
-      <a class="qz-result-product-btn" href="${pick.url}" target="_blank" rel="nofollow sponsored" onclick="trackAffiliate('quiz-result-click');">View on Amazon →</a>
+      <a class="qz-result-product-btn" href="#" onclick="trackAffiliate('${pick.url}','${pick.label}','small-living-room-article'); return false;">View on Amazon →</a>
       ${pick.isBarCart ? `<a href="https://vikramchennamsetty.github.io/5-antique-bar-carts-2026.html" style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:600;">See all 5 bar carts →</a>` : ''}
     </div>
   `;
@@ -1670,7 +1679,9 @@ function restartQuiz() {
 // ── SMOOTH ANCHOR SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (href === '#') return; // skip trackAffiliate links
+    const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
     const offset = window.innerWidth <= 768 ? 60 : 20;
