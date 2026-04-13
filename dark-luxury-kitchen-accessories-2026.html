@@ -12,12 +12,18 @@
   gtag('config', 'G-SSKL97RTQC');
 </script>
 <script>
-function trackAffiliate(label) {
-  gtag('event', 'affiliate_click', {
-    'event_category': 'affiliate',
-    'event_label': label,
-    'event_page': 'dark-kitchen-article'
-  });
+function trackAffiliate(link, label, page) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'affiliate_click', {
+      event_category: 'affiliate',
+      event_label: label,
+      event_page: page,
+      transport_type: 'beacon'
+    });
+  }
+  setTimeout(() => {
+    window.open(link, '_blank');
+  }, 120);
 }
 </script>
 <meta charset="UTF-8">
@@ -354,6 +360,7 @@ body {
   font-weight: 700;
   box-shadow: 0 4px 15px rgba(184,134,11,0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .tip-product .p-btn:hover {
@@ -671,6 +678,7 @@ body {
   transition: 0.22s;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .studio-product:last-child { margin-bottom: 0; }
@@ -731,8 +739,6 @@ body {
   border-radius: 0 8px 8px 0;
   padding: 10px 13px;
 }
-
-
 
 .studio-tip-text {
   font-size: 11.5px;
@@ -872,6 +878,7 @@ body {
   font-weight: 600;
   font-size: 13px;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn:hover { background: #c9a44a; color: #1a1a1a; }
@@ -1048,7 +1055,7 @@ body {
             <div class="p-name">Gibson Soho Lounge Black Reactive Stoneware</div>
             <div class="p-desc">Each piece unique. Artisanal reactive glaze. The dark kitchen hero.</div>
             <div class="p-scarcity">⭐ 21,000+ reviews · 900+ bought last month</div>
-            <a class="p-btn" href="https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'gibson-reactive-stoneware','event_page':'dark-kitchen-article'})">View on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl','gibson-reactive-stoneware','dark-kitchen-article'); return false;">View on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1075,7 +1082,7 @@ body {
             <div class="p-name">Veken Black Stainless Coffee Canister</div>
             <div class="p-desc">Airtight seal, date tracker, matte black finish. The perfect countertop piece.</div>
             <div class="p-scarcity">⭐ 11,000+ reviews · 3,000+ bought last month</div>
-            <a class="p-btn" href="https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'veken-black-canister','event_page':'dark-kitchen-article'})">Check Today's Price →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl','veken-black-canister','dark-kitchen-article'); return false;">Check Today's Price →</a>
           </div>
         </div>
       </div>
@@ -1102,7 +1109,7 @@ body {
             <div class="p-name">Black One-Handed Paper Towel Holder</div>
             <div class="p-desc">Weighted base, one-handed tear. The $17 upgrade that changes everything.</div>
             <div class="p-scarcity">💰 $8.99 · 10,000+ bought last month</div>
-            <a class="p-btn" href="https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'black-paper-towel-holder','event_page':'dark-kitchen-article'})">See Reviews →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl','black-paper-towel-holder','dark-kitchen-article'); return false;">See Reviews →</a>
           </div>
         </div>
       </div>
@@ -1129,7 +1136,7 @@ body {
             <div class="p-name">Astercook Black Knife Set with Block</div>
             <div class="p-desc">Built-in sharpener, dishwasher safe. The professional dark kitchen anchor piece.</div>
             <div class="p-scarcity">⚡ 9,000+ bought last month · High demand set</div>
-            <a class="p-btn" href="https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'astercook-black-knife-set','event_page':'dark-kitchen-article'})">View Details →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl','astercook-black-knife-set','dark-kitchen-article'); return false;">View Details →</a>
           </div>
         </div>
       </div>
@@ -1156,7 +1163,7 @@ body {
             <div class="p-name">Stone Lain Matte Black Coupe Dinnerware</div>
             <div class="p-desc">Restaurant coupe shape. Rimless, sleek, editorial. The minimalist dark kitchen choice.</div>
             <div class="p-scarcity">🔥 21,000+ reviews · Limited-time deal</div>
-            <a class="p-btn" href="https://www.amazon.com/Stone-Lain-Coupe-Dinnerware-Service/dp/B07XKXB9VF?linkCode=ll2&tag=elevateliv00e-20&linkId=74eaa24f98e63abb2a89353d40b1cc64&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'stone-lain-coupe-dinnerware','event_page':'dark-kitchen-article'})">Shop on Amazon →</a>
+            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Stone-Lain-Coupe-Dinnerware-Service/dp/B07XKXB9VF?linkCode=ll2&tag=elevateliv00e-20&linkId=74eaa24f98e63abb2a89353d40b1cc64&language=en_US&ref_=as_li_ss_tl','stone-lain-coupe-dinnerware','dark-kitchen-article'); return false;">Shop on Amazon →</a>
           </div>
         </div>
       </div>
@@ -1393,7 +1400,7 @@ body {
         <p style="font-size:12px;color:#888;margin-top:6px;">
         ⭐ 21,000+ reviews · 900+ bought last month
         </p>
-        <a class="btn" href="https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'gibson-reactive-stoneware','event_page':'dark-kitchen-article'})">View on Amazon →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl','gibson-reactive-stoneware','dark-kitchen-article'); return false;">View on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1410,14 +1417,13 @@ body {
         <p style="font-size:12px;color:#888;margin-top:6px;">
         ⭐ 11,000+ reviews · 3,000+ bought last month
         </p>
-        <a class="btn" href="https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'veken-black-canister','event_page':'dark-kitchen-article'})">Check Today's Price →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl','veken-black-canister','dark-kitchen-article'); return false;">Check Today's Price →</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
             <img src="https://m.media-amazon.com/images/I/71iHGGNOipL._AC_SX679_.jpg" alt="Black Paper Towel Holder Countertop" loading="lazy">
-            
             <img src="https://m.media-amazon.com/images/I/61gZxKtm8yL._AC_SX679_.jpg" alt="Black Paper Towel Holder Detail" loading="lazy">
           </div>
           <div class="dots"></div>
@@ -1427,7 +1433,7 @@ body {
         <p style="font-size:12px;color:#888;margin-top:6px;">
         💰 $8.99 · 10,000+ bought last month
         </p>
-        <a class="btn" href="https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'black-paper-towel-holder','event_page':'dark-kitchen-article'})">See Reviews →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl','black-paper-towel-holder','dark-kitchen-article'); return false;">See Reviews →</a>
       </div>
 
       <div class="product-card">
@@ -1435,7 +1441,6 @@ body {
           <div class="slider-track">
             <img src="https://m.media-amazon.com/images/I/71MM+v16qRL._AC_SL1500_.jpg" alt="Astercook Knife Set Detail" loading="lazy">
             <img src="https://m.media-amazon.com/images/I/61TheuxRpFL._AC_SL1500_.jpg" alt="Astercook Black Knife Set with Block" loading="lazy">
-          
             <img src="https://m.media-amazon.com/images/I/718Nd3nhCOL._AC_SL1500_.jpg" alt="Astercook Knife Set Kitchen" loading="lazy">
           </div>
           <div class="dots"></div>
@@ -1445,7 +1450,7 @@ body {
         <p style="font-size:12px;color:#888;margin-top:6px;">
         ⚡ 9,000+ bought last month · High demand
         </p>
-        <a class="btn" href="https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'astercook-black-knife-set','event_page':'dark-kitchen-article'})">View Details →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl','astercook-black-knife-set','dark-kitchen-article'); return false;">View Details →</a>
       </div>
 
       <div class="product-card">
@@ -1453,7 +1458,6 @@ body {
           <div class="slider-track">
             <img src="https://m.media-amazon.com/images/I/711FVznmn0L._AC_SL1500_.jpg" alt="Stone Lain Black Plate Detail" loading="lazy">
             <img src="https://m.media-amazon.com/images/I/71-gAovDdKL._AC_SL1500_.jpg" alt="Stone Lain Matte Black Coupe Dinnerware" loading="lazy">
-          
             <img src="https://m.media-amazon.com/images/I/91CWPjNCOtL._AC_SL1500_.jpg" alt="Stone Lain Black Tablescape" loading="lazy">
           </div>
           <div class="dots"></div>
@@ -1463,7 +1467,7 @@ body {
         <p style="font-size:12px;color:#888;margin-top:6px;">
         🔥 21,000+ reviews · Limited-time deal
         </p>
-        <a class="btn" href="https://www.amazon.com/Stone-Lain-Coupe-Dinnerware-Service/dp/B07XKXB9VF?linkCode=ll2&tag=elevateliv00e-20&linkId=74eaa24f98e63abb2a89353d40b1cc64&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'stone-lain-coupe-dinnerware','event_page':'dark-kitchen-article'})">Shop on Amazon →</a>
+        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/Stone-Lain-Coupe-Dinnerware-Service/dp/B07XKXB9VF?linkCode=ll2&tag=elevateliv00e-20&linkId=74eaa24f98e63abb2a89353d40b1cc64&language=en_US&ref_=as_li_ss_tl','stone-lain-coupe-dinnerware','dark-kitchen-article'); return false;">Shop on Amazon →</a>
       </div>
 
     </div>
@@ -1474,7 +1478,7 @@ body {
     <p style="margin-top:8px;">
       <a href="https://vikramchennamsetty.github.io/5-antique-bar-carts-2026.html">Best Bar Carts 2026</a> · 
       <a href="https://vikramchennamsetty.github.io/7-dark-bookshelf-styling-ideas.html">Dark Bookshelf Styling</a> · 
-      <a href="https://vikramchennamsetty.github.io/small-living-room-dark-decor-ideas.html">Small Living Room Ideas</a>
+      <a href="https://vikramchennamsetty.github.io/small-living-room-dark-decor-ideas.html">Small Living Room Ideas</a> ·
       <a href="#faq">Black Kitchen FAQ</a>
     </p>
     <p style="margin-top:8px;">© 2026 ElevateLivingCo</p>
@@ -1507,33 +1511,33 @@ var studioVibes = {
   warm: {
     tip: 'Start with the Gibson stoneware as your hero. Stack plates on an open shelf — the reactive glaze reads as art. Pair with the Veken canister for a curated countertop vignette.',
     products: [
-      { img: 'https://m.media-amazon.com/images/I/91LD2izgBRL._AC_SL1500_.jpg', name: 'Gibson Black Reactive Stoneware', why: 'Hero piece — artisanal, dramatic', badge: '#1 Pick', scarcity: '🔥 High demand', url: 'https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/71fqTPrjLbL._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Countertop vignette — matte warmth', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/71iHGGNOipL._AC_SX679_.jpg', name: 'Black Paper Towel Holder', why: 'Finish the vignette — $17 upgrade', badge: 'Quick win', scarcity: '', url: 'https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl' }
+      { img: 'https://m.media-amazon.com/images/I/91LD2izgBRL._AC_SL1500_.jpg', name: 'Gibson Black Reactive Stoneware', why: 'Hero piece — artisanal, dramatic', badge: '#1 Pick', scarcity: '🔥 High demand', url: 'https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl', label: 'gibson-reactive-stoneware' },
+      { img: 'https://m.media-amazon.com/images/I/71fqTPrjLbL._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Countertop vignette — matte warmth', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl', label: 'veken-black-canister' },
+      { img: 'https://m.media-amazon.com/images/I/71iHGGNOipL._AC_SX679_.jpg', name: 'Black Paper Towel Holder', why: 'Finish the vignette — $17 upgrade', badge: 'Quick win', scarcity: '', url: 'https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl', label: 'black-paper-towel-holder' }
     ]
   },
   cool: {
     tip: 'Stone Lain coupe plates are the centerpiece of a cool minimal look. Rimless + matte black = restaurant energy. Add the paper towel holder to unify your countertop in one clean finish.',
     products: [
-      { img: 'https://m.media-amazon.com/images/I/91CWPjNCOtL._AC_SL1500_.jpg', name: 'Stone Lain Matte Black Coupe', why: 'Centerpiece — rimless, editorial', badge: '#1 Pick', scarcity: '', url: 'https://www.amazon.com/Stone-Lain-Coupe-Dinnerware-Service/dp/B07XKXB9VF?linkCode=ll2&tag=elevateliv00e-20&linkId=74eaa24f98e63abb2a89353d40b1cc64&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/71iHGGNOipL._AC_SX679_.jpg', name: 'Black Paper Towel Holder', why: 'Unify the countertop finish', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/61Pjcm+BcDL._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Sleek matte canister — no clutter', badge: 'Optional', scarcity: '⚡ Bestseller', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl' }
+      { img: 'https://m.media-amazon.com/images/I/91CWPjNCOtL._AC_SL1500_.jpg', name: 'Stone Lain Matte Black Coupe', why: 'Centerpiece — rimless, editorial', badge: '#1 Pick', scarcity: '', url: 'https://www.amazon.com/Stone-Lain-Coupe-Dinnerware-Service/dp/B07XKXB9VF?linkCode=ll2&tag=elevateliv00e-20&linkId=74eaa24f98e63abb2a89353d40b1cc64&language=en_US&ref_=as_li_ss_tl', label: 'stone-lain-coupe-dinnerware' },
+      { img: 'https://m.media-amazon.com/images/I/71iHGGNOipL._AC_SX679_.jpg', name: 'Black Paper Towel Holder', why: 'Unify the countertop finish', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl', label: 'black-paper-towel-holder' },
+      { img: 'https://m.media-amazon.com/images/I/61Pjcm+BcDL._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Sleek matte canister — no clutter', badge: 'Optional', scarcity: '⚡ Bestseller', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl', label: 'veken-black-canister' }
     ]
   },
   chef: {
     tip: 'The Astercook knife block is your anchor — place it back-corner on the counter. Built-in sharpener, dishwasher safe. Add the canister for your coffee station nearby and you have a fully functional, styled workspace.',
     products: [
-      { img: 'https://m.media-amazon.com/images/I/71MM+v16qRL._AC_SL1500_.jpg', name: 'Astercook Black Knife Set', why: 'Anchor piece — professional, striking', badge: 'Start here', scarcity: '⚡ Limited stock', url: 'https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/61Pjcm+BcDL._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Coffee station next to knife block', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/51dmwtRhoPL._AC_SX679_.jpg', name: 'Black Paper Towel Holder', why: 'Working kitchen essential', badge: 'Essential', scarcity: '', url: 'https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl' }
+      { img: 'https://m.media-amazon.com/images/I/71MM+v16qRL._AC_SL1500_.jpg', name: 'Astercook Black Knife Set', why: 'Anchor piece — professional, striking', badge: 'Start here', scarcity: '⚡ Limited stock', url: 'https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl', label: 'astercook-black-knife-set' },
+      { img: 'https://m.media-amazon.com/images/I/61Pjcm+BcDL._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Coffee station next to knife block', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl', label: 'veken-black-canister' },
+      { img: 'https://m.media-amazon.com/images/I/51dmwtRhoPL._AC_SX679_.jpg', name: 'Black Paper Towel Holder', why: 'Working kitchen essential', badge: 'Essential', scarcity: '', url: 'https://www.amazon.com/Stainless-One-Handed-Operation-Countertop-Dispenser/dp/B09DKH8XDS?linkCode=ll2&tag=elevateliv00e-20&linkId=848a67758a8bb6ccb50f3863a77900ef&language=en_US&ref_=as_li_ss_tl', label: 'black-paper-towel-holder' }
     ]
   },
   academia: {
     tip: 'Gibson reactive glaze + Astercook knife set = the full dark academia kitchen. The organic, unique glaze on each Gibson piece creates that collected-over-time feel. The knife block is the dramatic focal point.',
     products: [
-      { img: 'https://m.media-amazon.com/images/I/61j5uJXlJZL._AC_SX679_.jpg', name: 'Gibson Black Reactive Stoneware', why: 'The collected, artisanal centerpiece', badge: '#1 Pick', scarcity: '🔥 High demand', url: 'https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/81aJl2xmzSL._AC_SL1500_.jpg', name: 'Astercook Black Knife Set', why: 'Dramatic focal point — all-black', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl' },
-      { img: 'https://m.media-amazon.com/images/I/61qYteBwQ+L._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Dark academia coffee ritual', badge: 'Finishing touch', scarcity: '', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl' }
+      { img: 'https://m.media-amazon.com/images/I/61j5uJXlJZL._AC_SX679_.jpg', name: 'Gibson Black Reactive Stoneware', why: 'The collected, artisanal centerpiece', badge: '#1 Pick', scarcity: '🔥 High demand', url: 'https://www.amazon.com/Gibson-Lounge-Reactive-Dinnerware-Dessert/dp/B0038JDEOY?linkCode=ll2&tag=elevateliv00e-20&linkId=e0fac5a36de910315f4db5aac4f06bf1&language=en_US&ref_=as_li_ss_tl', label: 'gibson-reactive-stoneware' },
+      { img: 'https://m.media-amazon.com/images/I/81aJl2xmzSL._AC_SL1500_.jpg', name: 'Astercook Black Knife Set', why: 'Dramatic focal point — all-black', badge: 'Pairs well', scarcity: '', url: 'https://www.amazon.com/Astercook-Kitchen-Dishwasher-Sharpener-Stainless/dp/B0C1YBPJ43?linkCode=ll2&tag=elevateliv00e-20&linkId=b340eb9e754bb94053f0280267d21471&language=en_US&ref_=as_li_ss_tl', label: 'astercook-black-knife-set' },
+      { img: 'https://m.media-amazon.com/images/I/61qYteBwQ+L._AC_SL1500_.jpg', name: 'Veken Black Coffee Canister', why: 'Dark academia coffee ritual', badge: 'Finishing touch', scarcity: '', url: 'https://www.amazon.com/Veken-Canister-Stainless-Container-22OZ%EF%BC%8CBlack/dp/B0CWH57Q9F?linkCode=ll2&tag=elevateliv00e-20&linkId=5a8a169bc9546f760139d310789aa87d&language=en_US&ref_=as_li_ss_tl', label: 'veken-black-canister' }
     ]
   }
 };
@@ -1546,7 +1550,7 @@ function setStudioVibe(vibe, tab) {
   recsEl.innerHTML = '<div class="studio-recs-label">Best picks for your style</div>';
   data.products.forEach(function(p) {
     var scarcityHtml = p.scarcity ? '<div class="studio-product-scarcity">' + p.scarcity + '</div>' : '';
-    recsEl.innerHTML += '<a class="studio-product" href="' + p.url + '" target="_blank" rel="nofollow sponsored" onclick="trackAffiliate(\'sidebar-studio-click\');">' +
+    recsEl.innerHTML += '<a class="studio-product" href="#" onclick="trackAffiliate(\'' + p.url + '\',\'' + p.label + '\',\'dark-kitchen-article\'); return false;">' +
       '<img class="studio-product-img" src="' + p.img + '" alt="' + p.name + '" loading="lazy">' +
       '<div class="studio-product-info">' +
         '<div class="studio-product-name">' + p.name + '</div>' +
@@ -1577,7 +1581,9 @@ function toggleFaq(el) {
 // ── SMOOTH ANCHOR SCROLL ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (href === '#') return; // skip trackAffiliate links
+    const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
     const offset = window.innerWidth <= 768 ? 60 : 20;
