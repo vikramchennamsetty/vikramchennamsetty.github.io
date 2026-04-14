@@ -15,12 +15,13 @@ function trackAffiliate(url, label, page) {
   gtag('event', 'affiliate_click', {
     event_category: 'affiliate',
     event_label: label,
-    event_page: page
+    event_page: page,
+    transport_type: 'beacon'
   });
 
   setTimeout(() => {
     window.open(url, '_blank');
-  }, 200);
+  }, 180);
 }
 </script>
 <meta charset="UTF-8">
@@ -700,7 +701,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             <div class="p-price">$71.63 <span class="p-was">$86.00</span><span class="p-save">-17%</span></div>
             <div class="p-stars">⭐ 4.6 · 1,977 reviews · 100+ bought/month</div>
             <div class="p-desc">Gold frame + 2 mirrored shelves + wine & glass holders — the neo deco showstopper.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -736,7 +737,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             <div class="p-price">$209.99</div>
             <div class="p-stars">⭐ 4.7 · 157 reviews</div>
             <div class="p-desc">Polished chrome, 3 tiers on wheels — sculptural statement for modern interiors.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'ferfalder-chrome-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'ferfalder-chrome-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -775,7 +776,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             <div class="p-price">$132.79 <span class="p-was">$139.99</span><span class="p-save">-5%</span></div>
             <div class="p-stars">⭐ 4.7 · 223 reviews · 50+ bought/month</div>
             <div class="p-desc">Rustic oak wood grain, 3 tiers, wine rack &amp; glass holder — warm organic style.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'bon-augure-rustic-oak','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'bon-augure-rustic-oak','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -814,7 +815,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             <div class="p-price">$39.99 <span class="p-was">$57.99</span><span class="p-save">-30%</span></div>
             <div class="p-stars">⭐ 4.3 · 547 reviews · 200+ bought/month</div>
             <div class="p-desc">Gold frame + white shelves + wine rack — soft glam, Amazon's Choice under $40.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'mahancris-gold-white','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'mahancris-gold-white','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -850,7 +851,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             <div class="p-price">$89.99</div>
             <div class="p-stars">⭐ 4.6 · 682 reviews · Amazon's Choice</div>
             <div class="p-desc">Black round frame + 2 mirror shelves + wine rack + lockable casters.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'ritesune-black-mirror','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'ritesune-black-mirror','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -889,7 +890,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             <div class="p-price">$159.99</div>
             <div class="p-stars">⭐ 4.7 · 223 reviews</div>
             <div class="p-desc">Gold frame + marbleized white finish + 3 tiers + wine rack — the ultimate butler cart with marble top.</div>
-            <a class="p-btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv00e-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'bon-augure-marble-top','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv00e-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'bon-augure-marble-top','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -919,7 +920,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>2</td>
                 <td>⭐ 4.6 (1,977)</td>
                 <td><strong>$71.63</strong> <span style="font-size:11px;color:#c0392b;">-17%</span></td>
-                <td><a href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
               </tr>
               <tr>
                 <td><strong>FERFALDER Chrome</strong></td>
@@ -928,7 +929,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.7 (157)</td>
                 <td>$209.99</td>
-                <td><a href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'ferfalder-chrome-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'ferfalder-chrome-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
               </tr>
               <tr>
                 <td><strong>BON AUGURE Oak</strong></td>
@@ -937,7 +938,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.7 (223)</td>
                 <td><strong>$132.79</strong> <span style="font-size:11px;color:#c0392b;">-5%</span></td>
-                <td><a href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'bon-augure-rustic-oak','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'bon-augure-rustic-oak','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
               </tr>
               <tr>
                 <td><strong>MAHANCRIS Gold &amp; White</strong> <span class="badge-budget">Best Under $40</span></td>
@@ -946,7 +947,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.3 (547)</td>
                 <td><strong>$39.99</strong> <span style="font-size:11px;color:#c0392b;">-30%</span></td>
-                <td><a href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'mahancris-gold-white','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'mahancris-gold-white','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
               </tr>
               <tr>
                 <td><strong>RiteSune Round Black</strong></td>
@@ -955,7 +956,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>2</td>
                 <td>⭐ 4.6 (682)</td>
                 <td>$89.99</td>
-                <td><a href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'ritesune-black-mirror','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'ritesune-black-mirror','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
               </tr>
               <tr class="bonus-row">
                 <td><strong>BON AUGURE Marble</strong> <span class="badge-bonus">✦ Bonus Marble Pick</span></td>
@@ -964,7 +965,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.7 (223)</td>
                 <td>$159.99</td>
-                <td><a href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv00e-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'bon-augure-marble-top','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv00e-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'bon-augure-marble-top','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View →</a></td>
               </tr>
             </tbody>
           </table>
@@ -1127,7 +1128,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <h2>عربات تقديم المشروبات الفاخرة لعام 2026</h2>
         <p>هل تبحث عن أفضل عربة تقديم أو عربة بار فاخرة لعام 2025 و2026؟ اخترنا لك أجمل 5 عربات بار بتصميمات آرت ديكو النيو وأسطح الرخام والإطارات الذهبية — متاحة على أمازون مع الشحن السريع.</p>
         <p>عربة VASAGLE الذهبية هي الأفضل تقييماً مع 1,977 مراجعة بسعر 71.63 دولار فقط (خصم 17%)، فيما تُعدّ عربة BON AUGURE بالطلاء الرخامي بسعر 159.99 دولار خيار العام الأول للمهتمين بالتصميم الداخلي الراقي.</p>
-        <a class="p-btn-ar" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">تسوق الآن على أمازون ←</a>
+        <a class="p-btn-ar" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">تسوق الآن على أمازون ←</a>
       </div>
 
     </div><!-- end article-col -->
@@ -1223,7 +1224,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$71.63 <span class="card-was">$86</span><span class="card-save">-17%</span></div>
         <div class="card-stars">⭐ 4.6 · 1,977 reviews · 100+ bought/month</div>
         <p>Gold frame + 2 mirrored shelves + wine &amp; glass holders. Big Spring Deal — best overall pick.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'vasagle-gold-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1239,7 +1240,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$209.99</div>
         <div class="card-stars">⭐ 4.7 · 157 reviews</div>
         <p>Polished chrome, 3 tiers on wheels — bold sculptural statement, boutique hotel quality.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'ferfalder-chrome-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'ferfalder-chrome-bar-cart','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1255,7 +1256,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$132.79 <span class="card-was">$139.99</span><span class="card-save">-5%</span></div>
         <div class="card-stars">⭐ 4.7 · 223 reviews · 50+ bought/month</div>
         <p>Rich wood grain, 3 tiers, wine rack &amp; glass holder — warm organic style.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'bon-augure-rustic-oak','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'bon-augure-rustic-oak','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1271,7 +1272,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$39.99 <span class="card-was">$57.99</span><span class="card-save">-30%</span></div>
         <div class="card-stars">⭐ 4.3 · 547 reviews · 200+ bought/month · Amazon's Choice</div>
         <p>Gold frame + white shelves + wine rack — soft glam, Amazon's Choice, best value pick.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'mahancris-gold-white','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'mahancris-gold-white','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
       </div>
 
       <div class="product-card">
@@ -1287,7 +1288,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$89.99</div>
         <div class="card-stars">⭐ 4.6 · 682 reviews · Amazon's Choice</div>
         <p>Black round frame + 2 mirror shelves + wine rack + lockable casters — moody drama under $90.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'ritesune-black-mirror','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv00e-20" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'ritesune-black-mirror','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
       </div>
 
       <div class="product-card bonus-card">
@@ -1302,7 +1303,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$159.99</div>
         <div class="card-stars">⭐ 4.7 · 223 reviews</div>
         <p>Gold frame + marbleized white finish + 3 tiers + wine rack — the best butler cart with marble top 2026.</p>
-        <a class="btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv00e-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="gtag('event','affiliate_click',{'event_category':'affiliate','event_label':'bon-augure-marble-top','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
+        <a class="btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv00e-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored" onclick="onclick="trackAffiliate('URL','LABEL','PAGE'); return false;",{'event_category':'affiliate','event_label':'bon-augure-marble-top','event_page':'bar-cart-article'}); setTimeout(()=>{window.open(this.href,'_blank')},200); return false;">View on Amazon →</a>
       </div>
 
     </div>
