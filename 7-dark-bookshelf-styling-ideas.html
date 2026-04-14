@@ -12,16 +12,20 @@
 </script>
 <script>
 function trackAffiliate(url, label, page) {
+  console.log('CLICK:', label, page);
+
   if (typeof gtag === 'function') {
     gtag('event', 'affiliate_click', {
       event_category: 'affiliate',
       event_label: label,
-      event_page: page
+      event_page: page,
+      transport_type: 'beacon'
     });
   }
+
   setTimeout(() => {
     window.open(url, '_blank');
-  }, 200);
+  }, 180);
 }
 </script>
 <meta charset="UTF-8">
@@ -244,6 +248,7 @@ body {
   font-weight: 700;
   transition: 0.25s;
   box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+  cursor: pointer;
 }
 
 .tip-product .p-btn:hover { 
@@ -298,6 +303,7 @@ body {
   font-size: 11px;
   font-weight: 700;
   transition: 0.2s;
+  cursor: pointer;
 }
 .mini-product-btn:hover { background: #c9a44a; color: #1a1a1a; }
 
@@ -422,6 +428,7 @@ body {
   font-size: 13px;
   font-weight: 600;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .s-card .s-btn:hover { background: #c9a44a; color: #1a1a1a; }
@@ -516,6 +523,7 @@ body {
   font-size: 13px;
   transition: 0.3s;
   box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+  cursor: pointer;
 }
 
 .btn:hover { 
@@ -849,6 +857,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .qz-result-product-btn:hover { background: #c9a44a; color: #1a1a1a; }
@@ -937,7 +946,7 @@ body {
   <div class="hero">
     <div class="section-label">Dark Bookshelf Styling · Dark Academia · Neo Deco 2026</div>
     <h1>7 Dark Bookshelf Styling Ideas That Make Any Room Look Like a Designer Did It</h1>
-    <p class="intro">Dark bookshelf styling is the fastest-growing interior trend of 2026 — peaking at 100 on Pinterest in January and still climbing. Here's the exact formula: 7 specific pieces that transform any shelf into a **Dark Academia decor** showcase using the **Designer Rule of Thirds**. For those looking to express their individuality through curated home discovery, these 2026 picks are the ultimate intellectual anchor for your space. Master the perfect **Library lighting**, sculptural curation, and color balance with step-by-step guidance.</p>
+    <p class="intro">Dark bookshelf styling is the fastest-growing interior trend of 2026 — peaking at 100 on Pinterest in January and still climbing. Here's the exact formula: 7 specific pieces that transform any shelf into a Dark Academia decor showcase using the Designer Rule of Thirds. For those looking to express their individuality through curated home discovery, these 2026 picks are the ultimate intellectual anchor for your space. Master the perfect Library lighting, sculptural curation, and color balance with step-by-step guidance.</p>
   </div>
 
   <!-- PAGE LAYOUT -->
@@ -1630,12 +1639,11 @@ function showResult() {
 
   const guideBadge = pick.guide
     ? `<div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c9a44a;margin-bottom:8px;">${pick.guide.label}</div>` : '';
-const guideLink = pick.guide
-  ? `<a href="#"
-      onclick="trackAffiliate('${pick.guide.link}','guide-${pick.label}','dark-bookshelf-article'); return false;"
-      style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:700;">
-      ${pick.guide.text}
-    </a>` : '';
+  const guideLink = pick.guide
+    ? `<a href="${pick.guide.link}"
+        style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:700;">
+        ${pick.guide.text}
+      </a>` : '';
 
   document.getElementById('qzResultProduct').innerHTML = `
     <img src="${pick.img}" alt="${pick.name}">
