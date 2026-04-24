@@ -1,0 +1,16 @@
+title: ElevateLivingCo | Modern Home Inspiration
+description: Curated home decor guides, product reviews, and interior design inspiration for elevating your living space.
+author: Vikram Chennamsetty
+email: elevatelivingco7@gmail.com
+url: https://vikramchennamsetty.github.io
+baseurl: ""
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+header_pages:
+  - about.md
+  - disclosure.md
+  - contact.md
+google_analytics: G-SSKL97RTQC
+google_site_verification: rb3HiATzXuCqH9Pv0vH2QKdWNQFmzFEraO2DlZ69kRU
