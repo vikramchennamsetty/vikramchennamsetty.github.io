@@ -23,6 +23,56 @@ body{
   color:#111;
   overflow-x:hidden;
 }
+
+/* NAVIGATION BAR */
+nav{
+  background:#fff;
+  padding:16px 6vw;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.nav-brand{
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#111;
+  text-decoration:none;
+}
+.nav-links{
+  display:flex;
+  gap:32px;
+  align-items:center;
+}
+.nav-links a{
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+  font-size:14px;
+  transition:0.3s;
+  position:relative;
+}
+.nav-links a:hover{
+  color:#c9a44a;
+}
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:0;
+  height:2px;
+  background:#c9a44a;
+  transition:width 0.3s;
+}
+.nav-links a:hover::after{
+  width:100%;
+}
+
 /* BRAND */
 .brand{
   font-size:40px;
@@ -124,10 +174,48 @@ body{
   padding:40px;
   font-size:14px;
   color:#777;
+  border-top:1px solid #e9e7e4;
+}
+.footer a{
+  color:#c9a44a;
+  text-decoration:none;
+  margin:0 8px;
+  transition:0.3s;
+}
+.footer a:hover{
+  text-decoration:underline;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{
+    gap:20px;
+  }
+  .nav-links a{
+    font-size:13px;
+  }
+  .brand{
+    font-size:28px;
+  }
+  .hero h1{
+    font-size:32px;
+  }
 }
 </style>
 </head>
 <body>
+
+<!-- NAVIGATION BAR -->
+<nav>
+  <a href="/" class="nav-brand">ElevateLivingCo</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/disclosure/">Disclosure</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
+
 <div class="brand">ElevateLivingCo</div>
 <div class="hero">
   <h1>Create a Modern Home That Feels Premium</h1>
@@ -171,6 +259,10 @@ body{
 </div>
 <div class="footer">
 © 2026 ElevateLivingCo | Designed for modern living
+<br><br>
+<a href="/about/">About</a> · 
+<a href="/disclosure/">Disclosure</a> · 
+<a href="/contact/">Contact</a>
 </div>
 </body>
 </html>
