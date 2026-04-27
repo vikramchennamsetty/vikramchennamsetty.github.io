@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Shop Amazon Finds
-permalink: /shop-amazon-finds/
 ---
 
 # Shop Amazon Finds
