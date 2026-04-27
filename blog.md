@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Blog
+permalink: /blog/
 ---
 
-# Blog 
+# Blog
 
 Welcome to **ElevateLivingCo** — modern home decor ideas, buying guides, and Amazon finds.
 
@@ -13,4 +14,3 @@ Welcome to **ElevateLivingCo** — modern home decor ideas, buying guides, and A
 - [7 Small Living Room Decor Ideas](/small-living-room-decor-ideas.html)
 - [5 Antique Bar Carts Designers Love in 2026](/5-antique-bar-carts-2026.html)
 - [7 Dark Bookshelf Styling Ideas](/7-dark-bookshelf-styling-ideas.html)
-
