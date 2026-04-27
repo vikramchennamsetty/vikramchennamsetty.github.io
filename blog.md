@@ -3,7 +3,7 @@ layout: page
 title: Blog
 ---
 
-# Blog
+# Blog 
 
 Welcome to **ElevateLivingCo** — modern home decor ideas, buying guides, and Amazon finds.
 
