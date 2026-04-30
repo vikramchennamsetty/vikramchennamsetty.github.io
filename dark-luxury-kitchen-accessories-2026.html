@@ -14,19 +14,17 @@
 
 <!-- FIX #2: PAGE auto-detected, no manual page param needed -->
 <script>
-const PAGE = window.location.pathname;
-
-function trackAffiliate(link, label) {
+function trackAffiliate(url, label) {
   if (typeof gtag === 'function') {
     gtag('event', 'affiliate_click', {
       event_category: 'affiliate',
       event_label: label,
-      event_page: PAGE,
+      event_page: window.location.pathname,
       transport_type: 'beacon'
     });
   }
   setTimeout(() => {
-    window.open(link, '_blank');
+    window.open(url, '_blank');
   }, 120);
 }
 </script>
@@ -1278,6 +1276,18 @@ body {
             <div class="crosslink-title">Best Waterproof Outdoor Rug (5x8) Under $50: Patio Setup That Looks $500+</div>
             <div class="crosslink-desc">The foundation trick that makes patios look expensive: rug + lights + pillows + tray (built to convert).</div>
             <div class="crosslink-cta">Read the Guide →</div>
+          </div>
+        </a>
+
+        <a href="https://vikramchennamsetty.github.io/cheap-patio-setup-under-50.html" class="crosslink-card" style="margin-top:16px;">
+          <div class="crosslink-img-wrap">
+            <img src="https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg" alt="cheap patio setup under $50" loading="lazy">
+          </div>
+          <div class="crosslink-content">
+            <div class="crosslink-label">Related · Budget Patio</div>
+            <div class="crosslink-title">Cheap Patio Setup Under $50: Amazon Bundle That Looks Expensive</div>
+            <div class="crosslink-desc">A budget patio makeover formula that combines rug + lights + pillows for a real before/after result.</div>
+            <div class="crosslink-cta">Read the Bundle Guide →</div>
           </div>
         </a>
 
