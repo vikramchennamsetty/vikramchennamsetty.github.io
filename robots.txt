@@ -3,4 +3,4 @@ Allow: /
 Disallow: /apple-app-site-association
 Disallow: /.well-known/apple-app-site-association
 
-Sitemap: https://vikramchennamsetty.github.io/sitemap.xml
+Sitemap: https://elevatelivingco.me/sitemap.xml
