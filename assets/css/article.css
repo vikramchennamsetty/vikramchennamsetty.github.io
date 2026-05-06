@@ -126,8 +126,94 @@
     font-size: 1.25rem;
 }
 
+/* Table of Contents */
+.article-toc {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 3rem 0;
+}
+
+.toc-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    color: #888;
+}
+
+.article-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+
+.article-toc a {
+    text-decoration: none;
+    color: var(--c-dark-obsidian);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.article-toc a:hover {
+    color: var(--c-accent);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin: 5rem 0;
+    background: #f9f9f9;
+    padding: 3rem;
+    border-radius: 24px;
+}
+
+.faq-section h3 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item h4 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--c-dark-obsidian);
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Affiliate Note */
+.affiliate-note {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 2rem 0;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .article-header .article-title {
         font-size: 2.25rem;
+    }
+    .article-toc ul {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 }
