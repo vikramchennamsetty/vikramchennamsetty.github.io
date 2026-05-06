@@ -3,7 +3,7 @@ layout: page
 title: Shop Amazon Finds
 ---
 
-# Shop Amazon Finds
+
 
 Curated Amazon picks from recent guides.
 
