@@ -1,287 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SSKL97RTQC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SSKL97RTQC');
-</script>
-<meta charset="UTF-8">
-<meta name="google-site-verification" content="rb3HiATzXuCqH9Pv0vH2QKdWNQFmzFEraO2DlZ69kRU" />
-<title>ElevateLivingCo | Modern Home Inspiration</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(135deg,#f4f3f1,#e9e7e4);
-  color:#111;
-  overflow-x:hidden;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElevateLivingCo | Modern Home Decor & Small Space Solutions</title>
+    <meta name="description" content="Discover curated Amazon finds, luxury decor on a budget, and small space living solutions. Modern home inspiration for high-end aesthetics.">
+    <meta name="google-site-verification" content="rb3HiATzXuCqH9Pv0vH2QKdWNQFmzFEraO2DlZ69kRU" />
+    
+    <!-- Task 2: Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 
-/* NAVIGATION BAR */
-nav{
-  background:#fff;
-  padding:16px 6vw;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06);
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-.nav-brand{
-  font-size:20px;
-  font-weight:800;
-  letter-spacing:1px;
-  color:#111;
-  text-decoration:none;
-}
-.nav-links{
-  display:flex;
-  gap:32px;
-  align-items:center;
-}
-.nav-links a{
-  text-decoration:none;
-  color:#111;
-  font-weight:500;
-  font-size:14px;
-  transition:0.3s;
-  position:relative;
-}
-.nav-links a:hover{
-  color:#c9a44a;
-}
-.nav-links a::after{
-  content:'';
-  position:absolute;
-  bottom:-4px;
-  left:0;
-  width:0;
-  height:2px;
-  background:#c9a44a;
-  transition:width 0.3s;
-}
-.nav-links a:hover::after{
-  width:100%;
-}
-
-/* BRAND */
-.brand{
-  font-size:40px;
-  font-weight:800;
-  padding:40px 6vw 20px 6vw;
-  letter-spacing:1px;
-}
-/* HERO SECTION */
-.hero{
-  padding:60px 6vw;
-  max-width:1100px;
-}
-.hero h1{
-  font-size:48px;
-  line-height:1.2;
-  margin-bottom:20px;
-}
-.hero p{
-  font-size:20px;
-  color:#555;
-  max-width:600px;
-}
-/* FLOATING ARTICLE GRID */
-.articles{
-  padding:40px 6vw 100px 6vw;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:50px;
-  perspective:1200px;
-}
-/* CARD */
-.card{
-  background:#fff;
-  border-radius:30px;
-  padding:30px;
-  box-shadow:0 30px 70px rgba(0,0,0,0.08);
-  transition:all .4s ease;
-  transform-style:preserve-3d;
-  position:relative;
-  overflow:hidden;
-}
-.card:hover{
-  transform:rotateX(6deg) rotateY(-6deg) translateY(-10px);
-  box-shadow:0 40px 90px rgba(0,0,0,0.15);
-}
-/* IMAGE */
-.card img{
-  width:100%;
-  height:220px;
-  object-fit:contain;
-  background:#fff;
-  border-radius:20px;
-  margin-bottom:20px;
-  transition:.4s;
-}
-.card:hover img{
-  transform:scale(1.05);
-}
-/* CONTENT */
-.card h2{
-  font-size:22px;
-  margin-bottom:10px;
-}
-.card p{
-  font-size:15px;
-  color:#666;
-  margin-bottom:20px;
-}
-.card:first-child{
-  grid-column:span 2;
-}
-/* BUTTON */
-.btn{
-  display:inline-block;
-  padding:12px 24px;
-  border-radius:30px;
-  background:#111;
-  color:#fff;
-  text-decoration:none;
-  transition:.3s;
-}
-.btn:hover{
-  background:#c9a44a;
-}
-/* NEW badge */
-.new-badge{
-  position:absolute;
-  top:20px;
-  right:20px;
-  background:linear-gradient(135deg,#c9a44a,#e8c97a);
-  color:#1a1a1a;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  padding:5px 12px;
-  border-radius:20px;
-}
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding:40px;
-  font-size:14px;
-  color:#777;
-  border-top:1px solid #e9e7e4;
-}
-.footer a{
-  color:#c9a44a;
-  text-decoration:none;
-  margin:0 8px;
-  transition:0.3s;
-}
-.footer a:hover{
-  text-decoration:underline;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .nav-links{
-    gap:20px;
-  }
-  .nav-links a{
-    font-size:13px;
-  }
-  .brand{
-    font-size:28px;
-  }
-  .hero h1{
-    font-size:32px;
-  }
-}
-</style>
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSKL97RTQC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SSKL97RTQC');
+    </script>
+    <!-- Task 2: Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://elevatelivingco.me/"
+      }]
+    }
+    </script>
 </head>
 <body>
 
-<!-- NAVIGATION BAR -->
-<nav>
-  <a href="/" class="nav-brand">ElevateLivingCo</a>
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/disclosure/">Disclosure</a>
-    <a href="/contact/">Contact</a>
-  </div>
-</nav>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">ElevateLiving<span class="text-accent">Co</span></a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
 
-<div class="brand">ElevateLivingCo</div>
-<div class="hero">
-  <h1>Fix Your Patio Without Spending Hundreds</h1>
-  <p>Simple Amazon-based setups that turn cheap spaces into clean, styled outdoor areas.</p>
-</div>
-<div class="articles">
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="#featured">Clusters</a>
+                <a href="/about.html">About</a>
+            </nav>
+        </div>
+    </header>
 
-  <div class="card">
-    <span class="new-badge">✦ New</span>
-    <img src="https://m.media-amazon.com/images/I/91b8I189EAL._AC_SL1500_.jpg" alt="5 Patio Mistakes That Make Your Space Look Cheap">
-    <h2>5 Patio Mistakes That Make Your Space Look Cheap</h2>
-    <p>A high-CTR fix guide: 5 common mistakes and how to correct each one under $50.</p>
-    <a class="btn" href="5-patio-mistakes-that-make-your-space-look-cheap-fix-under-50.html">Fix Your Patio →</a>
-  </div>
+    <main class="container">
+        
+        <section class="home-hero">
+            <h1 class="text-serif">Elevated Living,<br><span class="text-accent">Luxury Within Reach.</span></h1>
+            <p class="hero-sub">Expertly curated Amazon finds and luxury styling secrets designed to help you build a high-end home on an attainable budget.</p>
+            <div class="hero-badges">
+                <span class="badge-trust">✦ Expert Curated</span>
+                <span class="badge-trust">✦ Real-World Budgets</span>
+                <span class="badge-trust">✦ Amazon Prime Ready</span>
+            </div>
+            <a href="#featured" class="btn btn-primary mt-section">Start Your Transformation ↓</a>
+        </section>
 
-  <div class="card">
-    <span class="new-badge">✦ New</span>
-    <img src="https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg" alt="Budget Patio Setup Under $50">
-    <h2>Budget Patio Setup Under $50</h2>
-    <p>A cheap patio setup under $50 using a bundle formula: rug + lights + pillows for a fast before/after transformation.</p>
-    <a class="btn" href="cheap-patio-setup-under-50.html">See $50 Setup →</a>
-  </div>
+        <section id="featured" class="cluster-section">
+            <div class="flex-between">
+                <div>
+                    <span class="text-upper text-accent">Trending Now</span>
+                    <h2 class="section-title text-serif">Fix Your Patio Without Spending Hundreds</h2>
+                </div>
+            </div>
 
-  <div class="card">
-    
-    <img src="https://m.media-amazon.com/images/I/810lOKDG09L._AC_SL1500_.jpg" alt="5 Dark Luxury Kitchen Accessories 2026">
-    <h2>5 Black Kitchen Accessories That Look Expensive</h2>
-    <p>Upgrade your kitchen instantly with premium black accessories that create a modern luxury feel.</p>
-    <a class="btn" href="dark-luxury-kitchen-accessories-2026.html">Explore Article</a>
-  </div>
+            <div class="cluster-grid">
+                
+                <!-- Main Feature -->
+                <a href="/5-patio-mistakes-that-make-your-space-look-cheap-fix-under-50.html" class="article-card featured-card">
+                    <span class="new-badge">✦ New</span>
+                    <img src="https://m.media-amazon.com/images/I/91b8I189EAL._AC_SL1500_.jpg" alt="5 Patio Mistakes That Make Your Space Look Cheap" width="800" height="480" loading="eager">
+                    <div class="article-card-body">
+                        <span class="article-category">Outdoor Living</span>
+                        <h3 class="article-title text-serif">5 Patio Mistakes That Make Your Space Look Cheap (And How To Fix Them Under $50)</h3>
+                        <p class="article-excerpt">A high-conversion fix guide: 5 common styling errors and the exact Amazon finds to correct them instantly.</p>
+                    </div>
+                </a>
 
-  <!-- ARTICLE CARD 1 -->
-  <div class="card">
-    <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="7 Small Living Room Decor Ideas">
-    <h2>7 Small Living Room Decor Ideas</h2>
-    <p>Transform compact spaces with floating shelves, lighting, mirrors and premium accents.</p>
-    <a class="btn" href="small-living-room-decor-ideas.html">Explore Article</a>
-  </div>
+                <!-- Sub Feature 1 -->
+                <a href="/cheap-patio-setup-under-50.html" class="article-card">
+                    <span class="new-badge">✦ New</span>
+                    <img src="https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg" alt="Budget Patio Setup Under $50" width="400" height="240" loading="lazy">
+                    <div class="article-card-body">
+                        <span class="article-category">Budget Luxury</span>
+                        <h3 class="article-title text-serif">The $50 Patio Setup Bundle Formula</h3>
+                        <p class="article-excerpt">Rug + Lights + Pillows: The triple-threat combo for a fast before/after transformation.</p>
+                    </div>
+                </a>
 
-  <!-- ARTICLE CARD 2 -->
-  <div class="card">
-    <img src="https://m.media-amazon.com/images/I/71ZjmrdWXFL._AC_SL1200_.jpg" alt="5 Antique Bar Carts Designers Love in 2026">
-    <h2>5 Antique Bar Carts Designers Love in 2026</h2>
-    <p>Luxury brass, marble, and art deco-inspired bar carts redefining neo deco interiors.</p>
-    <a class="btn" href="5-antique-bar-carts-2026.html">Explore Article</a>
-  </div>
+                <!-- Sub Feature 2 -->
+                <a href="/7-dark-bookshelf-styling-ideas.html" class="article-card">
+                    <span class="new-badge">✦ New</span>
+                    <img src="https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg" alt="Dark Bookshelf Styling" width="400" height="240" loading="lazy">
+                    <div class="article-card-body">
+                        <span class="article-category">Mood Interiors</span>
+                        <h3 class="article-title text-serif">7 Dark Bookshelf Styling Ideas for a Moody Study</h3>
+                    </div>
+                </a>
 
-  <!-- ARTICLE CARD 3 — NEW -->
-  <div class="card">
-    
-    <img src="https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg" alt="7 Dark Bookshelf Styling Ideas">
-    <h2>7 Dark Bookshelf Styling Ideas</h2>
-    <p>The exact formula for a dark academia shelf — LED lighting, gold sculptures, matte ceramics and leather-bound books.</p>
-    <a class="btn" href="7-dark-bookshelf-styling-ideas.html">Explore Article</a>
-  </div>
+            </div>
+        </section>
 
-</div>
-<div class="footer">
-© 2026 ElevateLivingCo | Designed for modern living
-<br><br>
-<a href="/about/">About</a> · 
-<a href="/disclosure/">Disclosure</a> · 
-<a href="/contact/">Contact</a>
-</div>
+        <section class="cluster-section">
+            <h2 class="text-serif mb-2">More Inspiration</h2>
+            <div class="grid-3">
+                <a href="/dark-luxury-kitchen-accessories-2026.html" class="article-card">
+                    <img src="https://m.media-amazon.com/images/I/810lOKDG09L._AC_SL1500_.jpg" alt="Dark Kitchen" width="400" height="240" loading="lazy">
+                    <div class="article-card-body">
+                        <span class="article-category">Kitchen</span>
+                        <h3 class="article-title">5 Black Kitchen Accessories That Look Expensive</h3>
+                    </div>
+                </a>
+                <a href="/small-living-room-decor-ideas.html" class="article-card">
+                    <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Small Living Room" width="400" height="240" loading="lazy">
+                    <div class="article-card-body">
+                        <span class="article-category">Small Spaces</span>
+                        <h3 class="article-title">7 Small Living Room Ideas Designers Swear By</h3>
+                    </div>
+                </a>
+                <a href="/5-antique-bar-carts-2026.html" class="article-card">
+                    <img src="https://m.media-amazon.com/images/I/71ZjmrdWXFL._AC_SL1200_.jpg" alt="Bar Carts" width="400" height="240" loading="lazy">
+                    <div class="article-card-body">
+                        <span class="article-category">Hosting</span>
+                        <h3 class="article-title">5 Antique Bar Carts Designers Love in 2026</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Newsletter Capture -->
+        <section class="newsletter-card">
+            <h3>Join The Inner Circle</h3>
+            <p>Get notified about trending Amazon drops and styling hacks first.</p>
+            <form class="newsletter-form" action="#">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-1">Disclosure: As an Amazon Associate, I earn from qualifying purchases at no extra cost to you.</p>
+            <div class="nav-links-footer">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/disclosure.html">Disclosure</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/privacy.html">Privacy Policy</a>
+            </div>
+            <p class="footer-credit">© 2026 ElevateLivingCo Media System. Powered by GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script src="/assets/js/tracking.js"></script>
 </body>
 </html>
+
+
