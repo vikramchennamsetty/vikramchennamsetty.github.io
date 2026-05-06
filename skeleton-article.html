@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Template - ElevateLiving</title>
+    
+    <!-- SEO & Metas (Override per article) -->
+    <meta name="description" content="Meta Description Here">
+    <link rel="canonical" href="https://yourdomain.com/path-here.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Article Title">
+    <meta property="og:image" content="https://yourdomain.com/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Task 2: Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/article.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSKL97RTQC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SSKL97RTQC');
+    </script>
+    <!-- Task 2: Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Article Title",
+      "image": ["https://yourdomain.com/hero.jpg"],
+      "datePublished": "2026-05-06T00:00:00Z",
+      "author": {
+        "@type": "Organization",
+        "name": "ElevateLivingCo"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do I make a small living room look bigger?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most effective way is using oversized mirrors opposite windows to reflect natural light and choosing furniture with visible legs to create 'visual floor space'."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What furniture is best for studio apartments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focus on multi-functional, vertical items like wall-mounted shelves, floating desks, and nesting tables that can be tucked away when not in use."
+        }
+      }]
+    }
+    </script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">ElevateLiving<span class="text-accent">Co</span></a>
+            
+            <!-- Task 3: Real Mobile Navigation -->
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/#featured">Clusters</a>
+                <a href="/about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="post-content">
+            
+            <section class="article-hero">
+                <span class="text-upper text-accent text-bold">Category / Topic</span>
+                <h1>Main Headline Goes Here</h1>
+                <p class="article-intro">A strong intro hook that addresses pain points and pre-sells the affiliate links. Keep it under 3 sentences for mobile readers.</p>
+                
+                <!-- Task 6: Table of Contents -->
+                <nav class="article-toc">
+                    <span class="text-upper text-bold">In this guide:</span>
+                    <ul>
+                        <li><a href="#section1">Why This Matters</a></li>
+                        <li><a href="#products">Top Rated Picks</a></li>
+                        <li><a href="#faq">Frequently Asked Questions</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <!-- Main Content Section -->
+            <section class="content-section">
+                <h2 id="section1">Why This Matters</h2>
+                <p>Paragraph content using <strong>keywords</strong> naturally. Mention specific items like "waterproof outdoor rug" or "dark bookshelf styling."</p>
+            </section>
+
+            <!-- Reusable Product Card Grid (Task 5 Improvements) -->
+            <div id="products" class="product-grid">
+                
+                <!-- Product Card Start -->
+                <div class="product-card">
+                    <!-- Optional Badge: <span class="card-badge badge-gold">Best Overall</span> -->
+                    <div class="product-image-wrapper">
+                        <img src="https://m.media-amazon.com/images/I/PLACEHOLDER.jpg" alt="Product Name" width="800" height="800" loading="lazy">
+                    </div>
+                    <h3 class="product-title">Product Name (Brand)</h3>
+                    <div class="product-meta">
+                        <div class="product-price">$XX.99</div>
+                        <div class="price-was">$YY.00</div>
+                        <div class="price-save">Save ZZ%</div>
+                    </div>
+                    <div class="product-trust">
+                        <span>★ 4.9 Rating</span>
+                        <span class="trust-sep">|</span>
+                        <span>Amazon's Choice</span>
+                    </div>
+                    <p class="product-desc">Short description of why it's a win. High durability, luxury finish, or best-seller on Amazon.</p>
+                    <a href="https://www.amazon.com/dp/XXX?tag=elevateliv00e-20" 
+                       onclick="ElevateLiving.trackAffiliate(event, 'product-id-label');"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-primary">Check Price on Amazon →</a>
+                </div>
+                <!-- Product Card End -->
+
+            </div>
+
+            <!-- FAQ Section -->
+            <div id="faq" class="faq-container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <button class="faq-question">How do I make a small living room look bigger?</button>
+                    <div class="faq-answer">
+                        <p>The most effective way is using oversized mirrors opposite windows to reflect natural light and choosing furniture with visible legs to create "visual floor space." This prevents the room from feeling "grounded" and heavy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What furniture is best for studio apartments?</button>
+                    <div class="faq-answer">
+                        <p>Focus on multi-functional, vertical items like wall-mounted shelves, floating desks, and nesting tables. Pro tip: Stick to a monochromatic color palette to keep the space from looking cluttered.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Capture -->
+            <section class="newsletter-card">
+                <h3>Get The $50 Home Glow-Up</h3>
+                <p>Weekly luxury finds that look expensive but cost under $50.</p>
+                <form class="newsletter-form" action="YOUR_FORM_HANDLER" method="POST">
+                    <input type="email" placeholder="Your best email..." required>
+                    <button type="submit" class="btn btn-primary">Get Access</button>
+                </form>
+            </section>
+
+            <!-- Internal Linking / Related Articles -->
+            <section class="mt-section pt-section border-top">
+                <h3 class="text-upper">Up Next</h3>
+                <div class="grid-2">
+                    
+                    <a href="/related-article.html" class="related-card">
+                        <img src="/assets/img/placeholder-related.jpg" alt="Related Title" class="related-card-img" width="140" height="140" loading="lazy">
+                        <div class="related-card-body">
+                            <span class="related-label">Category</span>
+                            <div class="related-title">7 Small Living Room Ideas That Make Any Space Feel Huge</div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-1">Disclosure: As an Amazon Associate, I earn from qualifying purchases at no extra cost to you.</p>
+            <div class="nav-links-footer">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/disclosure.html">Disclosure</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/privacy.html">Privacy Policy</a>
+            </div>
+            <p class="footer-credit">© 2026 ElevateLivingCo. Designed for static site speed.</p>
+        </div>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="/assets/js/tracking.js"></script>
+
+</body>
+</html>
