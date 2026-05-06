@@ -10,7 +10,7 @@ window.ElevateLiving = {
     amazonTag: 'elevateliv00e-20'
   },
 
-  trackAffiliate: function(event, label) {
+  trackAffiliate: function(label) {
     if (typeof gtag === 'function') {
       gtag('event', 'affiliate_click', {
         event_category: 'affiliate',
