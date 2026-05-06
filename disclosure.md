@@ -4,7 +4,6 @@ title: Affiliate Disclosure
 permalink: /disclosure/
 ---
 
-# Affiliate Disclosure
 
 This website contains affiliate links. I participate in the Amazon Associates Program.
 
