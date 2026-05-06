@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog/
 ---
 
-# Blog
+
 
 Welcome to **ElevateLivingCo** — modern home decor ideas, buying guides, and Amazon finds.
 
