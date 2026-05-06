@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- CORE PAGES -->
+
   <url>
     <loc>https://elevatelivingco.me/</loc>
     <lastmod>2026-05-06</lastmod>
@@ -9,32 +11,34 @@
   </url>
 
   <url>
-    <loc>https://elevatelivingco.me/about/</loc>
+    <loc>https://elevatelivingco.me/about.html</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://elevatelivingco.me/blog/</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/contact/</loc>
+    <loc>https://elevatelivingco.me/contact.html</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://elevatelivingco.me/disclosure/</loc>
+    <loc>https://elevatelivingco.me/disclosure.html</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <url>
+    <loc>https://elevatelivingco.me/privacy.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ARTICLES -->
 
   <url>
     <loc>https://elevatelivingco.me/best-waterproof-outdoor-rug-patio-under-50.html</loc>
@@ -83,6 +87,20 @@
     <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://elevatelivingco.me/patio-transformation-guide-luxury-under-100.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://elevatelivingco.me/dark-luxury-home-decor-bible.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
