@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- CORE PAGES -->
 
   <url>
     <loc>https://elevatelivingco.me/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/about.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/contact.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/disclosure.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/privacy.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -42,51 +43,79 @@
 
   <url>
     <loc>https://elevatelivingco.me/best-waterproof-outdoor-rug-patio-under-50.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg</image:loc>
+      <image:title>Best Waterproof Outdoor Rug 5x8 Under $50</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/dark-luxury-kitchen-accessories-2026.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://m.media-amazon.com/images/I/71dCLpPPMqL._AC_SL1500_.jpg</image:loc>
+      <image:title>Black Kitchen Accessories That Look Expensive 2026</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/7-dark-bookshelf-styling-ideas.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg</image:loc>
+      <image:title>Dark Bookshelf Styling Ideas for Moody Study</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/5-antique-bar-carts-2026.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg</image:loc>
+      <image:title>Best Antique Bar Carts 2026</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/small-living-room-decor-ideas.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg</image:loc>
+      <image:title>Small Living Room Decor Ideas for Apartments</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/cheap-patio-setup-under-50.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg</image:loc>
+      <image:title>Cheap Patio Setup Under $50 Amazon Bundle</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/5-patio-mistakes-that-make-your-space-look-cheap-fix-under-50.html</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://m.media-amazon.com/images/I/91b8I189EAL._AC_SL1500_.jpg</image:loc>
+      <image:title>5 Patio Mistakes Fix Guide Under $50</image:title>
+    </image:image>
   </url>
 
 </urlset>
