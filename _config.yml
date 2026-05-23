@@ -5,6 +5,7 @@ author:
   name: "Vikram Chennamsetty"
   email: "elevatelivingco7@gmail.com"
 
+# CRITICAL: Primary domain for SEO consolidation
 url: "https://elevatelivingco.me"
 baseurl: ""
 
@@ -22,6 +23,13 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# Auto-generate sitemap to prevent manual maintenance issues
+sitemap:
+  path: /sitemap.xml
+  exclude:
+    - /404.html
+    - /README.md
 
 defaults:
   -
