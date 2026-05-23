@@ -1,3 +1,7 @@
+# ElevateLivingCo robots.txt
+# Primary domain: https://elevatelivingco.me
+# Old GitHub Pages domain will be removed via GSC
+
 User-agent: *
 Allow: /
 Disallow: /apple-app-site-association
