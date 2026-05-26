@@ -156,5 +156,21 @@
       <image:title>Antique Bar Cart Ideas</image:title>
     </image:image>
   </url>
+ <url>
+   <loc>https://elevatelivingco.me/why-some-apartments-feel-expensive.html</loc>
+   <lastmod>2026-05-26</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.7</priority>
+
+   <image:image>
+     <image:loc>
+       https://i.pinimg.com/736x/d9/2f/e9/d92fe9398851bb2de626751e5fd364ab.jpg
+     </image:loc>
+
+     <image:title>
+       Why Some Apartments Feel Expensive
+     </image:title>
+   </image:image>
+ </url>
 
 </urlset>
