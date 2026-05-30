@@ -33,13 +33,12 @@ exclude:
 
 ## defaults:
 
-```
 scope:
   path: ""
 values:
   image: "/favicon.ico"
   locale: "en_US"
-```
+
 
 logo: "/favicon.ico"
 
