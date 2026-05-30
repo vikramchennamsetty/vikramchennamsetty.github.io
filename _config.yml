@@ -1,15 +1,15 @@
-title: "ElevateLivingCo | Modern Home Inspiration"
-description: "Curated home decor guides, product reviews, and interior design inspiration for elevating your living space."
+title: "ElevateLivingCo | Luxury Apartment Decor, Old Money Interiors & Home Inspiration"
+
+description: "Discover luxury apartment decor ideas, old money interiors, quiet luxury trends, dark academia styling, and home decor inspiration for elegant modern living."
 
 author:
-  name: "Vikram Chennamsetty"
-  email: "elevatelivingco7@gmail.com"
+name: "Vikram Chennamsetty"
+email: "[elevatelivingco7@gmail.com](mailto:elevatelivingco7@gmail.com)"
 
-# CRITICAL: Primary domain for SEO consolidation
 url: "https://elevatelivingco.me"
 baseurl: ""
 
-lang: en
+lang: en-US
 timezone: Asia/Kolkata
 
 google_analytics: "G-SSKL97RTQC"
@@ -20,36 +20,52 @@ permalink: /:title.html
 markdown: kramdown
 
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
 
-# Auto-generate sitemap to prevent manual maintenance issues
+* jekyll-feed
+* jekyll-seo-tag
+* jekyll-sitemap
+
 sitemap:
-  path: /sitemap.xml
-  exclude:
-    - /404.html
-    - /README.md
+path: /sitemap.xml
+exclude:
+- /404.html
+- /README.md
 
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      image: "/favicon.ico"
+## defaults:
+
+```
+scope:
+  path: ""
+values:
+  image: "/favicon.ico"
+  locale: "en_US"
+```
+
+logo: "/favicon.ico"
 
 social:
-  name: ElevateLivingCo
-  links:
-    - https://www.pinterest.com/
+name: ElevateLivingCo
+links:
+- https://in.pinterest.com/elevateliving_co/
+
+twitter:
+card: summary_large_image
 
 exclude:
-  - README.md
-  - node_modules
-  - vendor
-  - Gemfile
-  - Gemfile.lock
-  - skeleton-article.html
+
+* README.md
+* node_modules
+* vendor
+* Gemfile
+* Gemfile.lock
+* skeleton-article.html
 
 sass:
-  style: compressed
+style: compressed
+
+feed:
+posts_limit: 20
+
+seo:
+type: WebSite
+name: ElevateLivingCo
