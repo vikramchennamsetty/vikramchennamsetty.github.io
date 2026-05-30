@@ -172,12 +172,19 @@
      </image:title>
    </image:image>
  </url>
-<url>
-  <loc>https://elevatelivingco.me/your-article-slug.html</loc>
+ <url>
+  <loc>https://elevatelivingco.me/old-money-interiors-quiet-luxury-aesthetic.html</loc>
   <lastmod>2026-05-30</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
+  <priority>0.7</priority>
+
+  <image:image>
+    <image:loc>
+      https://elevatelivingco.me/assets/images/old-money-article.png
+    </image:loc>
+
+    <image:title>
+      Old Money Interiors & Quiet Luxury Aesthetic
+    </image:title>
+  </image:image>
 </url>
-
-
-</urlset>
