@@ -21,9 +21,9 @@ markdown: kramdown
 
 plugins:
 
-* jekyll-feed
-* jekyll-seo-tag
-* jekyll-sitemap
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-sitemap
 
 sitemap:
 path: /sitemap.xml
@@ -52,12 +52,12 @@ card: summary_large_image
 
 exclude:
 
-* README.md
-* node_modules
-* vendor
-* Gemfile
-* Gemfile.lock
-* skeleton-article.html
+- README.md
+- node_modules
+- vendor
+- Gemfile
+- Gemfile.lock
+- skeleton-article.html
 
 sass:
 style: compressed
