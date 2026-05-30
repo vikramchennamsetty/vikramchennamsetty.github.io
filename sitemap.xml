@@ -14,14 +14,14 @@
   <url>
     <loc>https://elevatelivingco.me/about.html</loc>
     <lastmod>2026-05-26</lastmod>
-    <changefreq>quarterly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/contact.html</loc>
     <lastmod>2026-05-26</lastmod>
-    <changefreq>quarterly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 
@@ -44,7 +44,7 @@
   <url>
     <loc>https://elevatelivingco.me/dark-academia-apartment-decor-2026.html</loc>
     <lastmod>2026-05-30</lastmod>
-    <changefreq>bi-weekly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg</image:loc>
@@ -77,7 +77,7 @@
   <url>
     <loc>https://elevatelivingco.me/5-moody-entryway-ideas-luxury-on-budget.html</loc>
     <lastmod>2026-05-30</lastmod>
-    <changefreq>bi-weekly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://elevatelivingco.me/assets/images/moody-entryway.png</image:loc>
@@ -88,7 +88,7 @@
   <url>
     <loc>https://elevatelivingco.me/why-some-apartments-feel-expensive.html</loc>
     <lastmod>2026-05-30</lastmod>
-    <changefreq>bi-weekly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://i.pinimg.com/736x/d9/2f/e9/d92fe9398851bb2de626751e5fd364ab.jpg</image:loc>
@@ -99,7 +99,7 @@
   <url>
     <loc>https://elevatelivingco.me/old-money-interiors-quiet-luxury-aesthetic.html</loc>
     <lastmod>2026-05-30</lastmod>
-    <changefreq>bi-weekly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://elevatelivingco.me/assets/images/old-money-article.png</image:loc>
