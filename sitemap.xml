@@ -2,28 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- HOMEPAGE -->
-
+  <!-- HOMEPAGE - Highest Priority -->
   <url>
     <loc>https://elevatelivingco.me/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- CORE PAGES -->
-
+  <!-- CORE UTILITY PAGES - Low Priority -->
   <url>
     <loc>https://elevatelivingco.me/about.html</loc>
     <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>quarterly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/contact.html</loc>
     <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>quarterly</changefreq>
     <priority>0.3</priority>
   </url>
 
@@ -41,150 +39,133 @@
     <priority>0.1</priority>
   </url>
 
-  <!-- DARK ACADEMIA / MOODY LUXURY CLUSTER -->
+  <!-- DARK ACADEMIA / MOODY LUXURY CLUSTER - High Priority Content -->
 
   <url>
     <loc>https://elevatelivingco.me/dark-academia-apartment-decor-2026.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>bi-weekly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg</image:loc>
-      <image:title>Dark Academia Apartment Decor Ideas 2026</image:title>
+      <image:title>Dark Academia Apartment Decor Ideas 2026 | Luxury Neo Deco</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/7-dark-bookshelf-styling-ideas.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg</image:loc>
-      <image:title>Dark Bookshelf Styling Ideas</image:title>
+      <image:title>7 Dark Bookshelf Styling Ideas | Luxury Home Decor on Budget</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/dark-luxury-kitchen-accessories-2026.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/71dCLpPPMqL._AC_SL1500_.jpg</image:loc>
-      <image:title>Dark Luxury Kitchen Accessories</image:title>
+      <image:title>Dark Luxury Kitchen Accessories 2026 | Moody Elegant Decor</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/5-moody-entryway-ideas-luxury-on-budget.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>bi-weekly</changefreq>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://elevatelivingco.me/assets/images/moody-entryway.png</image:loc>
-      <image:title>Moody Entryway Ideas On A Budget</image:title>
+      <image:title>5 Moody Entryway Ideas | Luxury Aesthetic On Budget</image:title>
     </image:image>
   </url>
 
-  <!-- SMALL SPACE / APARTMENT DECOR -->
+  <url>
+    <loc>https://elevatelivingco.me/why-some-apartments-feel-expensive.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>bi-weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://i.pinimg.com/736x/d9/2f/e9/d92fe9398851bb2de626751e5fd364ab.jpg</image:loc>
+      <image:title>Why Some Apartments Feel Expensive | Quiet Luxury Secrets</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://elevatelivingco.me/old-money-interiors-quiet-luxury-aesthetic.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>bi-weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://elevatelivingco.me/assets/images/old-money-article.png</image:loc>
+      <image:title>Old Money Interiors | Quiet Luxury Aesthetic Guide 2026</image:title>
+    </image:image>
+  </url>
+
+  <!-- SMALL SPACE / APARTMENT DECOR - Medium-High Priority -->
 
   <url>
     <loc>https://elevatelivingco.me/small-living-room-decor-ideas.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg</image:loc>
-      <image:title>Small Living Room Decor Ideas</image:title>
+      <image:title>Small Living Room Decor Ideas | Luxury Design for Apartments</image:title>
     </image:image>
   </url>
 
-  <!-- PATIO / OUTDOOR CLUSTER -->
+  <!-- PATIO / OUTDOOR CLUSTER - Medium Priority -->
 
   <url>
     <loc>https://elevatelivingco.me/best-waterproof-outdoor-rug-patio-under-50.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-
+    <priority>0.6</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg</image:loc>
-      <image:title>Waterproof Outdoor Rug Ideas</image:title>
+      <image:title>Best Waterproof Outdoor Rugs Under $50 | Patio Decor Ideas</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/cheap-patio-setup-under-50.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-
+    <priority>0.6</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg</image:loc>
-      <image:title>Cheap Patio Setup Ideas</image:title>
+      <image:title>Cheap Patio Setup Ideas Under $50 | Budget Outdoor Decor</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://elevatelivingco.me/5-patio-mistakes-that-make-your-space-look-cheap-fix-under-50.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-
+    <priority>0.6</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/91b8I189EAL._AC_SL1500_.jpg</image:loc>
-      <image:title>Patio Mistakes That Make Spaces Look Cheap</image:title>
+      <image:title>5 Patio Mistakes That Make Spaces Look Cheap | Budget Fixes</image:title>
     </image:image>
   </url>
 
-  <!-- DECOR / FURNITURE -->
+  <!-- DECOR / FURNITURE - Medium Priority -->
 
   <url>
     <loc>https://elevatelivingco.me/5-antique-bar-carts-2026.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg</image:loc>
-      <image:title>Antique Bar Cart Ideas</image:title>
+      <image:title>5 Best Antique Bar Carts 2026 | Luxury Home Bar Decor</image:title>
     </image:image>
   </url>
- <url>
-   <loc>https://elevatelivingco.me/why-some-apartments-feel-expensive.html</loc>
-   <lastmod>2026-05-26</lastmod>
-   <changefreq>monthly</changefreq>
-   <priority>0.7</priority>
 
-   <image:image>
-     <image:loc>
-       https://i.pinimg.com/736x/d9/2f/e9/d92fe9398851bb2de626751e5fd364ab.jpg
-     </image:loc>
-
-     <image:title>
-       Why Some Apartments Feel Expensive
-     </image:title>
-   </image:image>
- </url>
- <url>
-  <loc>https://elevatelivingco.me/old-money-interiors-quiet-luxury-aesthetic.html</loc>
-  <lastmod>2026-05-30</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-
-  <image:image>
-    <image:loc>
-      https://elevatelivingco.me/assets/images/old-money-article.png
-    </image:loc>
-
-    <image:title>
-      Old Money Interiors and Quiet Luxury Aesthetic
-    </image:title>
-  </image:image>
-</url>
+</urlset>
