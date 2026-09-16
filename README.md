@@ -1,64 +1,67 @@
-# 🚀 ElevateLiving Publish OS (Zero-Confusion v3.0)
+# 🚀 ElevateLiving Publish OS (Production Engine v3.5)
 
-Welcome to the premium affiliate media system. Built for **Extreme PageSpeed**, **Pinterest Mobile SEO**, and **Zero Build Complexity**.
+Welcome to ElevateLivingCo — a high-performance static affiliate publishing platform optimized for **Extreme PageSpeed**, **Pinterest Visual Commerce**, and **Technical SEO Compliance**.
 
 ---
 
-## 🧱 1. SYSTEM CORE (The 4 Asset Files)
+## 🧱 1. SYSTEM ARCHITECTURE
 
-To scale to 100+ articles without speed degradation, we centralize all logic into 4 files:
-- `/assets/css/main.css`: Design tokens, typography, and site-wide layout.
-- `/assets/css/components.css`: Reusable UI (Product Cards, FAQ, Newsletter, Buttons).
+Logic and styles are centralized into core asset files:
+- `/assets/css/main.css`: Global design tokens, typography, header/footer layout.
+- `/assets/css/components.css`: Reusable UI (Product Cards, FAQ accordions, Buttons, Newsletters).
 - `/assets/css/article.css`: Post-specific typography optimized for mobile reading.
-- `/assets/js/tracking.js`: Vanilla JS for mobile nav and affiliate conversion tracking.
+- `/assets/js/tracking.js`: Vanilla JS for mobile nav toggle, FAQ accordions, and GA4 `affiliate_click` tracking.
 
 ---
 
 ## 🧱 2. REPOSITORY MAP
 
-- `/index.html`: The cluster-focused homepage.
-- `/skeleton-article.html`: The master blueprint for every new article.
-- `/metadata.json`: Site configuration & permissions.
-- `/*.html`: All articles live at the root for maximum crawl depth efficiency.
+- `/index.html`: Main cluster homepage.
+- `/about.html`, `/contact.html`, `/privacy.html`, `/disclosure.html`, `/shop-amazon-finds.html`: Core utility & legal pages.
+- `/*.html`: 13 high-intent articles placed at the root for maximum crawl depth efficiency.
+- `/sitemap.xml`: XML sitemap containing production HTTPS canonical URLs.
+- `/robots.txt`: Crawler directives pointing to `https://elevatelivingco.me/sitemap.xml`.
 
 ---
 
 ## 🚀 3. PUBLISHING WORKFLOW (SOP)
 
-Follow this 5-step process to publish a new high-intent article:
+Follow this 5-step process when publishing a new article:
 
-1. **Initialize:** Duplicate `skeleton-article.html`.
-2. **Slug:** Rename file using kebab-case (e.g., `best-outdoor-rugs-2026.html`).
-3. **Content:**
-   - Update `<title>`, `<meta description>`, and `<link rel="canonical">`.
-   - Update **JSON-LD Schema** in the `<head>`.
-   - Paste content into `content-section` blocks.
-4. **Commerce:**
-   - Insert Product Cards using the template component.
-   - **Crucial:** Every `<img>` must have explicit `width` and `height` to prevent Layout Shift (CLS).
-   - Use `ElevateLiving.trackAffiliate(url, 'label')` for Amazon links.
-5. **Distribute:** Add a Thumbnail Card to the `index.html` homepage.
-
----
-
-## 📸 4. IMAGE PROTOCOL (Performance First)
-
-- **Format:** Always prefer **WebP**.
-- **Dimensions:** 
-  - Hero: 1200px width.
-  - Product Shots: 800x800px.
-- **Attributes:** Always include `loading="lazy"` and `width/height`.
-- **Naming:** `[keyword]-description.webp`.
+1. **Initialize:** Create static `.html` file at root using kebab-case slug (e.g., `best-outdoor-rugs-2026.html`).
+2. **Head & Metadata:**
+   - Add `<title>`, `<meta name="description">`, and `<link rel="canonical" href="https://elevatelivingco.me/[slug].html">`.
+   - Add complete OpenGraph tags (`og:title`, `og:description`, `og:url`, `og:image`, `og:type`).
+   - Include GA4 script (`G-SSKL97RTQC`) and `<script src="/assets/js/tracking.js" defer></script>`.
+   - Insert JSON-LD `Article`, `Organization`, and `BreadcrumbList` schemas.
+3. **Content & Layout:**
+   - Use standard `<header class="site-header">` and `<footer>` components.
+   - Insert body sections inside `<main class="article-container">`.
+4. **Commerce & Images:**
+   - Convert hero/og images to **WebP** format.
+   - Include explicit `width` and `height` attributes on every `<img>` tag to prevent Layout Shift (CLS).
+   - Use valid Amazon product links with parameter `tag=elevateliv00e-20`.
+5. **Distribution & Sitemap:**
+   - Link the article from `index.html` and contextually related articles.
+   - Add entry to `sitemap.xml`.
 
 ---
 
-## ⚡ 5. PERFORMANCE SPECS
+## 🧪 4. VALIDATION COMMANDS
 
-- **FCP:** < 0.8s
-- **LCP:** < 1.2s
-- **CLS:** 0.00
-- **Total Bundle Size:** < 50KB (Excluding Amazon images)
+Run the automated verification test suite locally using Python 3.11+:
+
+```bash
+python scratch/P0_K_verification_suite.py
+```
+
+Checks performed:
+- Canonical tag consistency (`.html` extensions).
+- Sitemap URL alignment.
+- Absence of `{search_term_string}` / `SearchAction` placeholders.
+- 0 broken internal links or first-party asset paths.
+- GA4 & `tracking.js` inclusion on 100% of pages.
 
 ---
 
-**© 2026 ElevateLiving Performance Engineering. Simplified for high-velocity growth.**
+**© 2026 ElevateLiving Performance Engineering.**
