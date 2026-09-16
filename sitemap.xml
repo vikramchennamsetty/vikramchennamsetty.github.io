@@ -1,203 +1,148 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- HOMEPAGE - Highest Priority -->
-  <url>
-    <loc>https://elevatelivingco.me/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- CORE UTILITY PAGES - Low Priority -->
-  <url>
-    <loc>https://elevatelivingco.me/about.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/contact.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/privacy.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.1</priority>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/disclosure.html</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.1</priority>
-  </url>
-
-  <!-- DARK ACADEMIA / MOODY LUXURY CLUSTER - High Priority Content -->
-
-  <url>
-    <loc>https://elevatelivingco.me/dark-academia-apartment-decor-2026.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg</image:loc>
-      <image:title>Dark Academia Apartment Decor Ideas 2026 | Luxury Neo Deco</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/7-dark-bookshelf-styling-ideas.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg</image:loc>
-      <image:title>7 Dark Bookshelf Styling Ideas | Luxury Home Decor on Budget</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/dark-luxury-kitchen-accessories-2026.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/71dCLpPPMqL._AC_SL1500_.jpg</image:loc>
-      <image:title>Dark Luxury Kitchen Accessories 2026 | Moody Elegant Decor</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/5-moody-entryway-ideas-luxury-on-budget.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://elevatelivingco.me/assets/images/moody-entryway.png</image:loc>
-      <image:title>5 Moody Entryway Ideas | Luxury Aesthetic On Budget</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/why-some-apartments-feel-expensive.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://i.pinimg.com/736x/d9/2f/e9/d92fe9398851bb2de626751e5fd364ab.jpg</image:loc>
-      <image:title>Why Some Apartments Feel Expensive | Quiet Luxury Secrets</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/old-money-interiors-quiet-luxury-aesthetic.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://elevatelivingco.me/assets/images/old-money-article.png</image:loc>
-      <image:title>Old Money Interiors | Quiet Luxury Aesthetic Guide 2026</image:title>
-    </image:image>
-  </url>
-
-  <!-- SMALL SPACE / APARTMENT DECOR - Medium-High Priority -->
-
-  <url>
-    <loc>https://elevatelivingco.me/small-living-room-decor-ideas.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg</image:loc>
-      <image:title>Small Living Room Decor Ideas | Luxury Design for Apartments</image:title>
-    </image:image>
-  </url>
-
-  <!-- PATIO / OUTDOOR CLUSTER - Medium Priority -->
-
-  <url>
-    <loc>https://elevatelivingco.me/best-waterproof-outdoor-rug-patio-under-50.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg</image:loc>
-      <image:title>Best Waterproof Outdoor Rugs Under $50 | Patio Decor Ideas</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/cheap-patio-setup-under-50.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg</image:loc>
-      <image:title>Cheap Patio Setup Ideas Under $50 | Budget Outdoor Decor</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://elevatelivingco.me/5-patio-mistakes-that-make-your-space-look-cheap-fix-under-50.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/91b8I189EAL._AC_SL1500_.jpg</image:loc>
-      <image:title>5 Patio Mistakes That Make Spaces Look Cheap | Budget Fixes</image:title>
-    </image:image>
-  </url>
-
-  <!-- DECOR / FURNITURE - Medium Priority -->
-
-  <url>
-    <loc>https://elevatelivingco.me/5-antique-bar-carts-2026.html</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg</image:loc>
-      <image:title>5 Best Antique Bar Carts 2026 | Luxury Home Bar Decor</image:title>
-    </image:image>
-  </url>
-
-
-
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<!-- HOMEPAGE - Highest Priority -->
 <url>
-  <loc>https://elevatelivingco.me/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html</loc>
-  <lastmod>2026-06-02</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-
-  <image:image>
-    <image:loc>https://elevatelivingco.me/assets/images/modern-coffee-tables-og-image.png</image:loc>
-    <image:title>7 Modern Coffee Tables That Make Apartments Look Expensive (2026)</image:title>
-  </image:image>
+<loc>https://elevatelivingco.me/</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
 </url>
-
-
+<!-- CORE UTILITY PAGES - Low Priority -->
 <url>
-  <loc>https://elevatelivingco.me/how-to-style-a-round-coffee-table-like-a-designer-2026.html</loc>
-  <lastmod>2026-06-03</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-
-  <image:image>
-    <image:loc>https://elevatelivingco.me/assets/images/formula_1_luxury_styling.png</image:loc>
-    <image:title>How To Style A Round Coffee Table Like A Designer (2026 Guide)</image:title>
-  </image:image>
+<loc>https://elevatelivingco.me/about.html</loc>
+<lastmod>2026-05-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.3</priority>
 </url>
-  <url>
-    <loc>https://elevatelivingco.me/shop-amazon-finds.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+<url>
+<loc>https://elevatelivingco.me/contact.html</loc>
+<lastmod>2026-05-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://elevatelivingco.me/privacy.html</loc>
+<lastmod>2026-05-26</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.1</priority>
+</url>
+<url>
+<loc>https://elevatelivingco.me/disclosure.html</loc>
+<lastmod>2026-05-26</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.1</priority>
+</url>
+<!-- DARK ACADEMIA / MOODY LUXURY CLUSTER - High Priority Content -->
+<url>
+<loc>https://elevatelivingco.me/dark-academia-apartment-decor-2026.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+
+</url>
+<url>
+<loc>https://elevatelivingco.me/7-dark-bookshelf-styling-ideas.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+
+</url>
+<url>
+<loc>https://elevatelivingco.me/dark-luxury-kitchen-accessories-2026.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+
+</url>
+<url>
+<loc>https://elevatelivingco.me/5-moody-entryway-ideas-luxury-on-budget.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+<image:image>
+<image:loc>https://elevatelivingco.me/assets/images/moody-entryway.png</image:loc>
+<image:title>5 Moody Entryway Ideas | Luxury Aesthetic On Budget</image:title>
+</image:image>
+</url>
+<url>
+<loc>https://elevatelivingco.me/why-some-apartments-feel-expensive.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+
+</url>
+<url>
+<loc>https://elevatelivingco.me/old-money-interiors-quiet-luxury-aesthetic.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+<image:image>
+<image:loc>https://elevatelivingco.me/assets/images/old-money-article.png</image:loc>
+<image:title>Old Money Interiors | Quiet Luxury Aesthetic Guide 2026</image:title>
+</image:image>
+</url>
+<!-- SMALL SPACE / APARTMENT DECOR - Medium-High Priority -->
+<url>
+<loc>https://elevatelivingco.me/small-living-room-decor-ideas.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+
+</url>
+<!-- PATIO / OUTDOOR CLUSTER - Medium Priority -->
+<url>
+<loc>https://elevatelivingco.me/best-waterproof-outdoor-rug-patio-under-50.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+
+</url>
+<url>
+<loc>https://elevatelivingco.me/cheap-patio-setup-under-50.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+
+</url>
+<url>
+<loc>https://elevatelivingco.me/5-patio-mistakes-that-make-your-space-look-cheap-fix-under-50.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+
+</url>
+<!-- DECOR / FURNITURE - Medium Priority -->
+<url>
+<loc>https://elevatelivingco.me/5-antique-bar-carts-2026.html</loc>
+<lastmod>2026-05-30</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+
+</url>
+<url>
+<loc>https://elevatelivingco.me/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html</loc>
+<lastmod>2026-06-02</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+<image:image>
+<image:loc>https://elevatelivingco.me/assets/images/modern-coffee-tables-og-image.png</image:loc>
+<image:title>7 Modern Coffee Tables That Make Apartments Look Expensive (2026)</image:title>
+</image:image>
+</url>
+<url>
+<loc>https://elevatelivingco.me/how-to-style-a-round-coffee-table-like-a-designer-2026.html</loc>
+<lastmod>2026-06-03</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+<image:image>
+<image:loc>https://elevatelivingco.me/assets/images/formula_1_luxury_styling.png</image:loc>
+<image:title>How To Style A Round Coffee Table Like A Designer (2026 Guide)</image:title>
+</image:image>
+</url>
+<url>
+<loc>https://elevatelivingco.me/shop-amazon-finds.html</loc>
+<lastmod>2026-06-03</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
 </urlset>

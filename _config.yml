@@ -57,7 +57,6 @@ exclude:
 - vendor
 - Gemfile
 - Gemfile.lock
-- skeleton-article.html
 
 sass:
 style: compressed
