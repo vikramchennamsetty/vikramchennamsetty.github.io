@@ -6,7 +6,7 @@
 window.ElevateLiving = window.ElevateLiving || {};
 window.ElevateLiving.config = window.ElevateLiving.config || {
   gaId: 'G-SSKL97RTQC',
-  amazonTag: 'elevateliv00e-20'
+  amazonTag: 'elevateliv05f-20'
 };
 
 window.ElevateLiving.trackAffiliate = function(label) {
