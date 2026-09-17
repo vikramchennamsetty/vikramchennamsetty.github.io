@@ -14,6 +14,9 @@
     <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
     <link href="https://elevatelivingco.me/" rel="canonical"/>
 
+    <!-- LCP Image Preload for Immediate Discovery -->
+    <link rel="preload" as="image" href="/assets/images/moody-entryway.webp" fetchpriority="high"/>
+
     <!-- SEO Meta Tags -->
     <title>ElevateLivingCo | Luxury Home Decor Ideas, Apartment Styling &amp; Amazon Finds</title>
     <meta content="Luxury home decor ideas, apartment styling guides, interior psychology, dark academia decor, coffee table trends, and curated Amazon finds for elevated living." name="description"/>
@@ -28,10 +31,10 @@
     <meta content="https://elevatelivingco.me/" property="og:url"/>
     <meta content="website" property="og:type"/>
 
-    <!-- Typography -->
+    <!-- Typography (Optimized Weights & Preconnect) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
 
     <!-- Stylesheets -->
     <link href="/assets/css/main.css" rel="stylesheet"/>
@@ -39,8 +42,8 @@
     <link href="/assets/css/motion.css" rel="stylesheet"/>
     <link href="/assets/css/immersive.css" rel="stylesheet"/>
 
-    <!-- GA4 -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SSKL97RTQC"></script>
+    <!-- GA4 Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSKL97RTQC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -389,9 +392,9 @@
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
+    <!-- SCRIPTS (Non-blocking Deferred Loading) -->
     <script src="/assets/js/shop-the-look.js" defer></script>
     <script src="/assets/js/immersive.js" defer></script>
-    <script src="/assets/js/tracking.js"></script>
+    <script src="/assets/js/tracking.js" defer></script>
 </body>
 </html>
