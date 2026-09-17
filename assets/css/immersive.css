@@ -1,0 +1,496 @@
+/* 
+  ElevateLivingCo — Immersive Homepage Redesign Stylesheet
+  Architectural 3D Door Stage, Mood Board Cards, Hotspots & Editorial Sections
+*/
+
+/* --- 1. HERO 3D DOOR STAGE --- */
+.hero-door-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Perspective Container */
+.door-viewport {
+  position: absolute;
+  inset: 0;
+  perspective: 1200px;
+  perspective-origin: center center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.door-frame {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  display: flex;
+}
+
+.door-panel-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50.1%;
+  height: 100%;
+  transform-origin: left center;
+  background: linear-gradient(135deg, #181818 0%, #0A0A0A 100%);
+  border-right: 1px solid rgba(201, 164, 74, 0.25);
+  box-shadow: inset -10px 0 30px rgba(0, 0, 0, 0.8);
+  will-change: transform;
+}
+
+.door-panel-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50.1%;
+  height: 100%;
+  transform-origin: right center;
+  background: linear-gradient(-135deg, #181818 0%, #0A0A0A 100%);
+  border-left: 1px solid rgba(201, 164, 74, 0.25);
+  box-shadow: inset 10px 0 30px rgba(0, 0, 0, 0.8);
+  will-change: transform;
+}
+
+/* Door Handles & Architectural Moldings */
+.door-handle-left,
+.door-handle-right {
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 60px;
+  background: linear-gradient(180deg, #E8C97A, #C9A44A);
+  border-radius: 3px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 12px rgba(201, 164, 74, 0.4);
+}
+
+.door-handle-left { right: 24px; }
+.door-handle-right { left: 24px; }
+
+/* Interior Reveal Layer behind door */
+.door-interior-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at center, rgba(30, 26, 20, 0.95) 0%, rgba(10, 10, 10, 1) 100%),
+              url('/assets/images/moody-entryway.webp') center/cover no-repeat;
+  background-blend-mode: multiply;
+  opacity: 0.1;
+  transform: scale(1.05);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+}
+
+/* Hero Content Overlay */
+.hero-content-layer {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 860px;
+  padding: 0 24px;
+  pointer-events: auto;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-gold-metallic);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--f-serif);
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.hero-sub {
+  font-family: var(--f-sans);
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 640px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.scroll-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--c-gold-metallic);
+  border-bottom: 2px solid var(--c-gold-metallic);
+  transform: rotate(45deg);
+  animation: elPulseLight 2s infinite ease-in-out;
+}
+
+/* CSS Scroll Timeline Support for Modern Browsers */
+@supports (animation-timeline: scroll()) {
+  .door-panel-left {
+    animation: doorOpenLeft linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 45vh;
+  }
+  .door-panel-right {
+    animation: doorOpenRight linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 45vh;
+  }
+  .door-interior-reveal {
+    animation: interiorReveal linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 45vh;
+  }
+}
+
+@keyframes doorOpenLeft {
+  0% { transform: rotateY(0deg); opacity: 1; }
+  100% { transform: rotateY(-82deg); opacity: 0.2; }
+}
+@keyframes doorOpenRight {
+  0% { transform: rotateY(0deg); opacity: 1; }
+  100% { transform: rotateY(82deg); opacity: 0.2; }
+}
+@keyframes interiorReveal {
+  0% { opacity: 0.15; transform: scale(1.05); }
+  100% { opacity: 0.9; transform: scale(1); }
+}
+
+/* --- 2. SECTION: DISCOVER YOUR SPACE --- */
+.section-discover {
+  padding: 100px 6vw;
+  background-color: var(--c-paper-cream);
+  color: var(--c-dark-obsidian);
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.discover-quote {
+  font-family: var(--f-serif);
+  font-size: clamp(24px, 3.8vw, 42px);
+  font-style: italic;
+  line-height: 1.35;
+  color: #1A1A1A;
+  max-width: 900px;
+  margin: 0 auto 36px;
+}
+
+.discover-text {
+  font-family: var(--f-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--c-muted-text);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* --- 3. SECTION: CHOOSE YOUR ATMOSPHERE --- */
+.section-atmosphere {
+  padding: 90px 6vw;
+  background-color: #0F0F0F;
+  color: #FFFFFF;
+}
+
+.atmosphere-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.atmosphere-header h2 {
+  font-family: var(--f-serif);
+  font-size: clamp(30px, 4vw, 48px);
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.atmosphere-header p {
+  font-family: var(--f-sans);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.05em;
+}
+
+.atmosphere-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.atmosphere-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  background: #181818;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform var(--t-card) var(--ease-smooth),
+              border-color var(--t-card) var(--ease-smooth),
+              box-shadow var(--t-card) var(--ease-smooth);
+}
+
+.atmosphere-card:hover,
+.atmosphere-card:focus-visible {
+  transform: translateY(-8px);
+  border-color: rgba(201, 164, 74, 0.5);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.atm-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.atm-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.atmosphere-card:hover .atm-img-wrap img {
+  transform: scale(1.06);
+}
+
+.atm-body {
+  padding: 28px 24px;
+}
+
+.atm-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-gold-metallic);
+  margin-bottom: 8px;
+}
+
+.atm-title {
+  font-family: var(--f-serif);
+  font-size: 22px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.atm-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- 4. SECTION: STYLING PRINCIPLES --- */
+.section-principles {
+  padding: 100px 6vw;
+  background-color: var(--c-paper-cream);
+  color: var(--c-dark-obsidian);
+}
+
+.principles-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 70px;
+}
+
+.principles-header h2 {
+  font-family: var(--f-serif);
+  font-size: clamp(30px, 4vw, 46px);
+  margin-bottom: 16px;
+}
+
+.principles-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.principle-step {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.principle-num {
+  font-family: var(--f-serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-gold-metallic);
+  margin-bottom: 14px;
+}
+
+.principle-img {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+.principle-title {
+  font-family: var(--f-sans);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.principle-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--c-muted-text);
+}
+
+/* --- 5. SECTION: ROOM HOTSPOTS --- */
+.section-hotspots {
+  padding: 90px 6vw;
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+.hotspot-stage {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+}
+
+.hotspot-stage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hotspot-pin {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(201, 164, 74, 0.9);
+  border: 2px solid #FFFFFF;
+  color: #000;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 16px rgba(201, 164, 74, 0.6);
+  transition: transform 0.25s var(--ease-smooth), background 0.25s ease;
+  z-index: 10;
+}
+
+.hotspot-pin:hover,
+.hotspot-pin:focus-visible {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: #FFFFFF;
+  outline: none;
+}
+
+.hotspot-card {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 260px;
+  background: #1E1E1E;
+  border: 1px solid rgba(201, 164, 74, 0.4);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 12;
+}
+
+.hotspot-pin.active + .hotspot-card,
+.hotspot-pin:hover + .hotspot-card {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hotspot-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.hotspot-card-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+}
+
+.hotspot-card-link {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-gold-metallic);
+  text-decoration: none;
+}
+.hotspot-card-link:hover { text-decoration: underline; }
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 980px) {
+  .atmosphere-grid { grid-template-columns: 1fr; gap: 24px; }
+  .principles-timeline { grid-template-columns: repeat(2, 1fr); }
+  .hero-title { font-size: 36px; }
+}
+
+@media (max-width: 640px) {
+  .principles-timeline { grid-template-columns: 1fr; }
+  .hero-door-stage { min-height: 580px; }
+  .door-panel-left, .door-panel-right { opacity: 0.15; }
+  .door-interior-reveal { opacity: 0.85; }
+}
+
+/* REDUCED MOTION OVERRIDES */
+@media (prefers-reduced-motion: reduce) {
+  .door-panel-left { transform: rotateY(-80deg) !important; opacity: 0.1 !important; }
+  .door-panel-right { transform: rotateY(80deg) !important; opacity: 0.1 !important; }
+  .door-interior-reveal { opacity: 0.9 !important; transform: scale(1) !important; }
+}

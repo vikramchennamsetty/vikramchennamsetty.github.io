@@ -1,0 +1,117 @@
+/* 
+  ElevateLivingCo — Motion System Utilities
+  Architectural, restrained, high-performance transitions & animations.
+  Zero layout thrashing; uses transform and opacity exclusively.
+*/
+
+:root {
+  /* Motion Duration Tokens */
+  --t-micro: 200ms;
+  --t-card: 350ms;
+  --t-section: 750ms;
+  --t-hero: 1200ms;
+  
+  /* Easing Functions */
+  --ease-architectural: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-bounce-none: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Base Reveal Classes */
+.el-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--t-section) var(--ease-architectural),
+              transform var(--t-section) var(--ease-architectural);
+  will-change: opacity, transform;
+}
+
+.el-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.el-reveal-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity var(--t-section) var(--ease-architectural),
+              transform var(--t-section) var(--ease-architectural);
+}
+.el-reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.el-reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity var(--t-section) var(--ease-architectural),
+              transform var(--t-section) var(--ease-architectural);
+}
+.el-reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.el-reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity var(--t-section) var(--ease-architectural),
+              transform var(--t-section) var(--ease-architectural);
+}
+.el-reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger Delays for Children */
+.el-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.el-stagger > *:nth-child(2) { transition-delay: 120ms; }
+.el-stagger > *:nth-child(3) { transition-delay: 240ms; }
+.el-stagger > *:nth-child(4) { transition-delay: 360ms; }
+.el-stagger > *:nth-child(5) { transition-delay: 480ms; }
+
+/* Subtle Depth & Hover Utility */
+.el-hover-lift {
+  transition: transform var(--t-card) var(--ease-smooth),
+              box-shadow var(--t-card) var(--ease-smooth);
+}
+.el-hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* KEYFRAMES */
+@keyframes elPulseLight {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes elDoorGlow {
+  0% { box-shadow: 0 0 15px rgba(201,164,74,0.1); }
+  50% { box-shadow: 0 0 40px rgba(201,164,74,0.35); }
+  100% { box-shadow: 0 0 15px rgba(201,164,74,0.1); }
+}
+
+/* MANDATORY REDUCED MOTION OVERRIDES */
+@media (prefers-reduced-motion: reduce) {
+  .el-reveal,
+  .el-reveal-up,
+  .el-reveal-left,
+  .el-reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .el-stagger > * {
+    transition-delay: 0ms !important;
+  }
+
+  .el-hover-lift {
+    transition: none !important;
+  }
+  .el-hover-lift:hover {
+    transform: none !important;
+  }
+}
