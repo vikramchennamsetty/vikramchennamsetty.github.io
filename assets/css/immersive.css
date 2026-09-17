@@ -530,6 +530,26 @@
 .hotspot-card-link:hover { text-decoration: underline; }
 
 /* --- 6. NEWSLETTER: THE ELEVATE EDIT --- */
+.editorial-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  .editorial-articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .editorial-articles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .newsletter-card {
   background: #0E0E0E;
   border: 1px solid rgba(201, 164, 74, 0.3);

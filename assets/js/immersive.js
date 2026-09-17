@@ -1,6 +1,6 @@
 /**
  * ElevateLivingCo — Immersive Homepage Script
- * Refined Door Controller, Reveal Observer, Hotspots & Analytics
+ * Refined Door Controller, Mobile Navigation Drawer, Reveal Observer, Hotspots & Analytics
  */
 
 (function () {
@@ -9,11 +9,49 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.addEventListener('DOMContentLoaded', function () {
+    initMobileNav();
     initDoorController();
     initRevealObserver();
     initHotspots();
     initScrollAnalytics();
   });
+
+  /**
+   * 0. MOBILE NAVIGATION DRAWER TOGGLE
+   */
+  function initMobileNav() {
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const isActive = toggle.classList.contains('active');
+      toggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', (!isActive).toString());
+    });
+
+    // Close mobile nav when clicking any link
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        toggle.classList.remove('active');
+        nav.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close nav when clicking outside
+    document.addEventListener('click', function (e) {
+      if (nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        toggle.classList.remove('active');
+        nav.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   /**
    * 1. 3D DOOR SCROLL PROGRESS CONTROLLER
