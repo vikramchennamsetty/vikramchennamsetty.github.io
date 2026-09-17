@@ -1,17 +1,11 @@
 /**
  * ElevateLivingCo — Immersive Homepage Script
- * Features:
- *  - Feature detection for CSS Scroll-Driven Animations
- *  - RequestAnimationFrame fallback door progress controller
- *  - IntersectionObserver reveal animations
- *  - Interactive Room Hotspots handler
- *  - GA4 Scroll Milestone Event Dispatcher
+ * Refined Door Controller, Reveal Observer, Hotspots & Analytics
  */
 
 (function () {
   'use strict';
 
-  // Respect prefers-reduced-motion
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -34,13 +28,13 @@
       (CSS.supports('animation-timeline: scroll()') || CSS.supports('animation-timeline', 'scroll()'));
 
     if (supportsScrollTimeline) {
-      // CSS handles animation natively; no JS transform needed
       return;
     }
 
     const doorLeft = document.querySelector('.door-panel-left');
     const doorRight = document.querySelector('.door-panel-right');
     const interior = document.querySelector('.door-interior-reveal');
+    const beam = document.querySelector('.door-light-beam');
 
     if (!doorLeft || !doorRight || !interior) return;
 
@@ -50,22 +44,28 @@
       const scrollY = window.scrollY || window.pageYOffset;
       const heroHeight = window.innerHeight * 0.5;
       
-      // Calculate progress from 0.0 to 1.0
       let progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
-
-      // Easing curve for realistic door swing
       const easeProgress = Math.pow(progress, 0.85);
 
-      const angle = 82 * easeProgress;
-      const interiorOpacity = 0.15 + (0.75 * easeProgress);
+      const angle = 84 * easeProgress;
+      const opacity = 1 - 0.85 * easeProgress;
+      const interiorOpacity = 0.15 + (0.80 * easeProgress);
+      const brightness = 0.65 + (0.45 * easeProgress);
+      const scale = 1.05 - (0.05 * easeProgress);
 
       doorLeft.style.transform = 'rotateY(-' + angle + 'deg)';
-      doorLeft.style.opacity = (1 - 0.8 * easeProgress).toString();
+      doorLeft.style.opacity = opacity.toString();
 
       doorRight.style.transform = 'rotateY(' + angle + 'deg)';
-      doorRight.style.opacity = (1 - 0.8 * easeProgress).toString();
+      doorRight.style.opacity = opacity.toString();
+
+      if (beam) {
+        beam.style.opacity = (0.7 * easeProgress).toString();
+      }
 
       interior.style.opacity = interiorOpacity.toString();
+      interior.style.filter = 'brightness(' + brightness + ') contrast(1.1)';
+      interior.style.transform = 'scale(' + scale + ')';
 
       ticking = false;
     }
@@ -77,7 +77,6 @@
       }
     }, { passive: true });
 
-    // Initial render
     updateDoor();
   }
 
@@ -122,24 +121,14 @@
         e.preventDefault();
         const isActive = pin.classList.contains('active');
         
-        // Close all pins first
         pins.forEach(function (p) { p.classList.remove('active'); });
 
         if (!isActive) {
           pin.classList.add('active');
         }
       });
-
-      // Keyboard support
-      pin.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          pin.click();
-        }
-      });
     });
 
-    // Close hotspots when clicking outside
     document.addEventListener('click', function (e) {
       if (!e.target.closest('.hotspot-pin') && !e.target.closest('.hotspot-card')) {
         pins.forEach(function (p) { p.classList.remove('active'); });

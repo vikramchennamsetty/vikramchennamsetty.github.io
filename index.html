@@ -54,11 +54,11 @@
     <header class="site-header">
         <div class="container">
             <a class="logo" href="/">ElevateLiving<span class="text-accent">Co</span></a>
-            <button aria-label="Toggle Navigation" class="mobile-nav-toggle">
+            <button aria-label="Toggle Navigation" class="mobile-nav-toggle" type="button">
                 <span></span>
                 <span></span>
             </button>
-            <nav class="site-nav">
+            <nav class="site-nav" aria-label="Main Navigation">
                 <a href="/dark-academia-apartment-decor-2026.html">Dark Academia</a>
                 <a href="/small-living-room-decor-ideas.html">Small Living</a>
                 <a href="/old-money-interiors-quiet-luxury-aesthetic.html">Quiet Luxury</a>
@@ -70,32 +70,45 @@
     </header>
 
     <main id="main-content">
-        <!-- HERO 3D DOOR STAGE -->
+        <!-- HERO 3D ARCHITECTURAL DOOR STAGE -->
         <section class="hero-door-stage" aria-label="Hero Door Experience">
             <div class="door-viewport">
                 <div class="door-frame">
+                    <!-- Left Door Panel -->
                     <div class="door-panel-left">
+                        <div class="door-molding">
+                            <div class="door-molding-inner"></div>
+                        </div>
+                        <div class="door-escutcheon-left"></div>
                         <div class="door-handle-left"></div>
                     </div>
+                    <!-- Right Door Panel -->
                     <div class="door-panel-right">
+                        <div class="door-molding">
+                            <div class="door-molding-inner"></div>
+                        </div>
+                        <div class="door-escutcheon-right"></div>
                         <div class="door-handle-right"></div>
                     </div>
                 </div>
             </div>
             
+            <!-- Warm Light Beam Rays -->
+            <div class="door-light-beam"></div>
+
             <!-- Interior background revealed behind door -->
             <div class="door-interior-reveal"></div>
 
-            <!-- Hero Typography -->
+            <!-- Hero Typography Overlay -->
             <div class="hero-content-layer el-reveal">
                 <span class="hero-eyebrow">Elevate Living Co.</span>
                 <h1 class="hero-title">Elevated Living,<br/>Luxury Within Reach.</h1>
                 <p class="hero-sub">Enter a curated world of dark academia styling, quiet luxury decor, and architectural apartment inspiration designed to transform your space.</p>
                 
-                <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight * 0.85, behavior: 'smooth'});">
+                <button class="scroll-indicator" type="button" aria-label="Scroll to enter website" onclick="window.scrollTo({top: window.innerHeight * 0.82, behavior: 'smooth'});">
                     <span>Scroll To Enter</span>
                     <div class="scroll-arrow"></div>
-                </div>
+                </button>
             </div>
         </section>
 
@@ -122,7 +135,7 @@
                 <div class="atmosphere-grid el-stagger">
                     <a href="/dark-academia-apartment-decor-2026.html" class="atmosphere-card">
                         <div class="atm-img-wrap">
-                            <img src="https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg" alt="Dark Academia Decor" loading="lazy" width="400" height="320"/>
+                            <img src="https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg" alt="Dark Academia Decor" loading="lazy" width="400" height="280"/>
                         </div>
                         <div class="atm-body">
                             <span class="atm-tag">Aesthetic 01</span>
@@ -133,7 +146,7 @@
 
                     <a href="/small-living-room-decor-ideas.html" class="atmosphere-card">
                         <div class="atm-img-wrap">
-                            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Small Living Room Decor" loading="lazy" width="400" height="320"/>
+                            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Small Living Room Decor" loading="lazy" width="400" height="280"/>
                         </div>
                         <div class="atm-body">
                             <span class="atm-tag">Aesthetic 02</span>
@@ -144,7 +157,7 @@
 
                     <a href="/old-money-interiors-quiet-luxury-aesthetic.html" class="atmosphere-card">
                         <div class="atm-img-wrap">
-                            <img src="/assets/images/old-money-article.webp" alt="Quiet Luxury Interiors" loading="lazy" width="400" height="320"/>
+                            <img src="/assets/images/old-money-article.webp" alt="Quiet Luxury Interiors" loading="lazy" width="400" height="280"/>
                         </div>
                         <div class="atm-body">
                             <span class="atm-tag">Aesthetic 03</span>
@@ -199,17 +212,17 @@
         <!-- SECTION 5: ROOM HOTSPOTS -->
         <section class="section-hotspots el-reveal" aria-label="Interactive Room Hotspots">
             <div class="container">
-                <div class="atmosphere-header" style="margin-bottom: 40px;">
+                <div class="atmosphere-header" style="margin-bottom: 36px;">
                     <h2>Interactive Room Showcase</h2>
                     <p>Hover or tap hotspots to discover curated styling details</p>
                 </div>
 
                 <div class="hotspot-stage">
-                    <img src="/assets/images/formula_5_designer_editorial.webp" alt="Designer Editorial Living Room Scene" loading="lazy" width="1100" height="600"/>
+                    <img src="/assets/images/formula_5_designer_editorial.webp" alt="Designer Editorial Living Room Scene" loading="lazy" width="1040" height="580"/>
                     
                     <!-- Hotspot 1 -->
                     <div style="top: 65%; left: 32%;">
-                        <button class="hotspot-pin" aria-label="View Coffee Table Styling">1</button>
+                        <button class="hotspot-pin" aria-label="View Coffee Table Styling" type="button">1</button>
                         <div class="hotspot-card">
                             <div class="hotspot-card-title">Sculptural Coffee Table</div>
                             <div class="hotspot-card-desc">Low profile wooden round coffee table anchoring the seating area.</div>
@@ -219,7 +232,7 @@
 
                     <!-- Hotspot 2 -->
                     <div style="top: 40%; left: 75%;">
-                        <button class="hotspot-pin" aria-label="View Bookshelf Styling">2</button>
+                        <button class="hotspot-pin" aria-label="View Bookshelf Styling" type="button">2</button>
                         <div class="hotspot-card">
                             <div class="hotspot-card-title">Moody Dark Bookshelf</div>
                             <div class="hotspot-card-desc">Layered vintage books and metallic object accents.</div>
@@ -231,11 +244,11 @@
         </section>
 
         <!-- SECTION 6: SHOP THE LOOK SHOWCASE -->
-        <section class="section-discover el-reveal" aria-label="Shop the Look Commercial Showcase" style="background: #111; color: #fff;">
+        <section class="section-discover el-reveal" aria-label="Shop the Look Commercial Showcase" style="background: #111; color: #fff; padding: 64px 6vw;">
             <div class="container" style="max-width: 900px;">
                 <span class="hero-eyebrow">Curated Commercial Showcase</span>
-                <h2 style="font-family: var(--f-serif); font-size: 32px; color: #fff; margin-bottom: 16px;">Build The Look</h2>
-                <p style="color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 40px;">Explore verified Amazon affiliate picks used across our luxury living guides.</p>
+                <h2 style="font-family: var(--f-serif); font-size: 32px; color: #fff; margin-bottom: 14px;">Build The Look</h2>
+                <p style="color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 36px;">Explore verified Amazon affiliate picks used across our luxury living guides.</p>
 
                 <section aria-label="Shop the Look Featured Products" class="shop-the-look" id="stl-living" style="text-align: left;">
                     <script class="shop-look-data" type="application/json">[{"name": "Abstract Ceramic Donut Vase", "category": "DECOR ACCENTS", "desc": "Off-white beige ceramic donut vase with organic texture for minimalist coffee tables.", "img": "https://m.media-amazon.com/images/I/71P48HkWt3L._AC_SL1500_.jpg", "alt": "Ceramic Donut Vase", "href": "https://www.amazon.com/dp/B09V7S1V46?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B09V7S1V46?tag=elevateliv05f-20', 'donut-vase');"}, {"name": "Matte Black Candle Holders Pair", "category": "LIGHTING", "desc": "Taper candle holder pair adding height and moody drama to entryway console tables.", "img": "https://m.media-amazon.com/images/I/71vJ39kXmML._AC_SL1500_.jpg", "alt": "Matte Black Candle Holders", "href": "https://www.amazon.com/dp/B08XMW6Y8L?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B08XMW6Y8L?tag=elevateliv05f-20', 'candle-holders');"}]</script>
@@ -244,13 +257,13 @@
         </section>
 
         <!-- SECTION 7: EDITORIAL ARTICLES GRID -->
-        <section class="container" aria-label="All Articles Grid" style="padding-top: 80px; padding-bottom: 80px;">
+        <section class="container" aria-label="All Articles Grid" style="padding-top: 64px; padding-bottom: 64px;">
             <div class="atmosphere-header">
                 <h2 style="color: #000;">Editorial Guides &amp; Inspiration</h2>
                 <p style="color: #666;">Explore our complete collection of apartment decor guides</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px;">
                 <a class="article-card el-hover-lift el-reveal" href="/dark-academia-apartment-decor-2026.html">
                     <span class="new-badge"> New</span>
                     <img alt="Dark Academia Apartment Decor 2026" height="240" loading="lazy" src="https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg" width="400"/>
@@ -314,48 +327,65 @@
             </div>
         </section>
 
-        <!-- NEWSLETTER CAPTURE -->
-        <section class="newsletter-card">
-            <h3>Join The Inner Circle</h3>
-            <p>Get notified about trending Amazon drops and styling hacks first.</p>
+        <!-- NEWSLETTER: THE ELEVATE EDIT -->
+        <section class="newsletter-card el-reveal">
+            <span class="newsletter-eyebrow">The Elevate Edit</span>
+            <h3>Curated Spaces &amp; Styling Ideas</h3>
+            <p>Join our reader list receiving dark academia styling formulas, quiet luxury guides, and Amazon finds directly to your inbox.</p>
             <form action="#" class="newsletter-form">
                 <input aria-label="Email Address" placeholder="Enter your email address..." required="" type="email"/>
                 <button type="submit">Subscribe</button>
             </form>
-            <span class="spam-free">100% Free. No spam, ever.</span>
+            <span class="newsletter-note">Weekly drops. Unsubscribe anytime.</span>
         </section>
     </main>
 
     <!-- SITE FOOTER -->
     <footer class="site-footer">
-        <div class="container footer-content">
+        <div class="footer-grid">
+            <!-- Brand Column -->
             <div class="footer-brand">
-                <span class="footer-logo">ElevateLiving<span class="text-accent">Co</span></span>
-                <p>Curated luxury home decor ideas, apartment styling, and Amazon finds for elevated living.</p>
-                <p class="amazon-disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+                <div class="footer-brand-title">ElevateLiving<span class="text-accent">Co</span></div>
+                <p class="footer-brand-desc">Curated luxury home decor ideas, apartment styling formulas, and Amazon finds for elevated living.</p>
+                <p class="footer-amazon-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
+
+            <!-- Atmospheres Column -->
+            <div>
+                <div class="footer-col-title">Atmospheres</div>
+                <ul class="footer-links-list">
+                    <li><a href="/dark-academia-apartment-decor-2026.html">Dark Academia</a></li>
+                    <li><a href="/small-living-room-decor-ideas.html">Small Space Luxury</a></li>
+                    <li><a href="/old-money-interiors-quiet-luxury-aesthetic.html">Quiet Luxury</a></li>
+                    <li><a href="/dark-luxury-kitchen-accessories-2026.html">Modern Kitchens</a></li>
+                    <li><a href="/7-dark-bookshelf-styling-ideas.html">Dark Bookshelves</a></li>
+                </ul>
+            </div>
+
+            <!-- Guides Column -->
+            <div>
+                <div class="footer-col-title">Guides</div>
+                <ul class="footer-links-list">
+                    <li><a href="/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html">Coffee Table Trends</a></li>
+                    <li><a href="/5-moody-entryway-ideas-luxury-on-budget.html">Entryway Styling</a></li>
+                    <li><a href="/5-antique-bar-carts-2026.html">Antique Bar Carts</a></li>
+                    <li><a href="/cheap-patio-setup-under-50.html">Cheap Patio Setup</a></li>
+                </ul>
+            </div>
+
+            <!-- Navigation Column -->
+            <div>
+                <div class="footer-col-title">Navigation</div>
+                <ul class="footer-links-list">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about.html">About Us</a></li>
                     <li><a href="/privacy.html">Privacy Policy</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
-                <h4>Popular Guides</h4>
-                <ul>
-                    <li><a href="/dark-academia-apartment-decor-2026.html">Dark Academia Decor</a></li>
-                    <li><a href="/small-living-room-decor-ideas.html">Small Living Room Ideas</a></li>
-                    <li><a href="/old-money-interiors-quiet-luxury-aesthetic.html">Quiet Luxury Aesthetics</a></li>
-                    <li><a href="/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html">Coffee Table Trends</a></li>
-                </ul>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 ElevateLivingCo. All rights reserved.</p>
-            </div>
+
+        <div class="footer-bar">
+            &copy; 2026 ElevateLivingCo. All rights reserved.
         </div>
     </footer>
 
