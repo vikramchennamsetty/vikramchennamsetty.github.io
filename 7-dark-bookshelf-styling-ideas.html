@@ -618,274 +618,6 @@ body {
 }
 
 /* ══════════════════════════
-   QUIZ WIDGET
-══════════════════════════ */
-.quiz-card {
-  background: #fff;
-  border-radius: 22px;
-  padding: 26px 22px;
-  box-shadow: 0 16px 44px rgba(0,0,0,0.09);
-  border: 2px solid #f0e8d8;
-}
-
-.qz-progress-wrap {
-  background: #f0e8d8;
-  border-radius: 10px;
-  height: 5px;
-  margin-bottom: 22px;
-  overflow: hidden;
-}
-
-.qz-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #c9a44a, #e8c97a);
-  border-radius: 10px;
-  transition: width 0.4s ease;
-}
-
-.qz-step { }
-.qz-step.hidden { display: none; }
-
-.qz-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #c9a44a;
-  margin-bottom: 8px;
-}
-
-.qz-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-
-.qz-subtitle {
-  font-size: 13px;
-  color: #888;
-  margin-bottom: 18px;
-  line-height: 1.5;
-}
-
-/* Image choices */
-.qz-img-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.qz-img-choice {
-  border: 2px solid #f0e8d8;
-  border-radius: 14px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.25s;
-}
-
-.qz-img-choice:hover {
-  border-color: #c9a44a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201,164,74,0.2);
-}
-
-.qz-img-choice.selected {
-  border-color: #c9a44a;
-  box-shadow: 0 0 0 3px rgba(201,164,74,0.25);
-}
-
-.qz-img-choice img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  display: block;
-}
-
-.qz-img-label {
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  padding: 8px 6px;
-  color: #1a1a1a;
-  background: #faf7f2;
-}
-
-/* Pill choices */
-.qz-pill-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.qz-pill {
-  background: #f9f6f2;
-  border: 2px solid #f0e8d8;
-  border-radius: 12px;
-  padding: 12px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1a1a1a;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.qz-pill:hover {
-  border-color: #c9a44a;
-  background: #fdf5e4;
-  transform: translateX(4px);
-}
-
-/* Checklist */
-.qz-checklist {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.qz-check-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: #333;
-  cursor: pointer;
-  padding: 10px 14px;
-  background: #f9f6f2;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  transition: 0.2s;
-}
-
-.qz-check-item:hover { border-color: #c9a44a; }
-
-.qz-check-item input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #c9a44a;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.qz-next-btn {
-  width: 100%;
-  padding: 13px;
-  background: #1a1a1a;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.25s;
-}
-
-.qz-next-btn:hover { background: #c9a44a; color: #1a1a1a; }
-
-/* Result */
-.qz-result-badge {
-  background: linear-gradient(135deg, #c9a44a, #e8c97a);
-  color: #1a1a1a;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 8px 16px;
-  border-radius: 30px;
-  margin-bottom: 18px;
-}
-
-.qz-score-ring {
-  font-size: 52px;
-  font-weight: 900;
-  text-align: center;
-  color: #1a1a1a;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.qz-score-label {
-  font-size: 14px;
-  font-weight: 600;
-  text-align: center;
-  color: #c9a44a;
-  margin-bottom: 16px;
-}
-
-.qz-result-text {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-.qz-result-product {
-  background: #f9f6f2;
-  border: 2px solid #f0e8d8;
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 16px;
-}
-
-.qz-result-product img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-}
-
-.qz-result-product-info {
-  padding: 14px;
-}
-
-.qz-result-product-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 6px;
-}
-
-.qz-result-product-reason {
-  font-size: 12.5px;
-  color: #777;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-
-.qz-result-product-btn {
-  display: block;
-  background: #1a1a1a;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  padding: 10px 14px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 700;
-  transition: 0.25s;
-  cursor: pointer;
-}
-
-.qz-result-product-btn:hover { background: #c9a44a; color: #1a1a1a; }
-
-.qz-restart-btn {
-  width: 100%;
-  padding: 10px;
-  background: transparent;
-  color: #999;
-  border: 1px solid #ddd;
-  border-radius: 30px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.qz-restart-btn:hover { color: #1a1a1a; border-color: #1a1a1a; }
-
-/* ══════════════════════════
    RESPONSIVE
 ══════════════════════════ */
 @media (max-width: 980px) {
@@ -951,7 +683,7 @@ body {
 <meta content="https://elevatelivingco.me/7-dark-bookshelf-styling-ideas.html" property="og:url"/>
 <meta content="article" property="og:type"/>
 <meta content="https://elevatelivingco.me/assets/images/formula_1_luxury_styling.webp" property="og:image"/>
-</head>
+<script defer="True" src="assets/js/shop-the-look.js"></script><link href="assets/css/components.css" rel="stylesheet"/></head>
 <body>
 <nav style="background:#fff;padding:16px 6vw;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:sticky;top:0;z-index:100;">
 <a href="/" style="font-size:20px;font-weight:800;letter-spacing:1px;color:#111;text-decoration:none;">ElevateLivingCo</a>
@@ -1272,74 +1004,61 @@ body {
 </div><!-- end article-col -->
 <!-- SIDEBAR: Quiz -->
 <div class="sidebar">
-<div class="quiz-card" id="quizWidget">
-<!-- PROGRESS BAR -->
-<div class="qz-progress-wrap">
-<div class="qz-progress-bar" id="qzProgress" style="width:0%"></div>
+<section aria-label="Shop the Look Featured Products" class="shop-the-look" id="stl-bookshelf">
+<script class="shop-look-data" type="application/json">[{"name": "ASOKO LED Under Cabinet Light Bar", "category": "LIGHTING", "desc": "Warm 3000K ambient illumination for dark shelves & displays.", "img": "https://m.media-amazon.com/images/I/71lhm8m4O2L._AC_SX679_.jpg", "alt": "ASOKO LED Under Cabinet Light Bar Warm 3000K", "href": "https://www.amazon.com/dp/B08R7FZN8L?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B08R7FZN8L?tag=elevateliv05f-20', 'asoko-led-under-cabinet-light');"}, {"name": "Quoowiit Gold Thinker Statue (Set of 3)", "category": "SCULPTURE", "desc": "Art Deco metallic thinker statues for intellectual depth.", "img": "https://m.media-amazon.com/images/I/71nswYM31SL._AC_SX679_.jpg", "alt": "Quoowiit Gold Thinker Statue 3 Piece Art Deco Set", "href": "https://www.amazon.com/dp/B0CJC2KSPC?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B0CJC2KSPC?tag=elevateliv05f-20', 'quoowiit-gold-thinker-statue');"}, {"name": "GUKJOB Matte Black Ceramic Vase", "category": "CERAMICS", "desc": "Fluted ribbed matte black ceramic that absorbs light for rich texture.", "img": "https://m.media-amazon.com/images/I/71hfUwXYTwL._AC_SL1500_.jpg", "alt": "GUKJOB Matte Black Ribbed Ceramic Vase Art Deco", "href": "https://www.amazon.com/dp/B0CNVRPRZS?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B0CNVRPRZS?tag=elevateliv05f-20', 'gukjob-matte-black-ceramic-vase');"}, {"name": "Norrclp Black & Gold Abstract Statue", "category": "HERO PIECE", "desc": "Boutique hotel energy with fluid form and glowing gold orb.", "img": "https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg", "alt": "Norrclp Black Gold Abstract Art Ceramic Statue", "href": "https://www.amazon.com/dp/B093P4NQKN?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B093P4NQKN?tag=elevateliv05f-20', 'norrclp-black-gold-abstract-statue');"}]</script>
+<div class="shop-look-header">
+<span class="shop-look-eyebrow">SHOP THE LOOK</span>
+<h3 class="shop-look-heading">Featured Pick</h3>
+<p class="shop-look-subtitle">Curated for this article</p>
 </div>
-<!-- STEP 1: Style Vibe -->
-<div class="qz-step" id="step1">
-<div class="qz-label">HOME STYLE QUIZ · 3 QUESTIONS</div>
-<div class="qz-title">What's your home aesthetic?</div>
-<div class="qz-subtitle">Pick the image that feels most like your dream space</div>
-<div class="qz-img-grid">
-<div class="qz-img-choice" id="vibe-dark" onclick="pickVibe('dark')">
-<img alt="Dark Moody Academia" decoding="async" height="600" loading="lazy" src="https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg" width="800"/>
-<div class="qz-img-label">Dark &amp; Moody</div>
+<div class="shop-look-card">
+<div class="shop-look-img-container">
+<img alt="ASOKO LED Under Cabinet Light Bar Warm 3000K" class="stl-featured-img" decoding="async" loading="lazy" src="https://m.media-amazon.com/images/I/71lhm8m4O2L._AC_SX679_.jpg"/>
 </div>
-<div class="qz-img-choice" id="vibe-glam" onclick="pickVibe('glam')">
-<img alt="Glam Neo Deco" decoding="async" height="600" loading="lazy" src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" width="800"/>
-<div class="qz-img-label">Glam &amp; Luxe</div>
+<div class="shop-look-body">
+<span class="stl-featured-category shop-look-category">LIGHTING</span>
+<h4 class="stl-featured-title shop-look-title">ASOKO LED Under Cabinet Light Bar</h4>
+<p class="stl-featured-desc shop-look-desc">Warm 3000K ambient illumination for dark shelves &amp; displays.</p>
+</div>
+<div aria-label="Select product pick" class="shop-look-selector" role="tablist">
+<button aria-label="ASOKO LED Under Cabinet Light Bar" aria-selected="true" class="stl-thumb-btn active" onclick="switchShopLookProduct('stl-bookshelf', 0)" role="tab">
+<img alt="ASOKO LED Under Cabinet Light Bar Warm 3000K" src="https://m.media-amazon.com/images/I/71lhm8m4O2L._AC_SX679_.jpg"/>
+</button>
+<button aria-label="Quoowiit Gold Thinker Statue (Set of 3)" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-bookshelf', 1)" role="tab">
+<img alt="Quoowiit Gold Thinker Statue 3 Piece Art Deco Set" src="https://m.media-amazon.com/images/I/71nswYM31SL._AC_SX679_.jpg"/>
+</button>
+<button aria-label="GUKJOB Matte Black Ceramic Vase" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-bookshelf', 2)" role="tab">
+<img alt="GUKJOB Matte Black Ribbed Ceramic Vase Art Deco" src="https://m.media-amazon.com/images/I/71hfUwXYTwL._AC_SL1500_.jpg"/>
+</button>
+<button aria-label="Norrclp Black &amp; Gold Abstract Statue" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-bookshelf', 3)" role="tab">
+<img alt="Norrclp Black Gold Abstract Art Ceramic Statue" src="https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg"/>
+</button>
+</div>
+<a class="stl-featured-cta shop-look-cta" href="https://www.amazon.com/dp/B08R7FZN8L?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B08R7FZN8L?tag=elevateliv05f-20', 'asoko-led-under-cabinet-light');" rel="sponsored nofollow" target="_blank">
+      View on Amazon →
+    </a>
+<p class="shop-look-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+</div>
+<div class="shop-look-more">
+<div class="shop-look-more-title">More Picks for This Look</div>
+<div class="shop-look-mini-list">
+<a class="stl-mini-card" href="https://www.amazon.com/dp/B085G47VY4?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B085G47VY4?tag=elevateliv05f-20', 'maxgear-tree-bookends');" rel="sponsored nofollow" target="_blank">
+<img alt="MaxGear Tree Design Black Bookends" src="https://m.media-amazon.com/images/I/71jQMlHoOLL._AC_SL1500_.jpg"/>
+<div class="stl-mini-info">
+<span class="stl-mini-name">MaxGear Tree Metal Bookends</span>
+<span class="stl-mini-cta">View on Amazon →</span>
+</div>
+</a>
+<a class="stl-mini-card" href="https://www.amazon.com/dp/B07JGLT7FT?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B07JGLT7FT?tag=elevateliv05f-20', 'happyhapi-arch-bookends');" rel="sponsored nofollow" target="_blank">
+<img alt="HappyHapi Heavy Duty Arch Black Bookends" src="https://m.media-amazon.com/images/I/71fhnyLDERL._AC_SL1500_.jpg"/>
+<div class="stl-mini-info">
+<span class="stl-mini-name">HappyHapi Heavy-Duty Arch Bookends</span>
+<span class="stl-mini-cta">View on Amazon →</span>
+</div>
+</a>
 </div>
 </div>
-</div>
-<!-- STEP 2: Priority -->
-<div class="qz-step hidden" id="step2">
-<div class="qz-label">STEP 2 OF 3</div>
-<div class="qz-title">What's your biggest priority right now?</div>
-<div class="qz-subtitle">What's missing most from your home?</div>
-<div class="qz-pill-grid">
-<div class="qz-pill" onclick="pickPriority('shelf')">📚 Style my bookshelf</div>
-<div class="qz-pill" onclick="pickPriority('space')">🪞 Make my room feel bigger</div>
-<div class="qz-pill" onclick="pickPriority('statement')">✨ One big statement piece</div>
-<div class="qz-pill" onclick="pickPriority('light')">💡 Better lighting</div>
-</div>
-</div>
-<!-- STEP 3: Budget -->
-<div class="qz-step hidden" id="step3">
-<div class="qz-label">STEP 3 OF 3</div>
-<div class="qz-title">What's your budget for this upgrade?</div>
-<div class="qz-subtitle">Every budget has a great option here</div>
-<div class="qz-pill-grid">
-<div class="qz-pill" onclick="pickBudget('low')">Under</div>
-<div class="qz-pill" onclick="pickBudget('mid')">–</div>
-<div class="qz-pill" onclick="pickBudget('high')">+ — go all in 🖤</div>
-</div>
-</div>
-<!-- STEP 4: Score Checker -->
-<div class="qz-step hidden" id="step4">
-<div class="qz-label">YOUR HOME SCORE</div>
-<div class="qz-title">What do you already have?</div>
-<div class="qz-subtitle">Tick everything you currently own</div>
-<div class="qz-checklist">
-<label class="qz-check-item"><input id="ck1" type="checkbox"/> <span>Under-shelf or accent lighting</span></label>
-<label class="qz-check-item"><input id="ck2" type="checkbox"/> <span>A decorative sculpture or statue</span></label>
-<label class="qz-check-item"><input id="ck3" type="checkbox"/> <span>A statement mirror</span></label>
-<label class="qz-check-item"><input id="ck4" type="checkbox"/> <span>A bar cart or drinks trolley</span></label>
-<label class="qz-check-item"><input id="ck5" type="checkbox"/> <span>Floating shelves or a styled bookcase</span></label>
-</div>
-<button class="qz-next-btn" onclick="showResult()">See My Perfect Pick →</button>
-</div>
-<!-- RESULT -->
-<div class="qz-step hidden" id="stepResult">
-<div class="qz-result-badge" id="qzStyleName"></div>
-<div class="qz-score-ring" id="qzScoreRing"></div>
-<div class="qz-score-label" id="qzScoreLabel"></div>
-<div class="qz-result-text" id="qzResultText"></div>
-<div class="qz-result-product" id="qzResultProduct"></div>
-<button class="qz-restart-btn" onclick="restartQuiz()">↺ Retake Quiz</button>
-</div>
-</div><!-- end quiz-card -->
+</section><!-- end shop-the-look -->
 </div>
 </div><!-- end page-layout -->
 <!-- ALL PRODUCTS -->
@@ -1477,195 +1196,6 @@ document.querySelectorAll('.image-slider').forEach(slider => {
   });
 });
 
-// ── QUIZ LOGIC ──
-const quizState = { vibe: null, priority: null, budget: null };
-
-const allProducts = {
-  led: {
-    name: 'ASOKO LED Under Cabinet Light Bar',
-    reason: 'The #1 upgrade that makes everything else on your shelf look expensive. Install it first — it changes the entire display instantly.',
-    img: 'https://m.media-amazon.com/images/I/71lhm8m4O2L._AC_SX679_.jpg',
-    url: 'https://www.amazon.com/dp/B08R7FZN8L?tag=elevateliv05f-20',
-    label: 'asoko-led-under-cabinet-light-quiz',
-    guide: null
-  },
-  thinker: {
-    name: 'Quoowiit Gold Thinker Statue — 3-Piece',
-    reason: 'Art Deco gold sculptures that make your shelf look professionally styled. 3 poses, 1 set — every guest asks where you got it.',
-    img: 'https://m.media-amazon.com/images/I/71nswYM31SL._AC_SX679_.jpg',
-    url: 'https://www.amazon.com/dp/B0CJC2KSPC?tag=elevateliv05f-20',
-    label: 'quoowiit-gold-thinker-statue-quiz',
-    guide: null
-  },
-  sculpture: {
-    name: 'Norrclp Black & Gold Abstract Statue',
-    reason: 'Your hero piece. Swirling black & gold ceramic that looks boutique hotel-level — the conversation piece that makes the entire shelf.',
-    img: 'https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SL1000_.jpg',
-    url: 'https://www.amazon.com/dp/B093P4NQKN?tag=elevateliv05f-20',
-    label: 'norrclp-black-gold-abstract-statue-quiz',
-    guide: null
-  },
-  vase: {
-    name: 'GUKJOB Matte Black Ceramic Vase',
-    reason: 'Ribbed Art Deco texture in matte black — looks like a  designer vase. The texture object that adds depth to any dark display.',
-    img: 'https://m.media-amazon.com/images/I/71hfUwXYTwL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B0CNVRPRZS?tag=elevateliv05f-20',
-    label: 'gukjob-matte-black-ceramic-vase-quiz',
-    guide: null
-  },
-  bookends: {
-    name: 'MaxGear Tree Design Black Bookends',
-    reason: 'Popular Pick black bookends that instantly structure and elevate any shelf. Maximum style impact for under .',
-    img: 'https://m.media-amazon.com/images/I/71jQMlHoOLL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B085G47VY4?tag=elevateliv05f-20',
-    label: 'maxgear-tree-bookends-quiz',
-    guide: null
-  },
-  grimm: {
-    name: "Grimm's Complete Fairy Tales — Leather Bound",
-    reason: "Dark leather cover + gold spine. The book that makes every guest think a designer styled your shelf — and it costs less than dinner.",
-    img: 'https://m.media-amazon.com/images/I/71ttT+2FuoL._SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/1607103133?tag=elevateliv05f-20',
-    label: 'grimms-complete-fairy-tales-leather-quiz',
-    guide: null
-  },
-  brassCart: {
-    name: 'VASAGLE Gold Bar Cart',
-    reason: 'Gold frame + 2 mirrored shelves — the neo deco showstopper that anchors an entire room. For glam interiors, this is the ultimate statement piece.',
-    img: 'https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg',
-    url: 'https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20',
-    label: 'vasagle-gold-bar-cart-quiz',
-    guide: { label: '✦ From our Bar Cart Guide', link: '5-antique-bar-carts-2026.html', text: 'See all 5 bar carts →' }
-  },
-  blackCart: {
-    name: 'Round Black Mirror Bar Cart',
-    reason: 'Black round frame + 2 mirror shelves — moody drama that pairs perfectly with a dark aesthetic. Boutique hotel quality under .',
-    img: 'https://m.media-amazon.com/images/I/6156uhzLnpL._AC_SX679_.jpg',
-    url: 'https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20',
-    label: 'round-black-mirror-bar-cart-quiz',
-    guide: { label: '✦ From our Bar Cart Guide', link: '5-antique-bar-carts-2026.html', text: 'See all 5 bar carts →' }
-  },
-  mirror: {
-    name: 'Irregular Decorative Mirror',
-    reason: 'The #1 small space upgrade. Placed opposite a window it reflects light and visually doubles your room — the fastest transformation available.',
-    img: 'https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv05f-20',
-    label: 'irregular-decorative-mirror-quiz',
-    guide: { label: '✦ From our Small Living Room Guide', link: 'small-living-room-decor-ideas.html', text: 'See all 7 small room ideas →' }
-  },
-  lamp: {
-    name: 'Smart RGB Floor Lamp',
-    reason: "16M colors, app-controlled, zero installation. Transform your room's entire mood in 10 seconds — from bright and energizing to warm and cozy.",
-    img: 'https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv05f-20',
-    label: 'smart-rgb-floor-lamp-quiz',
-    guide: { label: '✦ From our Small Living Room Guide', link: 'small-living-room-decor-ideas.html', text: 'See all 7 small room ideas →' }
-  },
-  shelves: {
-    name: 'Floating Wall Shelves',
-    reason: 'Go vertical and free up your floor. The smartest storage upgrade for any compact room — and they double as styled display space.',
-    img: 'https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg',
-    url: 'https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv05f-20',
-    label: 'floating-wall-shelves-quiz',
-    guide: { label: '✦ From our Small Living Room Guide', link: 'small-living-room-decor-ideas.html', text: 'See all 7 small room ideas →' }
-  }
-};
-
-const styleNames = {
-  dark: { low: 'Dark Academia Beginner', mid: 'Dark Academia Stylist', high: 'Dark Academia Designer' },
-  glam: { low: 'Glam Decor Starter', mid: 'Neo Deco Enthusiast', high: 'Luxury Neo Deco Designer' }
-};
-
-function setProgress(pct) {
-  document.getElementById('qzProgress').style.width = pct + '%';
-}
-
-function showStep(id) {
-  document.querySelectorAll('.qz-step').forEach(s => s.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-}
-
-function pickVibe(v) {
-  quizState.vibe = v;
-  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
-  document.getElementById('vibe-' + v).classList.add('selected');
-  setTimeout(() => { setProgress(33); showStep('step2'); }, 300);
-}
-
-function pickPriority(p) { quizState.priority = p; setProgress(66); showStep('step3'); }
-function pickBudget(b) { quizState.budget = b; setProgress(85); showStep('step4'); }
-
-function showResult() {
-  const checks = ['ck1','ck2','ck3','ck4','ck5'];
-  const score = checks.filter(id => document.getElementById(id).checked).length;
-  let pick;
-
-  if (quizState.priority === 'light') {
-    pick = quizState.vibe === 'glam' ? allProducts.lamp : allProducts.led;
-  } else if (quizState.priority === 'space') {
-    pick = score <= 2 ? allProducts.mirror : allProducts.shelves;
-  } else if (quizState.priority === 'statement') {
-    if (quizState.vibe === 'glam' && quizState.budget === 'high') pick = allProducts.brassCart;
-    else if (quizState.vibe === 'glam' && quizState.budget === 'mid') pick = allProducts.blackCart;
-    else if (quizState.vibe === 'glam' && quizState.budget === 'low') pick = allProducts.thinker;
-    else if (quizState.vibe === 'dark' && quizState.budget === 'high') pick = allProducts.sculpture;
-    else if (quizState.vibe === 'dark' && quizState.budget === 'mid') pick = allProducts.thinker;
-    else pick = allProducts.bookends;
-  } else if (quizState.priority === 'shelf') {
-    if (quizState.budget === 'low') pick = allProducts.bookends;
-    else if (quizState.budget === 'mid') pick = score < 2 ? allProducts.led : allProducts.thinker;
-    else pick = allProducts.sculpture;
-  } else if (quizState.vibe === 'glam') {
-    pick = score >= 4 ? allProducts.brassCart : (quizState.budget === 'high' ? allProducts.brassCart : allProducts.blackCart);
-  } else {
-    pick = quizState.budget === 'low' ? allProducts.vase : allProducts.led;
-  }
-
-  let scoreLabel, scoreEmoji;
-  if (score <= 1) { scoreLabel = 'Your space is ready for a full transformation'; scoreEmoji = '🌱'; }
-  else if (score <= 3) { scoreLabel = 'Good foundation — one upgrade away'; scoreEmoji = '⚡'; }
-  else { scoreLabel = 'Your space is already beautifully elevated!'; scoreEmoji = '🏆'; }
-
-  const styleName = styleNames[quizState.vibe]?.[quizState.budget] || 'Home Decor Enthusiast';
-  document.getElementById('qzStyleName').textContent = '✦ ' + styleName + ' ✦';
-  document.getElementById('qzScoreRing').textContent = scoreEmoji + ' ' + score + '/5';
-  document.getElementById('qzScoreLabel').textContent = scoreLabel;
-
-  const resultText = pick.guide
-    ? "Your basics are sorted — here's the perfect next-level upgrade for your aesthetic:"
-    : "Based on your style and priorities, here's your perfect first pick:";
-  document.getElementById('qzResultText').textContent = resultText;
-
-  const guideBadge = pick.guide
-    ? `<div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c9a44a;margin-bottom:8px;">${pick.guide.label}</div>` : '';
-  const guideLink = pick.guide
-    ? `<a href="${pick.guide.link}"
-        style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:700;">
-        ${pick.guide.text}
-      </a>` : '';
-
-  document.getElementById('qzResultProduct').innerHTML = `
-    <img src="${pick.img}" alt="${pick.name}" width="800" height="600">
-    <div class="qz-result-product-info">
-      ${guideBadge}
-      <div class="qz-result-product-name">${pick.name}</div>
-      <div class="qz-result-product-reason">${pick.reason}</div>
-      <a class="qz-result-product-btn" href="#" onclick="trackAffiliate('${pick.url}', '${pick.label}'); return false;">View on Amazon →</a>
-      ${guideLink}
-    </div>
-  `;
-
-  setProgress(100);
-  showStep('stepResult');
-}
-
-function restartQuiz() {
-  quizState.vibe = null; quizState.priority = null; quizState.budget = null;
-  ['ck1','ck2','ck3','ck4','ck5'].forEach(id => document.getElementById(id).checked = false);
-  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
-  setProgress(0);
-  showStep('step1');
-}
 </script>
 </body>
 </html>

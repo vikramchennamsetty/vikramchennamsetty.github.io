@@ -507,136 +507,9 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 .crosslink-desc{font-size:12.5px;color:#888;line-height:1.5;}
 .crosslink-cta{font-size:13px;font-weight:700;color:var(--gold);margin-top:4px;}
 
-/* ── QUIZ ── */
-.quiz-card{
-  background:var(--white);border-radius:22px;
-  padding:26px 22px;
-  box-shadow:0 16px 44px rgba(0,0,0,0.09);
-  border:2px solid #f0e8d8;
-}
-.qz-progress-wrap{
-  background:#f0e8d8;border-radius:10px;
-  height:5px;margin-bottom:22px;overflow:hidden;
-}
-.qz-progress-bar{
-  height:100%;
-  background:linear-gradient(90deg,var(--gold),var(--gold-light));
-  border-radius:10px;transition:width 0.4s ease;
-}
-.qz-step.hidden{display:none;}
-.qz-label{
-  font-size:10px;font-weight:700;
-  letter-spacing:0.15em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:8px;
-}
-.qz-title{font-size:18px;font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:6px;}
-.qz-subtitle{font-size:13px;color:#888;margin-bottom:18px;line-height:1.5;}
-.qz-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.qz-img-choice{
-  border:2px solid #f0e8d8;border-radius:14px;
-  overflow:hidden;cursor:pointer;transition:0.25s;
-}
-.qz-img-choice:hover{
-  border-color:var(--gold);transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(201,164,74,0.2);
-}
-.qz-img-choice.selected{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,74,0.25);}
-.qz-img-choice img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;}
-.qz-img-label{font-size:12px;font-weight:600;text-align:center;padding:8px 6px;color:var(--dark);background:#faf7f2;}
-.qz-pill-grid{display:flex;flex-direction:column;gap:10px;}
-.qz-pill{
-  background:var(--cream);border:2px solid #f0e8d8;
-  border-radius:12px;padding:12px 16px;
-  font-size:14px;font-weight:500;color:var(--dark);
-  cursor:pointer;transition:0.2s;
-}
-.qz-pill:hover{border-color:var(--gold);background:#fdf5e4;transform:translateX(4px);}
-.qz-checklist{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
-.qz-check-item{
-  display:flex;align-items:center;gap:10px;font-size:14px;color:#333;
-  cursor:pointer;padding:10px 14px;background:var(--cream);
-  border-radius:10px;border:2px solid transparent;transition:0.2s;
-}
-.qz-check-item:hover{border-color:var(--gold);}
-.qz-check-item input[type="checkbox"]{width:18px;height:18px;accent-color:var(--gold);cursor:pointer;flex-shrink:0;}
-.qz-next-btn{
-  width:100%;padding:13px;background:var(--dark);color:var(--white);
-  border:none;border-radius:30px;font-size:14px;font-weight:700;
-  cursor:pointer;transition:0.25s;
-}
-.qz-next-btn:hover{background:var(--gold);color:var(--dark);}
-.qz-result-badge{
-  background:linear-gradient(135deg,var(--gold),var(--gold-light));
-  color:var(--dark);font-size:13px;font-weight:800;
-  letter-spacing:0.08em;text-transform:uppercase;
-  text-align:center;padding:8px 16px;border-radius:30px;margin-bottom:18px;
-}
-.qz-score-ring{font-size:52px;font-weight:900;text-align:center;color:var(--dark);line-height:1;margin-bottom:6px;}
-.qz-score-label{font-size:14px;font-weight:600;text-align:center;color:var(--gold);margin-bottom:16px;}
-.qz-result-text{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:18px;text-align:center;}
-.qz-result-product{background:var(--cream);border:2px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px;}
-.qz-result-product img{width:100%;aspect-ratio:1/1;object-fit:cover;}
-.qz-result-product-info{padding:14px;}
-.qz-result-product-name{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px;}
-.qz-result-product-price{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:6px;}
-.qz-result-product-reason{font-size:12.5px;color:#777;line-height:1.5;margin-bottom:12px;}
-.qz-result-product-btn{
-  display:block;background:var(--dark);color:var(--white);
-  text-decoration:none;text-align:center;padding:10px 14px;
-  border-radius:30px;font-size:13px;font-weight:700;transition:0.25s;cursor:pointer;
-}
-.qz-result-product-btn:hover{background:var(--gold);color:var(--dark);}
-.qz-restart-btn{
-  width:100%;padding:10px;background:transparent;color:#999;
-  border:1px solid #ddd;border-radius:30px;font-size:13px;cursor:pointer;transition:0.2s;
-}
-.qz-restart-btn:hover{color:var(--dark);border-color:var(--dark);}
-
-/* ── FOOTER ── */
-.footer{margin-top:60px;text-align:center;font-size:13px;color:#888;line-height:1.7;}
-.footer a{color:var(--gold);text-decoration:none;}
-.footer a:hover{text-decoration:underline;}
-
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
-@media(max-width:980px){
-  .page-layout{grid-template-columns:1fr;}
-  .sidebar{position:static;display:block;order:-1;}
-  .tip-inner{grid-template-columns:1fr 200px;}
-}
-
-@media(max-width:640px){
-  .brand-header{font-size:24px;padding:24px 5vw 8px;}
-  .hero{padding:28px 20px;}
-  .hero h1{font-size:24px;}
-  .content-card{padding:26px 20px;}
-  .faq-section{padding:26px 20px;}
-  .arabic-section{padding:26px 20px;}
-  .tip-text{padding:24px 18px;}
-  .tip-inner{grid-template-columns:1fr;}
-  .tip-product{
-    border-left:none;border-top:1px solid var(--border);
-    flex-direction:row;align-items:center;
-    gap:14px;padding:18px 20px;
-  }
-  .tip-product img{width:80px;min-width:80px;aspect-ratio:1/1;border-radius:10px;}
-  .tip-product .p-desc{display:none;}
-  .cta-box{padding:24px 18px;}
-  .cta-box h3{font-size:18px;}
-}
-
-@media(max-width:480px){
-  .hero h1{font-size:24px;}
-  .products-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;}
-  .product-card{padding:18px;}
-  .product-card h2{font-size:17px;}
-  .crosslink-card{flex-direction:column;}
-  .crosslink-img-wrap{width:100%;min-width:unset;height:160px;}
-}
 </style>
 <script defer="" src="/assets/js/tracking.js"></script>
-</head>
+<script defer="True" src="assets/js/shop-the-look.js"></script><link href="assets/css/components.css" rel="stylesheet"/></head>
 <body>
 <nav style="background:#fff;padding:16px 6vw;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:sticky;top:0;z-index:100;">
 <a href="/" style="font-size:20px;font-weight:800;letter-spacing:1px;color:#111;text-decoration:none;">ElevateLivingCo</a>
@@ -1125,68 +998,61 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 </div><!-- end article-col -->
 <!-- SIDEBAR: Quiz -->
 <div class="sidebar">
-<div class="quiz-card" id="quizWidget">
-<div class="qz-progress-wrap">
-<div class="qz-progress-bar" id="qzProgress" style="width:0%"></div>
+<section aria-label="Shop the Look Featured Products" class="shop-the-look" id="stl-barcarts">
+<script class="shop-look-data" type="application/json">[{"name": "Furinno 3-Tier Rolling Bar Cart", "category": "BAR CART", "desc": "Compact multi-tier mobility for apartment cocktail corners.", "img": "https://m.media-amazon.com/images/I/81x1R0+fB4L._AC_SL1500_.jpg", "alt": "Furinno 3-Tier Rolling Bar Cart", "href": "https://www.amazon.com/dp/B004ZGB88G?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B004ZGB88G?tag=elevateliv05f-20', 'furinno-bar-cart');"}, {"name": "Godinger Whiskey Decanter & Glass Set", "category": "GLASSWARE", "desc": "Cut glass decanter set for classic entertaining elegance.", "img": "https://m.media-amazon.com/images/I/81hG8Q5Cg+L._AC_SL1500_.jpg", "alt": "Godinger Whiskey Decanter & Glass Set", "href": "https://www.amazon.com/dp/B01LX0OHL4?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B01LX0OHL4?tag=elevateliv05f-20', 'godinger-decanter');"}, {"name": "Vintage Brass Serving Tray", "category": "ACCESSORIES", "desc": "Mirrored brass tray to group bottles and catch ambient light.", "img": "https://m.media-amazon.com/images/I/71Q2-3a8WLL._AC_SL1500_.jpg", "alt": "Vintage Brass Serving Tray", "href": "https://www.amazon.com/dp/B09XX7T5R8?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B09XX7T5R8?tag=elevateliv05f-20', 'brass-tray');"}, {"name": "Gold Cocktail Shaker Set", "category": "BARWARE", "desc": "Brushed metallic shaker set that adds warmth to shelf styling.", "img": "https://m.media-amazon.com/images/I/71K0M7Z8+WL._AC_SL1500_.jpg", "alt": "Gold Cocktail Shaker Set", "href": "https://www.amazon.com/dp/B07V5PZ942?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B07V5PZ942?tag=elevateliv05f-20', 'gold-shaker');"}]</script>
+<div class="shop-look-header">
+<span class="shop-look-eyebrow">SHOP THE LOOK</span>
+<h3 class="shop-look-heading">Featured Pick</h3>
+<p class="shop-look-subtitle">Curated for this article</p>
 </div>
-<div class="qz-step" id="step1">
-<div class="qz-label">STYLE QUIZ · 3 QUICK QUESTIONS</div>
-<div class="qz-title">What's your room vibe?</div>
-<div class="qz-subtitle">Pick the image that feels most like your dream space</div>
-<div class="qz-img-grid">
-<div class="qz-img-choice" id="vibe-neo" onclick="pickVibe('neo')">
-<img alt="Neo Deco Glam" height="600" loading="lazy" src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" width="800"/>
-<div class="qz-img-label">Glam &amp; Luxe</div>
+<div class="shop-look-card">
+<div class="shop-look-img-container">
+<img alt="Furinno 3-Tier Rolling Bar Cart" class="stl-featured-img" decoding="async" loading="lazy" src="https://m.media-amazon.com/images/I/81x1R0+fB4L._AC_SL1500_.jpg"/>
 </div>
-<div class="qz-img-choice" id="vibe-minimal" onclick="pickVibe('minimal')">
-<img alt="Clean Minimal" height="600" loading="lazy" src="https://m.media-amazon.com/images/I/71icnhGgPVL._AC_SL1200_.jpg" width="800"/>
-<div class="qz-img-label">Clean &amp; Minimal</div>
+<div class="shop-look-body">
+<span class="stl-featured-category shop-look-category">BAR CART</span>
+<h4 class="stl-featured-title shop-look-title">Furinno 3-Tier Rolling Bar Cart</h4>
+<p class="stl-featured-desc shop-look-desc">Compact multi-tier mobility for apartment cocktail corners.</p>
 </div>
+<div aria-label="Select product pick" class="shop-look-selector" role="tablist">
+<button aria-label="Furinno 3-Tier Rolling Bar Cart" aria-selected="true" class="stl-thumb-btn active" onclick="switchShopLookProduct('stl-barcarts', 0)" role="tab">
+<img alt="Furinno 3-Tier Rolling Bar Cart" src="https://m.media-amazon.com/images/I/81x1R0+fB4L._AC_SL1500_.jpg"/>
+</button>
+<button aria-label="Godinger Whiskey Decanter &amp; Glass Set" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-barcarts', 1)" role="tab">
+<img alt="Godinger Whiskey Decanter &amp; Glass Set" src="https://m.media-amazon.com/images/I/81hG8Q5Cg+L._AC_SL1500_.jpg"/>
+</button>
+<button aria-label="Vintage Brass Serving Tray" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-barcarts', 2)" role="tab">
+<img alt="Vintage Brass Serving Tray" src="https://m.media-amazon.com/images/I/71Q2-3a8WLL._AC_SL1500_.jpg"/>
+</button>
+<button aria-label="Gold Cocktail Shaker Set" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-barcarts', 3)" role="tab">
+<img alt="Gold Cocktail Shaker Set" src="https://m.media-amazon.com/images/I/71K0M7Z8+WL._AC_SL1500_.jpg"/>
+</button>
 </div>
+<a class="stl-featured-cta shop-look-cta" href="https://www.amazon.com/dp/B004ZGB88G?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B004ZGB88G?tag=elevateliv05f-20', 'furinno-bar-cart');" rel="sponsored nofollow" target="_blank">
+      View on Amazon →
+    </a>
+<p class="shop-look-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
 </div>
-<div class="qz-step hidden" id="step2">
-<div class="qz-label">STEP 2 OF 3</div>
-<div class="qz-title">What's your #1 priority?</div>
-<div class="qz-subtitle">What do you most want to improve?</div>
-<div class="qz-pill-grid">
-<div class="qz-pill" onclick="pickPriority('statement')">✨ A Statement Piece</div>
-<div class="qz-pill" onclick="pickPriority('space')">🪞 More Space &amp; Light</div>
-<div class="qz-pill" onclick="pickPriority('entertain')">🥂 Entertaining Style</div>
-<div class="qz-pill" onclick="pickPriority('cozy')">🛋️ Cosier Feel</div>
+<div class="shop-look-more">
+<div class="shop-look-more-title">More Picks for This Look</div>
+<div class="shop-look-mini-list">
+<a class="stl-mini-card" href="https://www.amazon.com/dp/B00F31K61U?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B00F31K61U?tag=elevateliv05f-20', 'rocks-glasses');" rel="sponsored nofollow" target="_blank">
+<img alt="Heavy Base Rocks Glasses" src="https://m.media-amazon.com/images/I/81hG8Q5Cg+L._AC_SL1500_.jpg"/>
+<div class="stl-mini-info">
+<span class="stl-mini-name">Heavy Base Rocks Glasses (Set of 4)</span>
+<span class="stl-mini-cta">View on Amazon →</span>
 </div>
+</a>
+<a class="stl-mini-card" href="https://www.amazon.com/dp/B079DHSN5M?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B079DHSN5M?tag=elevateliv05f-20', 'ice-bucket');" rel="sponsored nofollow" target="_blank">
+<img alt="Double Wall Ice Bucket" src="https://m.media-amazon.com/images/I/71K0M7Z8+WL._AC_SL1500_.jpg"/>
+<div class="stl-mini-info">
+<span class="stl-mini-name">Double-Wall Ice Bucket &amp; Tongs</span>
+<span class="stl-mini-cta">View on Amazon →</span>
 </div>
-<div class="qz-step hidden" id="step3">
-<div class="qz-label">STEP 3 OF 3</div>
-<div class="qz-title">What's your budget?</div>
-<div class="qz-subtitle">For your next home upgrade</div>
-<div class="qz-pill-grid">
-<div class="qz-pill" onclick="pickBudget('low')">on a budget</div>
-<div class="qz-pill" onclick="pickBudget('mid')">–</div>
-<div class="qz-pill" onclick="pickBudget('high')">+ 💸</div>
-</div>
-</div>
-<div class="qz-step hidden" id="step4">
-<div class="qz-label">YOUR ROOM SCORE</div>
-<div class="qz-title">What do you already have?</div>
-<div class="qz-subtitle">Tick everything in your room right now</div>
-<div class="qz-checklist">
-<label class="qz-check-item"><input id="ck1" type="checkbox"/> <span>A statement bar cart</span></label>
-<label class="qz-check-item"><input id="ck2" type="checkbox"/> <span>Brass or gold accents</span></label>
-<label class="qz-check-item"><input id="ck3" type="checkbox"/> <span>Crystal or glass decor</span></label>
-<label class="qz-check-item"><input id="ck4" type="checkbox"/> <span>A statement mirror</span></label>
-<label class="qz-check-item"><input id="ck5" type="checkbox"/> <span>Layered lighting</span></label>
-</div>
-<button class="qz-next-btn" onclick="showResult()">See My Result →</button>
-</div>
-<div class="qz-step hidden" id="stepResult">
-<div class="qz-result-badge" id="qzStyleName"></div>
-<div class="qz-score-ring" id="qzScoreRing"></div>
-<div class="qz-score-label" id="qzScoreLabel"></div>
-<div class="qz-result-text" id="qzResultText"></div>
-<div class="qz-result-product" id="qzResultProduct"></div>
-<button class="qz-restart-btn" onclick="restartQuiz()">↺ Retake Quiz</button>
+</a>
 </div>
 </div>
+</section>
 </div>
 </div><!-- end page-layout -->
 <!-- ALL PRODUCTS -->
@@ -1337,197 +1203,6 @@ function trackAffiliate(url, label, page) {
   setTimeout(() => { window.open(url, '_blank'); }, 180);
 }
 
-// ── QUIZ LOGIC ──
-const quizState = {vibe:null, priority:null, budget:null};
-
-const bcProducts = {
-  vasagle:{
-    name:'VASAGLE Gold Bar Cart (ULRC090A03)',
-    price:'',
-    reason:'Amazon\'s best-seller — gold frame, mirrored shelves, . Currently 17% off with the Top Recommendation.',
-    img:'https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg',
-    url:'https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20',
-    label:'vasagle-gold-bar-cart'
-  },
-  bonAugureOak:{
-    name:'BON AUGURE Rustic Oak Bar Cart',
-    price:'',
-    reason:'Rich wood grain warmth with 3 tiers and wine rack — organic luxury for earthy interiors. 4.7 stars, .',
-    img:'https://m.media-amazon.com/images/I/71icnhGgPVL._AC_SX679_.jpg',
-    url:'https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20',
-    label:'bon-augure-rustic-oak'
-  },
-  ferfalder:{
-    name:'FERFALDER Chrome Bar Cart',
-    price:'',
-    reason:'Bold geometric chrome lines — the premium statement piece for dark glam interiors. 4.7 stars.',
-    img:'https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SL1500_.jpg',
-    url:'https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20',
-    label:'ferfalder-chrome-bar-cart'
-  },
-  mahancris:{
-    name:'MAHANCRIS Gold & White Bar Cart',
-    price:'',
-    reason:'Amazon\'s Choice — soft gold + white shelves, . Best value (-30%).',
-    img:'https://m.media-amazon.com/images/I/81nPy9WFr8L._AC_SL1500_.jpg',
-    url:'https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20',
-    label:'mahancris-gold-white'
-  },
-  ritesune:{
-    name:'RiteSune Round Black Mirror Bar Cart',
-    price:'',
-    reason:'Distinctive round frame + mirror shelves — Amazon\'s Choice. Under , .',
-    img:'https://m.media-amazon.com/images/I/6156uhzLnpL._AC_SX679_.jpg',
-    url:'https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20',
-    label:'ritesune-black-mirror'
-  },
-  bonAugureMarble:{
-    name:'BON AUGURE Gold & Marbleized White Bar Cart',
-    price:'',
-    reason:'The best butler cart with marble top 2026 — gold frame, marbleized white finish, 4.7 stars.',
-    img:'https://m.media-amazon.com/images/I/71+UNmASy8L._AC_SL1200_.jpg',
-    url:'https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl',
-    label:'bon-augure-marble-top'
-  }
-};
-
-const slrProducts = {
-  mirror:{
-    name:'Irregular Decorative Mirror',
-    price:'',
-    reason:'The #1 small space upgrade — reflects light and visually doubles your room instantly.',
-    img:'https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg',
-    url:'https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv05f-20',
-    label:'quiz-result-click',
-    isSLR:true
-  },
-  lamp:{
-    name:'Smart RGB Floor Lamp',
-    price:'',
-    reason:'Transform your room\'s mood instantly — 16M colors, app-controlled, zero installation.',
-    img:'https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg',
-    url:'https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv05f-20',
-    label:'quiz-result-click',
-    isSLR:true
-  },
-  shelves:{
-    name:'Floating Wall Shelves',
-    price:'',
-    reason:'Free up floor space and go vertical — the smartest storage upgrade for any room.',
-    img:'https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg',
-    url:'https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv05f-20',
-    label:'quiz-result-click',
-    isSLR:true
-  }
-};
-
-const styleNames = {
-  neo:{low:'Budget Neo Deco Stylist',mid:'Neo Deco Enthusiast',high:'Luxury Neo Deco Designer'},
-  minimal:{low:'Smart Minimalist',mid:'Elevated Minimalist',high:'Premium Minimalist'}
-};
-
-function setProgress(pct){
-  document.getElementById('qzProgress').style.width = pct+'%';
-}
-function showStep(id){
-  document.querySelectorAll('.qz-step').forEach(s => s.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-}
-function pickVibe(vibe){
-  quizState.vibe = vibe;
-  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
-  document.getElementById('vibe-'+vibe).classList.add('selected');
-  setTimeout(() => { setProgress(33); showStep('step2'); }, 300);
-}
-function pickPriority(p){
-  quizState.priority = p;
-  setProgress(66);
-  showStep('step3');
-}
-function pickBudget(b){
-  quizState.budget = b;
-  setProgress(85);
-  showStep('step4');
-}
-function showResult(){
-  const checks = ['ck1','ck2','ck3','ck4','ck5'];
-  const score = checks.filter(id => document.getElementById(id).checked).length;
-  let pick;
-  if(quizState.budget==='high'){
-    if(quizState.priority==='statement'||quizState.vibe==='neo') pick=bcProducts.bonAugureMarble;
-    else pick=bcProducts.ferfalder;
-  } else if(quizState.budget==='mid'){
-    if(quizState.vibe==='neo'&&quizState.priority==='statement') pick=bcProducts.vasagle;
-    else if(quizState.vibe==='minimal') pick=bcProducts.bonAugureOak;
-    else pick=bcProducts.ritesune;
-  } else {
-    if(quizState.priority==='space') pick=slrProducts.mirror;
-    else if(quizState.priority==='cozy') pick=slrProducts.lamp;
-    else pick=bcProducts.mahancris;
-  }
-  if(!pick) pick = bcProducts.vasagle;
-
-  let scoreLabel, scoreEmoji;
-  if(score<=1){scoreLabel='Start with the basics first';scoreEmoji='🌱';}
-  else if(score<=3){scoreLabel='Good foundation — ready to elevate';scoreEmoji='⚡';}
-  else{scoreLabel='Your space is already styled!';scoreEmoji='🏆';}
-
-  const styleName = styleNames[quizState.vibe]?.[quizState.budget]||'Home Decor Enthusiast';
-  document.getElementById('qzStyleName').textContent='✦ '+styleName+' ✦';
-  document.getElementById('qzScoreRing').textContent=scoreEmoji+' '+score+'/5';
-  document.getElementById('qzScoreLabel').textContent=scoreLabel;
-
-  const resultText = pick.isSLR
-    ? 'Before the statement piece — this small space upgrade will make your room ready for it:'
-    : 'Based on your style and budget, here\'s your perfect match:';
-  document.getElementById('qzResultText').textContent=resultText;
-
-  const extraBadge = pick.isSLR
-    ? `<div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c9a44a;margin-bottom:10px;">✦ From our Small Living Room Guide</div>`
-    : '';
-  const priceHtml = pick.price ? `<div class="qz-result-product-price">${pick.price}</div>` : '';
-
-  document.getElementById('qzResultProduct').innerHTML=`
-    <img src="${pick.img}" alt="${pick.name}" loading="lazy" width="800" height="600">
-    <div class="qz-result-product-info">
-      ${extraBadge}
-      <div class="qz-result-product-name">${pick.name}</div>
-      ${priceHtml}
-      <div class="qz-result-product-reason">${pick.reason}</div>
-      <a class="qz-result-product-btn" href="#"
-        onclick="trackAffiliate('${pick.url}','${pick.label}','bar-cart-article'); return false;">
-        View on Amazon →
-      </a>
-      ${pick.isSLR ? `
-        <a href="https://elevatelivingco.me/small-living-room-decor-ideas.html"
-          style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:600;">
-          See all 7 small room ideas →
-        </a>
-      ` : ''}
-    </div>
-  `;
-  setProgress(100);
-  showStep('stepResult');
-}
-function restartQuiz(){
-  quizState.vibe=null;quizState.priority=null;quizState.budget=null;
-  ['ck1','ck2','ck3','ck4','ck5'].forEach(id => document.getElementById(id).checked=false);
-  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
-  setProgress(0);
-  showStep('step1');
-}
-
-// ── SMOOTH ANCHOR SCROLL ──
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
-    const target = document.querySelector(this.getAttribute('href'));
-    if(!target) return;
-    e.preventDefault();
-    const offset = window.innerWidth <= 768 ? 60 : 20;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({top, behavior:'smooth'});
-  });
-});
 </script>
 </body>
 </html>

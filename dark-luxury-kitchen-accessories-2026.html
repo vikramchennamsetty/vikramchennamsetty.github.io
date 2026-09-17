@@ -1035,7 +1035,7 @@ body {
   </style>
 <script defer="" src="/assets/js/tracking.js">
 </script>
-</head>
+<script defer="True" src="assets/js/shop-the-look.js"></script><link href="assets/css/components.css" rel="stylesheet"/></head>
 <body>
 <nav style="background:#fff;padding:16px 6vw;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:sticky;top:0;z-index:100;">
 <a href="/" style="font-size:20px;font-weight:800;letter-spacing:1px;color:#111;text-decoration:none;">
@@ -2043,52 +2043,61 @@ body {
 <!-- end article-col -->
 <!-- SIDEBAR: Dark Kitchen Studio -->
 <div class="sidebar">
-<div class="studio-card" id="kitchenStudio">
-<div class="studio-header">
-<div class="studio-eyebrow">✦ Dark Kitchen Studio</div>
-<div class="studio-title">Find Your Kitchen Vibe</div>
-<div class="studio-sub">Pick your style — see the perfect picks for your look</div>
+<section aria-label="Shop the Look Featured Products" class="shop-the-look" id="stl-kitchen">
+<script class="shop-look-data" type="application/json">[{"name": "Matte Black Paper Towel Holder", "category": "HARDWARE", "desc": "Minimalist matte black countertop accent for moody kitchens.", "img": "https://m.media-amazon.com/images/I/61j13FzN1RL._AC_SL1500_.jpg", "alt": "Matte Black Paper Towel Holder", "href": "https://www.amazon.com/dp/B08XMW6Y8L?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B08XMW6Y8L?tag=elevateliv05f-20', 'paper-towel-holder');"}, {"name": "Dark Walnut Cutting Board", "category": "PREP & SERVE", "desc": "Rich organic wood grain that anchors stone and dark surfaces.", "img": "https://m.media-amazon.com/images/I/71zF7x3+0RL._AC_SL1500_.jpg", "alt": "Dark Walnut Cutting Board", "href": "https://www.amazon.com/dp/B01LW8L9I1?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B01LW8L9I1?tag=elevateliv05f-20', 'walnut-board');"}, {"name": "Brass & Glass Soap Dispenser Pair", "category": "SINK ACCENTS", "desc": "Amber glass dispenser set with warm brass pump detail.", "img": "https://m.media-amazon.com/images/I/71L491B33wL._AC_SL1500_.jpg", "alt": "Brass & Glass Soap Dispenser Pair", "href": "https://www.amazon.com/dp/B08M9J8W8L?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B08M9J8W8L?tag=elevateliv05f-20', 'soap-dispenser');"}, {"name": "Black Ceramic Knife Block Set", "category": "COUNTERTOP", "desc": "Monochromatic cutlery block that blends with dark backsplashes.", "img": "https://m.media-amazon.com/images/I/71Z19X-F91L._AC_SL1500_.jpg", "alt": "Black Ceramic Knife Block Set", "href": "https://www.amazon.com/dp/B07R1W837H?tag=elevateliv05f-20", "onclick": "trackAffiliate('https://www.amazon.com/dp/B07R1W837H?tag=elevateliv05f-20', 'knife-block');"}]</script>
+<div class="shop-look-header">
+<span class="shop-look-eyebrow">SHOP THE LOOK</span>
+<h3 class="shop-look-heading">Featured Pick</h3>
+<p class="shop-look-subtitle">Curated for this article</p>
 </div>
-<div class="vibe-tabs">
-<div class="vibe-tab active" onclick="setStudioVibe('warm',this)">
-<span class="vibe-tab-name">Warm Moody</span>
-<span class="vibe-tab-desc">Artisanal · Layered</span>
+<div class="shop-look-card">
+<div class="shop-look-img-container">
+<img alt="Matte Black Paper Towel Holder" class="stl-featured-img" decoding="async" loading="lazy" src="https://m.media-amazon.com/images/I/61j13FzN1RL._AC_SL1500_.jpg"/>
 </div>
-<div class="vibe-tab" onclick="setStudioVibe('cool',this)">
-<span class="vibe-tab-name">Cool Minimal</span>
-<span class="vibe-tab-desc">Sleek · Editorial</span>
+<div class="shop-look-body">
+<span class="stl-featured-category shop-look-category">HARDWARE</span>
+<h4 class="stl-featured-title shop-look-title">Matte Black Paper Towel Holder</h4>
+<p class="stl-featured-desc shop-look-desc">Minimalist matte black countertop accent for moody kitchens.</p>
 </div>
-<div class="vibe-tab" onclick="setStudioVibe('chef',this)">
-<span class="vibe-tab-name">Chef Style</span>
-<span class="vibe-tab-desc">Pro · Functional</span>
+<div aria-label="Select product pick" class="shop-look-selector" role="tablist">
+<button aria-label="Matte Black Paper Towel Holder" aria-selected="true" class="stl-thumb-btn active" onclick="switchShopLookProduct('stl-kitchen', 0)" role="tab">
+<img alt="Matte Black Paper Towel Holder" src="https://m.media-amazon.com/images/I/61j13FzN1RL._AC_SL1500_.jpg"/>
+</button>
+<button aria-label="Dark Walnut Cutting Board" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-kitchen', 1)" role="tab">
+<img alt="Dark Walnut Cutting Board" src="https://m.media-amazon.com/images/I/71zF7x3+0RL._AC_SL1500_.jpg"/>
+</button>
+<button aria-label="Brass &amp; Glass Soap Dispenser Pair" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-kitchen', 2)" role="tab">
+<img alt="Brass &amp; Glass Soap Dispenser Pair" src="https://m.media-amazon.com/images/I/71L491B33wL._AC_SL1500_.jpg"/>
+</button>
+<button aria-label="Black Ceramic Knife Block Set" aria-selected="false" class="stl-thumb-btn" onclick="switchShopLookProduct('stl-kitchen', 3)" role="tab">
+<img alt="Black Ceramic Knife Block Set" src="https://m.media-amazon.com/images/I/71Z19X-F91L._AC_SL1500_.jpg"/>
+</button>
 </div>
-<div class="vibe-tab" onclick="setStudioVibe('academia',this)">
-<span class="vibe-tab-name">Dark Academia</span>
-<span class="vibe-tab-desc">Dramatic · Rich</span>
+<a class="stl-featured-cta shop-look-cta" href="https://www.amazon.com/dp/B08XMW6Y8L?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B08XMW6Y8L?tag=elevateliv05f-20', 'paper-towel-holder');" rel="sponsored nofollow" target="_blank">
+      View on Amazon →
+    </a>
+<p class="shop-look-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+</div>
+<div class="shop-look-more">
+<div class="shop-look-more-title">More Picks for This Look</div>
+<div class="shop-look-mini-list">
+<a class="stl-mini-card" href="https://www.amazon.com/dp/B08K3S91LW?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B08K3S91LW?tag=elevateliv05f-20', 'fruit-bowl');" rel="sponsored nofollow" target="_blank">
+<img alt="Matte Black Wire Fruit Bowl" src="https://m.media-amazon.com/images/I/61j13FzN1RL._AC_SL1500_.jpg"/>
+<div class="stl-mini-info">
+<span class="stl-mini-name">Matte Black Wire Fruit Bowl</span>
+<span class="stl-mini-cta">View on Amazon →</span>
+</div>
+</a>
+<a class="stl-mini-card" href="https://www.amazon.com/dp/B07C82K76M?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B07C82K76M?tag=elevateliv05f-20', 'salt-cellar');" rel="sponsored nofollow" target="_blank">
+<img alt="Black Marble Salt Cellar" src="https://m.media-amazon.com/images/I/71zF7x3+0RL._AC_SL1500_.jpg"/>
+<div class="stl-mini-info">
+<span class="stl-mini-name">Black Marble Salt Cellar with Lid</span>
+<span class="stl-mini-cta">View on Amazon →</span>
+</div>
+</a>
 </div>
 </div>
-<div class="studio-recs" id="studioRecs">
-<!-- populated by JS -->
-</div>
-<div class="studio-tip-box" id="studioTip">
-<div class="studio-tip-text" id="studioTipText">Build your full setup below ↓</div>
-</div>
-<div style="padding:0 14px 16px;">
-<a href="#all-products" style="
-            display:block;
-            text-align:center;
-            background:linear-gradient(135deg,#c9a44a,#e8c97a);
-            color:#1a1a1a;
-            font-weight:700;
-            font-size:12px;
-            padding:10px 14px;
-            border-radius:20px;
-            text-decoration:none;
-          ">
-          View Matching Products →
-         </a>
-</div>
-</div>
+</section>
 </div>
 </div>
 <!-- end page-layout -->
