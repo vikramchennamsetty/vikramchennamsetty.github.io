@@ -231,10 +231,10 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
   font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--dark);
 }
-.tip-inner{display:grid;grid-template-columns:1fr 240px;}
+.tip-inner{display:grid;grid-template-columns:1fr 240px;align-items:start;}
 .tip-inner.full{grid-template-columns:1fr;}
 
-.tip-text{padding:36px 40px;}
+.tip-text{padding:36px 40px;align-self:start;}
 .tip-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
 .tip-num{
   display:flex;align-items:center;justify-content:center;
@@ -276,10 +276,11 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
   padding:28px 22px;
   display:flex;flex-direction:column;
   justify-content:center;gap:10px;
+  align-self:start;
 }
 .tip-product.marble-product{background:var(--marble);}
 .tip-product img{
-  width:100%;aspect-ratio:1/1;object-fit:cover;
+  width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
   border-radius:14px;
 }
 .tip-product .p-name{font-size:14px;font-weight:700;color:var(--dark);line-height:1.3;}
