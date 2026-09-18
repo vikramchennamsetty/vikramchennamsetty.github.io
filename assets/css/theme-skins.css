@@ -1,0 +1,154 @@
+/* 
+  ElevateLivingCo — Cluster Theme Skins System
+  Modular CSS Custom Properties & Visual Skins for Elevate Living Co. Clusters
+  Supported Clusters: quiet-luxury, dark-academia, small-space, patio-outdoor
+
+  STRICT SCOPING RULE:
+  All theme rules are strictly scoped inside [data-theme="..."] selectors.
+  Pages without a data-theme attribute remain 100% unaffected.
+*/
+
+/* -------------------------------------------------------------------------- */
+/* 1. QUIET LUXURY SKIN                                                        */
+/* -------------------------------------------------------------------------- */
+[data-theme="quiet-luxury"] {
+  --theme-bg: #F5F2ED;
+  --theme-surface: #FAF8F5;
+  --theme-surface-alt: #EFEBE4;
+  --theme-text: #1C1A17;
+  --theme-muted: #6B655C;
+  --theme-border: rgba(28, 26, 23, 0.12);
+  --theme-accent: #C9A44A;
+  --theme-accent-soft: rgba(201, 164, 74, 0.12);
+  --theme-heading: #141210;
+  --theme-link: #9A7218;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. DARK ACADEMIA SKIN                                                       */
+/* -------------------------------------------------------------------------- */
+[data-theme="dark-academia"] {
+  --theme-bg: #0D0D0D;
+  --theme-surface: #141414;
+  --theme-surface-alt: #1F1F1F;
+  --theme-text: #F4EFEA;
+  --theme-muted: #A8A095;
+  --theme-border: rgba(232, 201, 122, 0.2);
+  --theme-accent: #E8C97A;
+  --theme-accent-soft: rgba(232, 201, 122, 0.12);
+  --theme-heading: #FFFFFF;
+  --theme-link: #E8C97A;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. SMALL SPACE SKIN                                                         */
+/* -------------------------------------------------------------------------- */
+[data-theme="small-space"] {
+  --theme-bg: #F7F5F0;
+  --theme-surface: #FFFFFF;
+  --theme-surface-alt: #EFECE6;
+  --theme-text: #1F2224;
+  --theme-muted: #5C6266;
+  --theme-border: rgba(31, 34, 36, 0.12);
+  --theme-accent: #9A7218;
+  --theme-accent-soft: rgba(154, 114, 24, 0.1);
+  --theme-heading: #121415;
+  --theme-link: #825E10;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. PATIO OUTDOOR SKIN                                                       */
+/* -------------------------------------------------------------------------- */
+[data-theme="patio-outdoor"] {
+  --theme-bg: #ECE8E1;
+  --theme-surface: #F4F1EA;
+  --theme-surface-alt: #DFD9CE;
+  --theme-text: #222623;
+  --theme-muted: #5C635E;
+  --theme-border: rgba(34, 38, 35, 0.12);
+  --theme-accent: #C9A44A;
+  --theme-accent-soft: rgba(201, 164, 74, 0.12);
+  --theme-heading: #171A18;
+  --theme-link: #9A7218;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SCOPED COMPONENT OVERRIDES WHEN DATA-THEME IS PRESENT                      */
+/* -------------------------------------------------------------------------- */
+body[data-theme] {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme] .article-page {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+[data-theme] .article-body {
+  color: var(--theme-text);
+}
+
+[data-theme] .article-body h1,
+[data-theme] .article-body h2,
+[data-theme] .article-body h3,
+[data-theme] .article-body h4,
+[data-theme] .article-body h5,
+[data-theme] .article-body h6,
+[data-theme] .article-header .article-title {
+  color: var(--theme-heading);
+}
+
+[data-theme] .article-header .article-meta,
+[data-theme] .article-excerpt,
+[data-theme] .faq-item p,
+[data-theme] .affiliate-note {
+  color: var(--theme-muted);
+}
+
+[data-theme] .article-header .article-category {
+  color: var(--theme-accent);
+}
+
+[data-theme] .tip-box {
+  background: var(--theme-surface);
+  border-left-color: var(--theme-accent);
+  color: var(--theme-text);
+}
+
+[data-theme] .summary-section {
+  background: var(--theme-surface-alt);
+  color: var(--theme-text);
+  border: 1px solid var(--theme-border);
+}
+
+[data-theme] .summary-section h3 {
+  color: var(--theme-accent);
+}
+
+[data-theme] .article-toc {
+  background: var(--theme-surface);
+  border-color: var(--theme-border);
+}
+
+[data-theme] .article-toc a {
+  color: var(--theme-text);
+}
+
+[data-theme] .article-toc a:hover {
+  color: var(--theme-accent);
+}
+
+[data-theme] .faq-section {
+  background: var(--theme-surface);
+  border: 1px solid var(--theme-border);
+}
+
+[data-theme] .faq-item h4 {
+  color: var(--theme-heading);
+}
+
+[data-theme] a {
+  color: var(--theme-link);
+}
