@@ -9,14 +9,58 @@ window.ElevateLiving.config = window.ElevateLiving.config || {
   amazonTag: 'elevateliv05f-20'
 };
 
-window.ElevateLiving.trackAffiliate = function(label) {
+/**
+ * Standardized, backward-compatible affiliate tracking function.
+ * Accepts:
+ *  - trackAffiliate(label)
+ *  - trackAffiliate(url, label)
+ *  - trackAffiliate(url, label, category)
+ */
+window.ElevateLiving.trackAffiliate = function(arg1, arg2, arg3) {
+  var url = '';
+  var label = '';
+  var category = 'affiliate';
+
+  if (typeof arg1 === 'string' && arg1.trim() !== '') {
+    var str1 = arg1.trim();
+    if (str1.indexOf('http://') === 0 || str1.indexOf('https://') === 0) {
+      url = str1;
+      label = (typeof arg2 === 'string' && arg2.trim() !== '') ? arg2.trim() : str1;
+      category = (typeof arg3 === 'string' && arg3.trim() !== '') ? arg3.trim() : 'affiliate';
+    } else {
+      label = str1;
+      if (typeof arg2 === 'string' && arg2.trim() !== '') {
+        var str2 = arg2.trim();
+        if (str2.indexOf('http://') === 0 || str2.indexOf('https://') === 0) {
+          url = str2;
+          category = (typeof arg3 === 'string' && arg3.trim() !== '') ? arg3.trim() : 'affiliate';
+        } else {
+          category = str2;
+          url = (typeof arg3 === 'string' && arg3.trim().indexOf('http') === 0) ? arg3.trim() : '';
+        }
+      }
+    }
+  } else if (typeof arg2 === 'string' && arg2.trim() !== '') {
+    label = arg2.trim();
+  }
+
   if (typeof gtag === 'function') {
-    gtag('event', 'affiliate_click', {
-      event_category: 'affiliate',
-      event_label: label,
-      event_page: window.location.pathname,
+    var payload = {
+      event_category: category,
+      event_label: label || 'affiliate_click',
+      event_page: (window.location && window.location.pathname) ? window.location.pathname : '',
       transport_type: 'beacon'
-    });
+    };
+    if (url) {
+      payload.outbound_url = url;
+    }
+    gtag('event', 'affiliate_click', payload);
+  }
+};
+
+window.ElevateLiving.trackAffiliateClick = function(arg1, arg2, arg3) {
+  if (typeof window.ElevateLiving.trackAffiliate === 'function') {
+    window.ElevateLiving.trackAffiliate(arg1, arg2, arg3);
   }
 };
 
@@ -29,10 +73,18 @@ window.ElevateLiving.trackInternal = function(label, destination) {
   }
 };
 
-// Global helper fallback so legacy inline onclick="trackAffiliate('...')" never throws ReferenceError
-window.trackAffiliate = function(label) {
+// Global helper fallbacks so legacy inline onclick handlers never throw ReferenceError
+window.trackAffiliate = function(arg1, arg2, arg3) {
   if (window.ElevateLiving && typeof window.ElevateLiving.trackAffiliate === 'function') {
-    window.ElevateLiving.trackAffiliate(label);
+    return window.ElevateLiving.trackAffiliate(arg1, arg2, arg3);
+  }
+};
+
+window.trackAffiliateClick = function(arg1, arg2, arg3) {
+  if (window.ElevateLiving && typeof window.ElevateLiving.trackAffiliateClick === 'function') {
+    return window.ElevateLiving.trackAffiliateClick(arg1, arg2, arg3);
+  } else if (typeof window.trackAffiliate === 'function') {
+    return window.trackAffiliate(arg1, arg2, arg3);
   }
 };
 
