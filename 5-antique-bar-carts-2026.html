@@ -731,14 +731,40 @@ a:focus-visible, button:focus-visible, input:focus-visible {
         <p>Interior designers are turning to neo deco aesthetics — bold brass, sculptural silhouettes, rich textures — to bring warmth and personality back into modern spaces. The antique bar cart sits at the center of this revival, offering both functional storage and instant visual drama.</p>
         <p>The top custom bar cart brands and makers in 2026 — VASAGLE, FERFALDER, BON AUGURE, MAHANCRIS, and RiteSune — have all leaned into this trend, producing luxury bar trolleys from under $40 to $210. <a href="/best-waterproof-outdoor-rug-patio-under-50.html" style="color:#c9a44a;font-weight:700;">See this $50 patio setup →</a></p>
         
-        <!-- EDITORIAL SPECIMEN FEATURE PRESENTATION -->
-        <figure class="editorial-feature-card scroll-reveal" style="background:#1a1a1a;border-radius:16px;overflow:hidden;margin:28px 0;border:1px solid #2d261e;box-shadow:0 12px 36px rgba(0,0,0,0.18);">
-          <img src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" alt="Styled Neo Deco Gold Bar Cart with Mirrored Glass and Glassware" width="1500" height="1500" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;">
-          <figcaption style="padding:16px 20px;background:linear-gradient(180deg,#1a1a1a,#141414);border-top:1px solid #2a241d;">
-            <div style="font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#c9a44a;margin-bottom:4px;">NEO DECO REVIVAL · DESIGNER CURATION</div>
-            <p style="font-size:13px;color:#b3a89b;line-height:1.5;margin:0;">A gold alloy frame paired with mirrored glass shelves brings bold neo deco silhouettes, functional storage, and visual drama to modern living spaces.</p>
-          </figcaption>
-        </figure>
+        <!-- V4 LEVEL-5 3D INTERACTIVE SPECIMEN EXPERIENCE -->
+        <div id="v4-3d-experience-container" class="scroll-reveal" style="background:radial-gradient(circle at 65% 45%, rgba(201,164,74,0.14) 0%, rgba(20,18,15,0) 60%), linear-gradient(165deg, #24201c 0%, #1a1714 50%, #12100e 100%);border-radius:16px;overflow:hidden;margin:28px 0;border:1px solid #2d261e;box-shadow:0 16px 44px rgba(0,0,0,0.25);position:relative;min-height:480px;">
+          <!-- STATIC FALLBACK VISUAL (Default view & fallback for WebGL/Reduced Motion/Errors) -->
+          <figure id="v4-3d-static-fallback" style="margin:0;padding:0;width:100%;height:100%;display:block;">
+            <img src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" alt="Styled Neo Deco Gold Bar Cart with Mirrored Glass and Glassware" width="1500" height="1500" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;">
+            <figcaption style="padding:16px 20px;background:linear-gradient(180deg,#1a1a1a,#141414);border-top:1px solid #2a241d;">
+              <div style="font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#c9a44a;margin-bottom:4px;">NEO DECO REVIVAL · DESIGNER CURATION</div>
+              <p style="font-size:13px;color:#b3a89b;line-height:1.5;margin:0;">A gold alloy frame paired with mirrored glass shelves brings bold neo deco silhouettes, functional storage, and visual drama to modern living spaces.</p>
+            </figcaption>
+          </figure>
+          
+          <!-- INTERACTIVE 3D WEBGL CANVAS -->
+          <div id="v4-3d-canvas-wrap" style="position:absolute;top:0;left:0;width:100%;height:100%;display:none;opacity:0;transform:scale(0.96);transition:opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);touch-action:pan-y;"></div>
+          
+          <!-- EDITORIAL TEXT OVERLAY -->
+          <div id="v4-3d-text-overlay" style="position:absolute;top:28px;left:28px;z-index:5;max-width:260px;pointer-events:none;display:none;opacity:0;transition:opacity 0.6s ease;">
+            <div style="font-size:10.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#c9a44a;margin-bottom:6px;">INTERACTIVE 3D SPECIMEN</div>
+            <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:24px;line-height:1.2;margin:0 0 8px 0;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.6);">Explore the Form</h3>
+            <p style="font-size:13px;color:#b3a89b;line-height:1.5;margin:0;text-shadow:0 1px 4px rgba(0,0,0,0.7);">Rotate, zoom and inspect this neo deco bar trolley from every angle.</p>
+          </div>
+
+          <!-- MINIMAL CIRCULAR CONTROLS -->
+          <div id="v4-3d-controls-overlay" style="position:absolute;top:24px;right:24px;z-index:6;display:none;flex-direction:column;gap:8px;">
+            <button type="button" onclick="v43DControls.zoomIn()" aria-label="Zoom In" style="width:36px;height:36px;border-radius:50%;background:rgba(26,24,21,0.85);border:1px solid rgba(201,164,74,0.4);color:#e8c97a;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:0.2s;">+</button>
+            <button type="button" onclick="v43DControls.zoomOut()" aria-label="Zoom Out" style="width:36px;height:36px;border-radius:50%;background:rgba(26,24,21,0.85);border:1px solid rgba(201,164,74,0.4);color:#e8c97a;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:0.2s;">−</button>
+            <button type="button" onclick="v43DControls.resetView()" aria-label="Reset View" style="width:36px;height:36px;border-radius:50%;background:rgba(26,24,21,0.85);border:1px solid rgba(201,164,74,0.4);color:#e8c97a;font-size:14px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:0.2s;">⟲</button>
+            <button type="button" onclick="v43DControls.toggleFullscreen()" aria-label="Toggle Fullscreen" style="width:36px;height:36px;border-radius:50%;background:rgba(26,24,21,0.85);border:1px solid rgba(201,164,74,0.4);color:#e8c97a;font-size:13px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:0.2s;">⛶</button>
+          </div>
+
+          <!-- EDITORIAL HINT -->
+          <div id="v4-3d-hint-overlay" style="position:absolute;bottom:20px;left:28px;z-index:5;background:rgba(20,18,15,0.85);backdrop-filter:blur(6px);padding:5px 12px;border-radius:20px;border:1px solid rgba(201,164,74,0.35);font-size:11px;font-weight:600;color:#c9a44a;pointer-events:none;display:none;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+            <span>✦ Drag to rotate 360°</span>
+          </div>
+        </div>
         
         <div class="highlight-box">
           <p>💡 A well-styled bar cart can transform a bare corner into the most talked-about spot in your home — without a renovation.</p>
@@ -1554,13 +1580,310 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, observerOptions);
 
-  document.querySelectorAll('.content-card, .tip-block, .editorial-feature-card, .hero').forEach(el => {
+  document.querySelectorAll('.content-card, .tip-block, #v4-3d-experience-container, .hero').forEach(el => {
     if (!el.classList.contains('scroll-reveal')) {
       el.classList.add('scroll-reveal');
     }
     scrollObserver.observe(el);
   });
 });
+
+// ── V4 LEVEL-5 THREE.JS 3D SPECIMEN EXPERIENCE ──
+(function() {
+  let webglInitialized = false;
+  let isRendering = false;
+  let animationFrameId = null;
+  let scene, camera, renderer, controls, model, shadowMesh;
+
+  // Global Controls API for UI buttons
+  window.v43DControls = {
+    zoomIn: function() {
+      if (!camera || !controls) return;
+      const dir = new THREE.Vector3();
+      camera.getWorldDirection(dir);
+      camera.position.addScaledVector(dir, 0.35);
+      controls.update();
+    },
+    zoomOut: function() {
+      if (!camera || !controls) return;
+      const dir = new THREE.Vector3();
+      camera.getWorldDirection(dir);
+      camera.position.addScaledVector(dir, -0.35);
+      controls.update();
+    },
+    resetView: function() {
+      if (!camera || !controls || !model) return;
+      controls.reset();
+      controls.autoRotate = false;
+    },
+    toggleFullscreen: function() {
+      const container = document.getElementById('v4-3d-experience-container');
+      if (!container) return;
+      if (!document.fullscreenElement) {
+        if (container.requestFullscreen) container.requestFullscreen();
+        else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      }
+    }
+  };
+
+  function track3DEvent(eventName, label) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, {
+        event_category: '3d_experience',
+        event_label: label || 'v4_bar_cart_3d',
+        transport_type: 'beacon'
+      });
+    }
+  }
+
+  function isWebGLSupported() {
+    try {
+      const canvas = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  async function init3D() {
+    if (webglInitialized) return;
+    webglInitialized = true;
+
+    // Check reduced motion preference
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      track3DEvent('3d_fallback', 'reduced_motion');
+      return;
+    }
+
+    // Check WebGL availability
+    if (!isWebGLSupported()) {
+      track3DEvent('3d_fallback', 'webgl_unsupported');
+      return;
+    }
+
+    const container = document.getElementById('v4-3d-experience-container');
+    const canvasWrap = document.getElementById('v4-3d-canvas-wrap');
+    const staticFallback = document.getElementById('v4-3d-static-fallback');
+    const textOverlay = document.getElementById('v4-3d-text-overlay');
+    const controlsOverlay = document.getElementById('v4-3d-controls-overlay');
+    const hintOverlay = document.getElementById('v4-3d-hint-overlay');
+
+    if (!container || !canvasWrap) return;
+
+    const startTime = performance.now();
+
+    try {
+      // Lazy-load Three.js, GLTFLoader, and MeshoptDecoder asynchronously
+      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
+      await loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js');
+      await loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js');
+      await loadScript('https://cdn.jsdelivr.net/npm/meshoptimizer@0.18.1/meshopt_decoder.js');
+
+      await MeshoptDecoder.ready;
+
+      scene = new THREE.Scene();
+      // Transparent background so CSS warm architectural background gradient shows through
+      scene.background = null;
+
+      const width = canvasWrap.clientWidth || container.clientWidth || 360;
+      const height = canvasWrap.clientHeight || 480;
+
+      camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      renderer.setSize(width, height);
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2;
+      canvasWrap.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.enableZoom = true;
+      controls.enablePan = false;
+      controls.maxPolarAngle = Math.PI / 2 + 0.08;
+      controls.minPolarAngle = Math.PI / 6;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.7;
+
+      let hasInteracted = false;
+      controls.addEventListener('start', function() {
+        controls.autoRotate = false;
+        if (!hasInteracted) {
+          hasInteracted = true;
+          track3DEvent('3d_interaction', 'user_rotated');
+        }
+      });
+
+      // Enhanced Warm Editorial Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+      scene.add(ambientLight);
+
+      const hemiLight = new THREE.HemisphereLight(0xfff8ee, 0x2e241c, 0.7);
+      scene.add(hemiLight);
+
+      const keyLight = new THREE.DirectionalLight(0xfffaeb, 1.6);
+      keyLight.position.set(3, 5, 4);
+      scene.add(keyLight);
+
+      const fillLight = new THREE.DirectionalLight(0xc9a44a, 0.75);
+      fillLight.position.set(-3, 2, -3);
+      scene.add(fillLight);
+
+      const rimLight = new THREE.DirectionalLight(0xffeedd, 0.5);
+      rimLight.position.set(0, 3, -4);
+      scene.add(rimLight);
+
+      const loader = new THREE.GLTFLoader();
+      loader.setMeshoptDecoder(MeshoptDecoder);
+
+      loader.load('assets/models/Hi3D_bar_cart_v4_optimized.glb', function(gltf) {
+        model = gltf.scene;
+
+        // Bounding box & runtime centering math
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+
+        // Center model geometry around origin
+        model.position.x = -center.x;
+        model.position.y = -center.y;
+        model.position.z = -center.z;
+
+        const isDesktop = (window.innerWidth >= 768);
+        const targetXOffset = isDesktop ? (size.x * 0.16) : 0;
+        model.position.x += targetXOffset;
+
+        scene.add(model);
+
+        // Add soft ground shadow disc underneath model
+        const shadowCanvas = document.createElement('canvas');
+        shadowCanvas.width = 128; shadowCanvas.height = 128;
+        const sCtx = shadowCanvas.getContext('2d');
+        const grad = sCtx.createRadialGradient(64,64,0, 64,64,64);
+        grad.addColorStop(0, 'rgba(0,0,0,0.65)');
+        grad.addColorStop(0.5, 'rgba(0,0,0,0.25)');
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
+        sCtx.fillStyle = grad;
+        sCtx.fillRect(0,0,128,128);
+
+        const shadowTexture = new THREE.CanvasTexture(shadowCanvas);
+        const shadowGeo = new THREE.PlaneGeometry(size.x * 1.6, size.z * 1.6);
+        const shadowMat = new THREE.MeshBasicMaterial({ map: shadowTexture, transparent: true, opacity: 0.85, depthWrite: false });
+        shadowMesh = new THREE.Mesh(shadowGeo, shadowMat);
+        shadowMesh.rotation.x = -Math.PI / 2;
+        shadowMesh.position.set(targetXOffset, -size.y / 2 - 0.01, 0);
+        scene.add(shadowMesh);
+
+        // Intelligent Camera Distance Math: Frame model to fill ~55-70% visible height
+        const fovRad = (camera.fov * Math.PI) / 180;
+        let camDist = (size.y / (2 * Math.tan(fovRad / 2))) * 1.35;
+        if (!isDesktop) camDist *= 1.12;
+
+        camera.position.set(camDist * 0.75, size.y * 0.1, camDist * 0.95);
+        controls.target.set(targetXOffset, 0, 0);
+        controls.minDistance = camDist * 0.6;
+        controls.maxDistance = camDist * 1.65;
+        controls.saveState();
+        controls.update();
+
+        // Transition from fallback image to WebGL canvas & overlays
+        canvasWrap.style.display = 'block';
+        setTimeout(function() {
+          canvasWrap.style.opacity = '1';
+          canvasWrap.style.transform = 'scale(1)';
+          if (staticFallback) staticFallback.style.display = 'none';
+          if (textOverlay) { textOverlay.style.display = 'block'; setTimeout(() => textOverlay.style.opacity = '1', 100); }
+          if (controlsOverlay) controlsOverlay.style.display = 'flex';
+          if (hintOverlay) hintOverlay.style.display = 'inline-flex';
+        }, 50);
+
+        const loadDuration = (performance.now() - startTime).toFixed(0);
+        track3DEvent('3d_view', 'load_time_' + loadDuration + 'ms');
+
+        startRenderLoop();
+      }, undefined, function(err) {
+        console.warn('3D model load failed:', err);
+        track3DEvent('3d_fallback', 'model_load_error');
+      });
+
+      window.addEventListener('resize', function() {
+        if (!canvasWrap || !camera || !renderer || !model) return;
+        const w = canvasWrap.clientWidth || container.clientWidth || 360;
+        const h = canvasWrap.clientHeight || 480;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+
+        const isDesk = (w >= 768);
+        const box = new THREE.Box3().setFromObject(model);
+        const size = box.getSize(new THREE.Vector3());
+        const offsetX = isDesk ? (size.x * 0.16) : 0;
+        controls.target.set(offsetX, 0, 0);
+        if (shadowMesh) shadowMesh.position.x = offsetX;
+      });
+
+    } catch (e) {
+      console.warn('3D initialization failed:', e);
+      track3DEvent('3d_fallback', 'init_exception');
+    }
+  }
+
+  function startRenderLoop() {
+    if (isRendering) return;
+    isRendering = true;
+    function animate() {
+      if (!isRendering) return;
+      animationFrameId = requestAnimationFrame(animate);
+      if (controls) controls.update();
+      if (renderer && scene && camera) renderer.render(scene, camera);
+    }
+    animate();
+  }
+
+  function stopRenderLoop() {
+    isRendering = false;
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('v4-3d-experience-container');
+    if (!container) return;
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          if (!webglInitialized) {
+            init3D();
+          } else {
+            startRenderLoop();
+          }
+        } else {
+          stopRenderLoop();
+        }
+      });
+    }, { rootMargin: '200px 0px', threshold: 0.05 });
+
+    observer.observe(container);
+  });
+})();
 </script>
 </body>
 </html>
