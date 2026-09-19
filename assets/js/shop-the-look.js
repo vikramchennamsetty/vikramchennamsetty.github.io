@@ -1,10 +1,12 @@
 /**
- * ElevateLivingCo - Shop The Look Interactive Sidebar Component
- * Lightweight vanilla JS for cursor perspective tilt and zero-reload product switcher.
+ * ElevateLivingCo - Shop The Look & Featured Product State System (V4.3)
+ * Handles cursor perspective tilt, keyboard navigation, and explicit product state transitions:
+ * DEFAULT -> PREVIEW (hover/focus) -> LOCKED (click/tap) -> EXPLICIT RESET
  */
 document.addEventListener('DOMContentLoaded', function () {
   initShopLookTilt();
   initShopLookKeyboard();
+  initFeaturedProductStage();
 });
 
 // Cursor Perspective Tilt (Desktop only via hover query & reduced-motion check)
@@ -14,7 +16,7 @@ function initShopLookTilt() {
 
   if (isTouchOrReducedMotion) return;
 
-  const tiltCards = document.querySelectorAll('.shop-look-card, .shop-look-img-container');
+  const tiltCards = document.querySelectorAll('.shop-look-card, .shop-look-img-container, .featured-product-card');
   tiltCards.forEach(function (card) {
     let ticking = false;
     let mouseX = 0;
@@ -36,7 +38,7 @@ function initShopLookTilt() {
 
       if (!ticking) {
         window.requestAnimationFrame(function () {
-          card.style.transform = `perspective(1000px) rotateX(${mouseX.toFixed(2)}deg) rotateY(${mouseY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+          card.style.transform = `perspective(1000px) rotateX(${mouseX.toFixed(2)}deg) rotateY(${mouseY.toFixed(2)}deg) scale3d(1.012, 1.012, 1.012)`;
           ticking = false;
         });
         ticking = true;
@@ -57,8 +59,90 @@ function initShopLookTilt() {
   });
 }
 
-// Zero-Reload Product Switcher
-function switchShopLookProduct(containerId, index) {
+// Global state tracker per container
+const productStageState = {};
+
+function initFeaturedProductStage() {
+  const containers = document.querySelectorAll('.shop-look-container, .featured-product-stage');
+  containers.forEach(function (container) {
+    const id = container.id || 'stl-default';
+    productStageState[id] = {
+      lockedIndex: null, // null means DEFAULT (Product 0)
+      previewIndex: null
+    };
+
+    // Attach hover & click handlers to thumb buttons
+    const buttons = container.querySelectorAll('.stl-thumb-btn');
+    buttons.forEach(function (btn, index) {
+      btn.addEventListener('mouseenter', function () {
+        previewShopLookProduct(id, index);
+      });
+      btn.addEventListener('mouseleave', function () {
+        clearShopLookPreview(id);
+      });
+      btn.addEventListener('focus', function () {
+        previewShopLookProduct(id, index);
+      });
+      btn.addEventListener('blur', function () {
+        clearShopLookPreview(id);
+      });
+      btn.addEventListener('click', function () {
+        lockShopLookProduct(id, index);
+      });
+    });
+
+    // Reset button
+    const resetBtn = container.querySelector('.stl-reset-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        resetShopLookState(id);
+      });
+    }
+
+    // Set initial DEFAULT state
+    renderShopLookState(id, 0, 'DEFAULT');
+  });
+}
+
+function previewShopLookProduct(containerId, index) {
+  const state = productStageState[containerId];
+  if (!state) return;
+  state.previewIndex = index;
+  renderShopLookState(containerId, index, state.lockedIndex !== null ? 'LOCKED' : 'PREVIEW');
+}
+
+function clearShopLookPreview(containerId) {
+  const state = productStageState[containerId];
+  if (!state) return;
+  state.previewIndex = null;
+  const activeIndex = state.lockedIndex !== null ? state.lockedIndex : 0;
+  const stateMode = state.lockedIndex !== null ? 'LOCKED' : 'DEFAULT';
+  renderShopLookState(containerId, activeIndex, stateMode);
+}
+
+function lockShopLookProduct(containerId, index) {
+  const state = productStageState[containerId];
+  if (!state) return;
+
+  // Toggle lock if clicking the already locked product
+  if (state.lockedIndex === index) {
+    resetShopLookState(containerId);
+    return;
+  }
+
+  state.lockedIndex = index;
+  renderShopLookState(containerId, index, 'LOCKED');
+}
+
+function resetShopLookState(containerId) {
+  const state = productStageState[containerId];
+  if (!state) return;
+  state.lockedIndex = null;
+  state.previewIndex = null;
+  renderShopLookState(containerId, 0, 'DEFAULT');
+}
+
+function renderShopLookState(containerId, index, mode) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
@@ -81,7 +165,11 @@ function switchShopLookProduct(containerId, index) {
   const catEl = container.querySelector('.stl-featured-category');
   const titleEl = container.querySelector('.stl-featured-title');
   const descEl = container.querySelector('.stl-featured-desc');
+  const whyEl = container.querySelector('.stl-featured-why');
   const ctaEl = container.querySelector('.stl-featured-cta');
+  const badgeEl = container.querySelector('.stl-state-badge');
+  const resetBtn = container.querySelector('.stl-reset-btn');
+  const animContainer = container.querySelector('.stl-anim-overlay');
 
   if (imgEl && prod.img) {
     imgEl.src = prod.img;
@@ -90,6 +178,7 @@ function switchShopLookProduct(containerId, index) {
   if (catEl && prod.category) catEl.textContent = prod.category;
   if (titleEl && prod.name) titleEl.textContent = prod.name;
   if (descEl && prod.desc) descEl.textContent = prod.desc;
+  if (whyEl && prod.whyItWorks) whyEl.textContent = prod.whyItWorks;
 
   if (ctaEl && prod.href) {
     ctaEl.href = prod.href;
@@ -101,6 +190,21 @@ function switchShopLookProduct(containerId, index) {
     }
   }
 
+  // Update State Badge & Reset Button visibility
+  if (badgeEl) {
+    badgeEl.textContent = mode;
+    badgeEl.setAttribute('data-state', mode);
+  }
+  if (resetBtn) {
+    resetBtn.style.display = mode === 'LOCKED' ? 'inline-flex' : 'none';
+  }
+
+  // Update product-specific atmospheric visual class on stage
+  if (animContainer) {
+    animContainer.className = 'stl-anim-overlay ' + (prod.animClass || 'anim-default');
+  }
+
+  // Active thumb buttons styling & accessibility
   const buttons = container.querySelectorAll('.stl-thumb-btn');
   buttons.forEach(function (btn, idx) {
     if (idx === index) {
@@ -111,6 +215,11 @@ function switchShopLookProduct(containerId, index) {
       btn.setAttribute('aria-selected', 'false');
     }
   });
+}
+
+// Zero-Reload Product Switcher compatibility wrapper
+function switchShopLookProduct(containerId, index) {
+  lockShopLookProduct(containerId, index);
 }
 
 // Keyboard navigation for selector buttons

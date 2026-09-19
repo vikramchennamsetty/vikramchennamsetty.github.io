@@ -48,8 +48,6 @@
 <!-- PINTEREST -->
 <meta content="a85b3bf7cfc9a08b61ccf1c1fffd3a88" name="p:domain_verify"/>
 <meta content="true" name="pinterest-rich-pin"/>
-<!-- PRELOAD HERO IMAGE (LCP optimization) -->
-<link as="image" fetchpriority="high" href="https://m.media-amazon.com/images/I/71z7Y9iY4KL._AC_SL1500_.jpg" rel="preload"/>
 <!-- GOOGLE FONTS — reduced weights for performance -->
 <link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -239,7 +237,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 }
 </script>
 <!-- ============================================================
-     PRODUCT SCHEMA — all 5 affiliate products
+     PRODUCT SCHEMA — all 5 affiliate products (V4.3 ASIN Aligned)
      ============================================================ -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -258,13 +256,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       "@type": "ListItem",
       "position": 2,
       "name": "Airkeep Reed Diffuser Set",
-      "url": "https://www.amazon.com/Airkeep-Reed-Diffuser-Set-3-38/dp/B0CMQRVRFF"
+      "url": "https://www.amazon.com/dp/B0F2HVG2WH"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Foamily Throw Pillows Set of 4",
-      "url": "https://www.amazon.com/Utopia-Bedding-Decorative-Pillow-Insert/dp/B0714K41PB"
+      "name": "Foamily 18x18 Throw Pillow Inserts Set of 4",
+      "url": "https://www.amazon.com/dp/B071YDNHDD"
     },
     {
       "@type": "ListItem",
@@ -276,7 +274,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       "@type": "ListItem",
       "position": 5,
       "name": "ACHIM Cordless Light Filtering Mini Blinds",
-      "url": "https://www.amazon.com/Cordless-Light-Filtering-Mini-Window-Blind/dp/B00YXGG3AI"
+      "url": "https://www.amazon.com/dp/B07JPYMPQS"
     }
   ]
 }</script>
@@ -2059,6 +2057,251 @@ tbody td:first-child {
 ::-webkit-scrollbar-thumb:hover { background: rgba(184,149,98,0.45); }
 
 /* ============================================================
+   SPECIFICITY FIX & CTA CONTRAST GATE (V4.3)
+   ============================================================ */
+[data-theme] .btn-amazon,
+[data-theme] .btn-primary-cta,
+[data-theme] .p-btn,
+[data-theme] .btn,
+[data-theme] .cta-btn,
+[data-theme] .mini-product-btn,
+[data-theme] .stl-featured-cta {
+  color: #0D0D0D !important;
+  background-color: var(--gold) !important;
+}
+
+[data-theme] .btn-amazon:hover,
+[data-theme] .btn-primary-cta:hover,
+[data-theme] .p-btn:hover,
+[data-theme] .btn:hover,
+[data-theme] .cta-btn:hover,
+[data-theme] .mini-product-btn:hover,
+[data-theme] .stl-featured-cta:hover {
+  color: #0D0D0D !important;
+  background-color: var(--gold-light) !important;
+}
+
+/* ============================================================
+   FEATURED PRODUCT MASTER STAGE (V4.3)
+   ============================================================ */
+.featured-product-stage {
+  background: var(--bg-card);
+  border: 1px solid var(--divider-gold);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  margin: 48px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.stl-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.stl-state-badge {
+  font-family: var(--ff-cinzel);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(184,149,98,0.12);
+  color: var(--gold);
+  border: 1px solid var(--divider-gold);
+}
+
+.stl-state-badge[data-state="LOCKED"] {
+  background: var(--gold);
+  color: #0D0D0D;
+  font-weight: 600;
+}
+
+.stl-reset-btn {
+  background: transparent;
+  border: 1px solid var(--divider-gold);
+  color: var(--gold);
+  font-family: var(--ff-cinzel);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+
+.stl-reset-btn:hover {
+  background: rgba(184,149,98,0.15);
+  color: var(--gold-light);
+}
+
+.stl-stage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.stl-featured-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  background: #181614;
+}
+
+.stl-featured-img {
+  width: 100%;
+  height: 360px;
+  aspect-ratio: 640 / 360;
+  object-fit: cover;
+  transition: opacity 0.4s var(--ease-luxury), transform 0.4s var(--ease-luxury);
+}
+
+.stl-anim-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.anim-lamp {
+  background: radial-gradient(circle at 50% 40%, rgba(232, 201, 122, 0.22) 0%, transparent 65%);
+}
+
+.anim-diffuser {
+  background: linear-gradient(180deg, rgba(232, 201, 122, 0.12) 0%, transparent 60%);
+}
+
+.anim-textile {
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
+}
+
+.anim-blackout {
+  background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, transparent 50%, rgba(0,0,0,0.4) 100%);
+}
+
+.anim-blinds {
+  background: repeating-linear-gradient(0deg, transparent, transparent 12px, rgba(232,201,122,0.05) 12px, rgba(232,201,122,0.05) 14px);
+}
+
+.stl-featured-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stl-featured-category {
+  font-family: var(--ff-cinzel);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.stl-featured-title {
+  font-family: var(--ff-display);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.stl-featured-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.stl-featured-why-box {
+  background: rgba(184,149,98,0.06);
+  border-left: 2px solid var(--gold);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 8px 0;
+}
+
+.stl-featured-why-title {
+  font-family: var(--ff-cinzel);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.stl-featured-why {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.stl-thumbs-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.stl-thumb-btn {
+  background: var(--bg-card-hover);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--t-fast);
+  min-height: 48px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.stl-thumb-btn:hover,
+.stl-thumb-btn:focus {
+  border-color: var(--divider-gold);
+  outline: none;
+}
+
+.stl-thumb-btn.active {
+  border-color: var(--gold);
+  background: rgba(184,149,98,0.1);
+}
+
+.stl-thumb-num {
+  font-family: var(--ff-display);
+  font-size: 14px;
+  color: var(--gold);
+  font-style: italic;
+}
+
+.stl-thumb-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .stl-stage-grid { grid-template-columns: 1fr; gap: 24px; }
+  .stl-featured-img { height: 260px; }
+  .featured-product-stage { padding: 24px 20px; }
+  .stl-thumbs-row { flex-wrap: nowrap; }
+}
+
+/* ============================================================
    SKIP LINK (accessibility)
    ============================================================ */
 .skip-link {
@@ -2451,11 +2694,11 @@ tbody td:first-child {
 <p>Scent is processed by the limbic system — the most ancient and emotionally responsive part of the brain. It bypasses rational thought entirely, encoding memory and atmosphere directly. This is why luxury hotels invest in signature scent programs as seriously as in visual design programs.</p>
 <p>The key insight: <strong>the most expensive-feeling scent profiles are clean rather than sweet or heavy</strong>. Fresh linen, cedar, sandalwood, and green tea signal premium hospitality consistently. Artificial fruit or dense floral notes signal the opposite.</p>
 <!-- Contextual product callout -->
-<a aria-label="View Airkeep Reed Diffuser on Amazon" class="product-inline-callout" href="https://www.amazon.com/dp/B0CTJGJL2T?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/Airkeep-Reed-Diffuser-Set-3-38/dp/B0CMQRVRFF?th=1&amp;linkCode=ll2&amp;tag=elevateliv05f-20','Airkeep Reed Diffuser inline')" rel="nofollow sponsored" target="_blank">
-<img alt="Airkeep Reed Diffuser" class="pic-img" decoding="async" height="72" loading="lazy" src="https://m.media-amazon.com/images/I/71IZ+rdkUiL._AC_SL1500_.jpg" width="72"/>
+<a aria-label="View Airkeep Reed Diffuser on Amazon" class="product-inline-callout" href="https://www.amazon.com/dp/B0F2HVG2WH?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0F2HVG2WH?tag=elevateliv05f-20','Airkeep Reed Diffuser inline')" rel="nofollow sponsored" target="_blank">
+<img alt="Airkeep Reed Diffuser Set" class="pic-img" decoding="async" height="72" loading="lazy" src="https://m.media-amazon.com/images/I/81W2HRCjK9L._AC_SL1500_.jpg" width="72"/>
 <div class="pic-body">
 <div class="pic-label">Editor's Choice · Home Fragrance</div>
-<div class="pic-name">Airkeep Reed Diffuser</div>
+<div class="pic-name">Airkeep Reed Diffuser Set</div>
 <div class="pic-desc">Clean linen · 100ml · ~on Amazon</div>
 </div>
 <div aria-hidden="true" class="pic-arrow">→</div>
@@ -2543,6 +2786,119 @@ tbody td:first-child {
 <div class="affiliate-disclosure-banner" role="note">
 <strong>Disclosure:</strong> ElevateLivingCo participates in the Amazon Associates program. If you purchase through links on this page, we earn a small commission at no additional cost to you. All products are independently selected and personally tested by our editorial team. We are not paid to promote any specific brand.
       </div>
+
+<!-- MASTER FEATURED PRODUCT STAGE (V4.3 DEFAULT -> PREVIEW -> LOCKED -> RESET) -->
+<div class="featured-product-stage shop-look-container" id="stl-featured-master">
+  <script type="application/json" class="shop-look-data">
+  [
+    {
+      "name": "GODONLIF Candle Warmer Lamp",
+      "category": "Top Pick · Ambient Lighting",
+      "desc": "A dimmable candle warmer lamp providing focused warm amber illumination. Features adjustable brightness and a built-in cycle timer.",
+      "whyItWorks": "WHY IT WORKS: Pairs warm 2700K ambient illumination with a sculptural metal silhouette, providing focused side-table lighting while serving as a decorative accent during the day.",
+      "img": "https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg",
+      "alt": "GODONLIF Candle Warmer Lamp producing warm amber glow",
+      "href": "https://www.amazon.com/dp/B0CTJGJL2T?tag=elevateliv05f-20",
+      "onclick": "trackAffiliate('https://www.amazon.com/dp/B0CTJGJL2T?tag=elevateliv05f-20', 'GODONLIF Candle Warmer Lamp')",
+      "animClass": "anim-lamp"
+    },
+    {
+      "name": "Airkeep Reed Diffuser Set",
+      "category": "Editor's Choice · Scent & Atmosphere",
+      "desc": "A 100ml clean linen reed diffuser housed in a minimal glass vessel with 8 diffusion sticks.",
+      "whyItWorks": "WHY IT WORKS: Delivers a clean linen fragrance profile in a minimal glass vessel, introducing subtle atmospheric scent without relying on open flames.",
+      "img": "https://m.media-amazon.com/images/I/81W2HRCjK9L._AC_SL1500_.jpg",
+      "alt": "Airkeep Reed Diffuser Set clean linen scent",
+      "href": "https://www.amazon.com/dp/B0F2HVG2WH?tag=elevateliv05f-20",
+      "onclick": "trackAffiliate('https://www.amazon.com/dp/B0F2HVG2WH?tag=elevateliv05f-20', 'Airkeep Reed Diffuser Set')",
+      "animClass": "anim-diffuser"
+    },
+    {
+      "name": "Foamily 18x18 Throw Pillow Inserts (4 Pack)",
+      "category": "Texture & Softness",
+      "desc": "Four 18x18 inch down-alternative pillow inserts designed for decorative cushion covers.",
+      "whyItWorks": "WHY IT WORKS: Provides a resilient 18x18 loft foundation for decorative covers, allowing easy textile layering across sofas and reading chairs.",
+      "img": "https://m.media-amazon.com/images/I/813fAOa1f2L._AC_SX679_.jpg",
+      "alt": "Foamily 18x18 Throw Pillow Inserts 4 Pack",
+      "href": "https://www.amazon.com/dp/B071YDNHDD?tag=elevateliv05f-20",
+      "onclick": "trackAffiliate('https://www.amazon.com/dp/B071YDNHDD?tag=elevateliv05f-20', 'Foamily 18x18 Throw Pillow Inserts')",
+      "animClass": "anim-textile"
+    },
+    {
+      "name": "NICETOWN Black Blackout Curtains (2 Panels)",
+      "category": "Window Treatments · Bedroom",
+      "desc": "Thermal insulated blackout curtain panels designed to block external light when closed.",
+      "whyItWorks": "WHY IT WORKS: Hung high and wide around window frames, heavy blackout fabric creates vertical visual depth and controls daylight contrast in bedroom spaces.",
+      "img": "https://m.media-amazon.com/images/I/61SAVx3FYYS._AC_SL1500_.jpg",
+      "alt": "NICETOWN Thermal Insulated Blackout Curtains",
+      "href": "https://www.amazon.com/dp/B01CS31R94?tag=elevateliv05f-20",
+      "onclick": "trackAffiliate('https://www.amazon.com/dp/B01CS31R94?tag=elevateliv05f-20', 'NICETOWN Blackout Curtains')",
+      "animClass": "anim-blackout"
+    },
+    {
+      "name": "ACHIM Cordless Light Filtering Mini Blind",
+      "category": "Window Treatments · Living Room",
+      "desc": "Pearl white cordless mini blind in 38x64 inch size for soft diffused daylight filtering.",
+      "whyItWorks": "WHY IT WORKS: Diffuses direct natural daylight into soft ambient illumination while eliminating hanging cords for cleaner window lines.",
+      "img": "https://m.media-amazon.com/images/I/71vUglh+-wL._AC_SX679_.jpg",
+      "alt": "ACHIM Cordless Light Filtering Mini Blind",
+      "href": "https://www.amazon.com/dp/B07JPYMPQS?tag=elevateliv05f-20",
+      "onclick": "trackAffiliate('https://www.amazon.com/dp/B07JPYMPQS?tag=elevateliv05f-20', 'ACHIM Cordless Light Filtering Mini Blind')",
+      "animClass": "anim-blinds"
+    }
+  ]
+  </script>
+
+  <div class="stl-stage-header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="stl-state-badge" data-state="DEFAULT">DEFAULT</span>
+      <span style="font-size:12px;color:var(--text-muted);font-weight:300;">Hover to preview · Click/Tap to lock item</span>
+    </div>
+    <button class="stl-reset-btn" style="display:none;" type="button">Reset to Top Pick ↺</button>
+  </div>
+
+  <div class="stl-stage-grid">
+    <div class="stl-featured-media">
+      <img class="stl-featured-img" src="https://m.media-amazon.com/images/I/71ioZasMKmL._AC_SL1500_.jpg" alt="GODONLIF Candle Warmer Lamp" width="640" height="360" loading="eager" />
+      <div class="stl-anim-overlay anim-lamp" aria-hidden="true"></div>
+    </div>
+    <div class="stl-featured-info">
+      <div class="stl-featured-category">Top Pick · Ambient Lighting</div>
+      <h3 class="stl-featured-title">GODONLIF Candle Warmer Lamp</h3>
+      <p class="stl-featured-desc">A dimmable candle warmer lamp providing focused warm amber illumination. Features adjustable brightness and a built-in cycle timer.</p>
+      
+      <div class="stl-featured-why-box">
+        <div class="stl-featured-why-title">EDITORIAL RATIONALE</div>
+        <div class="stl-featured-why">WHY IT WORKS: Pairs warm 2700K ambient illumination with a sculptural metal silhouette, providing focused side-table lighting while serving as a decorative accent during the day.</div>
+      </div>
+
+      <a class="btn-amazon stl-featured-cta" href="https://www.amazon.com/dp/B0CTJGJL2T?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0CTJGJL2T?tag=elevateliv05f-20', 'GODONLIF Candle Warmer Lamp')" rel="sponsored nofollow" target="_blank" role="button">Check Price on Amazon →</a>
+    </div>
+  </div>
+
+  <div class="stl-thumbs-row" role="tablist" aria-label="Select active Dark Academia decor item">
+    <button class="stl-thumb-btn active" role="tab" aria-selected="true" type="button">
+      <span class="stl-thumb-num">01</span>
+      <span class="stl-thumb-label">Candle Lamp</span>
+    </button>
+    <button class="stl-thumb-btn" role="tab" aria-selected="false" type="button">
+      <span class="stl-thumb-num">02</span>
+      <span class="stl-thumb-label">Reed Diffuser</span>
+    </button>
+    <button class="stl-thumb-btn" role="tab" aria-selected="false" type="button">
+      <span class="stl-thumb-num">03</span>
+      <span class="stl-thumb-label">Pillow Inserts</span>
+    </button>
+    <button class="stl-thumb-btn" role="tab" aria-selected="false" type="button">
+      <span class="stl-thumb-num">04</span>
+      <span class="stl-thumb-label">Blackout Curtains</span>
+    </button>
+    <button class="stl-thumb-btn" role="tab" aria-selected="false" type="button">
+      <span class="stl-thumb-num">05</span>
+      <span class="stl-thumb-label">Mini Blinds</span>
+    </button>
+  </div>
+</div>
 <div class="product-grid">
 <!-- PRODUCT 1 -->
 <article class="product-card">
@@ -3156,11 +3512,12 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     if (target) {
       e.preventDefault();
       const offset = 72;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: top, behavior: 'smooth' });
     }
   });
 });
 </script>
+<!-- SHOP THE LOOK & FEATURED PRODUCT ENGINE -->
+<script src="assets/js/shop-the-look.js"></script>
 </body>
 </html>
