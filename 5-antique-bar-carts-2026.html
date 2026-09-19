@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="quiet-luxury">
 <head>
  
 <script type="text/javascript">
@@ -20,16 +20,14 @@
 </script>
 <script>
 function trackAffiliate(url, label, page) {
-  gtag('event', 'affiliate_click', {
-    event_category: 'affiliate',
-    event_label: label,
-    event_page: page,
-    transport_type: 'beacon'
-  });
-
-  setTimeout(() => {
-    window.open(url, '_blank');
-  }, 180);
+  if (typeof gtag === 'function') {
+    gtag('event', 'affiliate_click', {
+      event_category: 'affiliate',
+      event_label: label,
+      event_page: page,
+      transport_type: 'beacon'
+    });
+  }
 }
 </script>
 <meta charset="UTF-8">
@@ -124,6 +122,8 @@ function trackAffiliate(url, label, page) {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 *{box-sizing:border-box;margin:0;padding:0;}
 
 :root{
@@ -137,31 +137,70 @@ function trackAffiliate(url, label, page) {
   --cream:#f9f6f2;
   --marble:#f5f2ee;
   --bonus-gold:#b8960c;
+  --font-serif:'Playfair Display', Georgia, serif;
+  --font-prose:'Newsreader', Georgia, serif;
+  --font-sans:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
-body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--dark);line-height:1.65;}
+
+/* Accessibility Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 2.5D Scroll Story & Depth Transitions */
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0) scale(0.97);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
 
 /* ── BRAND HEADER ── */
 .brand-header{
+  font-family:var(--font-serif);
   font-size:32px;font-weight:700;
-  padding:36px 5vw 10px;letter-spacing:1px;
+  padding:36px 5vw 10px;letter-spacing:0.02em;
 }
 
 .wrapper{width:100%;padding:0 5vw 80px;}
 
-/* ── HERO ── */
+/* ── HERO (2.5D Cinematic Perspective Frame) ── */
 .hero{
   background:var(--white);border-radius:24px;
   padding:52px;box-shadow:0 20px 50px rgba(0,0,0,0.07);
-  margin-bottom:40px;
+  margin-bottom:40px;border:1px solid var(--border);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+.hero:hover {
+  box-shadow:0 30px 60px rgba(201,164,74,0.12);
 }
 .section-label{
+  font-family:var(--font-sans);
   font-size:12px;font-weight:600;
   letter-spacing:0.16em;text-transform:uppercase;
   color:var(--gold);margin-bottom:14px;
 }
-.hero h1{font-size:36px;line-height:1.2;margin-bottom:16px;}
-.hero .intro{font-size:17px;color:var(--muted);line-height:1.75;}
+.hero h1{font-family:var(--font-serif);font-size:36px;line-height:1.2;margin-bottom:16px;letter-spacing:-0.015em;}
+.hero .intro{font-family:var(--font-prose);font-size:18px;color:var(--muted);line-height:1.75;}
 
 /* ── LAYOUT ── */
 .page-layout{
@@ -249,12 +288,13 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
   border-radius:50%;font-weight:700;font-size:15px;
 }
 .tip-num.bonus-num{background:linear-gradient(135deg,#c9a44a,#e8c97a);color:var(--dark);}
-.tip-header h3{font-size:19px;line-height:1.25;}
-.tip-text p{font-size:15px;color:#444;line-height:1.8;margin-bottom:12px;}
+.tip-header h3{font-family:var(--font-serif);font-size:20px;line-height:1.25;letter-spacing:-0.01em;}
+.tip-text p{font-family:var(--font-prose);font-size:16.5px;color:#444;line-height:1.75;margin-bottom:12px;}
 .tip-text p:last-child{margin-bottom:0;}
 
 .tip-badges{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
 .tip-badge{
+  font-family:var(--font-sans);
   font-size:11.5px;font-weight:600;
   padding:4px 11px;border-radius:20px;
   border:1px solid var(--border);
@@ -288,19 +328,20 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
   width:100%;aspect-ratio:1/1;object-fit:cover;
   border-radius:14px;
 }
-.tip-product .p-name{font-size:14px;font-weight:700;color:var(--dark);line-height:1.3;}
+.tip-product .p-name{font-family:var(--font-sans);font-size:14px;font-weight:700;color:var(--dark);line-height:1.3;}
 .tip-product .p-price{font-size:16px;font-weight:800;color:var(--dark);}
 .tip-product .p-price .p-was{font-size:12px;color:#999;text-decoration:line-through;font-weight:400;margin-left:4px;}
 .tip-product .p-price .p-save{font-size:11px;font-weight:700;color:#c0392b;background:#fff0f0;padding:2px 7px;border-radius:20px;margin-left:4px;}
 .tip-product .p-stars{font-size:12px;color:#888;margin-top:-4px;}
-.tip-product .p-desc{font-size:12.5px;color:#777;line-height:1.55;flex-grow:1;}
+.tip-product .p-desc{font-family:var(--font-sans);font-size:12.5px;color:#777;line-height:1.55;flex-grow:1;}
 .tip-product .p-btn{
-   display:block;background:linear-gradient(135deg, #B8860B 0%, #8B6508 100%);color:var(--white);
+   display:inline-flex;align-items:center;justify-content:center;
+   background:linear-gradient(135deg, #c9a44a 0%, #b8960c 100%);color:var(--dark);
    text-decoration:none;text-align:center;
-   padding:10px 14px;border-radius:30px;
-   font-size:13px;font-weight:700;box-shadow:0 4px 15px rgba(184, 134, 11, 0.4);transition:0.25s;cursor:pointer;
+   padding:12px 18px;border-radius:30px;min-height:44px;
+   font-family:var(--font-sans);font-size:13.5px;font-weight:700;box-shadow:0 4px 15px rgba(184, 134, 11, 0.25);transition:0.25s;cursor:pointer;
 }
-.tip-product .p-btn:hover{background:var(--gold);color:var(--dark);}
+.tip-product .p-btn:hover{background:var(--dark);color:var(--white);}
 .tip-product .p-btn.gold-btn{background:linear-gradient(135deg,#c9a44a,#e8c97a);color:var(--dark);}
 .tip-product .p-btn.gold-btn:hover{background:var(--dark);color:var(--white);}
 
@@ -602,10 +643,25 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 .footer a{color:var(--gold);text-decoration:none;}
 .footer a:hover{text-decoration:underline;}
 
+/* Motion Ladder Level 2 Scroll Reveals & Accessibility Overrides */
+@media (prefers-reduced-motion: no-preference) {
+  .tip-block, .content-card, .product-card {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ══════════════════════════════
    RESPONSIVE
 ══════════════════════════════ */
-@media(max-width:980px){
+@media(max-width:1080px){
   .page-layout{grid-template-columns:1fr;}
   .sidebar{position:static;display:block;order:-1;}
   .tip-inner{grid-template-columns:1fr 200px;}
@@ -656,7 +712,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 <div class="wrapper">
 
   <!-- HERO -->
-  <div class="hero">
+  <div class="hero scroll-reveal active">
     <div class="section-label">Best Custom Bar Carts · Antique & Marble Top · Neo Deco 2026</div>
     <h1>5 Best Antique & Custom Bar Carts for 2026 — Neo Deco Luxury Picks</h1>
     <p class="intro">Bar carts used to be just a place to park bottles. Not anymore. The right cart — with brass legs, a marble shelf, or art deco curves — becomes the centerpiece of your living room or dining nook. We tested and ranked 5 that you can get on Amazon right now, from a $72 gold showstopper to a full marble-top stunner. Plus a bonus pick at the end that keeps selling out.</p>
@@ -669,11 +725,21 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
     <div class="article-col">
 
       <!-- INTRO -->
-      <div class="content-card">
+      <div class="content-card scroll-reveal">
         <h2>Why the Antique Bar Cart Is the #1 Interior Trend of 2026</h2>
         <p>If you've been scrolling Pinterest lately, you've noticed one thing showing up in every beautifully styled living room: an antique bar cart. And it's not just a trend — it's a design movement.</p>
         <p>Interior designers are turning to neo deco aesthetics — bold brass, sculptural silhouettes, rich textures — to bring warmth and personality back into modern spaces. The antique bar cart sits at the center of this revival, offering both functional storage and instant visual drama.</p>
         <p>The top custom bar cart brands and makers in 2026 — VASAGLE, FERFALDER, BON AUGURE, MAHANCRIS, and RiteSune — have all leaned into this trend, producing luxury bar trolleys from under $40 to $210. <a href="/best-waterproof-outdoor-rug-patio-under-50.html" style="color:#c9a44a;font-weight:700;">See this $50 patio setup →</a></p>
+        
+        <!-- EDITORIAL SPECIMEN FEATURE PRESENTATION -->
+        <figure class="editorial-feature-card scroll-reveal" style="background:#1a1a1a;border-radius:16px;overflow:hidden;margin:28px 0;border:1px solid #2d261e;box-shadow:0 12px 36px rgba(0,0,0,0.18);">
+          <img src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" alt="Styled Neo Deco Gold Bar Cart with Mirrored Glass and Glassware" width="1500" height="1500" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover;">
+          <figcaption style="padding:16px 20px;background:linear-gradient(180deg,#1a1a1a,#141414);border-top:1px solid #2a241d;">
+            <div style="font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#c9a44a;margin-bottom:4px;">NEO DECO REVIVAL · DESIGNER CURATION</div>
+            <p style="font-size:13px;color:#b3a89b;line-height:1.5;margin:0;">A gold alloy frame paired with mirrored glass shelves brings bold neo deco silhouettes, functional storage, and visual drama to modern living spaces.</p>
+          </figcaption>
+        </figure>
+        
         <div class="highlight-box">
           <p>💡 A well-styled bar cart can transform a bare corner into the most talked-about spot in your home — without a renovation.</p>
         </div>
@@ -712,12 +778,12 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Bar Cart ULRC090A03 with Mirrored Shelves" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Bar Cart ULRC090A03 with Mirrored Shelves" width="400" height="400" loading="eager">
             <div class="p-name">VASAGLE Gold Bar Cart (ULRC090A03)</div>
             <div class="p-price">$71.63 <span class="p-was">$86.00</span><span class="p-save">-17%</span></div>
             <div class="p-stars">⭐ 4.6 · 1,977 reviews · 100+ bought/month</div>
-            <div class="p-desc">Gold frame + 2 mirrored shelves + wine & glass holders — the neo deco showstopper.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article'); return false;">Check Price &amp; Availability on Amazon →</a>
+            <div class="p-desc">Gold frame + 2 mirrored shelves + wine &amp; glass holders — the neo deco showstopper.</div>
+            <a class="p-btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article');">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -748,12 +814,12 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="FERFALDER Chrome 3-Tier Bar Cart on wheels" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="FERFALDER Chrome 3-Tier Bar Cart on wheels" width="300" height="300" loading="lazy">
             <div class="p-name">FERFALDER Chrome 3-Tier Bar Cart</div>
             <div class="p-price">$209.99</div>
             <div class="p-stars">⭐ 4.7 · 157 reviews</div>
             <div class="p-desc">Polished chrome, 3 tiers on wheels — sculptural statement for modern interiors.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20','ferfalder-chrome-bar-cart','bar-cart-article'); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20','ferfalder-chrome-bar-cart','bar-cart-article');">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -787,12 +853,12 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/71icnhGgPVL._AC_SX679_.jpg" alt="BON AUGURE Rustic Oak Rolling Bar Cart with wine rack" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71icnhGgPVL._AC_SX679_.jpg" alt="BON AUGURE Rustic Oak Rolling Bar Cart with wine rack" width="679" height="679" loading="lazy">
             <div class="p-name">BON AUGURE Rustic Oak Bar Cart</div>
             <div class="p-price">$132.79 <span class="p-was">$139.99</span><span class="p-save">-5%</span></div>
             <div class="p-stars">⭐ 4.7 · 223 reviews · 50+ bought/month</div>
             <div class="p-desc">Rustic oak wood grain, 3 tiers, wine rack &amp; glass holder — warm organic style.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20','bon-augure-rustic-oak','bar-cart-article'); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20','bon-augure-rustic-oak','bar-cart-article');">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -826,12 +892,12 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/81nPy9WFr8L._AC_SL1500_.jpg" alt="MAHANCRIS Gold and White 3-Tier Bar Cart RCJM6101 with wine rack" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/81nPy9WFr8L._AC_SL1500_.jpg" alt="MAHANCRIS Gold and White 3-Tier Bar Cart RCJM6101 with wine rack" width="600" height="600" loading="lazy">
             <div class="p-name">MAHANCRIS Gold &amp; White Bar Cart (RCJM6101)</div>
             <div class="p-price">$39.99 <span class="p-was">$57.99</span><span class="p-save">-30%</span></div>
             <div class="p-stars">⭐ 4.3 · 547 reviews · 200+ bought/month</div>
             <div class="p-desc">Gold frame + white shelves + wine rack — soft glam, Amazon's Choice under $40.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20','mahancris-gold-white','bar-cart-article'); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20','mahancris-gold-white','bar-cart-article');">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -862,12 +928,12 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/6156uhzLnpL._AC_SX679_.jpg" alt="RiteSune Round Black Mirror Bar Cart with wine rack under $90" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/6156uhzLnpL._AC_SX679_.jpg" alt="RiteSune Round Black Mirror Bar Cart with wine rack under $90" width="679" height="679" loading="lazy">
             <div class="p-name">RiteSune Round Black Mirror Bar Cart</div>
             <div class="p-price">$89.99</div>
             <div class="p-stars">⭐ 4.6 · 682 reviews · Amazon's Choice</div>
             <div class="p-desc">Black round frame + 2 mirror shelves + wine rack + lockable casters.</div>
-            <a class="p-btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20','ritesune-black-mirror','bar-cart-article'); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20','ritesune-black-mirror','bar-cart-article');">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -901,12 +967,12 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
             </div>
           </div>
           <div class="tip-product marble-product">
-            <img src="https://m.media-amazon.com/images/I/71+UNmASy8L._AC_SL1200_.jpg" alt="Luxury Butler Cart with Marble Top and Gold Frame - Neo Deco Style" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71+UNmASy8L._AC_SL1200_.jpg" alt="Luxury Butler Cart with Marble Top and Gold Frame - Neo Deco Style" width="600" height="600" loading="lazy">
             <div class="p-name">BON AUGURE Gold &amp; Marbleized White Bar Cart</div>
             <div class="p-price">$159.99</div>
             <div class="p-stars">⭐ 4.7 · 223 reviews</div>
             <div class="p-desc">Gold frame + marbleized white finish + 3 tiers + wine rack — the ultimate butler cart with marble top.</div>
-            <a class="p-btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" onclick="trackAffiliate('https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl','bon-augure-marble-top','bar-cart-article'); return false;">Check Price &amp; Availability on Amazon →</a>
+            <a class="p-btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl','bon-augure-marble-top','bar-cart-article');">Check Price &amp; Availability on Amazon →</a>
           </div>
         </div>
       </div>
@@ -936,7 +1002,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>2</td>
                 <td>⭐ 4.6 (1,977)</td>
                 <td><strong>$71.63</strong> <span style="font-size:11px;color:#c0392b;">-17%</span></td>
-                <td><a href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article'); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article');">View →</a></td>
               </tr>
               <tr>
                 <td><strong>FERFALDER Chrome</strong></td>
@@ -945,7 +1011,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.7 (157)</td>
                 <td>$209.99</td>
-                <td><a href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20','ferfalder-chrome-bar-cart','bar-cart-article'); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20','ferfalder-chrome-bar-cart','bar-cart-article');">View →</a></td>
               </tr>
               <tr>
                 <td><strong>BON AUGURE Oak</strong></td>
@@ -954,7 +1020,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.7 (223)</td>
                 <td><strong>$132.79</strong> <span style="font-size:11px;color:#c0392b;">-5%</span></td>
-                <td><a href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20','bon-augure-rustic-oak','bar-cart-article'); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20','bon-augure-rustic-oak','bar-cart-article');">View →</a></td>
               </tr>
               <tr>
                 <td><strong>MAHANCRIS Gold &amp; White</strong> <span class="badge-budget">Best Under $40</span></td>
@@ -963,7 +1029,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.3 (547)</td>
                 <td><strong>$39.99</strong> <span style="font-size:11px;color:#c0392b;">-30%</span></td>
-                <td><a href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20','mahancris-gold-white','bar-cart-article'); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20','mahancris-gold-white','bar-cart-article');">View →</a></td>
               </tr>
               <tr>
                 <td><strong>RiteSune Round Black</strong></td>
@@ -972,7 +1038,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>2</td>
                 <td>⭐ 4.6 (682)</td>
                 <td>$89.99</td>
-                <td><a href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20','ritesune-black-mirror','bar-cart-article'); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20','ritesune-black-mirror','bar-cart-article');">View →</a></td>
               </tr>
               <tr class="bonus-row">
                 <td><strong>BON AUGURE Marble</strong> <span class="badge-bonus">✦ Bonus Marble Pick</span></td>
@@ -981,7 +1047,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
                 <td>3</td>
                 <td>⭐ 4.7 (223)</td>
                 <td>$159.99</td>
-                <td><a href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" onclick="trackAffiliate('https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl','bon-augure-marble-top','bar-cart-article'); return false;">View →</a></td>
+                <td><a href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl','bon-augure-marble-top','bar-cart-article');">View →</a></td>
               </tr>
             </tbody>
           </table>
@@ -1027,7 +1093,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         </div>
         <a href="https://elevatelivingco.me/best-waterproof-outdoor-rug-patio-under-50.html" class="crosslink-card" style="margin-top:16px;">
           <div class="crosslink-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg" alt="Best Waterproof Outdoor Rug 5x8 Under $50" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/91aFE242xmL._AC_SL1500_.jpg" alt="Best Waterproof Outdoor Rug 5x8 Under $50" width="300" height="300" loading="lazy">
           </div>
           <div class="crosslink-content">
             <div class="crosslink-label">New · Patio Entertaining</div>
@@ -1037,31 +1103,19 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
           </div>
         </a>
         <a href="https://elevatelivingco.me/how-to-style-a-round-coffee-table-like-a-designer-2026.html" class="crosslink-card" style="margin-top:16px;">
-         <div class="crosslink-img-wrap">
-           <img src="assets/images/formula_5_designer_editorial.png"
-                alt="How To Style A Round Coffee Table Like A Designer"
-                loading="lazy">
-         </div>
-       
-         <div class="crosslink-content">
-           <div class="crosslink-label">Designer Guide · Living Room</div>
-       
-           <div class="crosslink-title">
-             How To Style A Round Coffee Table Like A Designer (2026 Guide)
-           </div>
-       
-           <div class="crosslink-desc">
-             Discover the 5-element designer formula used in luxury apartments to create a professionally styled coffee table with books, greenery, sculptural decor, and ambient accents.
-           </div>
-       
-           <div class="crosslink-cta">
-             View the Styling Guide →
-           </div>
-         </div>
-       </a>
+          <div class="crosslink-img-wrap">
+            <img src="assets/images/formula_5_designer_editorial.png" alt="How To Style A Round Coffee Table Like A Designer" width="300" height="300" loading="lazy">
+          </div>
+          <div class="crosslink-content">
+            <div class="crosslink-label">Designer Guide · Living Room</div>
+            <div class="crosslink-title">How To Style A Round Coffee Table Like A Designer (2026 Guide)</div>
+            <div class="crosslink-desc">Discover the 5-element designer formula used in luxury apartments to create a professionally styled coffee table with books, greenery, sculptural decor, and ambient accents.</div>
+            <div class="crosslink-cta">View the Styling Guide →</div>
+          </div>
+        </a>
         <a href="https://elevatelivingco.me/dark-luxury-kitchen-accessories-2026.html" class="crosslink-card" style="margin-top:16px;">
           <div class="crosslink-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/810lOKDG09L._AC_SL1500_.jpg" alt="Dark Kitchen Accessories" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/810lOKDG09L._AC_SL1500_.jpg" alt="Dark Kitchen Accessories" width="300" height="300" loading="lazy">
           </div>
           <div class="crosslink-content">
             <div class="crosslink-label">Upgrade · Kitchen Style</div>
@@ -1071,9 +1125,9 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
           </div>
         </a>       
 
-        <a href="https://elevatelivingco.me/small-living-room-decor-ideas.html" class="crosslink-card">
+        <a href="https://elevatelivingco.me/small-living-room-decor-ideas.html" class="crosslink-card" style="margin-top:16px;">
           <div class="crosslink-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Small Living Room Decor Ideas" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Small Living Room Decor Ideas" width="300" height="300" loading="lazy">
           </div>
           <div class="crosslink-content">
             <div class="crosslink-label">Up Next · Small Space Decor</div>
@@ -1085,7 +1139,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
 
         <a href="https://elevatelivingco.me/7-dark-bookshelf-styling-ideas.html" class="crosslink-card" style="margin-top:16px;">
           <div class="crosslink-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SX679_.jpg" alt="Dark Bookshelf Styling Ideas" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/51jlss2O3DL._AC_SX679_.jpg" alt="Dark Bookshelf Styling Ideas" width="300" height="300" loading="lazy">
           </div>
           <div class="crosslink-content">
             <div class="crosslink-label">Up Next · Dark Decor</div>
@@ -1178,78 +1232,35 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <h2>عربات تقديم المشروبات الفاخرة لعام 2026</h2>
         <p>هل تبحث عن أفضل عربة تقديم أو عربة بار فاخرة لعام 2025 و2026؟ اخترنا لك أجمل 5 عربات بار بتصميمات آرت ديكو النيو وأسطح الرخام والإطارات الذهبية — متاحة على أمازون مع الشحن السريع.</p>
         <p>عربة VASAGLE الذهبية هي الأفضل تقييماً مع 1,977 مراجعة بسعر 71.63 دولار فقط (خصم 17%)، فيما تُعدّ عربة BON AUGURE بالطلاء الرخامي بسعر 159.99 دولار خيار العام الأول للمهتمين بالتصميم الداخلي الراقي.</p>
-        <a class="p-btn-ar" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article'); return false;">تسوق الآن على أمازون ←</a>
+        <a class="p-btn-ar" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article');">تسوق الآن على أمازون ←</a>
       </div>
 
     </div><!-- end article-col -->
 
-    <!-- SIDEBAR: Quiz -->
+    <!-- SIDEBAR: Shop The Look Curation -->
     <div class="sidebar">
-      <div class="quiz-card" id="quizWidget">
-        <div class="qz-progress-wrap">
-          <div class="qz-progress-bar" id="qzProgress" style="width:0%"></div>
+      <div class="stl-widget-card" id="shopTheLookWidget" style="background:#fff;border-radius:22px;padding:28px 24px;box-shadow:0 16px 44px rgba(0,0,0,0.06);border:1px solid #ede8e0;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#c9a44a;margin-bottom:6px;">SHOP THE LOOK · CURATED PAIRINGS</div>
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:20px;line-height:1.25;margin-bottom:8px;color:#1a1a1a;">Curated Bar Cart Styling</h3>
+        <p style="font-size:13.5px;color:#666;line-height:1.5;margin-bottom:16px;">Select a bar cart specimen to inspect companion styling details and direct Amazon purchase availability:</p>
+        
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px;">
+          <button type="button" onclick="selectStlProduct('vasagle')" class="stl-thumb-btn active" style="border:2px solid #c9a44a;border-radius:10px;padding:4px;background:#f9f6f2;cursor:pointer;min-height:44px;" aria-label="Select VASAGLE Gold Cart">
+            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Bar Cart" width="60" height="60" style="width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:6px;" loading="lazy">
+          </button>
+          <button type="button" onclick="selectStlProduct('ferfalder')" class="stl-thumb-btn" style="border:1px solid #ede8e0;border-radius:10px;padding:4px;background:#f9f6f2;cursor:pointer;min-height:44px;" aria-label="Select FERFALDER Chrome Cart">
+            <img src="https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SL1500_.jpg" alt="FERFALDER Chrome Bar Cart" width="60" height="60" style="width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:6px;" loading="lazy">
+          </button>
+          <button type="button" onclick="selectStlProduct('bonAugureMarble')" class="stl-thumb-btn" style="border:1px solid #ede8e0;border-radius:10px;padding:4px;background:#f9f6f2;cursor:pointer;min-height:44px;" aria-label="Select BON AUGURE Marble Cart">
+            <img src="https://m.media-amazon.com/images/I/71+UNmASy8L._AC_SL1200_.jpg" alt="BON AUGURE Marble Top Cart" width="60" height="60" style="width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:6px;" loading="lazy">
+          </button>
         </div>
 
-        <div class="qz-step" id="step1">
-          <div class="qz-label">STYLE QUIZ · 3 QUICK QUESTIONS</div>
-          <div class="qz-title">What's your room vibe?</div>
-          <div class="qz-subtitle">Pick the image that feels most like your dream space</div>
-          <div class="qz-img-grid">
-            <div class="qz-img-choice" onclick="pickVibe('neo')" id="vibe-neo">
-              <img src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" alt="Neo Deco Glam" loading="lazy">
-              <div class="qz-img-label">Glam &amp; Luxe</div>
-            </div>
-            <div class="qz-img-choice" onclick="pickVibe('minimal')" id="vibe-minimal">
-              <img src="https://m.media-amazon.com/images/I/71icnhGgPVL._AC_SL1200_.jpg" alt="Clean Minimal" loading="lazy">
-              <div class="qz-img-label">Clean &amp; Minimal</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="qz-step hidden" id="step2">
-          <div class="qz-label">STEP 2 OF 3</div>
-          <div class="qz-title">What's your #1 priority?</div>
-          <div class="qz-subtitle">What do you most want to improve?</div>
-          <div class="qz-pill-grid">
-            <div class="qz-pill" onclick="pickPriority('statement')">✨ A Statement Piece</div>
-            <div class="qz-pill" onclick="pickPriority('space')">🪞 More Space &amp; Light</div>
-            <div class="qz-pill" onclick="pickPriority('entertain')">🥂 Entertaining Style</div>
-            <div class="qz-pill" onclick="pickPriority('cozy')">🛋️ Cosier Feel</div>
-          </div>
-        </div>
-
-        <div class="qz-step hidden" id="step3">
-          <div class="qz-label">STEP 3 OF 3</div>
-          <div class="qz-title">What's your budget?</div>
-          <div class="qz-subtitle">For your next home upgrade</div>
-          <div class="qz-pill-grid">
-            <div class="qz-pill" onclick="pickBudget('low')">Under $50</div>
-            <div class="qz-pill" onclick="pickBudget('mid')">$50 – $150</div>
-            <div class="qz-pill" onclick="pickBudget('high')">$150+ 💸</div>
-          </div>
-        </div>
-
-        <div class="qz-step hidden" id="step4">
-          <div class="qz-label">YOUR ROOM SCORE</div>
-          <div class="qz-title">What do you already have?</div>
-          <div class="qz-subtitle">Tick everything in your room right now</div>
-          <div class="qz-checklist">
-            <label class="qz-check-item"><input type="checkbox" id="ck1"> <span>A statement bar cart</span></label>
-            <label class="qz-check-item"><input type="checkbox" id="ck2"> <span>Brass or gold accents</span></label>
-            <label class="qz-check-item"><input type="checkbox" id="ck3"> <span>Crystal or glass decor</span></label>
-            <label class="qz-check-item"><input type="checkbox" id="ck4"> <span>A statement mirror</span></label>
-            <label class="qz-check-item"><input type="checkbox" id="ck5"> <span>Layered lighting</span></label>
-          </div>
-          <button class="qz-next-btn" onclick="showResult()">See My Result →</button>
-        </div>
-
-        <div class="qz-step hidden" id="stepResult">
-          <div class="qz-result-badge" id="qzStyleName"></div>
-          <div class="qz-score-ring" id="qzScoreRing"></div>
-          <div class="qz-score-label" id="qzScoreLabel"></div>
-          <div class="qz-result-text" id="qzResultText"></div>
-          <div class="qz-result-product" id="qzResultProduct"></div>
-          <button class="qz-restart-btn" onclick="restartQuiz()">↺ Retake Quiz</button>
+        <div id="stlActiveDisplay" style="background:#f9f6f2;border-radius:14px;padding:16px;border:1px solid #ede8e0;">
+          <div id="stlActiveBadge" style="font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8a6a10;background:#fdf5e4;padding:3px 8px;border-radius:12px;display:inline-block;margin-bottom:8px;">Gold &amp; Mirrored Pick</div>
+          <div id="stlActiveTitle" style="font-weight:700;font-size:15px;color:#1a1a1a;margin-bottom:8px;">VASAGLE Gold Bar Cart (ULRC090A03)</div>
+          <p id="stlActiveDesc" style="font-size:13px;color:#555;line-height:1.5;margin-bottom:14px;">Gold alloy frame with tempered glass &amp; mirrored shelves, wine holders, and stemware racks.</p>
+          <a id="stlActiveCta" class="p-btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','shop-the-look-sidebar');" style="width:100%;text-align:center;display:inline-flex;align-items:center;justify-content:center;min-height:44px;background:linear-gradient(135deg,#c9a44a,#b8960c);color:#1a1a1a;border-radius:30px;font-weight:700;font-size:13.5px;text-decoration:none;">View on Amazon →</a>
         </div>
       </div>
     </div>
@@ -1264,9 +1275,9 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Bar Cart" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/51a+7MaOhhL._AC_.jpg" alt="VASAGLE Gold Bar Cart side view" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" alt="VASAGLE Gold Bar Cart styled" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Bar Cart" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/51a+7MaOhhL._AC_.jpg" alt="VASAGLE Gold Bar Cart side view" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" alt="VASAGLE Gold Bar Cart styled" width="300" height="300" loading="lazy">
           </div>
           <div class="dots"></div>
         </div>
@@ -1274,15 +1285,15 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$71.63 <span class="card-was">$86</span><span class="card-save">-17%</span></div>
         <div class="card-stars">⭐ 4.6 · 1,977 reviews · 100+ bought/month</div>
         <p>Gold frame + 2 mirrored shelves + wine &amp; glass holders. Big Spring Deal — best overall pick.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article'); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-gold-bar-cart','bar-cart-article');">View on Amazon →</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="FERFALDER Chrome Bar Cart" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/810jQBWOlPL._AC_SL1500_.jpg" alt="FERFALDER Chrome detail" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/81iQ5ojqAjL._AC_SL1500_.jpg" alt="FERFALDER Chrome styled" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/81H4Buf3oKL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="FERFALDER Chrome Bar Cart" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/810jQBWOlPL._AC_SL1500_.jpg" alt="FERFALDER Chrome detail" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/81iQ5ojqAjL._AC_SL1500_.jpg" alt="FERFALDER Chrome styled" width="300" height="300" loading="lazy">
           </div>
           <div class="dots"></div>
         </div>
@@ -1290,15 +1301,15 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$209.99</div>
         <div class="card-stars">⭐ 4.7 · 157 reviews</div>
         <p>Polished chrome, 3 tiers on wheels — bold sculptural statement, boutique hotel quality.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20','ferfalder-chrome-bar-cart','bar-cart-article'); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20','ferfalder-chrome-bar-cart','bar-cart-article');">View on Amazon →</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/71icnhGgPVL._AC_SX679_.jpg" alt="BON AUGURE Rustic Oak Bar Cart" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/71D7Lf7DyjL._AC_SL1200_.jpg" alt="BON AUGURE Rustic Oak detail" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/71gNVBCtAhL._AC_SL1200_.jpg" alt="BON AUGURE Rustic Oak styled" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71icnhGgPVL._AC_SX679_.jpg" alt="BON AUGURE Rustic Oak Bar Cart" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71D7Lf7DyjL._AC_SL1200_.jpg" alt="BON AUGURE Rustic Oak detail" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71gNVBCtAhL._AC_SL1200_.jpg" alt="BON AUGURE Rustic Oak styled" width="300" height="300" loading="lazy">
           </div>
           <div class="dots"></div>
         </div>
@@ -1306,15 +1317,15 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$132.79 <span class="card-was">$139.99</span><span class="card-save">-5%</span></div>
         <div class="card-stars">⭐ 4.7 · 223 reviews · 50+ bought/month</div>
         <p>Rich wood grain, 3 tiers, wine rack &amp; glass holder — warm organic style.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20','bon-augure-rustic-oak','bar-cart-article'); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZ489W7B?tag=elevateliv05f-20','bon-augure-rustic-oak','bar-cart-article');">View on Amazon →</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/81nPy9WFr8L._AC_SL1500_.jpg" alt="MAHANCRIS Gold White Bar Cart" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/719F+T+5OXL._AC_SL1500_.jpg" alt="MAHANCRIS Gold White Bar Cart detail" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/916L5wnyAaL._AC_SL1500_.jpg" alt="MAHANCRIS Gold White Bar Cart styled" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/81nPy9WFr8L._AC_SL1500_.jpg" alt="MAHANCRIS Gold White Bar Cart" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/719F+T+5OXL._AC_SL1500_.jpg" alt="MAHANCRIS Gold White Bar Cart detail" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/916L5wnyAaL._AC_SL1500_.jpg" alt="MAHANCRIS Gold White Bar Cart styled" width="300" height="300" loading="lazy">
           </div>
           <div class="dots"></div>
         </div>
@@ -1322,15 +1333,15 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$39.99 <span class="card-was">$57.99</span><span class="card-save">-30%</span></div>
         <div class="card-stars">⭐ 4.3 · 547 reviews · 200+ bought/month · Amazon's Choice</div>
         <p>Gold frame + white shelves + wine rack — soft glam, Amazon's Choice, best value pick.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20','mahancris-gold-white','bar-cart-article'); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0CN8MF87T?tag=elevateliv05f-20','mahancris-gold-white','bar-cart-article');">View on Amazon →</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/6156uhzLnpL._AC_SX679_.jpg" alt="RiteSune Round Black Mirror Bar Cart" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/71tdsNZg27L._AC_SL1500_.jpg" alt="RiteSune Round Black Bar Cart detail" loading="lazy">
-            <img src="https://m.media-amazon.com/images/I/71mW24ZJYBL._AC_SX679_.jpg" alt="RiteSune Round Black Bar Cart styled" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/6156uhzLnpL._AC_SX679_.jpg" alt="RiteSune Round Black Mirror Bar Cart" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71tdsNZg27L._AC_SL1500_.jpg" alt="RiteSune Round Black Bar Cart detail" width="300" height="300" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71mW24ZJYBL._AC_SX679_.jpg" alt="RiteSune Round Black Bar Cart styled" width="300" height="300" loading="lazy">
           </div>
           <div class="dots"></div>
         </div>
@@ -1338,14 +1349,14 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$89.99</div>
         <div class="card-stars">⭐ 4.6 · 682 reviews · Amazon's Choice</div>
         <p>Black round frame + 2 mirror shelves + wine rack + lockable casters — moody drama under $90.</p>
-        <a class="btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20','ritesune-black-mirror','bar-cart-article'); return false;">View on Amazon →</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0BZR9VH34?tag=elevateliv05f-20','ritesune-black-mirror','bar-cart-article');">View on Amazon →</a>
       </div>
 
       <div class="product-card bonus-card">
         <div class="bonus-tag">✦ Bonus Marble Pick</div>
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/71+UNmASy8L._AC_SL1200_.jpg" alt="BON AUGURE Gold Marbleized White Bar Cart" loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71+UNmASy8L._AC_SL1200_.jpg" alt="BON AUGURE Gold Marbleized White Bar Cart" width="300" height="300" loading="lazy">
           </div>
           <div class="dots"></div>
         </div>
@@ -1353,7 +1364,7 @@ body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--dark);}
         <div class="card-price">$159.99</div>
         <div class="card-stars">⭐ 4.7 · 223 reviews</div>
         <p>Gold frame + marbleized white finish + 3 tiers + wine rack — the best butler cart with marble top 2026.</p>
-        <a class="btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" onclick="trackAffiliate('https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl','bon-augure-marble-top','bar-cart-article'); return false;">View on Amazon →</a>
+        <a class="btn gold-btn" href="https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="sponsored nofollow" onclick="trackAffiliate('https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl','bon-augure-marble-top','bar-cart-article');">View on Amazon →</a>
       </div>
 
     </div>
@@ -1401,17 +1412,6 @@ function toggleFaq(el){
     answer.classList.add('open');
     el.classList.add('active');
   }
-}
-
-// ── CENTRALIZED AFFILIATE TRACKER ──
-function trackAffiliate(url, label, page) {
-  gtag('event', 'affiliate_click', {
-    event_category: 'affiliate',
-    event_label: label,
-    event_page: page,
-    transport_type: 'beacon'
-  });
-  setTimeout(() => { window.open(url, '_blank'); }, 180);
 }
 
 // ── QUIZ LOGIC ──
@@ -1498,111 +1498,67 @@ const slrProducts = {
   }
 };
 
-const styleNames = {
-  neo:{low:'Budget Neo Deco Stylist',mid:'Neo Deco Enthusiast',high:'Luxury Neo Deco Designer'},
-  minimal:{low:'Smart Minimalist',mid:'Elevated Minimalist',high:'Premium Minimalist'}
+// ── SHOP THE LOOK SIDEBAR SWITCHER ──
+const stlData = {
+  vasagle: {
+    badge: 'Gold & Mirrored Pick',
+    title: 'VASAGLE Gold Bar Cart (ULRC090A03)',
+    desc: 'Gold alloy frame with tempered glass & mirrored shelves, wine holders, and stemware racks.',
+    url: 'https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20',
+    label: 'vasagle-gold-bar-cart'
+  },
+  ferfalder: {
+    badge: 'Chrome Sculptural Pick',
+    title: 'FERFALDER Chrome 3-Tier Bar Cart',
+    desc: 'Bold geometric chrome lines with 3 tiers and locking wheels for modern interiors.',
+    url: 'https://www.amazon.com/dp/B0BC8SNJYG?tag=elevateliv05f-20',
+    label: 'ferfalder-chrome-bar-cart'
+  },
+  bonAugureMarble: {
+    badge: 'Marble Top Pick',
+    title: 'BON AUGURE Gold & Marbleized White Cart',
+    desc: 'Butler cart with marbleized top tier, gold frame, built-in wine rack, and glass holders.',
+    url: 'https://www.amazon.com/dp/B0FCFG2W47?linkCode=ll2&tag=elevateliv05f-20&linkId=a7fcb4d29ba66d49d7911d9cdc2fa0e0&language=en_US&ref_=as_li_ss_tl',
+    label: 'bon-augure-marble-top'
+  }
 };
 
-function setProgress(pct){
-  document.getElementById('qzProgress').style.width = pct+'%';
-}
-function showStep(id){
-  document.querySelectorAll('.qz-step').forEach(s => s.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-}
-function pickVibe(vibe){
-  quizState.vibe = vibe;
-  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
-  document.getElementById('vibe-'+vibe).classList.add('selected');
-  setTimeout(() => { setProgress(33); showStep('step2'); }, 300);
-}
-function pickPriority(p){
-  quizState.priority = p;
-  setProgress(66);
-  showStep('step3');
-}
-function pickBudget(b){
-  quizState.budget = b;
-  setProgress(85);
-  showStep('step4');
-}
-function showResult(){
-  const checks = ['ck1','ck2','ck3','ck4','ck5'];
-  const score = checks.filter(id => document.getElementById(id).checked).length;
-  let pick;
-  if(quizState.budget==='high'){
-    if(quizState.priority==='statement'||quizState.vibe==='neo') pick=bcProducts.bonAugureMarble;
-    else pick=bcProducts.ferfalder;
-  } else if(quizState.budget==='mid'){
-    if(quizState.vibe==='neo'&&quizState.priority==='statement') pick=bcProducts.vasagle;
-    else if(quizState.vibe==='minimal') pick=bcProducts.bonAugureOak;
-    else pick=bcProducts.ritesune;
-  } else {
-    if(quizState.priority==='space') pick=slrProducts.mirror;
-    else if(quizState.priority==='cozy') pick=slrProducts.lamp;
-    else pick=bcProducts.mahancris;
+function selectStlProduct(key) {
+  const item = stlData[key];
+  if (!item) return;
+  document.querySelectorAll('.stl-thumb-btn').forEach(btn => btn.style.border = '1px solid #ede8e0');
+  if (event && event.currentTarget) {
+    event.currentTarget.style.border = '2px solid #c9a44a';
   }
-  if(!pick) pick = bcProducts.vasagle;
-
-  let scoreLabel, scoreEmoji;
-  if(score<=1){scoreLabel='Start with the basics first';scoreEmoji='🌱';}
-  else if(score<=3){scoreLabel='Good foundation — ready to elevate';scoreEmoji='⚡';}
-  else{scoreLabel='Your space is already styled!';scoreEmoji='🏆';}
-
-  const styleName = styleNames[quizState.vibe]?.[quizState.budget]||'Home Decor Enthusiast';
-  document.getElementById('qzStyleName').textContent='✦ '+styleName+' ✦';
-  document.getElementById('qzScoreRing').textContent=scoreEmoji+' '+score+'/5';
-  document.getElementById('qzScoreLabel').textContent=scoreLabel;
-
-  const resultText = pick.isSLR
-    ? 'Before the statement piece — this small space upgrade will make your room ready for it:'
-    : 'Based on your style and budget, here\'s your perfect match:';
-  document.getElementById('qzResultText').textContent=resultText;
-
-  const extraBadge = pick.isSLR
-    ? `<div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c9a44a;margin-bottom:10px;">✦ From our Small Living Room Guide</div>`
-    : '';
-  const priceHtml = pick.price ? `<div class="qz-result-product-price">${pick.price}</div>` : '';
-
-  document.getElementById('qzResultProduct').innerHTML=`
-    <img src="${pick.img}" alt="${pick.name}" loading="lazy">
-    <div class="qz-result-product-info">
-      ${extraBadge}
-      <div class="qz-result-product-name">${pick.name}</div>
-      ${priceHtml}
-      <div class="qz-result-product-reason">${pick.reason}</div>
-      <a class="qz-result-product-btn" href="#"
-        onclick="trackAffiliate('${pick.url}','${pick.label}','bar-cart-article'); return false;">
-        View on Amazon →
-      </a>
-      ${pick.isSLR ? `
-        <a href="https://elevatelivingco.me/small-living-room-decor-ideas.html"
-          style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:600;">
-          See all 7 small room ideas →
-        </a>
-      ` : ''}
-    </div>
-  `;
-  setProgress(100);
-  showStep('stepResult');
-}
-function restartQuiz(){
-  quizState.vibe=null;quizState.priority=null;quizState.budget=null;
-  ['ck1','ck2','ck3','ck4','ck5'].forEach(id => document.getElementById(id).checked=false);
-  document.querySelectorAll('.qz-img-choice').forEach(el => el.classList.remove('selected'));
-  setProgress(0);
-  showStep('step1');
+  document.getElementById('stlActiveBadge').innerText = item.badge;
+  document.getElementById('stlActiveTitle').innerText = item.title;
+  document.getElementById('stlActiveDesc').innerText = item.desc;
+  const cta = document.getElementById('stlActiveCta');
+  cta.href = item.url;
+  cta.setAttribute('onclick', `trackAffiliate('${item.url}','${item.label}','shop-the-look-sidebar');`);
 }
 
-// ── SMOOTH ANCHOR SCROLL ──
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
-    const target = document.querySelector(this.getAttribute('href'));
-    if(!target) return;
-    e.preventDefault();
-    const offset = window.innerWidth <= 768 ? 60 : 20;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({top, behavior:'smooth'});
+// ── 2.5D SCROLL STORY INTERSECTION OBSERVER ──
+document.addEventListener('DOMContentLoaded', function() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.1
+  };
+  
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.content-card, .tip-block, .editorial-feature-card, .hero').forEach(el => {
+    if (!el.classList.contains('scroll-reveal')) {
+      el.classList.add('scroll-reveal');
+    }
+    scrollObserver.observe(el);
   });
 });
 </script>
