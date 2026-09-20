@@ -125,3 +125,47 @@ $$\text{VISUAL INSPIRATION} \rightarrow \text{EDITORIAL EXPLANATION} \rightarrow
 - [ ] Are all touch targets $\ge 44\times 44\text{px}$ with tap handlers for mobile?
 - [ ] Are images configured with explicit dimensions for 0 layout shift?
 - [ ] Are all generic AI intro phrases, repetitive summary boilerplate, fixed word-count quotas, and unsubstantiated viral claims completely removed?
+
+---
+
+## 5. Permanent Image Governance & Source Integrity Rules
+
+### IMAGE SOURCE INTEGRITY RULE
+NEVER invent, guess, infer, or silently substitute an image URL.
+If an article needs an image and no verified image is available:
+- DO NOT choose a random stock image.
+- DO NOT reuse another article's product image.
+- DO NOT fabricate an Amazon image URL.
+- DO NOT silently search for a replacement.
+- **ASK THE HUMAN FOR THE IMAGE.**
+
+**Required State:** `IMAGE_REQUIRED_HUMAN_INPUT`
+```
+Required image: [article/product]
+Reason: No verified image source is available.
+Action: Ask human for the correct image URL/file.
+```
+
+### ARTICLE IMAGE ISOLATION RULE
+An image verified for Article A must NOT automatically be assigned to Article B.
+Image identity must be associated with:
+$$\text{ARTICLE\_ID} + \text{ASIN / PRODUCT\_ID} + \text{IMAGE\_SOURCE} + \text{PROVENANCE} + \text{VERIFICATION\_STATE}$$
+Cross-article reuse requires explicit verification.
+
+### VERIFIED IMAGE RULE
+A supplied image URL is considered usable only after:
+1. URL resolves successfully via HTTP request (status code 200).
+2. Image loads successfully without rendering error.
+3. Image identity matches intended content.
+4. Image provenance is recorded.
+
+If any required verification fails: halt transition and assign `IMAGE_REQUIRED_HUMAN_INPUT`.
+
+### NO-IMAGE FALLBACK
+If no verified image exists:
+- STOP at the image dependency.
+- Do NOT manufacture a URL.
+- Do NOT select a random image.
+- Do NOT downgrade silently to unrelated imagery.
+- Ask the human for directives.
+

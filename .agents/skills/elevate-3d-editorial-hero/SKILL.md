@@ -72,6 +72,61 @@ if (prefersReducedMotion) {
     <span class="editorial-badge">CASE #001 INTERACTIVE</span>
     <h1 class="hero-title">Small-Apartment Entryway Organization Guide</h1>
     <p class="hero-subtitle">Explore spatial 3D placement for narrow foyers and flip-drawer shoe cabinets.</p>
-  </div>
-</section>
 ```
+
+## Permanent Skill Governance Rules
+
+### HERO COMPOSITION RULE
+Every new product-focused editorial article that uses the `elevate-3d-editorial-hero` system MUST create a coherent hero scene that visually combines the article's primary product categories into one designed environment:
+$$\text{ROOM / SPACE} + \text{PRIMARY PRODUCTS} + \text{SUPPORTING DECOR} + \text{ARTICLE'S VISUAL STYLE}$$
+- The hero must NOT be a collage of floating, rectangular product cards pasted onto a room.
+- The hero should visually communicate how the products work together inside the intended space.
+
+### 3D HERO RULE
+When an article is designated for immersive/3D spatial treatment:
+- Use procedural Three.js or equivalent non-GLB technique.
+- Preserve the static LCP fallback as the immediate initial render asset.
+- Execute progressive 3D spatial enhancement post-paint.
+- Full reduced-motion support (`@media (prefers-reduced-motion: reduce)`).
+- Touch-safe mobile interaction without hover traps.
+- Zero render-blocking 3D initialization.
+
+### IMAGE SOURCE INTEGRITY RULE
+NEVER invent, guess, infer, or silently substitute an image URL.
+If an article needs an image and no verified image is available:
+- DO NOT choose a random stock image.
+- DO NOT reuse another article's product image.
+- DO NOT fabricate an Amazon image URL.
+- DO NOT silently search for a replacement.
+- **ASK THE HUMAN FOR THE IMAGE.**
+
+**Required State:** `IMAGE_REQUIRED_HUMAN_INPUT`
+```
+Required image: [article/product]
+Reason: No verified image source is available.
+Action: Ask human for the correct image URL/file.
+```
+
+### ARTICLE IMAGE ISOLATION RULE
+An image verified for Article A must NOT automatically be assigned to Article B.
+Image identity must be associated with:
+$$\text{ARTICLE\_ID} + \text{ASIN / PRODUCT\_ID} + \text{IMAGE\_SOURCE} + \text{PROVENANCE} + \text{VERIFICATION\_STATE}$$
+Cross-article reuse requires explicit verification.
+
+### VERIFIED IMAGE RULE
+A supplied image URL is considered usable only after:
+1. URL resolves successfully via HTTP request.
+2. Image loads successfully without error.
+3. Image identity matches intended content.
+4. Image provenance is recorded.
+
+If any required verification fails: halt transition and assign `IMAGE_REQUIRED_HUMAN_INPUT`.
+
+### NO-IMAGE FALLBACK
+If no verified image exists:
+- STOP at the image dependency.
+- Do NOT manufacture a URL.
+- Do NOT select a random image.
+- Do NOT downgrade silently to unrelated imagery.
+- Ask the human for directives.
+
