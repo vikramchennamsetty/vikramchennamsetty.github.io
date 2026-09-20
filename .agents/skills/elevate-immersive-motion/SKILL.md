@@ -103,7 +103,46 @@ $$\text{Level 0 Static} \rightarrow \text{Level 1 Micro} \rightarrow \text{Level
 
 ---
 
+## 6. Permanent Image & Visual Performance Governance Rules (A through J)
+
+### Rule A — VERIFIED IMAGE SOURCE RULE
+NEVER invent, guess, infer, or fabricate image URLs under any circumstances. Every image URL in production MUST be verified via HTTP 200 check.
+
+### Rule B — HUMAN IMAGE ESCALATION RULE
+If a required image is unavailable or unverified in the catalog/evidence ledger:
+- Set state to `IMAGE_REQUIRED_HUMAN_INPUT`.
+- **STOP and ask the human for the image.** Do not silently search or select a random replacement.
+
+### Rule C — ARTICLE IMAGE ISOLATION
+An image verified for Article A must NOT automatically be assigned to Article B. Image identity is bound to:
+$$\text{ARTICLE\_ID} + \text{ASIN / PRODUCT\_ID} + \text{IMAGE\_SOURCE} + \text{PROVENANCE} + \text{VERIFICATION\_STATE}$$
+
+### Rule D — FULL IMAGE VISIBILITY RULE
+Editorial and internal article-card images MUST show the complete source composition. Default setting:
+$$\text{object-fit: contain;}$$
+
+### Rule E — NO AUTOMATIC CROP RULE
+Do NOT use `object-fit: cover` for editorial/article-card imagery unless the human explicitly requests visual cropping.
+
+### Rule F — RESPONSIVE MEDIA FRAME RULE
+Card media frames must preserve source aspect ratios while maintaining consistent visual dimensions (`aspect-ratio` or fixed height container with flex centering and subtle neutral background).
+
+### Rule G — IMAGE DELIVERY RULE
+Optimize image resolution and transfer size according to actual rendered container dimensions (e.g. using Amazon CDN `_AC_SL500_.jpg` variants when rendered card width is $\le 400\text{px}$) without degrading visual quality.
+
+### Rule H — PERFORMANCE RULE
+Image payload optimization must NEVER sacrifice complete visual composition or cause layout shifts ($0.00$ CLS).
+
+### Rule I — 3D HERO RULE
+Product-focused editorial heroes MUST be a single coherent interior environment ($\text{ROOM} + \text{PRODUCTS} + \text{DECOR}$). Product collages or floating rectangles are strictly prohibited.
+
+### Rule J — 3D LCP RULE
+The static hero image MUST render first as the LCP asset (`loading="eager"`, `fetchpriority="high"`). Three.js initializes asynchronously post-paint and MUST pause rendering loops using `IntersectionObserver` when the hero is outside the active viewport.
+
+---
+
 ## Related Skills
 - `elevate-design-intelligence`: Art direction thesis, creative direction brief, and 16 validation gates.
 - `elevate-3d-web-experience`: WebGL Three.js render loops and resource disposal.
 - `elevate-design-system`: Accessible split-text animation standards.
+

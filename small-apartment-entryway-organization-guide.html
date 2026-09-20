@@ -805,21 +805,29 @@
 
         .internal-link-card-img-wrapper {
           width: 100%;
-          height: 160px;
+          height: 200px;
+          aspect-ratio: 16 / 9;
           overflow: hidden;
           position: relative;
-          background: #eee;
+          background: rgba(245, 242, 237, 0.75);
+          border-bottom: 1px solid rgba(201, 164, 74, 0.15);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .internal-link-card-img-wrapper img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.3s ease;
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          object-position: center;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .internal-link-card:hover .internal-link-card-img-wrapper img {
-          transform: scale(1.05);
+          transform: scale(1.03);
         }
 
         .internal-link-card-body {
@@ -1356,7 +1364,7 @@
                        class="internal-link-card" 
                        onclick="ElevateLiving.trackInternalLink('internal_link_card', '/dark-academia-apartment-decor-2026.html')">
                         <div class="internal-link-card-img-wrapper">
-                            <img src="https://m.media-amazon.com/images/I/810vcJJDrkL._AC_SL1500_.jpg" alt="Dark Academia Apartment Decor" loading="lazy" width="300" height="200">
+                            <img src="https://m.media-amazon.com/images/I/810vcJJDrkL._AC_SL500_.jpg" alt="Dark Academia Apartment Decor" loading="lazy" decoding="async" width="300" height="200">
                         </div>
                         <div class="internal-link-card-body">
                             <span class="internal-link-card-badge">ATMOSPHERIC DECOR</span>
@@ -1369,7 +1377,7 @@
                        class="internal-link-card" 
                        onclick="ElevateLiving.trackInternalLink('internal_link_card', '/5-antique-bar-carts-2026.html')">
                         <div class="internal-link-card-img-wrapper">
-                            <img src="https://m.media-amazon.com/images/I/916L5wnyAaL._AC_SL1500_.jpg" alt="Compact Storage Solutions" loading="lazy" width="300" height="200">
+                            <img src="https://m.media-amazon.com/images/I/916L5wnyAaL._AC_SL500_.jpg" alt="Compact Storage Solutions" loading="lazy" decoding="async" width="300" height="200">
                         </div>
                         <div class="internal-link-card-body">
                             <span class="internal-link-card-badge">COMPACT STORAGE</span>
@@ -1382,7 +1390,7 @@
                        class="internal-link-card" 
                        onclick="ElevateLiving.trackInternalLink('internal_link_card', '/5-moody-entryway-ideas-luxury-on-budget.html')">
                         <div class="internal-link-card-img-wrapper">
-                            <img src="https://m.media-amazon.com/images/I/81YsUzeK4NL._AC_SL1500_.jpg" alt="5 Moody Entryway Ideas" loading="lazy" width="300" height="200">
+                            <img src="https://m.media-amazon.com/images/I/81YsUzeK4NL._AC_SL500_.jpg" alt="5 Moody Entryway Ideas" loading="lazy" decoding="async" width="300" height="200">
                         </div>
                         <div class="internal-link-card-body">
                             <span class="internal-link-card-badge">ENTRYWAY DESIGN</span>
@@ -1668,12 +1676,25 @@
           // Smoothly fade canvas active
           container.classList.add('active');
 
+          // IntersectionObserver viewport rendering governance (prevents TBT & main thread work when scrolled away)
+          let isHeroInViewport = true;
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                isHeroInViewport = entry.isIntersecting;
+              });
+            }, { threshold: 0.05 });
+            observer.observe(container);
+          }
+
           // Render loop
           if (prefersReducedMotion) {
             renderer.render(scene, camera);
           } else {
             function animate() {
               requestAnimationFrame(animate);
+              if (!isHeroInViewport) return;
+
               currentMouseX += (targetMouseX - currentMouseX) * 0.05;
               currentMouseY += (targetMouseY - currentMouseY) * 0.05;
 
@@ -1689,7 +1710,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
           ElevateLiving.initMobileNav();
-          setTimeout(initThreeJsHero, 350);
+          setTimeout(initThreeJsHero, 400);
         });
     </script>
 </body>

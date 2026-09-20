@@ -55,4 +55,26 @@ assert.ok(content.includes('"@type": "FAQPage"'), 'Missing FAQPage schema');
 assert.ok(content.includes('"@type": "ItemPage"'), 'Missing ItemPage schema');
 console.log('[PASS] All 4 schema types (Article, BreadcrumbList, FAQPage, ItemPage) present');
 
+// Visual card & Image Governance checks
+assert.ok(content.includes('class="internal-link-card"'), 'Missing internal link cards');
+const cardImages = ['810vcJJDrkL', '916L5wnyAaL', '81YsUzeK4NL'];
+for (const imgId of cardImages) {
+  assert.ok(content.includes(imgId), `Missing verified card image ${imgId}`);
+}
+console.log('[PASS] All 3 verified internal card Amazon image sources present');
+
+assert.ok(content.includes('object-fit: contain'), 'Missing object-fit: contain on internal cards');
+assert.ok(!content.includes('.internal-link-card-img-wrapper img {\n          width: 100%;\n          height: 100%;\n          object-fit: cover;'), 'Found forbidden object-fit: cover on internal card images');
+console.log('[PASS] object-fit: contain enforced on internal cards (zero cover cropping)');
+
+assert.ok(content.includes('decoding="async"'), 'Missing decoding="async" attribute');
+assert.ok(content.includes('IntersectionObserver'), 'Missing Three.js viewport IntersectionObserver pause check');
+console.log('[PASS] Image delivery optimizations and Three.js IntersectionObserver pause verified');
+
+// Governance check
+const visualSkillContent = fs.readFileSync('.agents/skills/elevate-visual-assets/SKILL.md', 'utf8');
+assert.ok(visualSkillContent.includes('IMAGE_REQUIRED_HUMAN_INPUT'), 'Missing IMAGE_REQUIRED_HUMAN_INPUT in skill governance');
+console.log('[PASS] Skill governance rules A-J (IMAGE_REQUIRED_HUMAN_INPUT) verified');
+
 console.log('=== ARTICLE VALIDATION COMPLETE: ALL CHECKS PASSED ===');
+

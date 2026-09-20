@@ -74,59 +74,38 @@ if (prefersReducedMotion) {
     <p class="hero-subtitle">Explore spatial 3D placement for narrow foyers and flip-drawer shoe cabinets.</p>
 ```
 
-## Permanent Skill Governance Rules
+## Permanent Image & Visual Performance Governance Rules (A through J)
 
-### HERO COMPOSITION RULE
-Every new product-focused editorial article that uses the `elevate-3d-editorial-hero` system MUST create a coherent hero scene that visually combines the article's primary product categories into one designed environment:
-$$\text{ROOM / SPACE} + \text{PRIMARY PRODUCTS} + \text{SUPPORTING DECOR} + \text{ARTICLE'S VISUAL STYLE}$$
-- The hero must NOT be a collage of floating, rectangular product cards pasted onto a room.
-- The hero should visually communicate how the products work together inside the intended space.
+### Rule A — VERIFIED IMAGE SOURCE RULE
+NEVER invent, guess, infer, or fabricate image URLs under any circumstances. Every image URL in production MUST be verified via HTTP 200 check.
 
-### 3D HERO RULE
-When an article is designated for immersive/3D spatial treatment:
-- Use procedural Three.js or equivalent non-GLB technique.
-- Preserve the static LCP fallback as the immediate initial render asset.
-- Execute progressive 3D spatial enhancement post-paint.
-- Full reduced-motion support (`@media (prefers-reduced-motion: reduce)`).
-- Touch-safe mobile interaction without hover traps.
-- Zero render-blocking 3D initialization.
+### Rule B — HUMAN IMAGE ESCALATION RULE
+If a required image is unavailable or unverified in the catalog/evidence ledger:
+- Set state to `IMAGE_REQUIRED_HUMAN_INPUT`.
+- **STOP and ask the human for the image.** Do not silently search or select a random replacement.
 
-### IMAGE SOURCE INTEGRITY RULE
-NEVER invent, guess, infer, or silently substitute an image URL.
-If an article needs an image and no verified image is available:
-- DO NOT choose a random stock image.
-- DO NOT reuse another article's product image.
-- DO NOT fabricate an Amazon image URL.
-- DO NOT silently search for a replacement.
-- **ASK THE HUMAN FOR THE IMAGE.**
-
-**Required State:** `IMAGE_REQUIRED_HUMAN_INPUT`
-```
-Required image: [article/product]
-Reason: No verified image source is available.
-Action: Ask human for the correct image URL/file.
-```
-
-### ARTICLE IMAGE ISOLATION RULE
-An image verified for Article A must NOT automatically be assigned to Article B.
-Image identity must be associated with:
+### Rule C — ARTICLE IMAGE ISOLATION
+An image verified for Article A must NOT automatically be assigned to Article B. Image identity is bound to:
 $$\text{ARTICLE\_ID} + \text{ASIN / PRODUCT\_ID} + \text{IMAGE\_SOURCE} + \text{PROVENANCE} + \text{VERIFICATION\_STATE}$$
-Cross-article reuse requires explicit verification.
 
-### VERIFIED IMAGE RULE
-A supplied image URL is considered usable only after:
-1. URL resolves successfully via HTTP request.
-2. Image loads successfully without error.
-3. Image identity matches intended content.
-4. Image provenance is recorded.
+### Rule D — FULL IMAGE VISIBILITY RULE
+Editorial and internal article-card images MUST show the complete source composition. Default setting:
+$$\text{object-fit: contain;}$$
 
-If any required verification fails: halt transition and assign `IMAGE_REQUIRED_HUMAN_INPUT`.
+### Rule E — NO AUTOMATIC CROP RULE
+Do NOT use `object-fit: cover` for editorial/article-card imagery unless the human explicitly requests visual cropping.
 
-### NO-IMAGE FALLBACK
-If no verified image exists:
-- STOP at the image dependency.
-- Do NOT manufacture a URL.
-- Do NOT select a random image.
-- Do NOT downgrade silently to unrelated imagery.
-- Ask the human for directives.
+### Rule F — RESPONSIVE MEDIA FRAME RULE
+Card media frames must preserve source aspect ratios while maintaining consistent visual dimensions (`aspect-ratio` or fixed height container with flex centering and subtle neutral background).
 
+### Rule G — IMAGE DELIVERY RULE
+Optimize image resolution and transfer size according to actual rendered container dimensions (e.g. using Amazon CDN `_AC_SL500_.jpg` variants when rendered card width is $\le 400\text{px}$) without degrading visual quality.
+
+### Rule H — PERFORMANCE RULE
+Image payload optimization must NEVER sacrifice complete visual composition or cause layout shifts ($0.00$ CLS).
+
+### Rule I — 3D HERO RULE
+Product-focused editorial heroes MUST be a single coherent interior environment ($\text{ROOM} + \text{PRODUCTS} + \text{DECOR}$). Product collages or floating rectangles are strictly prohibited.
+
+### Rule J — 3D LCP RULE
+The static hero image MUST render first as the LCP asset (`loading="eager"`, `fetchpriority="high"`). Three.js initializes asynchronously post-paint and MUST pause rendering loops using `IntersectionObserver` when the hero is outside the active viewport.
