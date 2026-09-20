@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ElevateInternalLinkCardSpec",
+  "type": "object",
+  "properties": {
+    "card_type": {
+      "type": "string",
+      "enum": ["EDITORIAL_RELATED_ARTICLE", "CATEGORY_CLUSTER_LINK"]
+    },
+    "design_system_compatibility": {
+      "type": "string",
+      "default": "elevate-glassmorphism"
+    },
+    "fields": {
+      "type": "object",
+      "properties": {
+        "thumbnail_url": { "type": "string" },
+        "category_badge": { "type": "string" },
+        "article_title": { "type": "string" },
+        "contextual_fit_rationale": { "type": "string" },
+        "target_canonical_url": { "type": "string", "pattern": "^https://elevatelivingco\\.me/" },
+        "rel_attribute": { "type": "string", "default": "follow" }
+      },
+      "required": ["thumbnail_url", "category_badge", "article_title", "contextual_fit_rationale", "target_canonical_url"]
+    },
+    "visual_states": {
+      "type": "object",
+      "properties": {
+        "glassmorphism_background": { "type": "string", "default": "rgba(255, 255, 255, 0.08)" },
+        "backdrop_filter": { "type": "string", "default": "blur(12px)" },
+        "hover_transform": { "type": "string", "default": "translateY(-4px)" },
+        "focus_ring": { "type": "string", "default": "2px solid #3b82f6" }
+      }
+    }
+  },
+  "required": ["card_type", "design_system_compatibility", "fields"]
+}
