@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "description": "Synthetic Amazon Creators API response fixtures for CASE-20260920-001 testing only. Never presented as live evidence.",
+    "version": "1.3.0",
+    "marketplace": "www.amazon.com",
+    "partner_tag": "elevateliv05f-20"
+  },
+  "items": {
+    "B0DK87HKY6": {
+      "ASIN": "B0DK87HKY6",
+      "DetailPageURL": "https://www.amazon.com/dp/B0DK87HKY6?tag=elevateliv05f-20",
+      "ItemInfo": {
+        "Title": { "DisplayValue": "HOMCOM 2-Drawer Slim Shoe Cabinet Flip Drawer Storage Organizer" },
+        "ByLineInfo": { "Brand": { "DisplayValue": "HOMCOM" } },
+        "Classifications": { "ProductGroup": { "DisplayValue": "Furniture" } }
+      },
+      "Offers": {
+        "Listings": [
+          {
+            "Price": { "Amount": 79.99, "Currency": "USD", "DisplayAmount": "$79.99" },
+            "Availability": { "Message": "In Stock", "Type": "IN_STOCK" },
+            "MerchantInfo": { "Name": "HOMCOM Direct" }
+          }
+        ]
+      }
+    },
+    "B0G65C2FR1": {
+      "ASIN": "B0G65C2FR1",
+      "DetailPageURL": "https://www.amazon.com/dp/B0G65C2FR1?tag=elevateliv05f-20",
+      "ItemInfo": {
+        "Title": { "DisplayValue": "weselon Modern Flip Drawer Shoe Cabinet Narrow Entryway Storage" },
+        "ByLineInfo": { "Brand": { "DisplayValue": "weselon" } },
+        "Classifications": { "ProductGroup": { "DisplayValue": "Furniture" } }
+      },
+      "Offers": {
+        "Listings": [
+          {
+            "Price": { "Amount": 84.99, "Currency": "USD", "DisplayAmount": "$84.99" },
+            "Availability": { "Message": "In Stock", "Type": "IN_STOCK" },
+            "MerchantInfo": { "Name": "weselon Official Store" }
+          }
+        ]
+      }
+    },
+    "B0DNJJ5MLY": {
+      "ASIN": "B0DNJJ5MLY",
+      "DetailPageURL": "https://www.amazon.com/dp/B0DNJJ5MLY?tag=elevateliv05f-20",
+      "ItemInfo": {
+        "Title": { "DisplayValue": "VASAGLE Slim Shoe Cabinet 4-Tier Tall Entryway Organizer" },
+        "ByLineInfo": { "Brand": { "DisplayValue": "VASAGLE" } },
+        "Classifications": { "ProductGroup": { "DisplayValue": "Furniture" } }
+      },
+      "Offers": {
+        "Listings": [
+          {
+            "Price": { "Amount": 99.99, "Currency": "USD", "DisplayAmount": "$99.99" },
+            "Availability": { "Message": "In Stock", "Type": "IN_STOCK" },
+            "MerchantInfo": { "Name": "VASAGLE Direct" }
+          }
+        ]
+      }
+    },
+    "B07L1T8LVH": {
+      "ASIN": "B07L1T8LVH",
+      "DetailPageURL": "https://www.amazon.com/dp/B07L1T8LVH?tag=elevateliv05f-20",
+      "ItemInfo": {
+        "Title": { "DisplayValue": "Addlon Heavy Duty Wall Mounted Coat Rack 5 Tri Hooks" },
+        "ByLineInfo": { "Brand": { "DisplayValue": "Addlon" } },
+        "Classifications": { "ProductGroup": { "DisplayValue": "Home Hardware" } }
+      },
+      "Offers": {
+        "Listings": [
+          {
+            "Price": { "Amount": 19.99, "Currency": "USD", "DisplayAmount": "$19.99" },
+            "Availability": { "Message": "In Stock", "Type": "IN_STOCK" },
+            "MerchantInfo": { "Name": "Addlon Store" }
+          }
+        ]
+      }
+    },
+    "B091YMYV7Q": {
+      "ASIN": "B091YMYV7Q",
+      "DetailPageURL": "https://www.amazon.com/dp/B091YMYV7Q?tag=elevateliv05f-20",
+      "ItemInfo": {
+        "Title": { "DisplayValue": "Sand Mine Washable Entryway Runner Rug 2x6 Non Slip Flatweave" },
+        "ByLineInfo": { "Brand": { "DisplayValue": "Sand Mine" } },
+        "Classifications": { "ProductGroup": { "DisplayValue": "Home Textile" } }
+      },
+      "Offers": {
+        "Listings": [
+          {
+            "Price": { "Amount": 29.99, "Currency": "USD", "DisplayAmount": "$29.99" },
+            "Availability": { "Message": "In Stock", "Type": "IN_STOCK" },
+            "MerchantInfo": { "Name": "Sand Mine Home" }
+          }
+        ]
+      }
+    },
+    "B08JTFZLT9": {
+      "ASIN": "B08JTFZLT9",
+      "DetailPageURL": "https://www.amazon.com/dp/B08JTFZLT9?tag=elevateliv05f-20",
+      "ItemInfo": {
+        "Title": { "DisplayValue": "Phantoscope Corduroy Soft Decorative Throw Cushion Cover 18x18" },
+        "ByLineInfo": { "Brand": { "DisplayValue": "Phantoscope" } },
+        "Classifications": { "ProductGroup": { "DisplayValue": "Home Textile Accent" } }
+      },
+      "Offers": {
+        "Listings": [
+          {
+            "Price": { "Amount": 14.99, "Currency": "USD", "DisplayAmount": "$14.99" },
+            "Availability": { "Message": "In Stock", "Type": "IN_STOCK" },
+            "MerchantInfo": { "Name": "Phantoscope Direct" }
+          }
+        ]
+      }
+    }
+  },
+  "error_fixtures": {
+    "403_associate_not_eligible": {
+      "Errors": [
+        {
+          "Code": "AssociateNotEligible",
+          "Message": "Your Amazon Associates account is not currently eligible for Amazon Creators / PA-API v5 access."
+        }
+      ]
+    },
+    "401_unauthenticated": {
+      "Errors": [
+        {
+          "Code": "Unauthenticated",
+          "Message": "The request signature or client secret provided is invalid or expired."
+        }
+      ]
+    },
+    "404_item_not_found": {
+      "Errors": [
+        {
+          "Code": "ItemNotFound",
+          "Message": "The specified ASIN B000000000 was not found in the target marketplace."
+        }
+      ]
+    },
+    "429_throttled": {
+      "Errors": [
+        {
+          "Code": "RateExceeded",
+          "Message": "The request rate limit for the client ID has been exceeded."
+        }
+      ]
+    }
+  }
+}

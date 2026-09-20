@@ -1,0 +1,205 @@
+# Elevate Living Co — Active Regression Prevention Rules
+
+This document records active, non-negotiable regression prevention rules derived from production incidents.
+
+---
+
+## 1. Shared Component & CSS Rules
+- **RULE-001 (Shared CSS Ownership):** Shared component CSS rules (`.site-footer`, `.header`, `.product-card`) MUST reside in `assets/css/components.css` (or `main.css`). Every consumer HTML page MUST load `components.css` in `<head>`.
+- **RULE-002 (Consumer Inventory Gate):** Before modifying any shared CSS or component markup, create a consumer inventory and test computed presentation across 100% of consumer pages.
+
+## 2. Commercial Link & Affiliate Rules
+- **RULE-003 (Analytics Decoupling):** `trackAffiliate` analytics handlers MUST NEVER block navigation. `return false;` is strictly forbidden in `onclick` attributes.
+- **RULE-004 (Zero Dead Links):** `href="#"` and `javascript:void(0)` are strictly prohibited on commercial anchors.
+- **RULE-005 (URL Parity):** Anchor `href` destination MUST equal `trackAffiliate` URL parameter for 100% of affiliate links.
+- **RULE-006 (Parent Anchor Ownership):** Product images wrapped in `<a class="product-image-link">` MUST NOT contain conflicting inline `onclick` handlers on `<img>` tags.
+
+## 3. Theme & Art Direction Rules
+- **RULE-007 (Cluster Theme Parity):** All 13 production articles MUST specify their exact cluster `data-theme="..."` attribute on `<html>` and load `<link rel="stylesheet" href="assets/css/theme-skins.css">`.
+- **RULE-010 (Art Direction & Cohesive Experience Gate):** Major pages/redesigns MUST define a 10-point Creative Direction Brief and pass all 16 Validation Gates. Re-used visual references MUST yield high-level design principles only (principles over reproduction). Visual sophistication MUST remain subordinate to source integrity (0 invented facts/prices/ratings).
+
+## 4. Verification & QA Rules
+- **RULE-008 (Browser UAT Gate):** Static source checks alone are insufficient for interactive or visual behavior. Every release must be browser-verified across 8 viewports (375px–1440px).
+- **RULE-009 (Console & Network Cleanliness):** Browser console errors and network 404 resource errors MUST be 0 prior to release.
+- **RULE-011 (CSS Specificity & Computed Contrast Gate):** For visual bugs involving color, typography, spacing, sizing, positioning, z-index, or interaction states, reproduce the issue in a real browser and inspect computed styles (`window.getComputedStyle`) before writing CSS fixes. Identify the winning selector and specificity source. Measure rendered text/background contrast across default, `:hover`, `:focus`, `:active`, and `:visited` states. Do not infer contrast solely from source CSS.
+- **RULE-012 (Surgical Production-Fix Protocol):** When an already-compliant production page requires a visual correction, modify ONLY the smallest necessary scope (target-page-only CSS specificity fixes preferred). Do not refactor unrelated production code. Re-run 100% of existing regression gates afterward.
+- **RULE-013 (Dual Affiliate CTA Validation):** Validate both visual rendering (computed contrast, button labels, target sizing) AND actual navigation (Associate tag parity `tag=elevateliv05f-20`, `target="_blank"`, `rel="sponsored nofollow"`, zero `href="#"`, zero `return false`, working destination URL).
+- **RULE-014 (Explicit Deployment State Tracking):** Always explicitly distinguish and track the 4 deployment states:
+  1. *Local Working Tree* (uncommitted file changes)
+  2. *Local Commit* (committed on local branch)
+  3. *Origin/Main* (pushed to remote git repository)
+  4. *Live Production* (verified on live HTTPS deployment)
+  Never declare a feature or fix "deployed" until git push to `origin/main` and live verification are empirically confirmed.
+- **RULE-015 (Pinterest Experience & Intent Parity Gate):** Pinterest-oriented pages MUST provide immediate visual/topic confirmation in the first viewport (within 600px), enforce Pin-to-page continuity, structure content into saveable visual units (formulas, checklists, palettes), enforce mobile-first touch parity ($\ge 44\text{px}$ targets, zero hover-only locks), maintain visual-first editorial-to-commercial flow ($\text{VISUAL} \rightarrow \text{EDITORIAL} \rightarrow \text{CONTEXT} \rightarrow \text{WHY IT WORKS} \rightarrow \text{CTA}$), and strictly prohibit unverified viral/traffic guarantees or dark pattern urgency.
+- **RULE-016 (Product Selection Editorial Purpose Gate):** Every product selected for an Elevate article MUST be evaluated through the 12-step contextual evaluation hierarchy (`Article Intent -> User Problem -> Niche Fit -> Editorial Usefulness -> Visual Usefulness -> Trend/Demand Evidence -> Seasonality -> Quality Signals -> Commercial Verification -> Existing Coverage -> Portfolio Diversity -> Classification`). Products MUST be evaluated as contextual evidence rather than against rigid numerical metric thresholds (such as rating or review quotas). Selection must be based on genuine problem-solving ability, aesthetic compatibility, editorial/visual utility, and verified commercial identity.
+- **RULE-017 (Trend & Demand Evidence Parity Gate):** Never invent quantitative search volumes, trend metrics, percentage increases, sales rank, or viral claims. Qualitative trend assertions must reflect verifiable visual search interest or be framed strictly as truthful editorial design rationale ("Why It Works"). If live pricing is unavailable or unverified, tag as `PRICE_UNVERIFIED` without inventing estimates. Availability MUST be treated as time-sensitive (`AVAILABILITY_VERIFIED_AT: [timestamp]` or `AVAILABILITY_UNVERIFIED`).
+- **RULE-018 (Product Commercial Data Classification Protocol):** Every candidate product MUST be evaluated through the 5-tier classification matrix (`STRONG CANDIDATE`, `PROMISING`, `REQUIRES VERIFICATION`, `WEAK FIT`, `REJECT`) with an explicit written rationale contextually explaining the evaluation. Hard source integrity verification must confirm 100% identity agreement across 9 fields (`product_name`, `asin`, `amazon_destination`, `image_identity`, `marketplace`, `associate_tag`, `json_ld_identity`, `shop_the_look_identity`, `tracking_identity`) across HTML DOM, JS tracking, JSON-LD schema, and Product Matrix before implementation.
+- **RULE-019 (Product Portfolio Diversity Gate):** Product curation across an article and its supporting cluster MUST maintain a balanced portfolio distribution across price tiers (Budget, Mid-Range, Investment) and decor roles (Anchor Focal, Supporting Accent, Functional Core, Tactile Layer). Avoid repeating identical product sets across multiple cluster articles.
+- **RULE-020 (Scrape Permission & Access Gate):** Before executing automated collection from any web domain, verify that automated access is permitted. Check domain `robots.txt`, terms of service, and access policies. Set `SOURCE_ACCESS_STATUS: UNCLEAR` if permission is ambiguous and halt aggressive crawling.
+- **RULE-021 (Extraction vs Verification Decoupling Protocol):** Successful string parsing or extraction from a web source does NOT equal factual truth verification. Extracted candidate fields MUST be set to `UNVERIFIED` (or `PRICE_UNVERIFIED`, `AVAILABILITY_UNVERIFIED`) until confirmed through official program mechanisms or authoritative APIs.
+- **RULE-022 (Product Identity & ASIN Non-Inference Protocol):** Amazon ASINs and product SKUs MUST NOT be guessed or inferred from title similarity, image matching, search engine rankings, or non-authoritative URL fragments. Set ASIN to `IDENTITY_UNVERIFIED` if authoritative verification is unavailable.
+- **RULE-023 (Field-Level Provenance Tracking Gate):** Every extracted candidate field must retain source domain, checked timestamp, and verification status provenance metadata (`[FIELD]_SOURCE`, `[FIELD]_CHECKED`).
+- **RULE-024 (Duplicate Candidate Consolidation Protocol):** Duplicate product instances discovered across multiple URLs, search results, or retailers MUST be consolidated into a single candidate record referencing all source URLs.
+- **RULE-025 (Image Rights & Provenance Gate):** Public accessibility on the web does NOT imply commercial reuse rights. Extracted web images MUST NOT be downloaded or committed to the repository without verified Asset Provenance Class (A–F) license authorization.
+- **RULE-026 (Crawl Scope & Rate-Limiting Bounded Execution Protocol):** Every automated discovery run MUST enforce default safety bounds (max 3 domains, max 20 pages, min 1s request delay, max 10s timeout, duplicate URL tracking). Overrides are permitted ONLY when explicitly justified by task requirements, source permissions, and resource budget. Overrides MUST NEVER bypass `robots.txt`, site terms of service, rate limits, or access controls.
+- **RULE-027 (Trend Evidence & Provenance Gate):** Every trend assertion or report MUST record its underlying `SIGNAL`, `SOURCE`, `OBSERVED_AT` timestamp, `TIME_WINDOW`, and `CONFIDENCE` rating. Prohibit unevidenced trend claims.
+- **RULE-028 (Trend vs Demand Decoupling Protocol):** Trend direction (RISING/DECLINING) and commercial purchase demand MUST be evaluated as separate dimensions. Never equate visual media trending with commercial purchase intent or bestseller status.
+- **RULE-029 (Trend Recency & Stale Signal Gate):** Current trend assertions MUST reflect recent observation data. Observations older than 90 days MUST be flagged as `STALE` / `TIME-SENSITIVE` and refreshed before publishing.
+- **RULE-030 (Multi-Source Corroboration & Confidence Gate):** Single-source trend observations MUST be assigned `CONFIDENCE: LOW`. Assigning `CONFIDENCE: HIGH` requires independent corroboration across multiple distinct channels.
+- **RULE-031 (Elevate Niche Relevance Gate):** General mass-market trends MUST pass the Elevate Niche Filter (apartment living, Dark Academia, lighting, rental solutions) before being approved as content opportunities.
+- **RULE-032 (Seasonal Lead-Time Execution Protocol):** Seasonal content opportunities MUST be evaluated against calendar publishing lead time (`UPCOMING`, `NOW`, `PASSED`) to ensure publishing occurs prior to peak seasonal interest.
+- **RULE-033 (No Guaranteed Outcomes & Empirical Claims Gate):** Absolute prohibition on fabricating search volumes, growth percentages, sales ranks, viral claims, or promising guaranteed traffic, ranking positions, or affiliate sales conversions.
+- **RULE-034 (Article/Product Context Matching Gate):** Every product selected for an article MUST be evaluated across the relevant 18 core matching dimensions (`Article Intent`, `Audience`, `Room/Context`, `Decor Style`, `User Problem`, `Visual Fit`, `Functional Fit`, `Scale`). Every match requires an explicit written rationale.
+- **RULE-035 (Problem/Solution Relevance Gate):** Problem-solving guides require a direct, tangible functional link between the candidate product category and the stated decorating dilemma.
+- **RULE-036 (Style Evidence Gate):** Decor style taxonomy classification MUST be verified against visual, material, and finish evidence. Retailer promotional labels MUST NOT be accepted as sole proof of style fit.
+- **RULE-037 (Product Identity Preservation & Source Conflict Gate):** Product identity MUST remain 100% consistent throughout matching decisions. Discrepancies between visual imagery, ASIN, and URL destination MUST set `IDENTITY_STATUS: SOURCE_CONFLICT` and HALT matching decisions until resolved.
+- **RULE-038 (Product Portfolio Diversity & Shop The Look Coherence Gate):** Recommendations within an article MUST serve distinct portfolio roles (`PRIMARY`, `SECONDARY`, `ACCENT`, `DETAIL`) and provide differentiated category value. Shop The Look sections MUST form one cohesive room composition.
+- **RULE-039 (Small-Space Scale & Footprint Gate):** Product recommendations for compact living or rental guides MUST evaluate physical scale and footprint evidence. Set `SCALE_UNVERIFIED` if physical dimensions are unconfirmed.
+- **RULE-040 (Problem Decomposition Gate):** Every decorating request or guide MUST create a Problem Decomposition Record (`Primary Problem`, `Secondary Problems`, `Constraints`, `Desired Outcome`) before solution mapping.
+- **RULE-041 (Product-First Prevention Gate):** Product candidate selection and ASIN research MUST follow problem decomposition and solution mechanism mapping. Beginning editorial workflows with products is strictly prohibited.
+- **RULE-042 (Solution Mechanism Mapping Gate):** Every recommended product category MUST map to an explainable solution mechanism addressing the underlying root cause of the dilemma.
+- **RULE-043 (Constraint Compatibility Gate):** Recorded room, renter, scale, and electrical constraints MUST be evaluated prior to category handoff to prevent recommending incompatible products.
+- **RULE-044 (Non-Product Solution Preservation Gate):** Non-product design solutions (layout adjustment, decluttering, styling, natural light optimization) MUST be evaluated before or alongside commercial product categories.
+- **RULE-045 (Multi-Problem Separation Gate):** Articles addressing multiple distinct user dilemmas MUST maintain separate problem-solution paths and section headers rather than collapsing solutions into an undifferentiated product list.
+- **RULE-046 (Seasonal Evidence Gate):** Seasonal relevance classifications MUST be grounded in explainable signal evidence (`CALENDAR_BASED`, `WEATHER_BASED`, `SEARCH`, `TREND`). Retailer marketing copy MUST NOT be accepted as sole proof of seasonality.
+- **RULE-047 (Seasonal State Gate):** Every seasonal opportunity MUST have an explicit current state assigned (`EARLY`, `UPCOMING`, `ACTIVE`, `PEAK`, `DECLINING`, `ENDED`, `YEAR_ROUND`, `UNCLEAR`) based on empirical data.
+- **RULE-048 (Lead-Time Gate):** Seasonal content planning MUST evaluate and distinguish `PREPARATION_WINDOW`, `PUBLISHING_WINDOW`, and `PEAK_INTEREST_WINDOW`. Asserting unsupported exact publishing dates is strictly prohibited.
+- **RULE-049 (Geography Gate):** Seasonal conclusions MUST preserve geographic market context (`US`, `INDIA`, `GLOBAL`, `GEOGRAPHY_UNKNOWN`). Target market timing MUST NOT be silently substituted or assumed universal.
+- **RULE-050 (Seasonal vs Demand Separation Gate):** Seasonal relevance MUST NOT be presented as proof of active purchase demand or affiliate purchase readiness.
+- **RULE-051 (Seasonal Freshness Gate):** Time-sensitive seasonal product data and availability claims MUST be re-verified within 12 months or set to `CURRENT_STATUS: STALE`.
+- **RULE-052 (Seasonal Commercial Claim Gate):** Fabricating seasonal discounts, price drops, holiday sales, stock urgency, or shipping deadlines without live API verification is strictly prohibited.
+- **RULE-053 (Commercial Identity Parity Gate):** Product, ASIN, destination URL, marketplace, and relevant variant identity MUST remain 100% consistent across candidate records. Discrepancies set `IDENTITY_CONFLICT` or `SOURCE_CONFLICT`.
+- **RULE-054 (Marketplace Isolation Gate):** US (`AMAZON_US`) and India (`AMAZON_IN`) commercial records and Associate tags MUST NEVER be silently mixed or substituted.
+- **RULE-055 (Field-Level Freshness Gate):** Time-sensitive commercial fields require field-specific `OBSERVED_AT` timestamps and decay status tracking.
+- **RULE-056 (Price Verification Gate):** Unverified prices MUST NEVER be presented as current verified prices in downstream content.
+- **RULE-057 (Availability Verification Gate):** Availability claims require current supporting evidence timestamped in `AVAILABILITY_VERIFIED_AT`.
+- **RULE-058 (Variant Consistency Gate):** Variant-specific specifications and imagery MUST remain associated strictly with the verified variant.
+- **RULE-059 (Image Rights Separation Gate):** Image product identity (`IMAGE_IDENTITY_STATUS`) and image licensing authorization (`IMAGE_RIGHTS_STATUS`) MUST be tracked separately.
+- **RULE-060 (Promotion Freshness Gate):** Expired or unverified promotional claims MUST NOT be presented as active commercial offers.
+- **RULE-061 (Explainable Opportunity Assessment Gate):** Every opportunity priority assessment MUST expose its underlying dimensions, evidence sources, component contributions, and confidence level.
+- **RULE-062 (Confidence Separation Gate):** Opportunity Priority and Evidence Confidence MUST remain strictly separate classifications. High priority MUST NOT imply guaranteed performance.
+- **RULE-063 (Unknown Preservation Gate):** Missing or unverified evidence MUST remain `UNKNOWN` and MUST NOT be automatically converted to zero penalty points.
+- **RULE-064 (Trend/Demand Separation Gate):** Social trend momentum (`TREND_MOMENTUM`) and search demand intent (`DEMAND_EVIDENCE`) MUST remain separate dimensions in all scoring records.
+- **RULE-065 (Commercial/Editorial Separation Gate):** Commercial validity and affiliate potential MUST NOT independently dictate editorial priority or topic creation.
+- **RULE-066 (Article-Type Weighting Gate):** Opportunity scoring models MUST adjust dimension weights based on target article intent (`HOW_TO`, `PRODUCT_DISCOVERY`, `SEASONAL`, `PINTEREST`, `SMALL_SPACE`).
+- **RULE-067 (False Precision Prevention Gate):** Numerical scores MUST NOT imply unsupported decimal precision or certainty; output clear priority bands and confidence ratings.
+- **RULE-068 (Portfolio Identity Preservation Gate):** Portfolio records MUST preserve exact product identity, ASIN, URL, and marketplace context across all tracking levels.
+- **RULE-069 (Contextual Reuse Gate):** Previously recommended products MUST NOT be rejected solely because they were used before; evaluate contextual intent and article differentiation.
+- **RULE-070 (Artificial Diversity Prevention Gate):** Unrelated or visually incompatible products MUST NOT be introduced solely to satisfy arbitrary category count quotas.
+- **RULE-071 (Category Concentration Detection Gate):** Repeated product categories MUST be tracked and visible at article and cluster levels.
+- **RULE-072 (Brand Concentration Detection Gate):** Repeated brand placements MUST be surfaced where evidence indicates heavy concentration (>50% of article recommendations).
+- **RULE-073 (Shop-The-Look Composition Gate):** Shop The Look modules MUST maintain realistic room coherence and balanced product role distribution.
+- **RULE-074 (Cluster Differentiation Gate):** Cluster articles sharing candidate products MUST maintain distinct search, problem, or room context differentiation.
+- **RULE-075 (Unknown Preservation Gate):** Missing portfolio attributes MUST remain UNKNOWN and MUST NOT be converted to negative performance scores.
+- **RULE-076 (Age Is Not Obsolescence Gate):** Product age alone MUST NOT trigger product replacement or removal if identity, availability, quality, and aesthetic fit remain valid.
+- **RULE-077 (Longitudinal Identity Gate):** Physical product identity changes (`IDENTITY_CHANGED`) MUST immediately halt downstream use, set `BLOCK`, and trigger `elevate-source-integrity`.
+- **RULE-078 (Reverification Before Replacement Gate):** Stale or unverified commercial data MUST trigger `REVERIFY` rather than direct product deletion or replacement.
+- **RULE-079 (No Silent Substitution Gate):** ASIN replacements MUST preserve full baseline requirements (`replacement_baseline`) and log explicit migration rationale.
+- **RULE-080 (Seasonal Retention Gate):** Off-season products MUST NOT be removed if seasonally evergreen; mark `SEASONAL_PAUSE` instead.
+- **RULE-081 (Trend/Obsolescence Separation Gate):** A declining trend signal MUST NOT cause instant product removal if problem-solving utility remains high.
+- **RULE-082 (Editorial Context Freshness Gate):** Price or spec updates MUST verify that surrounding article prose remains factually true.
+- **RULE-083 (Alternative Baseline Preservation Gate):** Replacement candidates MUST be evaluated against the original product's defined baseline role, price bracket, style, and room context.
+- **RULE-084 (Problem-Before-Product Gate):** Relevant problem/context MUST precede commercial product presentation where article intent requires explanation.
+- **RULE-085 (Editorial Purpose Gate):** Every integrated product MUST have an explicit editorial purpose contributing to reader understanding.
+- **RULE-086 (Product Density Context Gate):** Product density MUST remain contextual; universal word/product quotas are strictly prohibited.
+- **RULE-087 (Commercial/Editorial Separation Gate):** Commercial actions MUST remain visually and textually distinguishable from neutral editorial explanation.
+- **RULE-088 (CTA Context Gate):** CTAs MUST follow meaningful product context and maintain visual breathing room.
+- **RULE-089 (Product Role Gate):** Product role MUST correspond strictly to the section purpose and maintain realistic role hierarchy.
+- **RULE-090 (Mobile Information Parity Gate):** Essential product context, scale notes, and tradeoffs MUST remain accessible on mobile viewports.
+- **RULE-091 (Product Identity Integration Gate):** Integrated product image, ASIN, variant, and destination URL MUST remain 100% synchronized across candidate and presentation records.
+- **RULE-092 (Affiliate Flow Preservation Gate):** Editorial product integration MUST NOT alter affiliate tag identity or required link relation attributes (`rel="sponsored nofollow"`).
+- **RULE-093 (Article/Product Coherence Gate):** The complete product set MUST support the article's primary editorial intent and documented reader problems.
+- **RULE-094 (Problem Coverage Gate):** Meaningful product-supported solutions MUST correspond to documented reader problems where products add genuine value.
+- **RULE-095 (Commercial Density Context Gate):** Commercial density MUST be evaluated relative to article intent and total editorial prose value.
+- **RULE-096 (Product Flow Continuity Gate):** Product placement MUST NOT interrupt necessary explanatory context or educational narrative flow.
+- **RULE-097 (Shop-The-Look Source Gate):** Shop The Look products MUST originate from or clearly support the article's editorial system.
+- **RULE-098 (Repeated Purpose Gate):** Repeated products REQUIRE distinct, documented editorial justification for each placement.
+- **RULE-099 (Article CTA Distribution Gate):** CTA placement MUST remain contextual and balanced across the full article page.
+- **RULE-100 (Mobile Product Parity Gate):** Essential product context, scale notes, and tradeoffs MUST remain accessible on mobile viewports.
+- **RULE-101 (Observation/Inference Separation Gate):** Observed metrics and causal explanations MUST remain strictly separated into explicit evidence states.
+- **RULE-102 (Commercial Outcome Verification Gate):** Affiliate clicks MUST NOT be presented or reported as confirmed orders or revenue without verified commercial data.
+- **RULE-103 (Sample Adequacy Gate):** Low sample sizes MUST remain classified as `INSUFFICIENT_EVIDENCE` and MUST NOT trigger global editorial changes.
+- **RULE-104 (Contextual Comparison Gate):** Performance comparisons MUST preserve traffic volume, search intent, timeframe, placement, and device context.
+- **RULE-105 (Metric Separation Gate):** Traffic, engagement, product interaction, and commercial outcomes MUST remain separate evaluation dimensions.
+- **RULE-106 (Performance Freshness Gate):** Historical observations MUST include an explicit observation window and freshness state.
+- **RULE-107 (Generalization Gate):** Single-article or single-product performance observations MUST NOT become universal rules without corroborating evidence across multiple articles.
+- **RULE-108 (Product Quality Separation Gate):** Observed interaction MUST NOT be interpreted as proof of physical product quality or customer satisfaction.
+- **RULE-109 (Editorial Value Preservation Gate):** Analytics optimization MUST NOT force commercial product insertion into useful non-commercial sections.
+- **RULE-110 (Experiment Isolation Gate):** Editorial experiments MUST define a single tested variable, explicit control baseline, and observation window.
+- **RULE-111 (Age/Decay Separation Gate):** Publication age alone MUST NOT trigger content decay classification or major editorial rewrites.
+- **RULE-112 (Multi-Signal Freshness Gate):** Traffic drops alone MUST NOT trigger article consolidation or archiving without corroborating decay signals across dimensions.
+- **RULE-113 (Product/Article Decoupling Gate):** Product staleness MUST NOT automatically invalidate surrounding editorial prose or trigger full page rewrites.
+- **RULE-114 (Trend/Evergreen Separation Gate):** Declining trend momentum MUST NOT cause article removal if core educational problem-solving utility remains valid.
+- **RULE-115 (Article Identity Preservation Gate):** Content refresh operations MUST preserve canonical URLs, target search intent, and affiliate tracking tag parameters.
+- **RULE-116 (Consolidation Evidence Gate):** Content consolidation MUST require verified intent overlap and cannibalization evidence rather than simple keyword similarity.
+- **RULE-117 (Source Freshness Gate):** Articles citing broken external sources or outdated standards MUST trigger `SOURCE_DECAY` and route to `elevate-source-integrity`.
+- **RULE-118 (Evidence-Based Decay Gate):** Article metadata freshness dates MUST NOT be updated without documented, evidence-based content improvements.
+- **RULE-119 (Intent-Based Cluster Gate):** Cluster relationships MUST be based on meaningful user intent rather than keyword similarity alone.
+- **RULE-120 (Content Gap Evidence Gate):** New article opportunities MUST have verified evidence of a meaningful unsatisfied user information need.
+- **RULE-121 (Existing Coverage Gate):** Existing articles MUST be audited for refresh or expansion before recommending a new standalone article.
+- **RULE-122 (Pillar/Support Coherence Gate):** Supporting articles MUST maintain clear, active structural relationships and bidirectional links with their pillar page.
+- **RULE-123 (Internal Link Purpose Gate):** Strategic internal links MUST have an explicit editorial purpose (`DISCOVERY`, `DEEPENING`, `REFERENCE`, `NEXT_STEP`) and natural prose placement.
+- **RULE-124 (Cannibalization Evidence Gate):** Overlap and cannibalization classifications MUST be supported by search intent and content evidence rather than string similarity alone.
+- **RULE-125 (Product-Neutral Cluster Gate):** Cluster expansion MUST NOT be driven primarily by affiliate product placement opportunities.
+- **RULE-126 (Seasonal Duplication Gate):** Recurring seasonal content MUST NOT be duplicated across multiple URLs without distinct information needs.
+- **RULE-127 (Opportunity Evidence Gate):** Every product opportunity MUST expose supporting evidence and explicit evidence states across evaluated dimensions.
+- **RULE-128 (Category/Product Separation Gate):** Category opportunities MUST remain separate from specific product candidate validation.
+- **RULE-129 (User Problem Gate):** Product opportunities MUST connect to an identifiable user problem or legitimate editorial purpose.
+- **RULE-130 (Portfolio Diversity Gate):** Opportunity selection MUST account for existing site-wide category and style concentration.
+- **RULE-131 (Commercial Verification Gate):** Commercial uncertainty MUST remain explicitly classified (`PRICE_UNVERIFIED`, `AVAILABILITY_UNVERIFIED`).
+- **RULE-132 (Source Conflict Gate):** Identity conflicts (`SOURCE_CONFLICT`, `IDENTITY_CONFLICT`) MUST block opportunity advancement.
+- **RULE-133 (Performance Context Gate):** Observed site performance MUST remain one contextual input among several and MUST NOT force product insertion into non-commercial sections.
+- **RULE-134 (Seasonal Timing Gate):** Seasonal opportunities MUST account for publishing lead time and MUST NOT be dispatched post-peak.
+- **RULE-135 (Commission Neutrality Gate):** Affiliate commission rates MUST NOT independently dictate product opportunity priority or topic creation.
+- **RULE-136 (Unknown-State Preservation Gate):** UNKNOWN and UNVERIFIED evidence states MUST NOT be converted into positive evidence or zero-penalty points.
+- **RULE-137 (Queue Evidence Gate):** Every queue item MUST expose explicit evidence states and missing evidence requirements across normalized fields.
+- **RULE-138 (Dependency Graph Gate):** Downstream research tasks MUST NOT be dispatched if required upstream dependencies are unresolved.
+- **RULE-139 (Skill Dispatch Contract Gate):** Research skill dispatches MUST supply a complete Research Handoff Contract specifying boundaries and expected outputs.
+- **RULE-140 (Duplicate Queue Control Gate):** Duplicate opportunities MUST NOT create redundant research queue items.
+- **RULE-141 (Seasonal Queue Lead-Time Gate):** Seasonal research queue items MUST respect lead-time preparation windows and suppress post-peak items.
+- **RULE-142 (Portfolio Awareness Queue Gate):** Queue prioritization MUST account for existing site-wide category and style concentration.
+- **RULE-143 (Research Resource Cost Gate):** Research dispatches MUST define explicit resource budgets (`RESOURCE_BUDGET`) and candidate count bounds.
+- **RULE-144 (Stop Condition Enforcement Gate):** Research MUST halt immediately if source permission, identity parity, or upstream dependency conflicts arise.
+- **RULE-145 (Result Return Contract Gate):** Research results MUST be returned via a structured Result Return Contract and routed back to `elevate-product-opportunity-scoring` for re-evaluation.
+- **RULE-146 (Unknown State Non-Promotion Gate):** Orchestration MUST NOT convert UNKNOWN or UNVERIFIED states into positive evidence or valid statuses.
+- **RULE-147 (Priority Rationale Requirement Gate):** Every prioritized research queue item MUST expose a written evidence rationale.
+- **RULE-148 (Queue Research Batching Gate):** Opportunity batches MUST share common user problems, solution mechanisms, or research methods and maintain individual opportunity identities.
+- **RULE-149 (Commission Neutrality Queue Gate):** Affiliate commission rates MUST NOT independently determine research queue creation, priority, or skill dispatch.
+- **RULE-150 (Valid State Transition Gate):** Workflow state updates MUST follow the explicit directed transition graph without skipping intermediate state gates.
+- **RULE-151 (Transition Gate Enforcement Gate):** Workflow state advancement MUST require explicit result payload validation satisfying defined gate criteria; tool invocation alone DOES NOT constitute completion.
+- **RULE-152 (Bounded Retry Gate):** Task retries MUST be strictly bounded (`MAX_RETRIES` = 2) and MUST NOT retry hard policy, TOS, or identity blockers.
+- **RULE-153 (Workflow Idempotency Gate):** Identical workflow transition requests with existing valid results MUST be suppressed or returned from cache.
+- **RULE-154 (Evidence Versioning Gate):** Historical evidence trails MUST be preserved and versioned (`EVIDENCE_VERSION`); destructive field overwrites are strictly prohibited.
+- **RULE-155 (Blocker Preservation Gate):** Active blocker states (`SOURCE_CONFLICT`, `IDENTITY_CONFLICT`, `PROHIBITED_ACCESS`) MUST persist until explicitly resolved.
+- **RULE-156 (Specialist Boundary Gate):** The workflow orchestrator MUST NOT perform domain research, scraping, scoring, or article writing directly.
+- **RULE-157 (Queue/Workflow State Separation Gate):** Research queue priority (`PRIORITY_STATE`) and workflow lifecycle state (`CURRENT_STATE`) MUST remain distinct evaluation fields.
+- **RULE-158 (Partial Result Handling Gate):** `PARTIAL_SUCCESS` outputs MUST NOT be promoted to validated states; missing items MUST be re-queued.
+- **RULE-159 (Production Boundary Protection Gate):** Intelligence workflows MUST HALT at `INTEGRATION_READY`; production edits require explicit deployment skill invocation.
+- **RULE-160 (Case Identity Integrity Gate):** `CASE_ID`, `WORKFLOW_ID`, `OPPORTUNITY_ID`, and `PRODUCT_CANDIDATE_ID` MUST remain distinct identifiers across all records.
+- **RULE-161 (Case Objective Requirement Gate):** Every case MUST state an explicit objective specifying user, problem, context, and expected decision prior to initialization.
+- **RULE-162 (Evidence Ledger Integrity Gate):** Evidence items MUST be logged in a non-destructive, versioned ledger with explicit source provenance and timestamps.
+- **RULE-163 (Decision Traceability Gate):** Every case decision MUST cite verified evidence ledger items and state an explicit evidence-based rationale.
+- **RULE-164 (Case/Workflow Separation Gate):** Case status (`CASE_STATUS`) and workflow lifecycle state (`WORKFLOW_STATE`) MUST remain distinct, synchronized fields.
+- **RULE-165 (Case Resume Behavior Gate):** Resuming a case MUST inspect last completed task and active blockers without restarting the entire case automatically or skipping gates.
+- **RULE-166 (Case Deduplication Gate):** Active case deduplication MUST precede case creation to prevent redundant parallel investigations.
+- **RULE-167 (Case Closure Criteria Gate):** Case closure MUST require a definitive decision classification, evidence summary, and unresolved unknowns list.
+- **RULE-168 (Case Reopening History Preservation Gate):** Reopening a closed case MUST route through reassessment and log a reopening event without erasing past closure history.
+- **RULE-169 (Case Handoff Minimization Gate):** Sub-task handoff contracts MUST include only relevant problem, opportunity, and evidence context.
+- **RULE-170 (Source/Interpretation Separation Gate):** Source adapters MUST ONLY collect, normalize, and record raw evidence; evidence evaluation is strictly reserved for specialist skills.
+- **RULE-171 (Access Method Provenance Gate):** The recorded `ACCESS_METHOD` MUST reflect the exact retrieval mechanism used (`WEB_SEARCH`, `DIRECT_HTTP`, `LOCAL_REPOSITORY`, `API`).
+- **RULE-172 (Observation Level Preservation Gate):** `INFERRED` and `HYPOTHESIZED` states MUST NOT be converted to `OBSERVED`.
+- **RULE-173 (Anti-Bot Bypass Prohibition Gate):** Automated requests MUST respect `robots.txt` and MUST NOT bypass CAPTCHAs, login walls, or anti-scraping controls.
+- **RULE-174 (Explicit Missing Credential Gate):** Missing API credentials MUST result in `MANUAL_ACTION_REQUIRED` and `UNVERIFIED` state; fake data is strictly prohibited.
+- **RULE-175 (Trend vs Demand Decoupling Gate):** Visual trend interest from Pinterest MUST NOT be used as proof of commercial buying demand.
+- **RULE-176 (Unobserved Field Preservation Gate):** Unobserved product fields MUST remain `UNKNOWN` or `UNVERIFIED`.
+- **RULE-177 (Source Production Isolation Gate):** Source acquisition operations MUST NOT modify production website files, HTML pages, or affiliate links.
+- **RULE-178 (Secret Protection Gate):** API keys, access tokens, and secrets MUST NOT be logged in chat responses, skill specifications, or evidence ledgers.
+- **RULE-179 (Versioned Evidence Append Gate):** Updated research results MUST create a new versioned entry (`EVIDENCE_VERSION`) rather than overwriting historical evidence logs.
+- **RULE-180 (Commercial Verification Identity Separation Gate):** Affiliate tracking tag presence or catalog ASIN existence MUST NOT be treated as proof of live pricing or real-time stock availability.
+- **RULE-181 (Candidate Category Parity Gate):** Product candidates MUST match the exact physical category of the intended solution mechanism (e.g. accessories MUST NOT be represented as furniture).
+- **RULE-182 (Unsupported Comparative Claim Prohibition Gate):** Qualitative community feedback MUST be recorded as descriptive observations; manufactured numerical rankings (`#1 recommendation`) are strictly prohibited.
+- **RULE-183 (First-Party vs Third-Party Provenance Gate):** Third-party trend analysis MUST be attributed to the actual third-party domain and MUST NOT be represented as first-party platform evidence.
+- **RULE-184 (Credential Presence Does Not Equal Article Readiness Gate):** PA-API credential availability ONLY enables commercial verification. It DOES NOT establish commercial evidence and DOES NOT authorize article authoring, production modification, publication, commit, or push.
+
+
+

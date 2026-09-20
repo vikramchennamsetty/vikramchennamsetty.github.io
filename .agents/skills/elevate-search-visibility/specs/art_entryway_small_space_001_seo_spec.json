@@ -1,0 +1,112 @@
+{
+  "article_id": "ART-ENTRYWAY-SMALL-SPACE-001",
+  "target_file": "small-apartment-entryway-organization-guide.html",
+  "version": "4.6.0",
+  "evidence_state": "SUPPORTED",
+  "specification": {
+    "PRIMARY_INTENT": "Informational and transactional research for organizing narrow small-apartment entryways using space-saving footwear storage, wall hooks, and easy-clean rugs.",
+    "SECONDARY_INTENTS": [
+      "Compare ultra-slim flip-drawer shoe cabinets versus traditional shoe racks",
+      "Evaluate wall-mounted entryway organization for tight door clearance",
+      "Style entryway benches with soft textile accent covers"
+    ],
+    "PRIMARY_ENTITY": "Small Apartment Entryway Organization",
+    "SECONDARY_ENTITIES": [
+      "Narrow Shoe Storage Cabinet",
+      "Wall-Mounted Coat Rack",
+      "Easy-Clean Entryway Rug",
+      "Entry Bench Styling Accent"
+    ],
+    "PRIMARY_QUERY": "small apartment entryway organization ideas",
+    "SEMANTIC_TOPIC_SET": [
+      "narrow entryway shoe storage",
+      "ultra slim shoe cabinet",
+      "wall mounted coat hooks",
+      "small foyer storage ideas",
+      "apartment entryway layout",
+      "easy clean entryway rug"
+    ],
+    "QUESTION_SET": [
+      "How to store shoes in a narrow entryway?",
+      "What is the best shoe storage for small apartments?",
+      "How to organize a small foyer without taking up floor space?"
+    ],
+    "TITLE": "Small Apartment Entryway Organization Guide (2026) | Elevate",
+    "META_DESCRIPTION": "Discover space-saving entryway organization ideas for small apartments. Maximize narrow foyers with ultra-slim shoe cabinets and heavy-duty wall hooks.",
+    "URL": "https://elevatelivingco.me/small-apartment-entryway-organization-guide.html",
+    "H1": "Small Apartment Entryway Organization: Maximize Narrow Foyers",
+    "H2_H3_STRUCTURE": [
+      {
+        "h2": "1. Eliminate Floor Clutter with Vertical Flip-Drawer Storage",
+        "h3_list": [
+          "Primary Solution: VASAGLE Narrow Shoe Storage Cabinet",
+          "Aesthetic Alternative: weselon 2-Tier Flip-Drawer Cabinet"
+        ]
+      },
+      {
+        "h2": "2. Elevate Outerwear with Heavy-Duty Wall Hooks",
+        "h3_list": [
+          "Dseap Wall-Mounted Coat Rack (2-Pack)"
+        ]
+      },
+      {
+        "h2": "3. Protect High-Traffic Entryway Flooring",
+        "h3_list": [
+          "SAND MINE Easy-Clean Entryway Rug"
+        ]
+      },
+      {
+        "h2": "4. Add Visual Warmth with Corduroy Textile Accents",
+        "h3_list": [
+          "Phantoscope Farmhouse Throw Pillow Covers"
+        ]
+      }
+    ],
+    "INTERNAL_LINK_TARGETS": [
+      "/dark-academia-apartment-decor-2026.html",
+      "/5-antique-bar-carts-2026.html"
+    ],
+    "ANCHOR_TEXT_CANDIDATES": [
+      "small apartment decor ideas",
+      "compact storage solutions"
+    ],
+    "SCHEMA_PLAN": [
+      "Article",
+      "FAQPage",
+      "ItemPage",
+      "BreadcrumbList"
+    ],
+    "AEO_BLOCKS": [
+      {
+        "question": "How to store shoes in a narrow entryway?",
+        "direct_answer": "To store shoes in a narrow entryway without blocking walkways or doors, use an ultra-slim vertical flip-drawer shoe cabinet under 9.5 inches deep. Flip-drawers conceal footwear vertically against the wall, clearing floor footprint while maintaining door sweep clearance.",
+        "format": "paragraph_plus_bullets"
+      }
+    ],
+    "GEO_ENTITY_REQUIREMENTS": {
+      "author_credits": "VERIFIED (Elevate Editorial Team)",
+      "factual_density": "HIGH (Exact 9.3 inch depth spec, 2-tier flip drawers, wall-anchored safety harness)",
+      "citation_readiness": "SUPPORTED (Observed Amazon US evidence)"
+    },
+    "SOURCE_REQUIREMENTS": {
+      "provenance": "AMAZON_PUBLIC_WEB",
+      "marketplace": "AMAZON_US",
+      "partner_tag": "elevateliv05f-20"
+    },
+    "IMAGE_SEO_REQUIREMENTS": {
+      "format": "WebP",
+      "dimensions": "Explicit width and height attributes required",
+      "alt_text": "Descriptive alt text front-loading primary entity keywords"
+    },
+    "PRODUCT_ENTITY_PLACEMENT": [
+      { "asin": "B0GQ26MSVQ", "role": "PRIMARY_PRODUCT" },
+      { "asin": "B0G65C2FR1", "role": "ALTERNATIVE_PRODUCT" },
+      { "asin": "B07K71JDZ3", "role": "SUPPORTING_PRODUCT" },
+      { "asin": "B091YMYV7Q", "role": "SUPPORTING_PRODUCT" },
+      { "asin": "B08JTFZLT9", "role": "BENCH_STYLING_ACCENT" }
+    ],
+    "CANONICAL_REQUIREMENT": "https://elevatelivingco.me/small-apartment-entryway-organization-guide.html",
+    "INDEXABILITY_REQUIREMENT": "index, follow",
+    "FRESHNESS_REQUIREMENT": "2026-09-20T17:26:29Z"
+  }
+}
