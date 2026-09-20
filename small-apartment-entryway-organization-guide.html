@@ -186,7 +186,7 @@
     <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230A0A0A' width='100' height='100'/><text x='50' y='65' font-size='60' font-weight='bold' fill='%23C9A44A' text-anchor='middle' font-family='serif'>E</text></svg>">
     <meta name="theme-color" content="#0A0A0A">
 
-    <!-- CSS (Elevate Design Tokens & Typography) -->
+    <!-- CSS (Elevate Design Tokens, Glassmorphism & Interaction Governance) -->
     <style>
         :root {
           --c-dark-obsidian: #0A0A0A;
@@ -324,7 +324,7 @@
           border-radius: 9999px;
           font-weight: 700;
           text-decoration: none;
-          transition: all 0.25s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
           font-size: 0.875rem;
           text-align: center;
           border: none;
@@ -343,6 +343,11 @@
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(228, 121, 17, 0.4);
           background: linear-gradient(135deg, #FFB84D 0%, #E47911 100%);
+        }
+
+        .btn-primary:focus-visible {
+          outline: 3px solid #C46400;
+          outline-offset: 3px;
         }
 
         /* ARTICLE PAGE */
@@ -534,14 +539,122 @@
           margin-bottom: 2rem;
         }
 
-        /* PRODUCT CARD */
+        /* ENHANCED GLASSMORPHISM PRODUCT CARDS (elevate-glassmorphism & elevate-design-system) */
         .product-spotlight-card {
-          margin: 2.5rem 0;
+          margin: 3rem 0;
           padding: 2rem;
-          background: white;
-          border-radius: 16px;
-          border: 1px solid #eee;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+          background: #ffffff; /* Solid fallback */
+          border-radius: 20px;
+          border: 1px solid rgba(201, 164, 74, 0.25);
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        @supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+          .product-spotlight-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+          }
+        }
+
+        .product-spotlight-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px 0 rgba(201, 164, 74, 0.15);
+          border-color: var(--c-gold-metallic);
+        }
+
+        .product-spotlight-card:focus-within {
+          outline: 3px solid var(--c-gold-metallic);
+          outline-offset: 3px;
+        }
+
+        .product-card-grid {
+          display: grid;
+          grid-template-columns: 260px 1fr;
+          gap: 2rem;
+          align-items: start;
+        }
+
+        @media (max-width: 768px) {
+          .product-card-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          @supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+            .product-spotlight-card {
+              backdrop-filter: blur(8px) saturate(160%);
+              -webkit-backdrop-filter: blur(8px) saturate(160%);
+            }
+          }
+        }
+
+        .product-image-wrapper {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          border-radius: 14px;
+          overflow: hidden;
+          background: #fdfdfd;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .product-image-wrapper img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-spotlight-card:hover .product-image-wrapper img {
+          transform: scale(1.04);
+        }
+
+        .product-placeholder-visual {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem;
+          text-align: center;
+          background: linear-gradient(135deg, rgba(201, 164, 74, 0.08) 0%, rgba(10, 10, 10, 0.03) 100%);
+          color: var(--c-dark-obsidian);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-spotlight-card:hover .product-placeholder-visual {
+          transform: scale(1.03);
+        }
+
+        .product-placeholder-icon {
+          width: 44px;
+          height: 44px;
+          margin-bottom: 0.75rem;
+          color: var(--c-gold-metallic);
+          opacity: 0.9;
+        }
+
+        .product-placeholder-brand {
+          font-weight: 800;
+          font-size: 0.85rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--c-gold-metallic);
+          margin-bottom: 0.25rem;
+        }
+
+        .product-placeholder-label {
+          font-size: 0.8rem;
+          color: var(--c-muted-text);
+          font-weight: 500;
+          line-height: 1.3;
         }
 
         .role-badge {
@@ -552,7 +665,7 @@
           letter-spacing: 0.08em;
           padding: 0.35rem 0.75rem;
           border-radius: 999px;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
         }
 
         .role-badge.primary { background: #eef6ec; color: #2e7d32; }
@@ -586,6 +699,20 @@
           position: absolute;
           left: 0;
           font-weight: bold;
+        }
+
+        /* REDUCED MOTION OVERRIDE (elevate-immersive-motion governance) */
+        @media (prefers-reduced-motion: reduce) {
+          .product-spotlight-card,
+          .product-spotlight-card *,
+          .product-image-wrapper img,
+          .product-placeholder-visual,
+          .btn,
+          .cluster-item {
+            transition: none !important;
+            transform: none !important;
+            animation: none !important;
+          }
         }
 
         /* FAQ SECTION */
@@ -800,49 +927,81 @@
                 Traditional open shoe racks require 14 to 18 inches of floor depth. In a narrow apartment hallway measuring under 36 inches wide, a standard shoe rack cuts your walking path in half. Vertical flip-drawer cabinets solve this spatial constraint by angling shoes vertically inside a slim profile under 9.5 inches deep.
             </p>
 
-            <!-- PRIMARY PRODUCT -->
+            <!-- PRIMARY PRODUCT CARD -->
             <div class="product-spotlight-card">
                 <span class="role-badge primary">Primary Solution</span>
-                <h3 class="product-card-title">VASAGLE Narrow Shoe Storage Cabinet</h3>
-                <p style="font-size: 1rem; color: #555;">
-                    Designed specifically for high-density entryways where floor depth is strictly limited.
-                </p>
-                <ul class="product-spec-list">
-                    <li><strong>Ultra-Slim Profile:</strong> 9.3-inch depth fits flush behind narrow door swings.</li>
-                    <li><strong>Vertical Compartments:</strong> Enclosed dual flip drawers keep footwear hidden from plain view.</li>
-                    <li><strong>Safety Engineering:</strong> Includes wall-anchoring safety strap to prevent tipping in tight spaces.</li>
-                </ul>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://www.amazon.com/dp/B0GQ26MSVQ?tag=elevateliv05f-20" 
-                       target="_blank" 
-                       rel="sponsored noopener" 
-                       class="btn btn-primary"
-                       onclick="trackAffiliateClick('VASAGLE_Narrow_Shoe_Cabinet_B0GQ26MSVQ')">
-                       Check Price on Amazon
-                    </a>
+                <div class="product-card-grid">
+                    <div class="product-image-wrapper">
+                        <div class="product-placeholder-visual">
+                            <svg class="product-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="4" y="3" width="16" height="18" rx="2" />
+                                <path d="M4 11h16" />
+                                <path d="M9 7h2" />
+                                <path d="M9 15h2" />
+                            </svg>
+                            <span class="product-placeholder-brand">VASAGLE</span>
+                            <span class="product-placeholder-label">Ultra-Slim Flip-Drawer Shoe Cabinet (9.3" Depth)</span>
+                        </div>
+                    </div>
+                    <div class="product-info-column">
+                        <h3 class="product-card-title">VASAGLE Narrow Shoe Storage Cabinet</h3>
+                        <p style="font-size: 1rem; color: #555;">
+                            Designed specifically for high-density entryways where floor depth is strictly limited.
+                        </p>
+                        <ul class="product-spec-list">
+                            <li><strong>Ultra-Slim Profile:</strong> 9.3-inch depth fits flush behind narrow door swings.</li>
+                            <li><strong>Vertical Compartments:</strong> Enclosed dual flip drawers keep footwear hidden from plain view.</li>
+                            <li><strong>Safety Engineering:</strong> Includes wall-anchoring safety strap to prevent tipping in tight spaces.</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="https://www.amazon.com/dp/B0GQ26MSVQ?tag=elevateliv05f-20" 
+                               target="_blank" 
+                               rel="sponsored noopener" 
+                               class="btn btn-primary"
+                               onclick="trackAffiliateClick('VASAGLE_Narrow_Shoe_Cabinet_B0GQ26MSVQ')">
+                               Check Price on Amazon
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ALTERNATIVE PRODUCT -->
+            <!-- ALTERNATIVE PRODUCT CARD -->
             <div class="product-spotlight-card">
                 <span class="role-badge alternative">Aesthetic Alternative</span>
-                <h3 class="product-card-title">weselon 2-Tier Flip-Drawer Shoe Cabinet</h3>
-                <p style="font-size: 1rem; color: #555;">
-                    An alternative option for interiors prioritizing natural wood textures and woven rattan detailing while preserving narrow depth constraints.
-                </p>
-                <ul class="product-spec-list">
-                    <li><strong>Compact Depth:</strong> 9.4-inch overall depth engineered for small apartment hallways.</li>
-                    <li><strong>Woven Accent Fronts:</strong> Breathable drawer panels foster airflow around stored footwear.</li>
-                    <li><strong>Dual Tier Design:</strong> Organizes daily shoes into separate upper and lower flip compartments.</li>
-                </ul>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://www.amazon.com/dp/B0G65C2FR1?tag=elevateliv05f-20" 
-                       target="_blank" 
-                       rel="sponsored noopener" 
-                       class="btn btn-primary"
-                       onclick="trackAffiliateClick('weselon_Flip_Drawer_Cabinet_B0G65C2FR1')">
-                       Check Price on Amazon
-                    </a>
+                <div class="product-card-grid">
+                    <div class="product-image-wrapper">
+                        <div class="product-placeholder-visual">
+                            <svg class="product-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="4" width="18" height="16" rx="2" />
+                                <path d="M3 12h18" />
+                                <path d="M8 8h1" />
+                                <path d="M8 16h1" />
+                            </svg>
+                            <span class="product-placeholder-brand">weselon</span>
+                            <span class="product-placeholder-label">Woven Rattan 2-Tier Cabinet (9.4" Depth)</span>
+                        </div>
+                    </div>
+                    <div class="product-info-column">
+                        <h3 class="product-card-title">weselon 2-Tier Flip-Drawer Shoe Cabinet</h3>
+                        <p style="font-size: 1rem; color: #555;">
+                            An alternative option for interiors prioritizing natural wood textures and woven rattan detailing while preserving narrow depth constraints.
+                        </p>
+                        <ul class="product-spec-list">
+                            <li><strong>Compact Depth:</strong> 9.4-inch overall depth engineered for small apartment hallways.</li>
+                            <li><strong>Woven Accent Fronts:</strong> Breathable drawer panels foster airflow around stored footwear.</li>
+                            <li><strong>Dual Tier Design:</strong> Organizes daily shoes into separate upper and lower flip compartments.</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="https://www.amazon.com/dp/B0G65C2FR1?tag=elevateliv05f-20" 
+                               target="_blank" 
+                               rel="sponsored noopener" 
+                               class="btn btn-primary"
+                               onclick="trackAffiliateClick('weselon_Flip_Drawer_Cabinet_B0G65C2FR1')">
+                               Check Price on Amazon
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -852,26 +1011,41 @@
                 Standing coat trees require a 16-to-20-inch circular footprint on the floor and frequently tip under the weight of heavy winter coats. Mounting coat hooks directly to wall studs above 48 inches utilizes zero floor space while converting bare drywall into functional vertical storage for coats, tote bags, and keys.
             </p>
 
-            <!-- SUPPORTING PRODUCT 1 -->
+            <!-- SUPPORTING PRODUCT CARD 1 -->
             <div class="product-spotlight-card">
                 <span class="role-badge supporting">Supporting Storage</span>
-                <h3 class="product-card-title">Dseap Coat Rack Wall Mounted (2-Pack)</h3>
-                <p style="font-size: 1rem; color: #555;">
-                    Heavy-duty wall-mounted hook rail system designed for dense outerwear organization.
-                </p>
-                <ul class="product-spec-list">
-                    <li><strong>Triple Hook Architecture:</strong> Features upper and lower prongs for simultaneous coat, hat, and key storage.</li>
-                    <li><strong>Solid Wood Rail:</strong> Sturdy backplate construction prevents wall scuffs and flexing.</li>
-                    <li><strong>Multi-Pack Value:</strong> Mount one rail near the door for immediate key drops and a second at standard coat height.</li>
-                </ul>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://www.amazon.com/dp/B07K71JDZ3?tag=elevateliv05f-20" 
-                       target="_blank" 
-                       rel="sponsored noopener" 
-                       class="btn btn-primary"
-                       onclick="trackAffiliateClick('Dseap_Coat_Rack_B07K71JDZ3')">
-                       Check Price on Amazon
-                    </a>
+                <div class="product-card-grid">
+                    <div class="product-image-wrapper">
+                        <div class="product-placeholder-visual">
+                            <svg class="product-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 12h16" />
+                                <path d="M6 12v-4a2 2 0 0 1 4 0v4" />
+                                <path d="M14 12v-4a2 2 0 0 1 4 0v4" />
+                            </svg>
+                            <span class="product-placeholder-brand">Dseap</span>
+                            <span class="product-placeholder-label">Heavy-Duty Wall-Mounted Coat Rack (2-Pack)</span>
+                        </div>
+                    </div>
+                    <div class="product-info-column">
+                        <h3 class="product-card-title">Dseap Coat Rack Wall Mounted (2-Pack)</h3>
+                        <p style="font-size: 1rem; color: #555;">
+                            Heavy-duty wall-mounted hook rail system designed for dense outerwear organization.
+                        </p>
+                        <ul class="product-spec-list">
+                            <li><strong>Triple Hook Architecture:</strong> Features upper and lower prongs for simultaneous coat, hat, and key storage.</li>
+                            <li><strong>Solid Wood Rail:</strong> Sturdy backplate construction prevents wall scuffs and flexing.</li>
+                            <li><strong>Multi-Pack Value:</strong> Mount one rail near the door for immediate key drops and a second at standard coat height.</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="https://www.amazon.com/dp/B07K71JDZ3?tag=elevateliv05f-20" 
+                               target="_blank" 
+                               rel="sponsored noopener" 
+                               class="btn btn-primary"
+                               onclick="trackAffiliateClick('Dseap_Coat_Rack_B07K71JDZ3')">
+                               Check Price on Amazon
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -881,26 +1055,37 @@
                 Apartment entryways endure high foot traffic, bringing in moisture, street dust, and grit. High-pile decorative rugs jam under the front door when opened. A low-profile flat-weave mat under 0.25 inches thick allows smooth door sweep clearance while trapping debris near the threshold.
             </p>
 
-            <!-- SUPPORTING PRODUCT 2 -->
+            <!-- SUPPORTING PRODUCT CARD 2 (WITH VERIFIED AMAZON PRODUCT IMAGE) -->
             <div class="product-spotlight-card">
                 <span class="role-badge supporting">Floor Protection</span>
-                <h3 class="product-card-title">SAND MINE Easy-Clean Entryway Rug</h3>
-                <p style="font-size: 1rem; color: #555;">
-                    Low-profile protective mat engineered to clear standard door clearance heights.
-                </p>
-                <ul class="product-spec-list">
-                    <li><strong>Low-Profile Weave:</strong> Under 0.25-inch thickness prevents door jams and tripping hazards.</li>
-                    <li><strong>Debris Trapping:</strong> Textured surface captures dirt and water at the apartment entrance.</li>
-                    <li><strong>Washable Maintenance:</strong> Easily vacuumed or rinsed clean for apartment living maintenance.</li>
-                </ul>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://www.amazon.com/dp/B091YMYV7Q?tag=elevateliv05f-20" 
-                       target="_blank" 
-                       rel="sponsored noopener" 
-                       class="btn btn-primary"
-                       onclick="trackAffiliateClick('SAND_MINE_Entryway_Rug_B091YMYV7Q')">
-                       Check Price on Amazon
-                    </a>
+                <div class="product-card-grid">
+                    <div class="product-image-wrapper">
+                        <img src="https://m.media-amazon.com/images/I/91b8I189EAL._AC_SL1500_.jpg" 
+                             alt="SAND MINE low-profile washable entryway rug" 
+                             width="260" 
+                             height="260" 
+                             loading="lazy">
+                    </div>
+                    <div class="product-info-column">
+                        <h3 class="product-card-title">SAND MINE Easy-Clean Entryway Rug</h3>
+                        <p style="font-size: 1rem; color: #555;">
+                            Low-profile protective mat engineered to clear standard door clearance heights.
+                        </p>
+                        <ul class="product-spec-list">
+                            <li><strong>Low-Profile Weave:</strong> Under 0.25-inch thickness prevents door jams and tripping hazards.</li>
+                            <li><strong>Debris Trapping:</strong> Textured surface captures dirt and water at the apartment entrance.</li>
+                            <li><strong>Washable Maintenance:</strong> Easily vacuumed or rinsed clean for apartment living maintenance.</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="https://www.amazon.com/dp/B091YMYV7Q?tag=elevateliv05f-20" 
+                               target="_blank" 
+                               rel="sponsored noopener" 
+                               class="btn btn-primary"
+                               onclick="trackAffiliateClick('SAND_MINE_Entryway_Rug_B091YMYV7Q')">
+                               Check Price on Amazon
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -910,26 +1095,37 @@
                 Functional storage elements benefit from soft textile styling to keep the foyer feeling inviting. If your entryway features a narrow bench or entryway shoe stool, adding ribbed corduroy pillow covers introduces warm tactile depth without occupying physical walking space.
             </p>
 
-            <!-- ACCENT PRODUCT -->
+            <!-- ACCENT PRODUCT CARD (WITH VERIFIED AMAZON PRODUCT IMAGE) -->
             <div class="product-spotlight-card">
                 <span class="role-badge accent">Styling Accent</span>
-                <h3 class="product-card-title">Phantoscope Farmhouse Throw Pillow Covers</h3>
-                <p style="font-size: 1rem; color: #555;">
-                    Decorative textile cushion covers designed for entryway bench styling and accent seating.
-                </p>
-                <ul class="product-spec-list">
-                    <li><strong>Ribbed Corduroy Texture:</strong> Adds soft visual contrast against wood and metal storage units.</li>
-                    <li><strong>Concealed Zipper:</strong> Seamless closure maintains a tailored editorial appearance.</li>
-                    <li><strong>Textile Cushion Protection:</strong> Encloses throw pillows for easy seasonal washing.</li>
-                </ul>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://www.amazon.com/dp/B08JTFZLT9?tag=elevateliv05f-20" 
-                       target="_blank" 
-                       rel="sponsored noopener" 
-                       class="btn btn-primary"
-                       onclick="trackAffiliateClick('Phantoscope_Pillow_Covers_B08JTFZLT9')">
-                       Check Price on Amazon
-                    </a>
+                <div class="product-card-grid">
+                    <div class="product-image-wrapper">
+                        <img src="https://m.media-amazon.com/images/I/91rsy+ErxbL._AC_SL1500_.jpg" 
+                             alt="Phantoscope ribbed corduroy farmhouse throw pillow covers" 
+                             width="260" 
+                             height="260" 
+                             loading="lazy">
+                    </div>
+                    <div class="product-info-column">
+                        <h3 class="product-card-title">Phantoscope Farmhouse Throw Pillow Covers</h3>
+                        <p style="font-size: 1rem; color: #555;">
+                            Decorative textile cushion covers designed for entryway bench styling and accent seating.
+                        </p>
+                        <ul class="product-spec-list">
+                            <li><strong>Ribbed Corduroy Texture:</strong> Adds soft visual contrast against wood and metal storage units.</li>
+                            <li><strong>Concealed Zipper:</strong> Seamless closure maintains a tailored editorial appearance.</li>
+                            <li><strong>Textile Cushion Protection:</strong> Encloses throw pillows for easy seasonal washing.</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="https://www.amazon.com/dp/B08JTFZLT9?tag=elevateliv05f-20" 
+                               target="_blank" 
+                               rel="sponsored noopener" 
+                               class="btn btn-primary"
+                               onclick="trackAffiliateClick('Phantoscope_Pillow_Covers_B08JTFZLT9')">
+                               Check Price on Amazon
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
