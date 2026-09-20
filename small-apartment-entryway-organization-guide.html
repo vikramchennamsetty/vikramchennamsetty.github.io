@@ -425,12 +425,31 @@
           margin: 2rem 0 4rem;
         }
 
-        .hero-image {
+        .hero-picture {
+          position: absolute;
+          inset: 0;
           width: 100%;
-          height: auto;
-          border-radius: 20px;
-          box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+          height: 100%;
           display: block;
+        }
+
+        .hero-image {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+          display: block;
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 0.6s ease, visibility 0.6s ease;
+          z-index: 1;
+        }
+
+        .hero-image.is-hidden {
+          opacity: 0;
+          visibility: hidden;
         }
 
         figcaption {
@@ -727,6 +746,7 @@
         .hero-3d-wrapper {
           position: relative;
           width: 100%;
+          aspect-ratio: 1024 / 683;
           border-radius: 20px;
           overflow: hidden;
           box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
@@ -735,18 +755,29 @@
 
         .hero-3d-canvas-wrapper {
           position: absolute;
-          top: 0;
-          left: 0;
+          inset: 0;
           width: 100%;
           height: 100%;
           opacity: 0;
-          transition: opacity 0.6s ease;
-          pointer-events: auto;
+          visibility: hidden;
+          pointer-events: none;
+          transition: opacity 0.6s ease, visibility 0.6s ease;
           z-index: 2;
+          border-radius: 20px;
+          overflow: hidden;
         }
 
         .hero-3d-canvas-wrapper.active {
           opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+
+        .hero-3d-canvas-wrapper canvas {
+          width: 100% !important;
+          height: 100% !important;
+          display: block;
+          border-radius: 20px;
         }
 
         .hero-3d-tooltip {
@@ -1117,7 +1148,7 @@
                          decoding="async">
                 </picture>
                 <!-- Asynchronously Mounted Three.js 3D Interactive Canvas -->
-                <div id="hero-3d-canvas-container" class="hero-3d-canvas-wrapper" role="region" aria-label="Interactive 3D Small Entryway Scene" aria-roledescription="Spatial interactive preview"></div>
+                <div id="hero-3d-canvas-container" class="hero-3d-canvas-wrapper" role="region" aria-label="Interactive 3D Small Entryway Scene" aria-roledescription="Spatial interactive preview" aria-hidden="true"></div>
             </div>
             <figcaption>A well-planned narrow foyer utilizes vertical wall space to keep footwear and outerwear off the floor. Explore the interactive 3D spatial layout above.</figcaption>
         </figure>
@@ -1559,173 +1590,205 @@
 
         function initThreeJsHero() {
           const container = document.getElementById('hero-3d-canvas-container');
+          const heroImgElement = document.querySelector('.hero-image');
           if (!container || typeof THREE === 'undefined') return;
 
-          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          const isMobile = window.innerWidth < 768;
+          try {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const isMobile = window.innerWidth < 768;
 
-          const width = container.clientWidth || container.parentElement.clientWidth || 800;
-          const height = container.clientHeight || container.parentElement.clientHeight || 533;
+            const width = container.clientWidth || container.parentElement.clientWidth || 800;
+            const height = container.clientHeight || container.parentElement.clientHeight || 533;
 
-          const scene = new THREE.Scene();
+            const scene = new THREE.Scene();
 
-          const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-          camera.position.set(0, 0, 6.2);
+            const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+            camera.position.set(0, 0, 6.2);
 
-          const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-          renderer.setSize(width, height);
-          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-          container.appendChild(renderer.domElement);
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+            renderer.setSize(width, height, false);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-          // Lights
-          const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
-          scene.add(ambientLight);
+            container.innerHTML = '';
+            container.appendChild(renderer.domElement);
 
-          const dirLight = new THREE.DirectionalLight(0xfff5ea, 0.6);
-          dirLight.position.set(2, 4, 5);
-          scene.add(dirLight);
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+            scene.add(ambientLight);
 
-          // DOM Image Texture Reuse (Prevents duplicate HTTP request)
-          const heroImgElement = document.querySelector('.hero-image');
-          let heroTex;
-          if (heroImgElement && heroImgElement.complete && heroImgElement.naturalWidth > 0) {
-            heroTex = new THREE.Texture(heroImgElement);
-            heroTex.needsUpdate = true;
-          } else if (heroImgElement) {
-            heroTex = new THREE.Texture();
-            heroImgElement.addEventListener('load', () => {
-              heroTex.image = heroImgElement;
+            const dirLight = new THREE.DirectionalLight(0xfff5ea, 0.6);
+            dirLight.position.set(2, 4, 5);
+            scene.add(dirLight);
+
+            // DOM Image Texture Reuse (Prevents duplicate HTTP request)
+            let heroTex;
+            if (heroImgElement && heroImgElement.complete && heroImgElement.naturalWidth > 0) {
+              heroTex = new THREE.Texture(heroImgElement);
               heroTex.needsUpdate = true;
-              if (renderer && scene && camera) {
+            } else if (heroImgElement) {
+              heroTex = new THREE.Texture();
+              heroImgElement.addEventListener('load', () => {
+                heroTex.image = heroImgElement;
+                heroTex.needsUpdate = true;
+                if (renderer && scene && camera) {
+                  renderer.render(scene, camera);
+                }
+              });
+            } else {
+              const textureLoader = new THREE.TextureLoader();
+              heroTex = textureLoader.load('https://elevatelivingco.me/assets/images/small-apartment-entryway-hero.jpg');
+            }
+
+            // 3D Room Plane Mesh
+            const roomGeo = new THREE.PlaneGeometry(6.4, 4.26);
+            const roomMat = new THREE.MeshStandardMaterial({ map: heroTex, roughness: 0.8 });
+            const roomMesh = new THREE.Mesh(roomGeo, roomMat);
+            roomMesh.position.set(0, 0, 0);
+            scene.add(roomMesh);
+
+            // SPATIAL ROOM HOT-ZONES (4 Primary Categories in Scene)
+            const hotspotMat = new THREE.MeshBasicMaterial({ color: 0xc9a44a, transparent: true, opacity: 0.0, side: THREE.DoubleSide });
+            
+            // 1. VASAGLE Cabinet (Left White Cabinet)
+            const zoneVasagle = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 2.2), hotspotMat.clone());
+            zoneVasagle.position.set(-2.1, -0.4, 0.05);
+            zoneVasagle.userData = { name: 'VASAGLE Narrow Shoe Cabinet (Primary)', target: '.product-spotlight-card' };
+            scene.add(zoneVasagle);
+
+            // 2. weselon Cabinet (Right Navy Cabinet)
+            const zoneWeselon = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 2.0), hotspotMat.clone());
+            zoneWeselon.position.set(2.1, -0.45, 0.05);
+            zoneWeselon.userData = { name: 'weselon 2-Tier Cabinet (Alternative)', target: '.product-spotlight-card:nth-of-type(2)' };
+            scene.add(zoneWeselon);
+
+            // 3. Dseap Coat Rack (Upper Right Wall Hooks)
+            const zoneDseap = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 0.9), hotspotMat.clone());
+            zoneDseap.position.set(1.4, 1.25, 0.05);
+            zoneDseap.userData = { name: 'Dseap Wall Coat Rack (Supporting)', target: '#section-2' };
+            scene.add(zoneDseap);
+
+            // 4. SAND MINE Rug (Center Floor Runner)
+            const zoneRug = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 1.3), hotspotMat.clone());
+            zoneRug.position.set(0.0, -1.25, 0.05);
+            zoneRug.userData = { name: 'SAND MINE Entryway Rug (Floor Protection)', target: '#section-3' };
+            scene.add(zoneRug);
+
+            const hotZones = [zoneVasagle, zoneWeselon, zoneDseap, zoneRug];
+
+            // Tooltip
+            const tooltip = document.createElement('div');
+            tooltip.className = 'hero-3d-tooltip';
+            tooltip.style.opacity = '0';
+            container.appendChild(tooltip);
+
+            // Raycaster & Interactivity
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2();
+            let hoveredZone = null;
+
+            let targetMouseX = 0;
+            let targetMouseY = 0;
+            let currentMouseX = 0;
+            let currentMouseY = 0;
+
+            if (!isMobile && !prefersReducedMotion) {
+              container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+                targetMouseX = mouse.x * 0.35;
+                targetMouseY = mouse.y * 0.20;
+
+                raycaster.setFromCamera(mouse, camera);
+                const intersects = raycaster.intersectObjects(hotZones);
+
+                if (intersects.length > 0) {
+                  const hit = intersects[0].object;
+                  if (hoveredZone !== hit) {
+                    if (hoveredZone) hoveredZone.material.opacity = 0.0;
+                    hoveredZone = hit;
+                    hoveredZone.material.opacity = 0.22;
+                    container.style.cursor = 'pointer';
+                    tooltip.innerText = 'Click to explore: ' + hit.userData.name;
+                    tooltip.style.opacity = '1';
+                  }
+                } else {
+                  if (hoveredZone) hoveredZone.material.opacity = 0.0;
+                  hoveredZone = null;
+                  container.style.cursor = 'default';
+                  tooltip.style.opacity = '0';
+                }
+              });
+            }
+
+            container.addEventListener('click', () => {
+              if (hoveredZone && hoveredZone.userData.target) {
+                document.querySelector(hoveredZone.userData.target)?.scrollIntoView({ behavior: 'smooth' });
+              }
+            });
+
+            // Render first frame to verify initialization success
+            renderer.render(scene, camera);
+
+            // Transition: Activate 3D experience and hide static DOM image
+            container.classList.add('active');
+            container.setAttribute('aria-hidden', 'false');
+            if (heroImgElement) {
+              heroImgElement.classList.add('is-hidden');
+            }
+
+            // ResizeObserver for dynamic canvas sizing
+            if ('ResizeObserver' in window) {
+              const resizeObserver = new ResizeObserver(() => {
+                const w = container.clientWidth;
+                const h = container.clientHeight;
+                if (w > 0 && h > 0) {
+                  camera.aspect = w / h;
+                  camera.updateProjectionMatrix();
+                  renderer.setSize(w, h, false);
+                  renderer.render(scene, camera);
+                }
+              });
+              resizeObserver.observe(container);
+            }
+
+            // IntersectionObserver viewport rendering governance
+            let isHeroInViewport = true;
+            if ('IntersectionObserver' in window) {
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  isHeroInViewport = entry.isIntersecting;
+                });
+              }, { threshold: 0.05 });
+              observer.observe(container);
+            }
+
+            // Render loop
+            if (prefersReducedMotion) {
+              renderer.render(scene, camera);
+            } else {
+              function animate() {
+                requestAnimationFrame(animate);
+                if (!isHeroInViewport) return;
+
+                currentMouseX += (targetMouseX - currentMouseX) * 0.05;
+                currentMouseY += (targetMouseY - currentMouseY) * 0.05;
+
+                camera.position.x = currentMouseX;
+                camera.position.y = currentMouseY;
+                camera.lookAt(0, 0, 0);
+
                 renderer.render(scene, camera);
               }
-            });
-          } else {
-            const textureLoader = new THREE.TextureLoader();
-            heroTex = textureLoader.load('https://elevatelivingco.me/assets/images/small-apartment-entryway-hero.jpg');
-          }
-
-          // 3D Room Plane Mesh
-          const roomGeo = new THREE.PlaneGeometry(6.4, 4.26);
-          const roomMat = new THREE.MeshStandardMaterial({ map: heroTex, roughness: 0.8 });
-          const roomMesh = new THREE.Mesh(roomGeo, roomMat);
-          roomMesh.position.set(0, 0, 0);
-          scene.add(roomMesh);
-
-          // SPATIAL ROOM HOT-ZONES (4 Primary Categories in Scene)
-          const hotspotMat = new THREE.MeshBasicMaterial({ color: 0xc9a44a, transparent: true, opacity: 0.0, side: THREE.DoubleSide });
-          
-          // 1. VASAGLE Cabinet (Left White Cabinet)
-          const zoneVasagle = new THREE.Mesh(new THREE.PlaneGeometry(1.6, 2.2), hotspotMat.clone());
-          zoneVasagle.position.set(-2.1, -0.4, 0.05);
-          zoneVasagle.userData = { name: 'VASAGLE Narrow Shoe Cabinet (Primary)', target: '.product-spotlight-card' };
-          scene.add(zoneVasagle);
-
-          // 2. weselon Cabinet (Right Navy Cabinet)
-          const zoneWeselon = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 2.0), hotspotMat.clone());
-          zoneWeselon.position.set(2.1, -0.45, 0.05);
-          zoneWeselon.userData = { name: 'weselon 2-Tier Cabinet (Alternative)', target: '.product-spotlight-card:nth-of-type(2)' };
-          scene.add(zoneWeselon);
-
-          // 3. Dseap Coat Rack (Upper Right Wall Hooks)
-          const zoneDseap = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 0.9), hotspotMat.clone());
-          zoneDseap.position.set(1.4, 1.25, 0.05);
-          zoneDseap.userData = { name: 'Dseap Wall Coat Rack (Supporting)', target: '#section-2' };
-          scene.add(zoneDseap);
-
-          // 4. SAND MINE Rug (Center Floor Runner)
-          const zoneRug = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 1.3), hotspotMat.clone());
-          zoneRug.position.set(0.0, -1.25, 0.05);
-          zoneRug.userData = { name: 'SAND MINE Entryway Rug (Floor Protection)', target: '#section-3' };
-          scene.add(zoneRug);
-
-          const hotZones = [zoneVasagle, zoneWeselon, zoneDseap, zoneRug];
-
-          // Tooltip
-          const tooltip = document.createElement('div');
-          tooltip.className = 'hero-3d-tooltip';
-          tooltip.style.opacity = '0';
-          container.appendChild(tooltip);
-
-          // Raycaster & Interactivity
-          const raycaster = new THREE.Raycaster();
-          const mouse = new THREE.Vector2();
-          let hoveredZone = null;
-
-          let targetMouseX = 0;
-          let targetMouseY = 0;
-          let currentMouseX = 0;
-          let currentMouseY = 0;
-
-          if (!isMobile && !prefersReducedMotion) {
-            container.addEventListener('mousemove', (e) => {
-              const rect = container.getBoundingClientRect();
-              mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-              mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-
-              targetMouseX = mouse.x * 0.35;
-              targetMouseY = mouse.y * 0.20;
-
-              raycaster.setFromCamera(mouse, camera);
-              const intersects = raycaster.intersectObjects(hotZones);
-
-              if (intersects.length > 0) {
-                const hit = intersects[0].object;
-                if (hoveredZone !== hit) {
-                  if (hoveredZone) hoveredZone.material.opacity = 0.0;
-                  hoveredZone = hit;
-                  hoveredZone.material.opacity = 0.22;
-                  container.style.cursor = 'pointer';
-                  tooltip.innerText = 'Click to explore: ' + hit.userData.name;
-                  tooltip.style.opacity = '1';
-                }
-              } else {
-                if (hoveredZone) hoveredZone.material.opacity = 0.0;
-                hoveredZone = null;
-                container.style.cursor = 'default';
-                tooltip.style.opacity = '0';
-              }
-            });
-          }
-
-          container.addEventListener('click', () => {
-            if (hoveredZone && hoveredZone.userData.target) {
-              document.querySelector(hoveredZone.userData.target)?.scrollIntoView({ behavior: 'smooth' });
+              animate();
             }
-          });
 
-          // Smoothly fade canvas active
-          container.classList.add('active');
-
-          // IntersectionObserver viewport rendering governance (prevents TBT & main thread work when scrolled away)
-          let isHeroInViewport = true;
-          if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                isHeroInViewport = entry.isIntersecting;
-              });
-            }, { threshold: 0.05 });
-            observer.observe(container);
-          }
-
-          // Render loop
-          if (prefersReducedMotion) {
-            renderer.render(scene, camera);
-          } else {
-            function animate() {
-              requestAnimationFrame(animate);
-              if (!isHeroInViewport) return;
-
-              currentMouseX += (targetMouseX - currentMouseX) * 0.05;
-              currentMouseY += (targetMouseY - currentMouseY) * 0.05;
-
-              camera.position.x = currentMouseX;
-              camera.position.y = currentMouseY;
-              camera.lookAt(0, 0, 0);
-
-              renderer.render(scene, camera);
-            }
-            animate();
+          } catch (err) {
+            console.warn('Three.js hero fallback active:', err);
+            if (heroImgElement) heroImgElement.classList.remove('is-hidden');
+            container.classList.remove('active');
+            container.setAttribute('aria-hidden', 'true');
           }
         }
 
