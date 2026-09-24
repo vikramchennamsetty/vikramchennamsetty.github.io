@@ -53,3 +53,22 @@ This document records post-task evaluations, root-cause analyses, and permanent 
 - **Preventive Rule:** Parent anchors own navigation and tracking. Images wrapped inside `<a class="product-image-link">` MUST NOT contain conflicting inline `onclick` handlers.
 - **Skill Updated:** `elevate-affiliate-compliance` (v3.0), `elevate-source-integrity` (v1.0)
 - **Regression Test Added:** Nested `img` `onclick` scanner ensuring zero conflicting handlers inside product image links.
+
+---
+
+### Lesson 005 — Case #001 Post-Publication Search Visibility & Release Governance
+- **Date:** 2026-09-20
+- **Task:** Small Apartment Entryway Organization Guide (Case #001)
+- **Article URL:** `https://elevatelivingco.me/small-apartment-entryway-organization-guide.html`
+- **Commits:** `555a3cd` → `62c7c0b` → `442988a` → `229a069`
+- **Failure Category:** Governance / Release Strategy
+- **Key Learnings:**
+  1. Lighthouse SEO 100 proves technical eligibility, NOT Google indexing.
+  2. Lab performance 99 (FCP 0.8s, LCP 1.0s, TBT 0ms) does not prove CrUX field metrics.
+  3. Static sitemap inclusion must be verified in repository immediately upon publishing.
+  4. Google Search Console URL Inspection is required for authoritative indexing evidence.
+  5. Google-selected canonical must be monitored against declared canonical.
+  6. Accessibility 100/100 belongs in the release gate (requires contrast ratio >= 4.5:1 and H1->H2->H3 heading hierarchy).
+  7. Performance optimization must stop once lab performance reaches elite levels (99 score, 1s LCP, 0ms TBT) to avoid diminishing returns and visual regressions.
+- **Skill Updated:** `elevate-search-visibility` (v4.7)
+- **Governance Gate Added:** `SEARCH_VISIBILITY_LIFECYCLE` with 10 canonical post-publication stages and 13 GSC evidence states.
