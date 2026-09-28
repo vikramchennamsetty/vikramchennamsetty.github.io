@@ -69,6 +69,11 @@ Checks performed:
 ElevateLivingCo uses a permanent, multi-tiered research and Pinterest campaign architecture:
 
 ### A. Core Intelligence Files & Locations
+- **Performance Data Schema:** `.agents/data/pinterest-performance-schema.md` (Authoritative metric schema & metadata definitions).
+- **KPI Definitions:** `.agents/data/pinterest-kpi-definitions.md` (Official platform metric definitions & rate calculations).
+- **Campaign Tracker:** `.agents/data/pinterest-campaign-tracker.csv` (CSV tracker initializing Dark Academia & upcoming clusters).
+- **Hypothesis Log:** `.agents/data/pinterest-hypotheses.md` (Structured hypothesis & evidentiary experiment log).
+- **Performance Report Template:** `.agents/templates/pinterest-performance-report.md` (Standardized campaign evaluation report).
 - **Keyword Database:** `.agents/data/pinterest-keyword-database.md` (Categorized search intent & evidence records).
 - **Search-Intent Matrix:** `.agents/data/pinterest-search-intent-matrix.md` (Intent mapping for automated Pin concept generation).
 - **Seasonal Calendar:** `.agents/data/pinterest-seasonal-calendar-2026-2027.md` (Month-by-month publishing & preparation windows).
@@ -78,7 +83,7 @@ ElevateLivingCo uses a permanent, multi-tiered research and Pinterest campaign a
 ### B. Core Operational Skills
 - **`elevate-pinterest-seo`:** Pinterest-native SEO, keyword mapping, 14-stage campaign lifecycle, title/description/alt-text copywriting formulas.
 - **`elevate-pinterest-qa`:** 23-point pre-scheduling automated quality assurance audit (visual parity, cannibalization check, mobile readability).
-- **`elevate-pinterest-learning-loop`:** Ingests Pinterest Analytics post-publication telemetry and appends dated learnings to project datasets.
+- **`elevate-pinterest-learning-loop`:** V2.0 Performance Intelligence Engine. Ingests Pinterest Analytics telemetry, normalizes rates, tests structured hypotheses, and appends dated learnings to project datasets.
 - **`elevate-research-evidence`:** 5-level evidence classification standard (Level A: Platform Docs to Level E: Model Inference).
 
 ---
