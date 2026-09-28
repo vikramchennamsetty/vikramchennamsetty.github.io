@@ -125,6 +125,25 @@ Every Search Console observation record MUST maintain the following field struct
 
 ## 4. POST-PUBLISH CHECKLIST & GOVERNANCE RULES
 
+### Mandatory Article Publishing & Site Discovery Protocol (Checks A–I)
+For EVERY future article publication workflow, execution MUST sequentially perform and verify these 9 post-publication steps:
+
+1. **A. CREATE ARTICLE:** Build and verify the production `.html` article file according to design, affiliate, and technical QA standards.
+2. **B. INTERNAL LINKING:** Establish a two-way topical cluster link network by adding inbound internal links from relevant existing articles and outbound links from the new article.
+3. **C. HOMEPAGE DISCOVERY:** Inspect `index.html`. Check whether the new article is linked from the homepage editorial grid/listing. If missing, add it using the existing site component pattern without creating duplicate cards or altering existing homepage layouts.
+4. **D. SITEMAP:** Inspect the production `sitemap.xml` file. If missing, add the exact `<loc>`, `<lastmod>`, `<priority>`, and `<image:image>` metadata under the appropriate cluster header. If using auto-generated sitemaps, verify front matter configuration. Never duplicate sitemap entries.
+5. **E. FEED:** Verify inclusion in RSS/Atom feeds if the site uses active feed feeds.
+6. **F. CANONICAL:** Verify that `<link rel="canonical">` points to the exact production URL (`https://elevatelivingco.me/[slug].html`).
+7. **G. LIVE URL:** After GitHub push, perform HTTP request verification to confirm the production URL returns status code `200 OK` and renders properly.
+8. **H. DISCOVERY AUDIT REPORTING:** Output an explicit audit summary table in the final publication report:
+   - **Homepage:** `PRESENT` / `ADDED` / `NOT APPLICABLE`
+   - **Sitemap:** `PRESENT` / `ADDED` / `AUTO-GENERATED` / `NOT APPLICABLE`
+   - **Feed:** `PRESENT` / `ADDED` / `NOT APPLICABLE`
+   - **Internal links:** `PASS` / `FAIL`
+   - **Canonical:** `PASS` / `FAIL`
+   - **Live URL:** `PASS` / `FAIL`
+9. **I. GIT SAFETY:** Never execute `git add .` blindly. Stage ONLY intended production website files (e.g. `[article].html`, `index.html`, `sitemap.xml`). Do NOT commit `.agents` tooling, manifests, experiments, or generated temporary assets.
+
 ### Post-Publish Checklist
 For every newly published article:
 
@@ -133,6 +152,7 @@ For every newly published article:
 - [ ] Canonical URL is self-referencing and correct.
 - [ ] Meta robots set to `index, follow`.
 - [ ] `sitemap.xml` contains the article URL.
+- [ ] Homepage `index.html` links to the article.
 - [ ] Internal links to the article exist in related content.
 - [ ] JSON-LD schema is valid (`Article`, `BreadcrumbList`, `FAQPage`).
 - [ ] Responsive mobile rendering verified across 375px/390px/768px/1440px viewports.
