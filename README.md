@@ -64,4 +64,24 @@ Checks performed:
 
 ---
 
+## 📌 5. PINTEREST & RESEARCH INTELLIGENCE ARCHITECTURE
+
+ElevateLivingCo uses a permanent, multi-tiered research and Pinterest campaign architecture:
+
+### A. Core Intelligence Files & Locations
+- **Keyword Database:** `.agents/data/pinterest-keyword-database.md` (Categorized search intent & evidence records).
+- **Search-Intent Matrix:** `.agents/data/pinterest-search-intent-matrix.md` (Intent mapping for automated Pin concept generation).
+- **Seasonal Calendar:** `.agents/data/pinterest-seasonal-calendar-2026-2027.md` (Month-by-month publishing & preparation windows).
+- **Timing Research:** `.agents/data/pinterest-timing-research.md` (US timezone mapping & multi-window test matrices).
+- **Pin Metadata Template:** `.agents/templates/pinterest-pin-metadata.md` (Standardized metadata records).
+
+### B. Core Operational Skills
+- **`elevate-pinterest-seo`:** Pinterest-native SEO, keyword mapping, 14-stage campaign lifecycle, title/description/alt-text copywriting formulas.
+- **`elevate-pinterest-qa`:** 23-point pre-scheduling automated quality assurance audit (visual parity, cannibalization check, mobile readability).
+- **`elevate-pinterest-learning-loop`:** Ingests Pinterest Analytics post-publication telemetry and appends dated learnings to project datasets.
+- **`elevate-research-evidence`:** 5-level evidence classification standard (Level A: Platform Docs to Level E: Model Inference).
+
+---
+
 **© 2026 ElevateLiving Performance Engineering.**
+
