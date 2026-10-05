@@ -31,7 +31,7 @@ function renderCatalog(books, container) {
         <article class="eb-glass-card eb-card-body" data-book-id="${book.id}">
             <div class="eb-book-stage">
                 <div class="eb-book-3d">
-                    <img src="${book.cover}" alt="${book.title} Book Cover" class="eb-book-cover-img" loading="lazy" width="280" height="420" />
+                    <img src="${book.cover}" alt="${book.title} Book Cover" class="eb-book-cover-img" loading="lazy" width="315" height="473" />
                     <div class="eb-book-spine"></div>
                     <div class="eb-book-pages"></div>
                 </div>

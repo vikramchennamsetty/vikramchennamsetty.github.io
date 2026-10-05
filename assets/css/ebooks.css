@@ -174,7 +174,7 @@
 
 .eb-book-3d {
   position: relative;
-  width: 280px;
+  width: 315px;
   aspect-ratio: 2 / 3;
   transform-style: preserve-3d;
   transform: rotateY(-18deg) rotateX(6deg);
@@ -204,22 +204,24 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 16px;
+  width: 14px;
   height: 100%;
-  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(201,164,74,0.3) 60%, rgba(255,255,255,0.1) 100%);
-  transform: rotateY(-90deg) translateZ(8px);
+  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(201,164,74,0.25) 70%, rgba(255,255,255,0.05) 100%);
+  transform-origin: left center;
+  transform: rotateY(-90deg);
   border-radius: 4px 0 0 4px;
 }
 
 .eb-book-pages {
   position: absolute;
-  top: 4px;
-  right: 2px;
-  width: 20px;
-  height: calc(100% - 8px);
-  background: linear-gradient(90deg, #EBE6DC 0%, #D4CEBF 100%);
-  transform: rotateY(90deg) translateZ(268px);
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  top: 3px;
+  right: 0;
+  width: 14px;
+  height: calc(100% - 6px);
+  background: linear-gradient(90deg, #C5BEAA 0%, #9E9785 100%);
+  transform-origin: right center;
+  transform: rotateY(90deg);
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
   border-radius: 0 2px 2px 0;
 }
 
