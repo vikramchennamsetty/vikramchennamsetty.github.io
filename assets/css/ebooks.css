@@ -1,0 +1,362 @@
+/* 
+  ElevateLivingCo — Ebooks Visual System
+  Isolated CSS for CHE's Bookshelf & Book Detail Experience
+  Palette: Obsidian Black, Deep Burgundy, Wine Red, Warm Gold
+  Features: Native 3D Book Perspective, Specular Glassmorphism, Responsive Mobile Fallbacks
+*/
+
+:root {
+  --eb-obsidian: #070506;
+  --eb-obsidian-surface: #0E090B;
+  --eb-burgundy-dark: #29050B;
+  --eb-burgundy-mid: #4A0E17;
+  --eb-wine-red: #6B1120;
+  --eb-crimson: #8B0000;
+  --eb-gold: #C9A44A;
+  --eb-gold-light: #F0DBA0;
+  --eb-gold-glow: rgba(201, 164, 74, 0.35);
+  --eb-glass-bg: rgba(18, 9, 12, 0.75);
+  --eb-glass-border: rgba(201, 164, 74, 0.22);
+  --eb-glass-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --eb-text-main: #F5F2ED;
+  --eb-text-muted: rgba(245, 242, 237, 0.72);
+}
+
+/* Base Page Background with Atmospheric Radial Light Pools */
+.ebooks-page {
+  background-color: var(--eb-obsidian);
+  color: var(--eb-text-main);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--f-sans);
+}
+
+.ebooks-ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  height: 900px;
+  background: 
+    radial-gradient(circle at 50% 18%, rgba(107, 17, 32, 0.38) 0%, rgba(74, 14, 23, 0.2) 40%, transparent 75%),
+    radial-gradient(circle at 80% 35%, rgba(201, 164, 74, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Shared Container */
+.ebooks-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 var(--safe-area);
+  position: relative;
+  z-index: 2;
+}
+
+/* Glassmorphic Surface Cards */
+.eb-glass-card {
+  background: var(--eb-glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--eb-glass-border);
+  border-radius: 20px;
+  box-shadow: var(--eb-glass-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.eb-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(240, 219, 160, 0.4) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Eyebrow & Badges */
+.eb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--eb-gold);
+  margin-bottom: 1rem;
+}
+
+.eb-eyebrow-line {
+  width: 24px;
+  height: 1px;
+  background-color: var(--eb-gold);
+}
+
+.eb-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(107, 17, 32, 0.5);
+  border: 1px solid rgba(201, 164, 74, 0.3);
+  color: var(--eb-gold-light);
+}
+
+/* Buttons */
+.eb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem 2.2rem;
+  border-radius: 9999px;
+  font-family: var(--f-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.eb-btn-primary {
+  background: linear-gradient(135deg, #C9A44A 0%, #9A7727 100%);
+  color: #070506;
+  box-shadow: 0 6px 24px rgba(201, 164, 74, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.eb-btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #F0DBA0 0%, #C9A44A 100%);
+  box-shadow: 0 10px 32px rgba(201, 164, 74, 0.5);
+  color: #000000;
+}
+
+.eb-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--eb-text-main);
+  border: 1px solid rgba(201, 164, 74, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.eb-btn-secondary:hover {
+  background: rgba(201, 164, 74, 0.15);
+  border-color: var(--eb-gold);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Native 3D Book Cover Stage */
+.eb-book-stage {
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.eb-book-3d {
+  position: relative;
+  width: 280px;
+  aspect-ratio: 2 / 3;
+  transform-style: preserve-3d;
+  transform: rotateY(-18deg) rotateX(6deg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.eb-book-3d:hover {
+  transform: rotateY(-6deg) rotateX(2deg) translateY(-8px) scale(1.02);
+}
+
+.eb-book-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px 12px 12px 4px;
+  box-shadow: 
+    -12px 16px 36px rgba(0, 0, 0, 0.8),
+    -2px 0 10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(107, 17, 32, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* 3D Spine and Page Edges Effects */
+.eb-book-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(201,164,74,0.3) 60%, rgba(255,255,255,0.1) 100%);
+  transform: rotateY(-90deg) translateZ(8px);
+  border-radius: 4px 0 0 4px;
+}
+
+.eb-book-pages {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  width: 20px;
+  height: calc(100% - 8px);
+  background: linear-gradient(90deg, #EBE6DC 0%, #D4CEBF 100%);
+  transform: rotateY(90deg) translateZ(268px);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Tropes Pills */
+.eb-tropes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1.5rem 0;
+}
+
+.eb-trope-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(240, 219, 160, 0.2);
+  color: rgba(245, 242, 237, 0.9);
+  transition: all 0.25s ease;
+}
+
+.eb-trope-pill:hover {
+  background: rgba(107, 17, 32, 0.3);
+  border-color: var(--eb-gold);
+  color: #FFFFFF;
+}
+
+/* Catalog Grid Layout */
+.eb-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.eb-card-body {
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.eb-card-title {
+  font-family: var(--f-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0.5rem 0 0.75rem 0;
+  line-height: 1.25;
+}
+
+.eb-card-desc {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: var(--eb-text-muted);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Elevate Return CTA Section */
+.eb-return-section {
+  margin: 5rem 0 3rem 0;
+  text-align: center;
+}
+
+.eb-return-card {
+  padding: 3.5rem 2rem;
+  max-width: 840px;
+  margin: 0 auto;
+  border: 1px solid var(--eb-glass-border);
+  background: linear-gradient(180deg, rgba(25, 10, 15, 0.8) 0%, rgba(10, 5, 7, 0.95) 100%);
+}
+
+.eb-return-title {
+  font-family: var(--f-serif);
+  font-size: 2rem;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.eb-return-sub {
+  color: var(--eb-text-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Responsive Overrides */
+@media (max-width: 980px) {
+  .eb-glass-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(18, 9, 12, 0.92);
+  }
+
+  .eb-book-3d {
+    width: 230px;
+    transform: rotateY(-10deg) rotateX(4deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .eb-book-stage {
+    perspective: none;
+    padding: 10px 0;
+  }
+
+  .eb-book-3d {
+    width: 210px;
+    transform: none !important;
+  }
+
+  .eb-book-cover-img {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.8), 0 0 16px rgba(107, 17, 32, 0.4);
+  }
+
+  .eb-book-spine,
+  .eb-book-pages {
+    display: none;
+  }
+
+  .eb-btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+/* Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  .eb-book-3d {
+    transform: none !important;
+    transition: none !important;
+  }
+  .eb-glass-card,
+  .eb-btn {
+    transition: none !important;
+  }
+}
