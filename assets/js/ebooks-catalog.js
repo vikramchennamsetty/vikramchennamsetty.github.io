@@ -1,7 +1,7 @@
 /**
  * ElevateLivingCo — Ebooks Catalog Engine
  * Dynamically loads books.json, renders CHE's digital bookshelf,
- * handles 3D tilt interactions, and tracks Amazon pre-order clicks.
+ * handles 3D tilt interactions, and tracks Amazon pre-order/buy clicks.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,11 +27,15 @@ async function initEbooksCatalog() {
 function renderCatalog(books, container) {
     if (!books || books.length === 0) return;
 
-    container.innerHTML = books.map(book => `
+    // Filter collection books (items not marked as featured hero release)
+    const collectionBooks = books.filter(b => !b.featured);
+    if (collectionBooks.length === 0) return;
+
+    container.innerHTML = collectionBooks.map(book => `
         <article class="eb-glass-card eb-card-body" data-book-id="${book.id}">
             <div class="eb-book-stage">
                 <div class="eb-book-3d">
-                    <img src="${book.cover}" alt="${book.title} Book Cover" class="eb-book-cover-img" loading="lazy" width="315" height="473" />
+                    <img src="${book.cover}" alt="${book.title} Book Cover by ${book.author}" class="eb-book-cover-img" loading="lazy" width="315" height="473" />
                     <div class="eb-book-spine"></div>
                     <div class="eb-book-pages"></div>
                 </div>
@@ -41,7 +45,7 @@ function renderCatalog(books, container) {
                 <span class="eb-badge">${book.genre}</span>
                 <h3 class="eb-card-title">${book.title}</h3>
                 <p style="font-size: 0.85rem; color: var(--eb-gold); font-weight: 600; margin-bottom: 0.75rem;">
-                    BY ${book.author.toUpperCase()} • RELEASE: ${formatReleaseDate(book.releaseDate)}
+                    BY ${book.author.toUpperCase()} • ${book.status === 'preorder' ? 'RELEASING: ' : 'PUBLISHED: '}${formatReleaseDate(book.releaseDate)}
                 </p>
                 <p class="eb-card-desc">${book.summary}</p>
                 
@@ -51,11 +55,9 @@ function renderCatalog(books, container) {
 
                 <div style="display: flex; gap: 12px; margin-top: 1.5rem; flex-wrap: wrap;">
                     <a href="${book.amazonUrl}" target="_blank" rel="noopener" class="eb-btn eb-btn-primary" onclick="trackEbookClick('${escapeJsString(book.title)}', '${book.amazonUrl}')">
-                        Pre-Order $${book.priceUSD}
+                        ${book.status === 'preorder' ? 'Pre-Order' : 'Buy On Amazon'} $${book.priceUSD}
                     </a>
-                    <a href="/ebooks/${book.slug}/" class="eb-btn eb-btn-secondary">
-                        View Details
-                    </a>
+                    ${book.slug === 'covert-sparks' ? `<a href="/ebooks/${book.slug}/" class="eb-btn eb-btn-secondary">View Details</a>` : ''}
                 </div>
             </div>
         </article>
