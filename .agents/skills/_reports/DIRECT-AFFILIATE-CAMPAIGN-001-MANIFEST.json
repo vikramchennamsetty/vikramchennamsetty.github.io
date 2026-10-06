@@ -6,6 +6,9 @@
   "PINTEREST_PROFILE": "https://in.pinterest.com/elevateliving_co/",
   "DISCLOSURE_STANDARD": "As an Amazon Associate I earn from qualifying purchases.",
   "AUDIT_DATE": "2026-10-06",
+  "SCHEDULED": true,
+  "SCHEDULE_STATUS": "SCHEDULED",
+  "SCHEDULE_TIMEZONE": "America/New_York (EDT)",
   "PINS": [
     {
       "PIN_ID": "DIRPIN-2026-001",
@@ -34,9 +37,14 @@
       "PRODUCT_IDENTITY_QA": "PASS (100% Identity Parity)",
       "CLAIM_QA": "PASS (All claims traced to live evidence)",
       "AFFILIATE_QA": "PASS (Direct Amazon URL with elevateliv00e-20 tag)",
-      "FINAL_QA_SCORE": "10.0 / 10.0",
-      "PUBLISH_STATUS": "NOT_PUBLISHED_WAITING_USER_APPROVAL",
-      "SCHEDULE_STATUS": "NOT_SCHEDULED"
+      "PRE_SCHEDULE_CHECK": "PASS (15/15 points verified)",
+      "SCHEDULED": true,
+      "SCHEDULED_DATE": "October 13, 2026",
+      "SCHEDULED_TIME": "8:50 PM EDT",
+      "SCHEDULED_AT": "2026-10-13T20:50:00-04:00",
+      "SCHEDULE_TIMEZONE": "America/New_York (EDT)",
+      "SCHEDULE_STATUS": "SCHEDULED",
+      "PUBLISH_STATUS": "SCHEDULED_ON_PINTEREST_SCHEDULER"
     },
     {
       "PIN_ID": "DIRPIN-2026-002",
@@ -65,9 +73,14 @@
       "PRODUCT_IDENTITY_QA": "PASS (100% Identity Parity)",
       "CLAIM_QA": "PASS (All claims traced to live evidence)",
       "AFFILIATE_QA": "PASS (Direct Amazon URL with elevateliv00e-20 tag)",
-      "FINAL_QA_SCORE": "10.0 / 10.0",
-      "PUBLISH_STATUS": "NOT_PUBLISHED_WAITING_USER_APPROVAL",
-      "SCHEDULE_STATUS": "NOT_SCHEDULED"
+      "PRE_SCHEDULE_CHECK": "PASS (15/15 points verified)",
+      "SCHEDULED": true,
+      "SCHEDULED_DATE": "October 17, 2026",
+      "SCHEDULED_TIME": "9:10 PM EDT",
+      "SCHEDULED_AT": "2026-10-17T21:10:00-04:00",
+      "SCHEDULE_TIMEZONE": "America/New_York (EDT)",
+      "SCHEDULE_STATUS": "SCHEDULED",
+      "PUBLISH_STATUS": "SCHEDULED_ON_PINTEREST_SCHEDULER"
     },
     {
       "PIN_ID": "DIRPIN-2026-003",
@@ -96,9 +109,14 @@
       "PRODUCT_IDENTITY_QA": "PASS (100% Identity Parity)",
       "CLAIM_QA": "PASS (All claims traced to live evidence)",
       "AFFILIATE_QA": "PASS (Direct Amazon URL with elevateliv00e-20 tag)",
-      "FINAL_QA_SCORE": "10.0 / 10.0",
-      "PUBLISH_STATUS": "NOT_PUBLISHED_WAITING_USER_APPROVAL",
-      "SCHEDULE_STATUS": "NOT_SCHEDULED"
+      "PRE_SCHEDULE_CHECK": "PASS (15/15 points verified)",
+      "SCHEDULED": true,
+      "SCHEDULED_DATE": "October 21, 2026",
+      "SCHEDULED_TIME": "8:40 PM EDT",
+      "SCHEDULED_AT": "2026-10-21T20:40:00-04:00",
+      "SCHEDULE_TIMEZONE": "America/New_York (EDT)",
+      "SCHEDULE_STATUS": "SCHEDULED",
+      "PUBLISH_STATUS": "SCHEDULED_ON_PINTEREST_SCHEDULER"
     },
     {
       "PIN_ID": "DIRPIN-2026-004",
@@ -127,9 +145,14 @@
       "PRODUCT_IDENTITY_QA": "PASS (100% Identity Parity)",
       "CLAIM_QA": "PASS (All claims traced to live evidence)",
       "AFFILIATE_QA": "PASS (Direct Amazon URL with elevateliv00e-20 tag)",
-      "FINAL_QA_SCORE": "10.0 / 10.0",
-      "PUBLISH_STATUS": "NOT_PUBLISHED_WAITING_USER_APPROVAL",
-      "SCHEDULE_STATUS": "NOT_SCHEDULED"
+      "PRE_SCHEDULE_CHECK": "PASS (15/15 points verified)",
+      "SCHEDULED": true,
+      "SCHEDULED_DATE": "October 26, 2026",
+      "SCHEDULED_TIME": "8:55 PM EDT",
+      "SCHEDULED_AT": "2026-10-26T20:55:00-04:00",
+      "SCHEDULE_TIMEZONE": "America/New_York (EDT)",
+      "SCHEDULE_STATUS": "SCHEDULED",
+      "PUBLISH_STATUS": "SCHEDULED_ON_PINTEREST_SCHEDULER"
     },
     {
       "PIN_ID": "DIRPIN-2026-005",
@@ -158,9 +181,14 @@
       "PRODUCT_IDENTITY_QA": "PASS (100% Identity Parity)",
       "CLAIM_QA": "PASS (All claims traced to live evidence)",
       "AFFILIATE_QA": "PASS (Direct Amazon URL with elevateliv00e-20 tag)",
-      "FINAL_QA_SCORE": "10.0 / 10.0",
-      "PUBLISH_STATUS": "NOT_PUBLISHED_WAITING_USER_APPROVAL",
-      "SCHEDULE_STATUS": "NOT_SCHEDULED"
+      "PRE_SCHEDULE_CHECK": "PASS (15/15 points verified)",
+      "SCHEDULED": true,
+      "SCHEDULED_DATE": "October 30, 2026",
+      "SCHEDULED_TIME": "9:05 PM EDT",
+      "SCHEDULED_AT": "2026-10-30T21:05:00-04:00",
+      "SCHEDULE_TIMEZONE": "America/New_York (EDT)",
+      "SCHEDULE_STATUS": "SCHEDULED",
+      "PUBLISH_STATUS": "SCHEDULED_ON_PINTEREST_SCHEDULER"
     }
   ]
 }
