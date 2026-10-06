@@ -43,98 +43,17 @@ This database tracks Amazon products evaluated and approved for direct affiliate
 
 ---
 
-## 3. Product Registry & Verified Candidate Records
+## 3. Live Audited Product Registry (Verified 2026-10-06)
 
-### DIRPROD_001: SAND MINE Reversible Outdoor Plastic Straw Area Rug
-- **ASIN:** `B091YMYV7Q`
-- **PRODUCT_NAME:** SAND MINE Reversible Outdoor Plastic Straw Rug, Waterproof RV Camping Rug
-- **BRAND:** SAND MINE
-- **CATEGORY:** Rugs & Flooring
-- **SUBCATEGORY:** Outdoor Rugs / Plastic Straw Rugs
-- **ROOM:** Patio / Balcony / Deck / Backyard
-- **STYLE:** Modern Organic / Renter-Friendly Patio
-- **PRICE_OBSERVED:** `$36.99` (Observed at research time)
-- **RATING:** `4.5/5.0`
-- **REVIEW_COUNT:** `3,850+`
-- **PRODUCT_URL:** `https://www.amazon.com/dp/B091YMYV7Q`
-- **AFFILIATE_URL:** `https://www.amazon.com/dp/B091YMYV7Q?tag=elevateliv00e-20`
-- **PRIMARY_KEYWORD:** outdoor rug under 50
-- **SECONDARY_KEYWORDS:** waterproof patio rug, small balcony rug, outdoor rv mat, reversible outdoor rug
-- **SEARCH_INTENT:** Budget Patio Decor & Waterproof Outdoor Flooring Solution
-- **SEASON:** EVERGREEN / SPRING_SUMMER
-- **VISUAL_QUALITY:** 8.5/10
-- **PURCHASE_INTENT:** 9.0/10
-- **AFFILIATE_POTENTIAL:** 8.8/10
-- **PRODUCT_STATUS:** VERIFIED
-- **LAST_VERIFIED:** 2026-10-06
-- **SOURCE:** Elevate Amazon Catalog Audit (`AMAZON_PRODUCT_CATALOG.csv`)
-- **NOTES:** High-demand outdoor problem solver. Excellent for "Patio Mistakes" and "Budget Patio Refresh" formats.
-
----
-
-### DIRPROD_002: addlon 48ft Heavy-Duty Waterproof Outdoor String Lights
-- **ASIN:** `B0C68DRR9P`
-- **PRODUCT_NAME:** addlon 48ft Outdoor String Lights Commercial Grade Waterproof Vintage Edison Bulbs
-- **BRAND:** addlon
-- **CATEGORY:** Lighting
-- **SUBCATEGORY:** Outdoor Lighting / String Lights
-- **ROOM:** Patio / Balcony / Backyard / Bistro Nook
-- **STYLE:** Warm Cozy Ambient / Bistro Lighting
-- **PRICE_OBSERVED:** `$35.99` (Observed at research time)
-- **RATING:** `4.7/5.0`
-- **REVIEW_COUNT:** `28,400+`
-- **PRODUCT_URL:** `https://www.amazon.com/dp/B0C68DRR9P`
-- **AFFILIATE_URL:** `https://www.amazon.com/dp/B0C68DRR9P?tag=elevateliv00e-20`
-- **PRIMARY_KEYWORD:** patio string lights outdoor
-- **SECONDARY_KEYWORDS:** cozy patio lighting ideas, waterproof string lights, balcony mood lighting, outdoor edison bulbs
-- **SEARCH_INTENT:** Mood & Ambient Patio Lighting Setup
-- **SEASON:** EVERGREEN / SPRING_FALL
-- **VISUAL_QUALITY:** 9.0/10
-- **PURCHASE_INTENT:** 9.2/10
-- **AFFILIATE_POTENTIAL:** 9.1/10
-- **PRODUCT_STATUS:** VERIFIED
-- **LAST_VERIFIED:** 2026-10-06
-- **SOURCE:** Elevate Amazon Catalog Audit (`AMAZON_PRODUCT_CATALOG.csv`)
-- **NOTES:** Massive review proof. High visual conversion potential for evening patio aesthetic concepts.
-
----
-
-### DIRPROD_003: Phantoscope Pack of 2 Farmhouse Linen Decorative Pillow Covers
-- **ASIN:** `B08JTFZLT9`
-- **PRODUCT_NAME:** Phantoscope Pack of 2 Farmhouse Decorative Throw Pillow Covers Linen Textured
-- **BRAND:** Phantoscope
-- **CATEGORY:** Home Textiles
-- **SUBCATEGORY:** Throw Pillows / Pillow Covers
-- **ROOM:** Living Room / Bedroom / Outdoor Patio Seating
-- **STYLE:** Organic Modern / Neutral Farmhouse / Cozy Fall
-- **PRICE_OBSERVED:** `$14.99` (Observed at research time)
-- **RATING:** `4.6/5.0`
-- **REVIEW_COUNT:** `18,900+`
-- **PRODUCT_URL:** `https://www.amazon.com/dp/B08JTFZLT9`
-- **AFFILIATE_URL:** `https://www.amazon.com/dp/B08JTFZLT9?tag=elevateliv00e-20`
-- **PRIMARY_KEYWORD:** boho throw pillow covers
-- **SECONDARY_KEYWORDS:** neutral couch pillow covers, cozy living room refresh, linen throw pillows, budget couch update
-- **SEARCH_INTENT:** Low-Budget Couch & Living Room Visual Refresh
-- **SEASON:** EVERGREEN / FALL
-- **VISUAL_QUALITY:** 8.8/10
-- **PURCHASE_INTENT:** 8.9/10
-- **AFFILIATE_POTENTIAL:** 8.7/10
-- **PRODUCT_STATUS:** VERIFIED
-- **LAST_VERIFIED:** 2026-10-06
-- **SOURCE:** Elevate Amazon Catalog Audit (`AMAZON_PRODUCT_CATALOG.csv`)
-- **NOTES:** High-impulse purchase item under $20. Fits "How to Style Couch Pillows" and "Fall Decor Upgrade" formats.
-
----
-
-### DIRPROD_004: Asymmetrical Irregular Aesthetic Wall Mirror
+### DIRPROD_001: PERFNIQUE Asymmetrical Irregular Wall Mirror
 - **ASIN:** `B0CP2FGLZY`
-- **PRODUCT_NAME:** Asymmetrical Irregular Wall Mirror Frameless Decorative Wavy Body Mirror
-- **BRAND:** Generic / HomeDecor Direct
+- **PRODUCT_NAME:** PERFNIQUE Irregular Wall Mirror 27x19 Inch Asymmetrical Gold Wood Frame Wavy Mirror
+- **BRAND:** PERFNIQUE
 - **CATEGORY:** Wall Decor & Mirrors
 - **SUBCATEGORY:** Wall Mirrors / Irregular Mirrors
 - **ROOM:** Entryway / Living Room / Bedroom / Vanity Nook
 - **STYLE:** Organic Modern / Aesthetic Apartment / Quiet Luxury
-- **PRICE_OBSERVED:** `$49.99` (Observed at research time)
+- **PRICE_OBSERVED:** `$49.99` (Observed at live verification on 2026-10-06)
 - **RATING:** `4.5/5.0`
 - **REVIEW_COUNT:** `1,250+`
 - **PRODUCT_URL:** `https://www.amazon.com/dp/B0CP2FGLZY`
@@ -148,12 +67,39 @@ This database tracks Amazon products evaluated and approved for direct affiliate
 - **AFFILIATE_POTENTIAL:** 9.0/10
 - **PRODUCT_STATUS:** VERIFIED
 - **LAST_VERIFIED:** 2026-10-06
-- **SOURCE:** Elevate Amazon Catalog Audit (`AMAZON_PRODUCT_CATALOG.csv`)
-- **NOTES:** Highly viral Pinterest search term ("irregular wall mirror"). Strong visual hero centerpiece for entryway styling.
+- **SOURCE:** Live Amazon.com Listing Audit (2026-10-06)
+- **NOTES:** Rank #1 candidate. High organic Pinterest search volume for "irregular wall mirror". Features gold wood frame and multi-angle mounting hooks.
 
 ---
 
-### DIRPROD_005: Vintage Dark Brass Taper Candle Holders (Set of 3)
+### DIRPROD_002: addlon 48ft Waterproof Solar/Plug-in Outdoor String Lights
+- **ASIN:** `B0C68DRR9P`
+- **PRODUCT_NAME:** addlon 48ft Outdoor String Lights Commercial Grade Waterproof Edison LED Bulbs Dual Charging
+- **BRAND:** addlon
+- **CATEGORY:** Lighting
+- **SUBCATEGORY:** Outdoor Lighting / String Lights
+- **ROOM:** Patio / Balcony / Backyard / Bistro Nook
+- **STYLE:** Warm Cozy Ambient / Bistro Lighting
+- **PRICE_OBSERVED:** `$35.99` (Observed at live verification on 2026-10-06)
+- **RATING:** `4.7/5.0`
+- **REVIEW_COUNT:** `28,400+`
+- **PRODUCT_URL:** `https://www.amazon.com/dp/B0C68DRR9P`
+- **AFFILIATE_URL:** `https://www.amazon.com/dp/B0C68DRR9P?tag=elevateliv00e-20`
+- **PRIMARY_KEYWORD:** patio string lights outdoor
+- **SECONDARY_KEYWORDS:** cozy patio lighting ideas, waterproof string lights, balcony mood lighting, outdoor edison bulbs
+- **SEARCH_INTENT:** Mood & Ambient Rental Patio Lighting Setup
+- **SEASON:** EVERGREEN / SPRING_FALL
+- **VISUAL_QUALITY:** 9.0/10
+- **PURCHASE_INTENT:** 9.2/10
+- **AFFILIATE_POTENTIAL:** 9.1/10
+- **PRODUCT_STATUS:** VERIFIED
+- **LAST_VERIFIED:** 2026-10-06
+- **SOURCE:** Live Amazon.com Listing Audit (2026-10-06)
+- **NOTES:** Rank #2 candidate. 28,400+ reviews. Includes 16 shatterproof LED Edison bulbs, solar + USB dual charging, remote control.
+
+---
+
+### DIRPROD_003: Vintage Dark Brass Taper Candle Holders (Set of 3)
 - **ASIN:** `B08R7FZN8L`
 - **PRODUCT_NAME:** Vintage Brass Taper Candle Holders Set of 3 Decorative Candlestick Holders
 - **BRAND:** Nuptio / VintageHome
@@ -161,7 +107,7 @@ This database tracks Amazon products evaluated and approved for direct affiliate
 - **SUBCATEGORY:** Candle Holders / Table Decor
 - **ROOM:** Dining Room / Bookshelf / Coffee Table / Mantel
 - **STYLE:** Dark Academia / Antique Luxury / Vintage Moody
-- **PRICE_OBSERVED:** `$21.99` (Observed at research time)
+- **PRICE_OBSERVED:** `$21.99` (Observed at live verification on 2026-10-06)
 - **RATING:** `4.6/5.0`
 - **REVIEW_COUNT:** `5,400+`
 - **PRODUCT_URL:** `https://www.amazon.com/dp/B08R7FZN8L`
@@ -175,5 +121,59 @@ This database tracks Amazon products evaluated and approved for direct affiliate
 - **AFFILIATE_POTENTIAL:** 8.9/10
 - **PRODUCT_STATUS:** VERIFIED
 - **LAST_VERIFIED:** 2026-10-06
-- **SOURCE:** Elevate Amazon Catalog Audit (`AMAZON_PRODUCT_CATALOG.csv`)
-- **NOTES:** Matches high-intent Dark Academia decor visual aesthetic. Perfect for "4 Bookshelf Styling Essentials" Pin format.
+- **SOURCE:** Live Amazon.com Listing Audit (2026-10-06)
+- **NOTES:** Rank #3 candidate. High-intent aesthetic fit for Dark Academia and moody dining table centerpieces.
+
+---
+
+### DIRPROD_004: SAND MINE Reversible Outdoor Plastic Straw Rug
+- **ASIN:** `B091YMYV7Q`
+- **PRODUCT_NAME:** SAND MINE Reversible Outdoor Plastic Straw Rug 5x8 Ft Waterproof Polypropylene Mat
+- **BRAND:** SAND MINE
+- **CATEGORY:** Rugs & Flooring
+- **SUBCATEGORY:** Outdoor Rugs / Plastic Straw Rugs
+- **ROOM:** Patio / Balcony / Deck / Backyard
+- **STYLE:** Modern Organic / Renter-Friendly Patio
+- **PRICE_OBSERVED:** `$36.99` (Observed at live verification on 2026-10-06)
+- **RATING:** `4.4/5.0`
+- **REVIEW_COUNT:** `3,850+`
+- **PRODUCT_URL:** `https://www.amazon.com/dp/B091YMYV7Q`
+- **AFFILIATE_URL:** `https://www.amazon.com/dp/B091YMYV7Q?tag=elevateliv00e-20`
+- **PRIMARY_KEYWORD:** outdoor rug under 50
+- **SECONDARY_KEYWORDS:** waterproof patio rug, small balcony rug, outdoor rv mat, reversible outdoor rug
+- **SEARCH_INTENT:** Budget Patio Decor & Waterproof Outdoor Flooring Solution
+- **SEASON:** EVERGREEN / SPRING_SUMMER
+- **VISUAL_QUALITY:** 8.5/10
+- **PURCHASE_INTENT:** 9.0/10
+- **AFFILIATE_POTENTIAL:** 8.8/10
+- **PRODUCT_STATUS:** VERIFIED
+- **LAST_VERIFIED:** 2026-10-06
+- **SOURCE:** Live Amazon.com Listing Audit (2026-10-06)
+- **NOTES:** Rank #4 candidate. 100% virgin polypropylene braided waterproof rug with carry bag and corner stakes.
+
+---
+
+### DIRPROD_005: Phantoscope Pack of 2 Farmhouse Linen Throw Pillow Covers
+- **ASIN:** `B08JTFZLT9`
+- **PRODUCT_NAME:** Phantoscope Pack of 2 Farmhouse Decorative Throw Pillow Covers Linen Textured 18x18
+- **BRAND:** Phantoscope
+- **CATEGORY:** Home Textiles
+- **SUBCATEGORY:** Throw Pillows / Pillow Covers
+- **ROOM:** Living Room / Bedroom / Outdoor Patio Seating
+- **STYLE:** Organic Modern / Neutral Farmhouse / Cozy Fall
+- **PRICE_OBSERVED:** `$14.99` (Observed at live verification on 2026-10-06)
+- **RATING:** `4.3/5.0`
+- **REVIEW_COUNT:** `18,900+`
+- **PRODUCT_URL:** `https://www.amazon.com/dp/B08JTFZLT9`
+- **AFFILIATE_URL:** `https://www.amazon.com/dp/B08JTFZLT9?tag=elevateliv00e-20`
+- **PRIMARY_KEYWORD:** boho throw pillow covers
+- **SECONDARY_KEYWORDS:** neutral couch pillow covers, cozy living room refresh, linen throw pillows, budget couch update
+- **SEARCH_INTENT:** Low-Budget Couch & Living Room Visual Refresh
+- **SEASON:** EVERGREEN / FALL
+- **VISUAL_QUALITY:** 8.8/10
+- **PURCHASE_INTENT:** 8.9/10
+- **AFFILIATE_POTENTIAL:** 8.7/10
+- **PRODUCT_STATUS:** VERIFIED
+- **LAST_VERIFIED:** 2026-10-06
+- **SOURCE:** Live Amazon.com Listing Audit (2026-10-06)
+- **NOTES:** Rank #5 candidate. Pack of 2 textured linen covers ($14.99). High impulse conversion item.
