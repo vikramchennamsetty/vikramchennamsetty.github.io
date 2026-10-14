@@ -28,9 +28,6 @@ function trackAffiliate(link, label) {
       transport_type: 'beacon'
     });
   }
-  setTimeout(() => {
-    window.open(link, '_blank');
-  }, 180);
 }
 </script>
 <meta charset="UTF-8">
@@ -96,13 +93,7 @@ function trackAffiliate(link, label) {
         {
           "@type":"ListItem",
           "position":2,
-          "name":"Small Space Decor",
-          "item":"https://elevatelivingco.me/small-living-room-decor-ideas.html"
-        },
-        {
-          "@type":"ListItem",
-          "position":3,
-          "name":"12 Small Living Room Decor Ideas",
+          "name":"Small Living Room Decor Ideas",
           "item":"https://elevatelivingco.me/small-living-room-decor-ideas.html"
         }
       ]
@@ -555,35 +546,6 @@ body {
 .faq-a.open { max-height: 500px; opacity: 1; }
 .faq-q.active .toggle { transform: rotate(45deg); }
 
-/* ARABIC */
-.arabic-section {
-  background: #fff;
-  border-radius: 22px;
-  padding: 36px 44px;
-  box-shadow: 0 16px 44px rgba(0,0,0,0.06);
-  margin-bottom: 28px;
-  direction: rtl;
-  text-align: right;
-}
-
-.arabic-section h2 { font-size: 22px; margin-bottom: 14px; line-height: 1.35; }
-.arabic-section p  { font-size: 15px; color: #444; line-height: 2; margin-bottom: 12px; }
-
-.arabic-section .p-btn-ar {
-  display: inline-block;
-  background: #1a1a1a;
-  color: #fff;
-  text-decoration: none;
-  padding: 11px 24px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 8px;
-  transition: 0.25s;
-  cursor: pointer;
-}
-
-.arabic-section .p-btn-ar:hover { background: #c9a44a; color: #1a1a1a; }
 
 /* SIDEBAR */
 .sidebar { position: sticky; top: 24px; }
@@ -717,7 +679,7 @@ body {
 
 .dot.active { background: #111; transform: scale(1.4); }
 
-.product-card h2 { font-size: 17px; margin-bottom: 7px; }
+.product-card h2, .product-card h3 { font-size: 17px; margin-bottom: 7px; }
 .product-card p  { font-size: 13.5px; color: #666; flex-grow: 1; line-height: 1.6; }
 
 .btn {
@@ -1068,12 +1030,12 @@ body {
   margin-top: 60px;
   text-align: center;
   font-size: 13px;
-  color: #888;
+  color: #595959;
   line-height: 1.7;
 }
 
-.footer a { color: #c9a44a; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
+.footer a { color: #7a580c; text-decoration: underline; font-weight: 600; }
+.footer a:hover { color: #4a3404; text-decoration: underline; }
 
 /* RESPONSIVE */
 @media (max-width: 980px) {
@@ -1088,7 +1050,6 @@ body {
   .hero h1 { font-size: 24px; }
   .content-card { padding: 26px 20px; }
   .faq-section { padding: 26px 20px; }
-  .arabic-section { padding: 26px 20px; }
   .tip-text { padding: 24px 18px; }
   .tip-inner { grid-template-columns: 1fr; }
   .tip-product {
@@ -1124,7 +1085,7 @@ body {
   </div>
 </nav>
 
-<div class="wrapper">
+<main class="wrapper">
 
   <!-- HERO -->
   <div class="hero">
@@ -1235,11 +1196,11 @@ body {
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Irregular Decorative Mirror for small living room" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Irregular Decorative Mirror for small living room" width="400" height="400" loading="lazy" decoding="async">
             <div class="p-name">Irregular Decorative Mirror</div>
             <div class="p-desc">Asymmetrical silhouette acts as contemporary wall art while maximizing natural light reflection.</div>
             <div class="p-proof">✔ Verified Design Choice · High Reflective Clarity</div>
-            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv05f-20','irregular-mirror'); return false;" rel="sponsored noopener noreferrer">👉 View on Amazon</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'irregular-mirror');">👉 View on Amazon</a>
           </div>
         </div>
       </div>
@@ -1262,11 +1223,11 @@ body {
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp for layered living room lighting" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp for layered living room lighting" width="400" height="400" loading="lazy" decoding="async">
             <div class="p-name">Smart RGB Floor Lamp</div>
             <div class="p-desc">Minimalist corner profile with customizable warmth and dimming for layered evening ambiance.</div>
             <div class="p-proof">✔ Space-Saving Corner Profile · 2700K Warm Dimming</div>
-            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv05f-20','rgb-floor-lamp'); return false;" rel="sponsored noopener noreferrer">👉 See Reviews</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'rgb-floor-lamp');">👉 See Reviews</a>
           </div>
         </div>
       </div>
@@ -1309,11 +1270,11 @@ body {
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Neutral Throw Pillow Covers for small living room" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Neutral Throw Pillow Covers for small living room" width="400" height="400" loading="lazy" decoding="async">
             <div class="p-name">Neutral Throw Pillow Covers</div>
             <div class="p-desc">Tactile bouclé and ribbed linen covers that elevate any apartment couch with calm, designer texture.</div>
             <div class="p-proof">✔ Soft Layered Weave · Machine Washable</div>
-            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv05f-20','neutral-throw-pillows'); return false;" rel="sponsored noopener noreferrer">👉 View Details</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'neutral-throw-pillows');">👉 View Details</a>
           </div>
         </div>
       </div>
@@ -1347,7 +1308,7 @@ body {
               <h3>Vertical Storage: Free Floor Space with Floating Wall Shelves</h3>
             </div>
             <p><strong>The Problem:</strong> Low bookcases, storage cubes, and multiple small floor plant pots quickly gobble up walking space. When your floor is crowded with small storage containers, the living room feels chaotic and cramped.</p>
-            <p><strong>The Practical Solution:</strong> Move your storage upward. Installing staggered floating shelves draws the eye toward the upper third of the room, utilizing empty vertical drywall. Complement wall shelves by elevating greenery onto a slender mid-century plant stand (<a href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv05f-20','plant-stand-text'); return false;" style="color:#c9a44a;font-weight:600;" rel="sponsored noopener noreferrer">view plant stand</a>) to bring organic foliage to eye level without floor sprawl.</p>
+            <p><strong>The Practical Solution:</strong> Move your storage upward. Installing staggered floating shelves draws the eye toward the upper third of the room, utilizing empty vertical drywall. Complement wall shelves by elevating greenery onto a slender mid-century plant stand (<a href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'plant-stand-text');" style="color:#c9a44a;font-weight:600;">view plant stand</a>) to bring organic foliage to eye level without floor sprawl.</p>
             <div class="highlight-box">
               <p>💡 <strong>The 30% Negative Space Rule:</strong> When styling floating shelves, leave approximately one-third of each shelf completely empty. Negative space gives decorative book stacks and ceramics room to breathe and prevents shelves from reading as clutter.</p>
             </div>
@@ -1356,11 +1317,11 @@ body {
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg" alt="Floating Wall Shelves for small living room apartment" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg" alt="Floating Wall Shelves for small living room apartment" width="400" height="400" loading="lazy" decoding="async">
             <div class="p-name">Floating Wall Shelves</div>
             <div class="p-desc">Sturdy solid wood wall shelves that clear floor square footage and draw eyesight upward.</div>
             <div class="p-proof">✔ Renter Drywall Friendly · Clean Minimal Lines</div>
-            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv05f-20','floating-shelves'); return false;" rel="sponsored noopener noreferrer">👉 Check Price</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'floating-shelves');">👉 Check Price</a>
           </div>
         </div>
       </div>
@@ -1383,11 +1344,11 @@ body {
             </div>
           </div>
           <div class="tip-product">
-            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Multi-Tier Bar Cart for small apartment" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Multi-Tier Bar Cart for small apartment" width="400" height="400" loading="lazy" decoding="async">
             <div class="p-name">VASAGLE Gold Bar Cart</div>
             <div class="p-desc">Slim rolling profile with tempered glass shelves that doubles as an elegant side table or mobile bar.</div>
             <div class="p-proof">✔ Locking Casters · Glass Reflective Shelves</div>
-            <a class="p-btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-bar-cart'); return false;" rel="sponsored noopener noreferrer">👉 View on Amazon</a>
+            <a class="p-btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'vasagle-bar-cart');">👉 View on Amazon</a>
           </div>
         </div>
       </div>
@@ -1477,8 +1438,10 @@ body {
         </div>
         <a href="/small-apartment-fall-decor-guide.html" class="crosslink-card" style="margin-top:16px;">
             <div class="crosslink-img-wrap">
-                <img src="/assets/images/fall-decor/small-apartment-fall-decor-hero.jpg"
+                <img src="/assets/images/small-apartment-fall-decor-hero.jpg"
                      alt="Small Apartment Fall Decor Guide"
+                     width="600"
+                     height="400"
                      loading="lazy">
             </div>
             <div class="crosslink-content">
@@ -1645,13 +1608,7 @@ body {
 
       </div>
 
-      <!-- ARABIC SECTION -->
-      <div class="arabic-section">
-        <h2>أفكار ديكور غرفة المعيشة الصغيرة لعام 2026</h2>
-        <p>هل تبحث عن أفضل أفكار لتزيين غرفة المعيشة الصغيرة في شقتك لعام 2026؟ اخترنا لك 12 حيلة تصميم داخلي فعّالة تجعل أي مساحة صغيرة تبدو فاخرة وواسعة — بدون ترميم أو نفقات كبيرة.</p>
-        <p>أقوى خدعة واحدة: ضع مرآة كبيرة ذات شكل غير منتظم في مواجهة نافذتك الرئيسية — ستضاعف الإحساس بالمساحة فوراً. جميع المنتجات متاحة على أمازون مع الشحن السريع.</p>
-        <a class="p-btn-ar" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv05f-20','irregular-mirror'); return false;" rel="sponsored noopener noreferrer">تسوق الآن على أمازون ←</a>
-      </div>
+
 
     </div><!-- end article-col -->
 
@@ -1738,93 +1695,93 @@ body {
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Neutral Throw Pillow Covers" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/61fTwGy2yqL._AC_SL1001_.jpg" alt="Pillows on Sofa" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/71XCi9vwWzL._AC_SL1001_.jpg" alt="Pillow Detail" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/81Voz3rpoSL._AC_SL1500_.jpg" alt="Neutral Throw Pillow Covers" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61fTwGy2yqL._AC_SL1001_.jpg" alt="Pillows on Sofa" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71XCi9vwWzL._AC_SL1001_.jpg" alt="Pillow Detail" width="300" height="300" loading="lazy" decoding="async">
           </div>
           <div class="dots"></div>
         </div>
-        <h2>Neutral Throw Pillow Covers</h2>
+        <h3>Neutral Throw Pillow Covers</h3>
         <p>Layer soft textures to instantly create warmth and a designer aesthetic.</p>
         <p style="color:#c9a44a; font-weight:700;">🔥 Verified Quality Choice</p>
-        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv05f-20','neutral-throw-pillows'); return false;" rel="sponsored noopener noreferrer">👉 View Details</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0CDGLNB22?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'neutral-throw-pillows');">👉 View Details</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg" alt="Mid-Century Plant Stand" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/61PPTTpCD7L._AC_SL1200_.jpg" alt="Plant Stand Detail" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/61aXIC6t-4L._AC_SL1200_.jpg" alt="Plant Stand Styled" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/71yRDRnpNbL._AC_SL1200_.jpg" alt="Plant Stand Room" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61ac60MELFL._AC_SL1500_.jpg" alt="Mid-Century Plant Stand" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61PPTTpCD7L._AC_SL1200_.jpg" alt="Plant Stand Detail" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61aXIC6t-4L._AC_SL1200_.jpg" alt="Plant Stand Styled" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71yRDRnpNbL._AC_SL1200_.jpg" alt="Plant Stand Room" width="300" height="300" loading="lazy" decoding="async">
           </div>
           <div class="dots"></div>
         </div>
-        <h2>Mid-Century Plant Stand</h2>
+        <h3>Mid-Century Plant Stand</h3>
         <p>Add greenery at eye level without cluttering valuable floor space.</p>
         <p style="color:#c9a44a; font-weight:700;">🔥 Vertical Space Saver</p>
-        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv05f-20','plant-stand'); return false;" rel="sponsored noopener noreferrer">👉 Shop Now</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0BS46GJHC?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'plant-stand');">👉 Shop Now</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/71os1uv07qL._AC_SL1500_.jpg" alt="RGB Colors" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/61NuRaZ6NrL._AC_SL1500_.jpg" alt="Lamp in Room" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61aTRWm2x6L._AC_SL1500_.jpg" alt="Smart RGB Floor Lamp" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71os1uv07qL._AC_SL1500_.jpg" alt="RGB Colors" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61NuRaZ6NrL._AC_SL1500_.jpg" alt="Lamp in Room" width="300" height="300" loading="lazy" decoding="async">
           </div>
           <div class="dots"></div>
         </div>
-        <h2>Smart RGB Floor Lamp</h2>
+        <h3>Smart RGB Floor Lamp</h3>
         <p>Create cosy, customizable lighting that upgrades your small living room instantly.</p>
         <p style="color:#c9a44a; font-weight:700;">🔥 Layered Lighting Essential</p>
-        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv05f-20','rgb-floor-lamp'); return false;" rel="sponsored noopener noreferrer">👉 See Reviews</a>
+        <a class="btn" href="https://www.amazon.com/dp/B099WTN2TR?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'rgb-floor-lamp');">👉 See Reviews</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Irregular Decorative Mirror" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/812jaP+5PQL._AC_SL1500_.jpg" alt="Mirror Detail" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/81fhTUKGD4L._AC_SL1500_.jpg" alt="Mirror on Wall" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/91rfBupxSZL._AC_SL1500_.jpg" alt="Irregular Decorative Mirror" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/812jaP+5PQL._AC_SL1500_.jpg" alt="Mirror Detail" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/81fhTUKGD4L._AC_SL1500_.jpg" alt="Mirror on Wall" width="300" height="300" loading="lazy" decoding="async">
           </div>
           <div class="dots"></div>
         </div>
-        <h2>Irregular Decorative Mirror</h2>
+        <h3>Irregular Decorative Mirror</h3>
         <p>Reflect light and visually expand your small living room or apartment instantly.</p>
         <p style="color:#c9a44a; font-weight:700;">🔥 Light Reflection Anchor</p>
-        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv05f-20','irregular-mirror'); return false;" rel="sponsored noopener noreferrer">👉 View on Amazon</a>
+        <a class="btn" href="https://www.amazon.com/dp/B0CP2FGLZY?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'irregular-mirror');">👉 View on Amazon</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg" alt="Floating Wall Shelves" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/71CMLBLDChL._AC_SL1500_.jpg" alt="Shelves Installed" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/61iRsEMCtTL._AC_SL1500_.jpg" alt="Shelves Styled" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/71FxnWQ77TL._AC_SL1500_.jpg" alt="Shelves Room" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71XE+YhhakL._AC_SL1500_.jpg" alt="Floating Wall Shelves" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71CMLBLDChL._AC_SL1500_.jpg" alt="Shelves Installed" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61iRsEMCtTL._AC_SL1500_.jpg" alt="Shelves Styled" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71FxnWQ77TL._AC_SL1500_.jpg" alt="Shelves Room" width="300" height="300" loading="lazy" decoding="async">
           </div>
           <div class="dots"></div>
         </div>
-        <h2>Floating Wall Shelves</h2>
+        <h3>Floating Wall Shelves</h3>
         <p>Minimal vertical storage — frees your floor and elevates your walls in any apartment.</p>
         <p style="color:#c9a44a; font-weight:700;">🔥 Vertical Storage Pick</p>
-        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv05f-20','floating-shelves'); return false;" rel="sponsored noopener noreferrer">👉 Check Price</a>
+        <a class="btn" href="https://www.amazon.com/dp/B088ZYNX1J?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'floating-shelves');">👉 Check Price</a>
       </div>
 
       <div class="product-card">
         <div class="image-slider">
           <div class="slider-track">
-            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Multi-Tier Bar Cart" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/71Yf1j8Gg+L._AC_SL1500_.jpg" alt="Bar Cart Detail" loading="lazy" decoding="async">
-            <img src="https://m.media-amazon.com/images/I/81x1WjB-96L._AC_SL1500_.jpg" alt="Bar Cart Styled" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/61zIfQMh7EL._AC_.jpg" alt="VASAGLE Gold Multi-Tier Bar Cart" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/51a+7MaOhhL._AC_.jpg" alt="VASAGLE Gold Bar Cart side view" width="300" height="300" loading="lazy" decoding="async">
+            <img src="https://m.media-amazon.com/images/I/71ODX0hqMKL._AC_SL1500_.jpg" alt="VASAGLE Gold Bar Cart styled" width="300" height="300" loading="lazy" decoding="async">
           </div>
           <div class="dots"></div>
         </div>
-        <h2>VASAGLE Multi-Tier Bar Cart</h2>
+        <h3>VASAGLE Multi-Tier Bar Cart</h3>
         <p>Smart mobile storage on casters with reflective glass shelves that serves multiple living functions.</p>
         <p style="color:#c9a44a; font-weight:700;">🔥 Multifunctional Essential</p>
-        <a class="btn" href="#" onclick="trackAffiliate('https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20','vasagle-bar-cart'); return false;" rel="sponsored noopener noreferrer">👉 View on Amazon</a>
+        <a class="btn" href="https://www.amazon.com/dp/B094VL5VHZ?tag=elevateliv05f-20" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'vasagle-bar-cart');">👉 View on Amazon</a>
       </div>
 
     </div>
@@ -1841,7 +1798,7 @@ body {
     <p style="margin-top:8px;">© 2026 ElevateLivingCo</p>
   </div>
 
-</div><!-- end wrapper -->
+</main><!-- end wrapper -->
 
 <script>
 // ── IMAGE SLIDER ──
@@ -2004,7 +1961,7 @@ function showResult() {
       ${extraBadge}
       <div class="qz-result-product-name">${pick.name}</div>
       <div class="qz-result-product-reason">${pick.reason}</div>
-      <a class="qz-result-product-btn" href="#" onclick="trackAffiliate('${pick.url}','${pick.label}'); return false;">View on Amazon →</a>
+      <a class="qz-result-product-btn" href="${pick.url}" target="_blank" rel="sponsored noopener noreferrer" onclick="trackAffiliate(this.href,'${pick.label}');">View on Amazon →</a>
       ${pick.isBarCart ? `<a href="https://elevatelivingco.me/5-antique-bar-carts-2026.html" style="display:block;text-align:center;margin-top:10px;font-size:12px;color:#c9a44a;font-weight:600;">See all 5 bar carts →</a>` : ''}
     </div>
   `;
