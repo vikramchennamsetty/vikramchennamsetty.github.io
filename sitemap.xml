@@ -3,32 +3,32 @@
 <!-- HOMEPAGE - Highest Priority -->
 <url>
 <loc>https://elevatelivingco.me/</loc>
-<lastmod>2026-05-30</lastmod>
+<lastmod>2026-10-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
 </url>
 <!-- CORE UTILITY PAGES - Low Priority -->
 <url>
 <loc>https://elevatelivingco.me/about.html</loc>
-<lastmod>2026-05-26</lastmod>
+<lastmod>2026-09-16</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 <url>
 <loc>https://elevatelivingco.me/contact.html</loc>
-<lastmod>2026-05-26</lastmod>
+<lastmod>2026-09-16</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
 </url>
 <url>
 <loc>https://elevatelivingco.me/privacy.html</loc>
-<lastmod>2026-05-26</lastmod>
+<lastmod>2026-09-16</lastmod>
 <changefreq>yearly</changefreq>
 <priority>0.1</priority>
 </url>
 <url>
 <loc>https://elevatelivingco.me/disclosure.html</loc>
-<lastmod>2026-05-26</lastmod>
+<lastmod>2026-09-16</lastmod>
 <changefreq>yearly</changefreq>
 <priority>0.1</priority>
 </url>
@@ -59,14 +59,14 @@
 </url>
 <url>
 <loc>https://elevatelivingco.me/dark-luxury-kitchen-accessories-2026.html</loc>
-<lastmod>2026-05-30</lastmod>
+<lastmod>2026-09-19</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 
 </url>
 <url>
 <loc>https://elevatelivingco.me/5-moody-entryway-ideas-luxury-on-budget.html</loc>
-<lastmod>2026-05-30</lastmod>
+<lastmod>2026-09-24</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7</priority>
 <image:image>
@@ -76,7 +76,7 @@
 </url>
 <url>
 <loc>https://elevatelivingco.me/small-apartment-entryway-organization-guide.html</loc>
-<lastmod>2026-09-20</lastmod>
+<lastmod>2026-09-24</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 <image:image>
@@ -107,7 +107,7 @@
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 <image:image>
-<image:loc>https://elevatelivingco.me/assets/images/old-money-article.png</image:loc>
+<image:loc>https://elevatelivingco.me/assets/images/old-money-article.webp</image:loc>
 <image:title>Old Money Interiors | Quiet Luxury Aesthetic Guide 2026</image:title>
 </image:image>
 </url>
@@ -131,21 +131,21 @@
 <!-- PATIO / OUTDOOR CLUSTER - Medium Priority -->
 <url>
 <loc>https://elevatelivingco.me/best-waterproof-outdoor-rug-patio-under-50.html</loc>
-<lastmod>2026-05-30</lastmod>
+<lastmod>2026-09-19</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 
 </url>
 <url>
 <loc>https://elevatelivingco.me/cheap-patio-setup-under-50.html</loc>
-<lastmod>2026-05-30</lastmod>
+<lastmod>2026-09-19</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 
 </url>
 <url>
 <loc>https://elevatelivingco.me/5-patio-mistakes-that-make-your-space-look-cheap-fix-under-50.html</loc>
-<lastmod>2026-05-30</lastmod>
+<lastmod>2026-09-19</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 
@@ -153,14 +153,14 @@
 <!-- DECOR / FURNITURE - Medium Priority -->
 <url>
 <loc>https://elevatelivingco.me/5-antique-bar-carts-2026.html</loc>
-<lastmod>2026-05-30</lastmod>
+<lastmod>2026-09-19</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 
 </url>
 <url>
 <loc>https://elevatelivingco.me/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html</loc>
-<lastmod>2026-06-02</lastmod>
+<lastmod>2026-09-19</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 <image:image>
@@ -170,18 +170,26 @@
 </url>
 <url>
 <loc>https://elevatelivingco.me/how-to-style-a-round-coffee-table-like-a-designer-2026.html</loc>
-<lastmod>2026-06-03</lastmod>
+<lastmod>2026-09-18</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 <image:image>
-<image:loc>https://elevatelivingco.me/assets/images/formula_1_luxury_styling.png</image:loc>
+<image:loc>https://elevatelivingco.me/assets/images/round-coffee-table-styling-og-image.webp</image:loc>
 <image:title>How To Style A Round Coffee Table Like A Designer (2026 Guide)</image:title>
 </image:image>
 </url>
 <url>
 <loc>https://elevatelivingco.me/shop-amazon-finds.html</loc>
-<lastmod>2026-06-03</lastmod>
+<lastmod>2026-09-17</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
-</urlset>
+<!-- PUBLIC EBOOK PAGES -->
+<url>
+<loc>https://elevatelivingco.me/ebooks/</loc>
+<lastmod>2026-10-05</lastmod>
+</url>
+<url>
+<loc>https://elevatelivingco.me/ebooks/covert-sparks/</loc>
+<lastmod>2026-10-05</lastmod>
+</url></urlset>
