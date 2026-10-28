@@ -1,0 +1,14 @@
+# Drafts and staging content - keep strictly local
+drafts/
+_drafts/
+
+# Scratch directory
+scratch/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.log
+
+# Internal draft backups
+.agents/drafts_backup/

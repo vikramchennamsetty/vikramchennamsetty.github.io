@@ -30,6 +30,8 @@ path: /sitemap.xml
 exclude:
 - /404.html
 - /README.md
+- /drafts/*
+- /_drafts/*
 
 ## defaults:
 
@@ -57,6 +59,10 @@ exclude:
 - vendor
 - Gemfile
 - Gemfile.lock
+- drafts
+- drafts/*
+- _drafts
+- _drafts/*
 
 sass:
 style: compressed
