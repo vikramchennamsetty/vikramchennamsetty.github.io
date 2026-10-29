@@ -29,12 +29,19 @@ Google's automated ranking systems reward content that genuinely satisfies the s
   ```
 * **Clear About Page Linking:** The author name should link directly to `about.html` or an author profile detailing design background, editorial philosophy, and contact channels.
 * **No Synthetic Authority:** Never use fake personas (e.g. "By Sarah Jenkins, Master Architect of 20 Years") if Sarah Jenkins is not a real, verifiable contributor.
+* **Author Voice (First vs. Third Person):** Authors are not required to write strictly in third person. Use first person ("we audited", "in our space") or third person based on clarity, truthful authorship, and brand tone.
 
 #### HOW Was This Content Created?
 * **Explain the Methodology:**
   *"To compile this guide, our team audited 14 compact living room layouts, tested sightline clearance with 3 different sofa leg profiles, and curated products that meet strict scale ratios for urban apartments."*
-* **Transparency on Sourcing:**
-  Explain how materials, measurements, and recommendations were verified. If AI-assisted tools were used for outline generation or grammar, explicit human curation, measurement validation, and styling judgment must govern the final copy.
+* **Transparency on Sourcing & Real Firsthand Evidence:**
+  Explain how materials, measurements, and recommendations were verified. Original firsthand evidence (such as physical clearances or tactile texture notes) is strongly encouraged when real and verifiable; never fabricate studio testing, simulated trials, or fake case studies. If AI-assisted tools were used for outline drafting or grammar, explicit human curation, measurement validation, and styling judgment must govern the final copy.
+* **Format & Length Flexibility:**
+  Structure and word count must suit the reader's task and the topic (`https://developers.google.com/search/docs/fundamentals/creating-helpful-content`). Avoid rigid templates such as mandatory 40–60 word introductions, forced numbered listicles, or artificial 3,000+ word minimums.
+* **Direct Answers Without Ranking Guarantees:**
+  Provide direct, concise answers to reader dilemmas near the top of sections where helpful. Never promise or guarantee featured snippets or AI Overview placements.
+* **Focused Subsections, Measurements & Optional Links:**
+  Add a focused subsection or specific measurement only when it directly helps satisfy the reader's intent and can be supported accurately. When it genuinely helps readers navigate related content and naturally fits the page, internal links may be added; Google does not mandate a specific internal link count.
 
 #### WHY Was This Content Created?
 * **The Test:** If you strip away all affiliate links and Google rankings, is this article still immensely helpful to a person moving into a small apartment?

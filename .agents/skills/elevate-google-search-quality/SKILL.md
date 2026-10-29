@@ -45,6 +45,7 @@ All requirements in this skill are directly anchored in official Google Search C
 | **Policy** | Google Search Spam Policies | `https://developers.google.com/search/docs/essentials/spam-policies` | Oct 2026 |
 | **Crawling/Indexing** | Crawling and Indexing Overview | `https://developers.google.com/search/docs/crawling-indexing` | Oct 2026 |
 | **Crawling/Indexing** | Sitemaps Overview & Best Practices | `https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview` | Oct 2026 |
+| **Crawling/Indexing** | Ask Google to Recrawl Your URLs | `https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl` | Oct 2026 |
 | **Crawling/Indexing** | Consolidate Duplicate URLs (Canonicalization) | `https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls` | Oct 2026 |
 | **Search Appearance** | Influencing Your Title Links in Search Results | `https://developers.google.com/search/docs/appearance/title-link` | Oct 2026 |
 | **Search Appearance** | Control Your Snippets in Search Results | `https://developers.google.com/search/docs/appearance/snippet` | Oct 2026 |
@@ -68,7 +69,7 @@ All requirements in this skill are directly anchored in official Google Search C
 > **BOUNDARY SEPARATION: DOCUMENTED GOOGLE REQUIREMENTS VS. INTERNAL HEURISTICS**
 > - **Google Documented Requirements:** Universal technical criteria (HTTP status codes, crawl accessibility, valid robots directives, canonical signals, sitemap schema, mobile rendering, and people-first content quality standards).
 > - **Internal Heuristics:** ElevateLivingCo brand guidelines (e.g. 7-stage narrative structure, dark aesthetic palette, 2/3 sofa-to-wall rule of thumb, specific layout card markup).
-> - **Prohibited Third-Party SEO Myths & Tool Scores:** Arbitrary word counts (e.g. "must be 2,500 words to rank"), fixed title character caps as ranking limits, keyword density percentages, artificial LSI injection, or claiming that submitting a sitemap or requesting indexing "guarantees" rankings or indexing.
+> - **Prohibited Third-Party SEO Myths & Tool Scores:** Arbitrary word counts (e.g. "must be 2,500 words to rank", mandatory 3,000+ word pillar page minimums, or fixed 40–60 word opening formulas), rigid format requirements (e.g. forcing numbered listicles when a guide calls for structured narrative), fixed title/snippet character caps as ranking limits, keyword density percentages, artificial LSI injection, or claiming that submitting a sitemap or requesting indexing "guarantees" rankings or indexing.
 > - **Third-Party SEO Tools & Scores:** Metrics such as "Domain Authority", "Page Authority", difficulty scores, and similar commercial grades are third-party estimates and heuristics, not Google-provided ranking data. According to Google's specific guidance on third-party SEO tools, services, and advice (`https://developers.google.com/search/docs/fundamentals/third-party-seo`), third-party tools do not have access to Google's internal ranking data, Google does not evaluate or approve third-party tools, and predictions or metrics provided by tools are independent provider estimates. Elevate Living's internal workflow guidance is to prioritize first-party Search Console data and verified user behavior over third-party tool scores when evaluating performance and making editorial decisions.
 
 ---
@@ -122,7 +123,13 @@ Google’s ranking systems are designed to reward content created to satisfy peo
 ### 1. The Who, How, and Why Quality Standard
 * **E-E-A-T Framework Clarification:** E-E-A-T (Experience, Expertise, Authoritativeness, and Trustworthiness) is not a direct or specific ranking factor itself; rather, it is a quality framework evaluated by human Search Quality Raters. Google's automated ranking systems use a mix of various signals that may reflect aspects of E-E-A-T to surface helpful, reliable information (`https://developers.google.com/search/docs/fundamentals/creating-helpful-content`).
 * **WHO:** Clear, honest author bylines (`By Vikram Chennamsetty, ElevateLivingCo Editorial Team`) linking to an authentic `about.html` page. Never invent synthetic personas or fake architectural degrees.
-* **HOW:** Transparent explanation of how products or styling tips were gathered (e.g. physical clearance measurements, material testing, scale ratios). 
+  - *Author Voice (First vs. Third Person):* Authors are not required to write strictly in third person. First-person perspective ("we audited", "in our measurement trials") or third-person analysis may be selected based on clarity, truthful authorship, and Elevate Living's editorial tone.
+* **HOW:** Transparent explanation of how products, styling tips, or spatial advice were gathered (e.g. physical clearance measurements, material testing, scale ratios). 
+  - *Article Structure, Format, and Length:* Google does not mandate universal article lengths or rigid structural templates (`https://developers.google.com/search/docs/fundamentals/creating-helpful-content`). Remove fixed requirements such as mandatory 40–60 word introductions, forced numbered listicle formats, or 3,000+ word pillar quotas. Recommend structures and lengths only when they suit the reader's task and the topic.
+  - *Direct Answers Without Ranking Promises:* Answer user questions directly and concisely when useful for human readers. Do not promise or guarantee Google Featured Snippets or AI Overview placement.
+  - *Focused Subsections and Measurements:* Add or refine a focused subsection (`<h3>`) or concrete physical measurement only when it directly helps satisfy the reader's intent and can be supported accurately with verifiable facts.
+  - *Optional Internal Links:* When it genuinely helps readers navigate related content and naturally fits the page, internal links may be added. Google does not mandate a specific internal link count; add links only where they provide legitimate reader value.
+  - *Original Firsthand Evidence Only When Verifiable:* Encourage original firsthand evidence (such as physical measurements, material inspections, or original styling sketches) only when it is real and verifiable. Never fabricate tests, experience, case studies, or named-brand evidence.
   - *Google AI Guidance:* Google’s ranking systems reward helpful, original, people-first content regardless of whether it is created by humans, AI, or automation. AI-assisted content is not inherently penalized (`https://developers.google.com/search/docs/fundamentals/ai-optimization-guide`).
   - *Spam Policy Violation:* Using automation or AI primarily to generate mass content to manipulate search rankings constitutes scaled content abuse under Google Search Spam Policies (`https://developers.google.com/search/docs/essentials/spam-policies`).
   - *Human Fact-Checking Mandate:* AI-assisted drafting or research requires rigorous, independent human fact-checking. Every measurement, material claim, pricing tier, and source attribution must be verified against authentic references prior to publication to prevent hallucinations.
@@ -131,11 +138,12 @@ Google’s ranking systems are designed to reward content created to satisfy peo
 ### 2. Prohibited Content Patterns (Hard Stop Gate)
 Elevate articles must NEVER include:
 * **Fabricated Experience or Testing:** Claiming products were "tested in our studio" when only specifications and third-party customer evidence were analyzed.
+* **Fabricated Firsthand Evidence or Case Studies:** Fabricating mock test setups, simulated studio trials, invented case studies, synthetic images, or fake named-brand endorsements.
 * **Fabricated Credentials or Endorsements:** Inventing expert quotes, fake designer certifications, or synthetic customer reviews.
-* **Fabricated Search Volume or Rank Guarantees:** Promising that an article "will rank on Page 1" or inventing search volume metrics.
+* **Fabricated Search Volume or Rank Guarantees:** Promising that an article "will rank #1", achieve featured snippets, or move rankings within 7–14 days.
 * **Keyword Stuffing:** Repetitive insertion of variations (e.g. "small apartment living room ideas for small apartments in small spaces").
-* **Arbitrary Word Counts:** Inflating text with empty filler phrases ("In today's modern world...") to reach an imaginary word quota.
-* **Mass-Produced Near-Duplicate Pages:** Creating near-identical articles targeting slight keyword synonyms (e.g. creating separate pages for "small flat decor" and "small apartment decor").
+* **Arbitrary Word Counts & Rigid Quotas:** Inflating text with empty filler phrases ("In today's modern world...") to reach an imaginary word count, or enforcing arbitrary length minimums.
+* **Mass-Produced Near-Duplicate Pages:** Creating near-identical articles targeting slight keyword synonyms (e.g. creating separate pages for "small flat decor" and "small apartment decor"). Always prefer improving an existing page when it already serves the same intent (`https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls`).
 
 ---
 
@@ -150,7 +158,8 @@ Elevate articles must NEVER include:
 * **URL Inspection: Indexed View vs. Live Test (`https://support.google.com/webmasters/answer/9012289`):**
   - **Indexed View:** Shows Google's cached index database state (last crawl date, Google-selected canonical, crawl agent). Reflects past crawl history and may lag behind live page updates.
   - **Live Test View:** Evaluates real-time crawlability, robots eligibility, and rendered DOM on the live server today. A passing live test confirms technical eligibility; it does NOT mean the page is indexed or updated in Google's index.
-* **Recrawl Request Expectations:** Submitting an indexing request asks Google to queue the URL. Submitting repeated indexing requests does NOT make Google recrawl faster or increase crawl priority (`https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl`).
+* **Recrawl Request Expectations (Never "Force Indexing"):** Submitting an indexing request through Search Console's URL Inspection tool asks Google to queue the URL for crawling (`https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl`). It queues a crawl request and does NOT guarantee or immediately cause indexing. Submitting repeated indexing requests does NOT make Google recrawl faster or increase crawl priority.
+* **Crawling, Indexing, and Measurement Delays:** Google's crawling, indexing, and ranking systems operate asynchronously on independent schedules (`https://developers.google.com/search/docs/fundamentals/how-search-works`), and Search Console data reflects standard processing lags (`https://support.google.com/webmasters/answer/17010961`). Never promise or expect ranking shifts within 7–14 days. Evaluate post-update performance over a suitable window with comparable date ranges and sufficient impressions.
 * **Indexing API Scope Restriction:** Google's Indexing API (`indexing_notify`) is strictly restricted to pages containing `JobPosting` or `BroadcastEvent` embedded in `VideoObject` structured data (`https://developers.google.com/search/apis/indexing-api/v3/quickstart`). Standard editorial articles, blog posts, and home decor guides must use Search Console's URL Inspection tool.
 
 ### 2. Canonicalization Signals
@@ -172,9 +181,11 @@ Elevate articles must NEVER include:
 * **Indexable File Types:** Google indexes text, HTML, PDF, and image formats (WebP, PNG, JPEG, SVG) (`https://developers.google.com/search/docs/crawling-indexing/indexable-file-types`). Production pages must return HTTP 200 and serve clean HTML for main text content.
 * *Reality Check:* Submitting a sitemap helps Google discover URLs; it does not guarantee crawling, indexing, or ranking.
 
-### 5. Search Appearance: Title Links & Snippets
-* **Title Links:** Write descriptive, concise `<title>` elements that closely align with the main visible `<h1>` to prevent Google from algorithmically rewriting titles in search results.
-* **Snippets:** Write informative 140–160 character meta descriptions summarizing the unique solution provided. Google may also extract visible page text if it better matches a user query.
+### 5. Search Appearance: Title Links & Snippets (`https://developers.google.com/search/docs/appearance/title-link`, `https://developers.google.com/search/docs/appearance/snippet`)
+* **No Fixed Character Limits:** Google states that title links and meta descriptions have no fixed character limits and may be truncated, expanded, or rewritten based on the search query, user device screen, and visible page text. Remove strict character target rules (such as mandatory 140–160 characters).
+* **Title Links:** Write concise, distinct, and accurate `<title>` elements that clearly reflect the page and reader intent (`https://developers.google.com/search/docs/appearance/title-link`). Align closely with visible `<h1>` headings to provide consistent context.
+* **Snippets (Meta Descriptions):** Write concise, distinct summaries that inform readers about the page's specific content and intent (`https://developers.google.com/search/docs/appearance/snippet`). Google may also extract visible page text if it better matches a user query.
+* **CTR as a Diagnostic Signal:** Treat Click-Through Rate (CTR) as one diagnostic signal, not conclusive proof that the title or description is defective. Average position, search intent type, snippet truncation, and SERP features (such as ads, video carousels, or rich results) may affect how results appear and influence user click behavior.
 
 ### 6. Structured Data (Schema.org JSON-LD) Parity
 * Include `Article`, `BreadcrumbList`, and `FAQPage` schemas where appropriate.

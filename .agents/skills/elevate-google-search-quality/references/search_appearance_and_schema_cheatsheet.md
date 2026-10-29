@@ -19,7 +19,7 @@ Google automatically generates title links in search results based on page title
 
 ### 2. Meta Descriptions & Snippet Controls
 
-* **Target Length:** 140–160 characters.
+* **Length & Flexibility:** Google has no fixed character limits for meta descriptions or title links (`https://developers.google.com/search/docs/appearance/snippet`). Descriptions may be truncated or adjusted in search results depending on the user's query and device viewport. Aim for concise, distinct summaries that accurately set user expectations without adhering to artificial character targets.
 * **Goal:** A clear, informative, non-exaggerated summary of what the article provides.
 * **Snippet Directives (if needed):**
   - `max-snippet:-1` (allows full descriptive snippets).

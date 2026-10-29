@@ -175,7 +175,7 @@ For every newly published article:
 - [ ] Categorize index status: `GSC_INDEXED`, `GSC_CRAWLED_NOT_INDEXED`, `GSC_DISCOVERED_NOT_INDEXED`, `GSC_CANONICAL_CONFLICT`, or `GSC_CRAWL_ERROR`.
 
 ### Google Search Console Governance Rules
-1. **Request Indexing $\neq$ Guaranteed Indexing:** Submitting an indexing request asks Google to queue the URL for crawling; it does not guarantee immediate indexation. Submitting repeated indexing requests does NOT make Google recrawl faster or increase priority (`https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl`).
+1. **Request Indexing Through URL Inspection $\neq$ Guaranteed Indexing:** Requesting indexing through Search Console's URL Inspection tool queues the URL for crawling; it does not guarantee or immediately cause indexing. Submitting repeated indexing requests does NOT make Google recrawl faster or increase priority (`https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl`). Never refer to this process as "force indexing".
 2. **Sitemap Submission $\neq$ Guaranteed Indexing:** Adding a URL to `sitemap.xml` signals discovery intent; indexing remains at Google's algorithmic discretion.
 3. **Live Test Pass $\neq$ Indexed:** Passing the GSC "Test Live URL" verifies technical eligibility today; it is NOT proof that the URL is already in Google's index.
 4. **Indexed View vs. Live Test View:** Search Console's index data reflects Google's cached index database, which may lag behind recent live page updates. Live Test evaluates real-time crawlability on the live server. These two views must never be conflated.
@@ -293,17 +293,48 @@ An article task reaches `RELEASE_COMPLETE` status ONLY when:
 
 ---
 
-## 10. GSC STRIKING-DISTANCE QUERY HARVESTING PROTOCOL (INTERNAL WORKFLOW RECOMMENDATION)
+## 10. GSC OPPORTUNITY SCREENING & ARTICLE OPTIMIZATION WORKFLOW (INTERNAL WORKFLOW HEURISTIC)
 
-When evaluating empirical Search Console performance telemetry, prioritize organic queries in the **"Striking Distance" (Positions 8–20)** with high impressions but low CTR:
+> [!NOTE]
+> **GOVERNANCE & BOUNDARY CLARIFICATION:**
+> The screening criteria, position ranges, and workflow steps below represent **Elevate Living internal heuristics**, NOT Google ranking rules, algorithmic thresholds, or official guarantees. Google does not publish a "striking distance" rule, does not indicate that positions 8–20 prove algorithmic preference, and does not promise that minor on-page edits will advance a URL to page one.
 
-1. **Identification:**
-   - Filter GSC Search Performance by: Impressions $> 50$, Average Position between 8.0 and 20.0, CTR $< 3\%$.
-2. **Intent Classification:**
-   - Verify whether the query represents Informational, Commercial Investigation, or Transactional intent.
-3. **Surgical On-Page Levers (Zero Collateral Impact):**
-   - **Snippet Refresh:** Adjust `<meta name="description">` and `<title>` to directly mirror the user intent and promise concrete answers without changing canonical URLs.
-   - **Section Entity Targeting:** Add or refine a focused `<h3>` subsection covering the exact query topic with concrete specs, dimensions, or styling rules.
-   - **AEO Direct Answer Inclusion:** Place a concise ($\le 50$ words) direct answer block immediately beneath the heading to target Google Featured Snippets.
-   - **Internal Anchor Flow:** Add 1–2 internal links from high-authority existing articles using descriptive, natural anchors reflecting the striking-distance phrase.
+When evaluating Search Console performance telemetry for potential editorial and technical refinements:
+
+### 1. Opportunity Discovery & Diagnostic Screening (Internal Heuristic)
+1. **Optional Screening Range (Positions ~8–20 - Internal Heuristic):**
+   - Queries averaging in the 8.0–20.0 range with meaningful impression volume may be reviewed as candidates for potential editorial refinement. This range serves strictly as an optional internal screening heuristic for prioritization, not proof of guaranteed rankings or algorithmic favoritism.
+2. **Comprehensive Diagnostic Evaluation (Beyond Titles and Copy):**
+   - For high-impression, low-click queries, do NOT immediately assume a content gap, poor title, or missing keyword is the root cause.
+   - First examine:
+     - **Query Intent:** Is the query navigational, informational, or transactional? Does the searcher want a quick definition, a visual gallery, or a purchase?
+     - **Page Relevance:** Does the current landing page genuinely satisfy the primary dilemma behind the query?
+     - **Average Position:** Position is a mathematical average across all recorded impressions (`https://support.google.com/webmasters/answer/17010961`); evaluate whether rank varies widely by device or query variation.
+     - **SERP Features:** Are commercial ads, local packs, video carousels, or rich features present? SERP features may affect how results appear on the page and influence user click behavior.
+     - **Device & Country Breakdown:** Is volume skewed toward mobile or international markets where SERP layout differs?
+     - **Data Volume & Date Range (Internal Heuristic):** Ensure sufficient impression volume exists. Under Elevate Living's internal heuristics, short observation windows (e.g. 7–14 days) and low impression counts are treated as weak, preliminary observations rather than solid evidence of a trend.
+3. **Consolidation First (Prevent Content Cannibalization):**
+   - Check existing indexed pages and query overlap across the site before recommending a new URL.
+   - Strongly prefer improving an existing page when it already covers or closely aligns with the search intent (`https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls`).
+
+### 2. Potential On-Page Refinements
+When an existing page is determined to be a suitable candidate for refinement, consider targeted improvements that respect the overall page structure:
+1. **Directly Answer User Questions:** Provide concise, direct answers to the core dilemma near the beginning of the section where helpful for the reader. Do NOT promise or guarantee Google Featured Snippets or AI Overview placement.
+2. **Title Link & Meta Description Assessment:**
+   - Review `<title>` and `<meta name="description">` for clarity, distinctness, and alignment with the page's actual subject matter (`https://developers.google.com/search/docs/appearance/title-link`, `https://developers.google.com/search/docs/appearance/snippet`).
+   - Treat low CTR as one diagnostic signal, not conclusive proof that the title or snippet caused it. Position, search intent, snippet truncation, and SERP features may all affect how results appear and influence click behavior.
+   - Do not adhere to rigid character count quotas; Google documents that titles and snippets have no fixed character limit and may be rewritten or truncated to suit the user's query and device screen.
+3. **Focused Subsection or Measurement Refinement:**
+   - Add or refine a focused subsection (`<h3>`) or concrete measurement only when it directly helps satisfy the reader's intent and can be supported accurately with verifiable facts.
+4. **Optional Internal Links:**
+   - When it genuinely helps readers navigate related content and naturally fits the page, consider adding internal links from established, relevant articles using natural, descriptive anchor text. Google does not mandate a specific internal link count; add links only where they provide legitimate reader value.
+
+### 3. Crawling and Measurement Expectations (Internal Heuristic Periods)
+1. **Request Indexing Through URL Inspection (Never "Force Indexing"):**
+   - After deploying improvements, request indexing through Search Console's URL Inspection tool (`https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl`).
+   - Requesting indexing queues the URL for crawling; it does not guarantee immediate crawling or indexing. Repeated requests do NOT make Google recrawl faster or increase crawl priority.
+2. **Realistic Measurement Windows (Internal Heuristic):**
+   - Never promise or expect a ranking shift within 7–14 days.
+   - Account for search engine crawl scheduling, index updates, and Search Console reporting delays (2–3 day standard lag) (`https://developers.google.com/search/docs/fundamentals/how-search-works`, `https://support.google.com/webmasters/answer/17010961`).
+   - Elevate Living's internal heuristic is to evaluate post-update performance over a suitable period (e.g. 28 days or longer) comparing comparable date ranges with adequate impression volume.
 
