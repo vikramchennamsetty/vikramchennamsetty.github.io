@@ -37,6 +37,7 @@ Establishes a normalized audit, intelligence, and post-publication governance la
 
 > [!IMPORTANT]
 > **ARCHITECTURE BOUNDARY:**
+> - `elevate-google-search-quality` is the **authoritative standards and editorial quality framework** synthesized directly from official Google Search Central documentation (`https://developers.google.com/search/docs`).
 > - `elevate-seo-performance` is the **authoritative execution and performance controller** (modifies HTML meta, title tags, canonicals, and site speed).
 > - `elevate-search-visibility` is the **audit, intent, entity, post-publication indexing, and search-visibility intelligence layer** (evaluates search readiness, manages GSC post-publish lifecycles, plans schema, and audits GEO citation readiness).
 
@@ -174,12 +175,12 @@ For every newly published article:
 - [ ] Categorize index status: `GSC_INDEXED`, `GSC_CRAWLED_NOT_INDEXED`, `GSC_DISCOVERED_NOT_INDEXED`, `GSC_CANONICAL_CONFLICT`, or `GSC_CRAWL_ERROR`.
 
 ### Google Search Console Governance Rules
-1. **Request Indexing $\neq$ Guaranteed Indexing:** Submitting an indexing request asks Google to queue the URL for crawling; it does not guarantee immediate indexation.
+1. **Request Indexing $\neq$ Guaranteed Indexing:** Submitting an indexing request asks Google to queue the URL for crawling; it does not guarantee immediate indexation. Submitting repeated indexing requests does NOT make Google recrawl faster or increase priority (`https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl`).
 2. **Sitemap Submission $\neq$ Guaranteed Indexing:** Adding a URL to `sitemap.xml` signals discovery intent; indexing remains at Google's algorithmic discretion.
 3. **Live Test Pass $\neq$ Indexed:** Passing the GSC "Test Live URL" verifies technical eligibility today; it is NOT proof that the URL is already in Google's index.
-4. **Google-Selected Canonical Monitoring:** The declared canonical tag in HTML must be compared against `google_selected_canonical` in GSC reports to catch algorithmic canonical overrides.
-5. **Indexed State vs Live State:** Search Console's index data reflects Google's cached index database, which may lag behind recent live page updates.
-6. **No Conflation:** Live-test results and historical index-state results must never be conflated.
+4. **Indexed View vs. Live Test View:** Search Console's index data reflects Google's cached index database, which may lag behind recent live page updates. Live Test evaluates real-time crawlability on the live server. These two views must never be conflated.
+5. **Google-Selected Canonical Monitoring:** The declared canonical tag in HTML must be compared against `google_selected_canonical` in GSC reports to catch algorithmic canonical overrides.
+6. **Indexing API Scope Restriction:** Google's Indexing API is strictly restricted to JobPosting and BroadcastEvent structured data. Standard editorial pages must use GSC URL Inspection.
 7. **Timestamp Integrity:** All GSC observations and requests must be explicitly timestamped.
 
 ---
@@ -197,16 +198,33 @@ After publishing or updating any article:
 
 ---
 
-## 6. SEARCH PERFORMANCE OBSERVATION
+## 6. SEARCH PERFORMANCE OBSERVATION & GSC TELEMETRY PROTOCOL
 
-During the `PERFORMANCE_QUERY_OBSERVATION` stage, track empirical performance data:
-- **Metrics Tracked:** Impressions, Clicks, Click-Through Rate (CTR), Average Position, Target Queries, Top Performing Pages, Country breakdown, Device breakdown, Date Range.
+During the `PERFORMANCE_QUERY_OBSERVATION` stage, track and document empirical performance data adhering to official Google Search Console accounting principles:
+
+### 1. Mandatory Audit Parameters
+Every analysis must explicitly document:
+* **Property:** URL-prefix (`https://elevatelivingco.me/`) or Domain property.
+* **Search Type:** Web, Image, Video, or Google News (evaluated separately; never conflated).
+* **Date Range:** Exact start and end dates (e.g. 28-day, 90-day, or comparative periods).
+* **Applied Filters:** Specific Page, Query, Country, Device, or Search Appearance filters.
+* **Grouping Dimension:** Grouped by Page, Query, Country, Device, Date, or Search Appearance.
+
+### 2. GSC Accounting Principles & Export Guardrails (Official Google Support)
+* **Property vs. Page Aggregation:** In property aggregation, multiple pages appearing in one SERP count as one impression with the topmost position. In page aggregation, each page logs its own impression and position. Never sum page-level impressions to calculate property totals. In small exports, page and property totals may happen to match if no query showed multiple site URLs; never assume page and property totals must match architecturally.
+* **Unreported Queries (Privacy + Row Limits):** The gap between total page impressions and visible query-row sums represents **unreported queries** (a composite of privacy-threshold filtering and interface table row limits). Do NOT attribute 100% of this gap solely to anonymization, and do NOT infer zero reader search demand from missing query rows.
+* **Row Truncation:** Interface tables truncate at 1,000 rows (API at 25,000–50,000).
+* **Data Freshness:** Standard data carries a 2–3 day reporting lag. Preliminary fresh data may adjust upon batch finalization.
+* **Average Position is NOT a Fixed Rank:** Average position is a mathematical mean across all recorded impressions, fluctuating by geography, device, personalization, and SERP layout.
+* **Short Windows as Early Signals:** Early observation windows (such as a 10-day export) capture initial crawl discovery, not mature performance trends or proof of established success/failure.
+* **Low-Impression Clicks:** Low-impression clicks (e.g. 1 click from 10 impressions) are isolated, encouraging observations, but unstable metrics that must not trigger major structural page rewrites.
+* **Generative AI Reporting:** Google Search Console provides a dedicated report/view for generative AI search features, while this data is also included in overall Search Console performance reporting (announced at `https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports`; documented at `https://support.google.com/webmasters/answer/16984139`). Segment this dedicated view for analysis (internal recommendation). Do not treat generative AI impressions as proof of editorial authority or speculate about underlying retrieval experiments.
 
 > [!IMPORTANT]
 > **ANALYTICS INTERPRETATION RULES:**
 > - Low clicks do NOT automatically mean poor content quality (e.g. low search volume niche or zero-click AEO answers).
 > - Ranking position is NOT a complete score of content value.
-> - All performance evaluations MUST be based on empirical GSC performance data, never assumptions.
+> - All performance evaluations MUST be based on empirical GSC performance data, never assumptions or manufactured metrics.
 
 ---
 
@@ -272,3 +290,20 @@ An article task reaches `RELEASE_COMPLETE` status ONLY when:
 7. **Accessibility in Release Gate:** Reaching 100/100 Accessibility requires enforcing color contrast ratios ($\ge 4.5:1$) and strict sequential `H1 -> H2 -> H3` heading hierarchy before final release.
 8. **Optimization Diminishing Returns:** Performance optimization must cease once lab metrics reach elite levels (Performance 99, LCP 1.0s, TBT 0ms); further micro-optimizations carry risk with negligible return.
 9. **Evidence-Based Optimization Only:** Code changes must be justified strictly by empirical trace evidence, log data, or verified defects.
+
+---
+
+## 10. GSC STRIKING-DISTANCE QUERY HARVESTING PROTOCOL (INTERNAL WORKFLOW RECOMMENDATION)
+
+When evaluating empirical Search Console performance telemetry, prioritize organic queries in the **"Striking Distance" (Positions 8–20)** with high impressions but low CTR:
+
+1. **Identification:**
+   - Filter GSC Search Performance by: Impressions $> 50$, Average Position between 8.0 and 20.0, CTR $< 3\%$.
+2. **Intent Classification:**
+   - Verify whether the query represents Informational, Commercial Investigation, or Transactional intent.
+3. **Surgical On-Page Levers (Zero Collateral Impact):**
+   - **Snippet Refresh:** Adjust `<meta name="description">` and `<title>` to directly mirror the user intent and promise concrete answers without changing canonical URLs.
+   - **Section Entity Targeting:** Add or refine a focused `<h3>` subsection covering the exact query topic with concrete specs, dimensions, or styling rules.
+   - **AEO Direct Answer Inclusion:** Place a concise ($\le 50$ words) direct answer block immediately beneath the heading to target Google Featured Snippets.
+   - **Internal Anchor Flow:** Add 1–2 internal links from high-authority existing articles using descriptive, natural anchors reflecting the striking-distance phrase.
+
