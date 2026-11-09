@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Modern Coffee Tables for Apartments (2026) | 7 Designer-Looking Picks</title>
-    <meta name="description" content="Discover 7 modern coffee tables that instantly elevate apartments. Fluted, marble, nesting, storage, and designer-inspired picks for luxury living rooms in 2026.">
+    <title>7 Best Modern Coffee Tables for Apartments (2026)</title>
+    <meta name="description" content="Compare 7 modern coffee tables for apartments, with lift-top designs, hidden storage, nesting tables, faux marble finishes, and space-saving styles.">
     <link rel="canonical" href="https://elevatelivingco.me/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://elevatelivingco.me/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html">
-    <meta property="og:title" content="7 Modern Coffee Tables That Make Apartments Look Expensive (2026)">
-    <meta property="og:description" content="Discover 7 modern coffee tables that instantly elevate apartments. Fluted, marble, nesting, storage, and designer-inspired picks for luxury living rooms in 2026.">
+    <meta property="og:title" content="7 Best Modern Coffee Tables for Apartments (2026)">
+    <meta property="og:description" content="Compare 7 modern coffee tables for apartments, with lift-top designs, hidden storage, nesting tables, faux marble finishes, and space-saving styles.">
     <meta property="og:image" content="https://elevatelivingco.me/assets/images/modern-coffee-tables-og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://elevatelivingco.me/7-modern-coffee-tables-that-make-apartments-look-expensive-2026.html">
-    <meta property="twitter:title" content="7 Modern Coffee Tables That Make Apartments Look Expensive (2026)">
-    <meta property="twitter:description" content="Discover 7 modern coffee tables that instantly elevate apartments. Fluted, marble, nesting, storage, and designer-inspired picks for luxury living rooms in 2026.">
+    <meta property="twitter:title" content="7 Best Modern Coffee Tables for Apartments (2026)">
+    <meta property="twitter:description" content="Compare 7 modern coffee tables for apartments, with lift-top designs, hidden storage, nesting tables, faux marble finishes, and space-saving styles.">
     <meta property="twitter:image" content="https://elevatelivingco.me/assets/images/modern-coffee-tables-og-image.png">
 
     <!-- Google Fonts -->
@@ -417,6 +417,9 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 120px;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
 
         body {
@@ -427,6 +430,8 @@
             font-size: 1.125rem;
             transition: background-color 0.4s ease, color 0.4s ease;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -587,15 +592,25 @@
 
         .article-layout {
             display: grid;
-            grid-template-columns: 1fr 320px;
+            grid-template-columns: minmax(0, 1fr) 320px;
             gap: 5rem;
             padding-bottom: 6rem;
             position: relative;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .main-content {
+            min-width: 0;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         @media (max-width: 1024px) {
             .article-layout {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
                 gap: 3rem;
             }
         }
@@ -656,6 +671,9 @@
             border: 1px solid var(--accent);
             margin: 3rem 0;
             position: relative;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .quick-picks::before {
@@ -715,6 +733,10 @@
             gap: 4rem;
             position: relative;
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            min-width: 0;
         }
 
         .product-card:hover {
@@ -963,6 +985,19 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 600px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .related-card {
+                padding: 1.5rem 1.25rem;
+            }
         }
 
         .related-card {
@@ -1203,9 +1238,13 @@
         .site-footer {
             background: var(--dark-accent);
             color: #fff;
-            padding: 4rem 2rem 2rem;
+            padding: 4rem 2rem 6.5rem;
             margin-top: 4rem;
             text-align: center;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
         }
         .footer-grid {
             display: grid;
@@ -1328,6 +1367,243 @@
         }
         .goog-te-banner-frame.skiptranslate { display: none !important; }
         body { top: 0px !important; }
+
+        /* Table horizontal scrollbar styling & scroll margins */
+        h2[id], h3[id], .product-card {
+            scroll-margin-top: 85px;
+        }
+        div[style*="overflow-x: auto"]::-webkit-scrollbar {
+            height: 6px;
+        }
+        div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
+            background: var(--surface);
+            border-radius: 10px;
+        }
+        div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        /* Mobile Layout & Viewport Enhancements (<= 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            /* Main Content & Article Layout */
+            .article-layout {
+                gap: 1.5rem;
+                padding-bottom: 3rem;
+            }
+            .main-content {
+                min-width: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Quick Navigation Shortlist */
+            .quick-picks {
+                padding: 2rem 1rem 1.25rem;
+                margin: 2rem 0;
+                border-radius: 16px;
+            }
+            .quick-picks::before {
+                left: 1rem;
+                font-size: 0.7rem;
+                padding: 0.2rem 0.75rem;
+            }
+            .quick-picks-list {
+                gap: 1rem;
+                margin-top: 1.25rem;
+            }
+            .quick-pick-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.35rem;
+                padding-bottom: 1rem;
+            }
+            .qp-title {
+                font-size: 0.95rem;
+                word-break: break-word;
+            }
+            .qp-award {
+                font-size: 0.8rem;
+            }
+
+            /* Product Cards */
+            .product-card {
+                padding: 1.5rem 1rem;
+                margin: 2.5rem 0;
+                gap: 1.5rem;
+                border-radius: 16px;
+            }
+            .badge-best {
+                right: 1rem;
+                padding: 0.4rem 0.85rem;
+                font-size: 0.75rem;
+            }
+            .product-title {
+                font-size: 1.35rem;
+                margin-bottom: 1rem;
+                word-break: break-word;
+            }
+            .product-features {
+                margin: 1.25rem 0;
+            }
+            .product-features li {
+                font-size: 0.92rem;
+            }
+            .product-pros {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+                border-radius: 12px;
+            }
+            .btn {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            /* Editor's Note */
+            .editors-note {
+                padding: 1.5rem 1.25rem;
+                margin: 2rem 0;
+                border-radius: 0 14px 14px 0;
+            }
+            .editors-note p {
+                font-size: 1.05rem;
+            }
+
+            /* FAQs */
+            .faq-section {
+                margin-top: 3.5rem;
+            }
+            .faq-q {
+                font-size: 1.05rem;
+                gap: 0.75rem;
+            }
+            .faq-a {
+                font-size: 0.95rem;
+                padding-right: 0.5rem;
+            }
+
+            /* Author Box */
+            .author-box {
+                padding: 1.5rem 1rem;
+                margin: 2.5rem 0;
+                border-radius: 16px;
+            }
+            .author-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            /* Hero adjustments */
+            .hero {
+                padding: 3rem 0 2rem;
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            .hero p {
+                font-size: 1.05rem !important;
+            }
+            .hero-image-wrap {
+                margin-top: 1.5rem;
+                border-radius: 16px;
+            }
+
+            /* Header: Logo and Language Selector Responsive Layout */
+            .site-header .container {
+                padding: 0 0.75rem;
+            }
+            .header-inner {
+                height: 64px;
+            }
+            .logo {
+                font-size: 1.125rem;
+                letter-spacing: 0;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .header-inner > div {
+                gap: 0.4rem !important;
+            }
+            #google_translate_element select, .goog-te-combo {
+                font-size: 0.75rem;
+                padding: 0.3rem 1.4rem 0.3rem 0.5rem;
+                background-position: right 0.45rem top 50%;
+                background-size: 0.55rem auto;
+                max-width: 110px;
+            }
+            .theme-toggle {
+                padding: 0.25rem;
+                font-size: 1rem;
+            }
+
+            /* Footer: Full-Width Stacking & Padding */
+            .site-footer {
+                padding: 3rem 1rem calc(7rem + env(safe-area-inset-bottom, 0px));
+                margin-top: 3rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto 2rem;
+                padding: 0;
+            }
+            .footer-col {
+                width: 100%;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+
+            /* Sticky Purchase Bar: Compact Mobile Proportions */
+            .sticky-cta {
+                padding: 0.6rem 0.75rem;
+                gap: 0.5rem;
+            }
+            .sticky-cta-info {
+                gap: 0.5rem;
+                min-width: 0;
+                flex: 1 1 auto;
+            }
+            .sticky-cta-title {
+                font-size: 0.82rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 175px;
+            }
+            .sticky-cta-badge {
+                font-size: 0.68rem;
+                letter-spacing: 0.5px;
+            }
+            .sticky-cta .btn {
+                padding: 0.5rem 0.85rem !important;
+                font-size: 0.8rem !important;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo {
+                font-size: 1.05rem;
+            }
+            #google_translate_element select, .goog-te-combo {
+                max-width: 95px;
+                font-size: 0.72rem;
+                padding-right: 1.2rem;
+            }
+            .sticky-cta-title {
+                max-width: 140px;
+                font-size: 0.78rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1479,7 +1755,7 @@
                 
                         <div class="product-image-container">
                             <img src="https://m.media-amazon.com/images/I/81+RIAkolrL._AC_SL1500_.jpg"
-                                 alt="Modern round fluted walnut drum coffee table with hidden storage for luxury apartment living room"
+                                 alt="JOINICE round fluted walnut drum coffee table with hidden storage for apartment living room"
                                  loading="lazy">
                         </div>
                     </a>
@@ -1502,11 +1778,11 @@
                         <p>A masterclass in contemporary design. This table perfectly captures the fluted wood trend while secretly housing massive storage capacity under a seamless lift-top mechanism. The craftsmanship on the exterior vertical fluting creates a rhythmic, architectural shadow play that shifts depending on the time of day and your apartment's natural light. The walnut finish is exceptionally rich, avoiding the red undertones that often plague cheaper wood pieces.</p>
                 
                         <ul class="product-features">
-                            <li>Premium Fluted Wood Design</li>
-                            <li>Pneumatic Lift Top Mechanism</li>
-                            <li>Deep Hidden Storage Compartment</li>
-                            <li>Rich Walnut Finish</li>
-                            <li>Perfect 31.5" Diameter Scale</li>
+                            <li>Architectural Fluted Wood Design</li>
+                            <li>Hydraulic-Assisted Lift Mechanism with Soft-Close Damping</li>
+                            <li>Deep Concealed Interior Storage Bay</li>
+                            <li>Sliding Tambour Cabinet Door with Lower Shelf</li>
+                            <li>31.5" Diameter × 17.7" Height (110 lb Closed Tabletop Capacity)</li>
                         </ul>
                 
                         <div class="product-pros">
@@ -1539,7 +1815,7 @@
                 
                         <div class="product-image-container">
                             <img src="https://m.media-amazon.com/images/I/81NfWk0z+yL._AC_SL1500_.jpg"
-                                 alt="Matte black round fluted coffee table perfect for dark academia aesthetic living room"
+                                 alt="JOINICE matte black fluted round drum coffee table with hidden storage for dark academia apartment"
                                  loading="lazy">
                         </div>
                 
@@ -1560,13 +1836,13 @@
                             </a>
                         </h3>
                 
-                        <p>For those leaning into moody, atmospheric aesthetics, this matte black variation offers striking contrast. It absorbs light beautifully, acting as a grounding focal point in light-filled rooms. A black coffee table requires precision in its finish; too glossy, and it looks like cheap plastic. This model uses an ultra-matte, scratch-resistant coating that looks and feels like premium ebonized oak. It is the quintessential statement piece for Dark Academia or minimalist industrial apartments.</p>
+                        <p>For those leaning into moody, atmospheric aesthetics, this matte black variation offers striking contrast. It absorbs ambient light smoothly, acting as a grounding focal point in light-filled rooms. A black coffee table requires precision in its finish; high-gloss finishes can reflect distracting glares. This model uses an ultra-matte finish on engineered wood that mimics the tactile presence of ebonized oak while reducing fingerprint marks. It is an intentional anchor piece for Dark Academia or minimalist industrial apartments.</p>
                 
                         <ul class="product-features">
-                            <li>Ultra-Matte Black Finish</li>
-                            <li>Continuous Fluted Texturing</li>
-                            <li>Integrated Hidden Storage</li>
-                            <li>Heavy, Monolithic Aesthetic</li>
+                            <li>Ultra-Matte Black Anti-Glare Finish</li>
+                            <li>Continuous Vertical Fluted Texturing</li>
+                            <li>Hydraulic Lift-Top with Soft-Close Damping</li>
+                            <li>31.5" Diameter × 17.7" Height (110 lb Top / 33 lb Shelf Capacity)</li>
                         </ul>
                 
                         <div class="product-pros">
@@ -1599,7 +1875,7 @@
                 
                         <div class="product-image-container">
                             <img src="https://m.media-amazon.com/images/I/81q5H2EjHdL._AC_SL1500_.jpg"
-                                 alt="Oval tambour lift top coffee table with ribbed sides and hidden storage for modern apartments"
+                                 alt="LINSY oval tambour lift top coffee table with sliding doors converting to work desk in small apartment"
                                  loading="lazy">
                         </div>
                 
@@ -1620,21 +1896,21 @@
                             </a>
                         </h3>
                 
-                        <p>The tambour door on this oval masterpiece mimics high-end Italian cabinetry. The elongated oval shape provides the softness of a round table with the surface area of a rectangular one, making it ideal for narrow, rectangular apartment living rooms. The tambour sliding doors reveal a lower storage cubby, while the primary surface lifts via dual gas struts to become a highly stable workstation. The juxtaposition of the ribbed siding with the smooth top surface is an interior designer's dream.</p>
+                        <p>The tambour door on this oval masterpiece brings the artisanal texture of slatted Italian cabinetry to everyday apartment living. Measuring 39.4" long by 20.5" wide, its elongated oval silhouette provides the soft walkway clearance of a round table while preserving the functional surface area of a rectangle. Dual pneumatic gas struts elevate the primary surface from a 17.0" baseline to a 22.3" working height, bringing laptops to a comfortable typing level from standard sofa cushions. Sliding tambour doors provide smooth access to the lower storage cubby without requiring extra door-swing clearance.</p>
                 
                         <ul class="product-features">
-                            <li>Soft Oval Silhouette</li>
-                            <li>Sliding Tambour Doors</li>
-                            <li>Dual Gas Strut Lift Top</li>
-                            <li>Multi-chamber Storage</li>
+                            <li>39.4" L × 20.5" W × 17.0" Baseline Height (Elevates to 22.3" H)</li>
+                            <li>Dual Pneumatic Gas Struts with Soft-Cushioned Slow Descent</li>
+                            <li>Dual-Sided Smooth Sliding Tambour Door Storage</li>
+                            <li>110 lb Total Closed Frame Capacity (44 lb Extended Tabletop Limit)</li>
                         </ul>
                 
                         <div class="product-pros">
                             <div class="pros-title">Why It Elevates Your Space</div>
                             <ul>
-                                <li>Improves foot traffic flow incredibly</li>
-                                <li>Tambour detail looks bespoke and custom</li>
-                                <li>Smooth, silent lifting mechanism</li>
+                                <li>Improves foot traffic flow in narrow rooms</li>
+                                <li>Tambour detail mimics custom slatted cabinetry</li>
+                                <li>Smooth pneumatic gas strut lift mechanism</li>
                                 <li>Ideal for narrow apartment layouts</li>
                             </ul>
                         </div>
@@ -1659,7 +1935,7 @@
                 
                         <div class="product-image-container">
                             <img src="https://m.media-amazon.com/images/I/81LwcEoBFgL._AC_SL1500_.jpg"
-                                 alt="Round faux marble coffee table with geometric gold legs for elegant apartment living room"
+                                 alt="Tribesigns 31.5-inch round white faux marble coffee table with geometric gold legs for apartment living room"
                                  loading="lazy">
                         </div>
                 
@@ -1680,13 +1956,13 @@
                             </a>
                         </h3>
                 
-                        <p>A round marble coffee table immediately signals traditional luxury. This faux marble round coffee table pairs a gorgeous veined top with slender geometric gold legs for an airy, glamorous vibe. Genuine marble is porous, stains easily, and weighs hundreds of pounds, making it impractical for most renters. This engineered alternative provides the exact visual weight of Calacatta marble while offering supreme resistance to red wine rings and coffee spills. The two-tier design allows you to display curated art books on the bottom shelf while keeping the top pristine.</p>
+                        <p>A round marble coffee table provides classic architectural presence. This 31.5" diameter design pairs a realistic white faux marble laminate with curved geometric gold metal legs for an open, airy profile. While genuine marble is heavy, porous, and susceptible to liquid rings, this high-density engineered wood top offers dependable water resistance against daily coffee cups and spills. Its two-tier structure provides an open lower shelf for art books and baskets while keeping the top surface clear for drinks and entertaining.</p>
                 
                         <ul class="product-features">
-                            <li>Realistic Faux Marble Top</li>
-                            <li>Geometric Gold Metal Base</li>
-                            <li>2-Tier Design for Display</li>
-                            <li>Stain and Water Resistant</li>
+                            <li>31.5" Diameter × 17.91" Height (1.57"–1.97" Thick Top)</li>
+                            <li>Water-Resistant White Faux marble laminate surface</li>
+                            <li>220 lb Manufacturer-Rated Total Load Capacity</li>
+                            <li>Fixed 2-Tier Storage with Curved Petal Geometric Gold Legs</li>
                         </ul>
                 
                         <div class="product-pros">
@@ -1719,7 +1995,7 @@
                 
                         <div class="product-image-container">
                             <img src="https://m.media-amazon.com/images/I/71S4kfIM67L._AC_SL1500_.jpg"
-                                 alt="Mid-century modern lift top coffee table with hidden drawers and open shelves for small spaces"
+                                 alt="Rolanstar 39.4-inch mid-century modern lift top coffee table with two storage drawers and open shelf"
                                  loading="lazy">
                         </div>
                 
@@ -1740,13 +2016,13 @@
                             </a>
                         </h3>
                 
-                        <p>The ultimate functional beast wrapped in a sleek mid-century modern aesthetic. If you live in a tiny apartment, this table acts as your dining table, desk, and storage unit. Most functional furniture sacrifices form for utility, but the Rolanstar maintains a clean, blocky, mid-century silhouette. The pop-up top is stabilized to handle heavy typing sessions without wobbling, and the dual smooth-gliding drawers provide essential organization for electronics, chargers, and living room miscellany.</p>
+                        <p>A versatile multi-functional anchor tailored for compact apartment floor plans. Measuring 39.4" wide by 19.7" deep, the Rolanstar integrates dining, working, and triple-tier storage into a structured mid-century profile. Its heavy-duty steel spring-assist hinges elevate the surface from an 18.2" baseline to an extended 24.3" height, bringing work surfaces to a natural desk level. Built with a crossbar-stabilized frame to prevent surface wobbling during typing, it features a concealed compartment under the top, two smooth-gliding drawers, and a wide lower shelf.</p>
                 
                         <ul class="product-features">
-                            <li>Pop-up Lift Top Surface</li>
-                            <li>2 Smooth-Gliding Drawers</li>
-                            <li>Open Display Shelf</li>
-                            <li>Industrial/Modern Wood Finish</li>
+                            <li>39.4" W × 19.7" D × 18.2" Baseline Height (Elevates to 24.3" H)</li>
+                            <li>Heavy-Duty Steel Spring-Assist Mechanism with Crossbar Stabilization</li>
+                            <li>100 lb Closed Top Capacity (30 lb Extended Tabletop Limit)</li>
+                            <li>Triple Storage: Concealed Bay, 2 Storage Drawers, and Open Shelf</li>
                         </ul>
                 
                         <div class="product-pros">
@@ -1779,7 +2055,7 @@
                 
                         <div class="product-image-container">
                             <img src="https://m.media-amazon.com/images/I/91wuSmUQaOS._AC_SL1500_.jpg"
-                                 alt="Industrial reclaimed oak nesting coffee tables space saving solution for small apartments"
+                                 alt="Nathan James Stella round nesting coffee tables set of two in reclaimed oak and black metal frame"
                                  loading="lazy">
                         </div>
                 
@@ -1800,13 +2076,13 @@
                             </a>
                         </h3>
                 
-                        <p>A nesting coffee table is the interior designer's secret weapon for awkward or compact layouts. Pull them apart for entertaining, tuck them together for floor space. The Stella set utilizes a highly textured reclaimed oak finish over a sturdy, minimalist matte black metal frame. When nested, they create an attractive layered geometry that adds immense visual interest to a room without feeling overwhelming. When separated, they serve beautifully as dual surfaces for guests during cocktail hour.</p>
+                        <p>A nesting coffee table set is an effective space-management solution for compact or awkward apartment layouts. The Stella set pairs a 31.6" diameter larger table (18.1" H) with a 23.6" diameter smaller table (13.0" H) that tucks fully underneath to reclaim floor space during daily routines. Built with textured reclaimed oak laminate over a powder-coated gunmetal steel frame, each table is independently rated for up to 50 lbs (100 lbs combined). The modular configuration allows you to expand your hosting surface area during social gatherings and collapse it when open circulation is needed.</p>
                 
                         <ul class="product-features">
-                            <li>Dynamic 2-Piece Nesting Design</li>
-                            <li>Textured Reclaimed Oak Finish</li>
-                            <li>Matte Black Metal Frames</li>
-                            <li>Modular Versatility</li>
+                            <li>Large: 31.6" Dia × 18.1" H / Small: 23.6" Dia × 13.0" H</li>
+                            <li>Space-Saving Modular Nesting (Smaller Table Slides Fully Beneath)</li>
+                            <li>50 lb Weight Limit per Tabletop (100 lb Combined Total)</li>
+                            <li>Durable Reclaimed Oak Paper Laminate with Powder-Coated Steel Legs</li>
                         </ul>
                 
                         <div class="product-pros">
@@ -1838,7 +2114,7 @@
                 
                         <div class="product-image-container">
                             <img src="https://m.media-amazon.com/images/I/91th363I8HL._AC_SL1500_.jpg"
-                                 alt="Mid-century modern triangle tempered glass coffee table with solid wood base for designer aesthetic"
+                                 alt="Honyee mid-century modern triangle tempered glass coffee table with solid wood tripod base for apartment"
                                  loading="lazy">
                         </div>
                 
@@ -1859,13 +2135,13 @@
                             </a>
                         </h3>
                 
-                        <p>Inspired by iconic mid-century museum pieces (specifically the legendary Noguchi table), this sculptural glass and wood table is a pure work of art. The transparency of the glass top ensures your beautiful rug remains fully visible, an essential trick for making small spaces feel vast. The interlocking solid wood base is an engineering marvel, balancing the heavy 220 lb capacity tempered glass effortlessly. It is the definition of "less is more" and serves as a phenomenal conversation starter.</p>
+                        <p>Inspired by mid-century sculptural icons, this triangle accent table uses optical transparency to maintain unbroken sightlines in compact rooms. Measuring 42.5" wide by 28.5" deep and 16.1" high, the clear tempered glass tabletop allows floor rugs and textures to remain fully visible, preventing visual crowding in narrow living rooms. An interlocking solid natural wood base forms a balanced tripod support equipped with transparent protective bumpers, rated for an Amazon-listed maximum load capacity of 220 lbs.</p>
                 
                         <ul class="product-features">
-                            <li>Thick Tempered Triangle Glass</li>
-                            <li>Interlocking Solid Wood Base</li>
-                            <li>Massive 220 lb Weight Capacity</li>
-                            <li>Museum-Quality Aesthetic</li>
+                            <li>42.5" W × 28.5" D × 16.1" H Apartment-Scaled Footprint</li>
+                            <li>Smooth-Beveled Tempered Safety Glass (Wipes Clean with Glass Cleaner)</li>
+                            <li>Interlocking Solid Natural Wood Tripod Base with Non-Slip Bumpers</li>
+                            <li>220 lb Maximum Weight Recommendation (Amazon-Listed Spec)</li>
                         </ul>
                 
                         <div class="product-pros">
@@ -1887,46 +2163,86 @@
                     </div>
                 </div>
 
-                                <h3 id="quick-comparison" class="fade-in">Quick Comparison</h3>
-                <div class="fade-in" style="overflow-x: auto; margin-bottom: 3rem;">
-                    <table style="width: 100%; border-collapse: collapse; text-align: left; background: var(--surface); box-shadow: var(--shadow-soft); border-radius: 12px; overflow: hidden;">
+                                <h3 id="quick-comparison" class="fade-in">Quick Comparison: Verified Specifications</h3>
+                <div class="table-scroll-hint fade-in" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.75rem; font-weight: 500;">
+                    <span>↔ Scroll horizontally to view full dimensions and mechanisms</span>
+                </div>
+                <div class="fade-in" style="overflow-x: auto; max-width: 100%; margin-bottom: 3rem; -webkit-overflow-scrolling: touch; border-radius: 12px; box-shadow: var(--shadow-soft);">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; background: var(--surface); box-shadow: var(--shadow-soft); border-radius: 12px; overflow: hidden; font-size: 0.92rem; min-width: 720px;">
                         <thead>
                             <tr style="background: var(--dark-accent); color: #fff;">
-                                <th style="padding: 1rem;">Product</th>
-                                <th style="padding: 1rem;">Best For</th>
-                                <th style="padding: 1rem;">Rating</th>
+                                <th scope="col" style="padding: 1rem;">Coffee Table Model</th>
+                                <th scope="col" style="padding: 1rem;">Design Style</th>
+                                <th scope="col" style="padding: 1rem;">Dimensions (W × D × H)</th>
+                                <th scope="col" style="padding: 1rem;">Lifted Height</th>
+                                <th scope="col" style="padding: 1rem;">Weight Capacity</th>
+                                <th scope="col" style="padding: 1rem;">Mechanism & Storage</th>
+                                <th scope="col" style="padding: 1rem;">Source Tier</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem;">JOINICE</td>
-                                <td style="padding: 1rem;">Overall</td>
-                                <td style="padding: 1rem;">4.4</td>
+                                <td style="padding: 1rem; font-weight: 600;">JOINICE Drum (Walnut)</td>
+                                <td style="padding: 1rem;">Architectural Fluted Round</td>
+                                <td style="padding: 1rem;">31.5" Dia × 17.7" H</td>
+                                <td style="padding: 1rem;"><em>Not published</em></td>
+                                <td style="padding: 1rem;">Top: 110 lbs<br><small style="color:var(--text-muted);">Shelf: 33 lbs</small></td>
+                                <td style="padding: 1rem;">Hydraulic lift + soft-close damping; sliding tambour door</td>
+                                <td style="padding: 1rem;"><small>Manual Mirror</small></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem;">LINSY</td>
-                                <td style="padding: 1rem;">Luxury</td>
-                                <td style="padding: 1rem;">4.4</td>
+                                <td style="padding: 1rem; font-weight: 600;">JOINICE Matte Black</td>
+                                <td style="padding: 1rem;">Dark Academia Monolith</td>
+                                <td style="padding: 1rem;">31.5" Dia × 17.7" H</td>
+                                <td style="padding: 1rem;"><em>Not published</em></td>
+                                <td style="padding: 1rem;">Top: 110 lbs<br><small style="color:var(--text-muted);">Shelf: 33 lbs</small></td>
+                                <td style="padding: 1rem;">Hydraulic lift + soft-close damping; sliding tambour door</td>
+                                <td style="padding: 1rem;"><small>Manual Mirror</small></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem;">Tribesigns</td>
-                                <td style="padding: 1rem;">Marble</td>
-                                <td style="padding: 1rem;">4.6</td>
+                                <td style="padding: 1rem; font-weight: 600;">LINSY Oval Tambour</td>
+                                <td style="padding: 1rem;">Bespoke Italian Modern</td>
+                                <td style="padding: 1rem;">39.4" L × 20.5" W × 17.0" H</td>
+                                <td style="padding: 1rem;"><strong>22.3" H</strong></td>
+                                <td style="padding: 1rem;">Closed: 110 lbs<br><small style="color:var(--text-muted);">Extended: 44 lbs</small></td>
+                                <td style="padding: 1rem;">Dual pneumatic gas struts; dual-sided sliding tambour doors</td>
+                                <td style="padding: 1rem;"><small>Manual Mirror</small></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem;">Rolanstar</td>
-                                <td style="padding: 1rem;">Storage</td>
-                                <td style="padding: 1rem;">4.5</td>
+                                <td style="padding: 1rem; font-weight: 600;">Tribesigns Marble</td>
+                                <td style="padding: 1rem;">Glam Modern Luxury</td>
+                                <td style="padding: 1rem;">31.5" Dia × 17.91" H</td>
+                                <td style="padding: 1rem;"><em>Not applicable</em></td>
+                                <td style="padding: 1rem;">Total: 220 lbs</td>
+                                <td style="padding: 1rem;">Static geometric steel frame; open lower display shelf</td>
+                                <td style="padding: 1rem;"><small>Manufacturer Spec</small></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border);">
-                                <td style="padding: 1rem;">Stella</td>
-                                <td style="padding: 1rem;">Small Spaces</td>
-                                <td style="padding: 1rem;">4.5</td>
+                                <td style="padding: 1rem; font-weight: 600;">Rolanstar Lift Top</td>
+                                <td style="padding: 1rem;">Mid-Century Functional</td>
+                                <td style="padding: 1rem;">39.4" W × 19.7" D × 18.2" H</td>
+                                <td style="padding: 1rem;"><strong>24.3" H</strong></td>
+                                <td style="padding: 1rem;">Closed: 100 lbs<br><small style="color:var(--text-muted);">Extended: 30 lbs</small></td>
+                                <td style="padding: 1rem;">Steel spring-assist hinges; 2 drawers + open lower shelf</td>
+                                <td style="padding: 1rem;"><small>Manual Mirror</small></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem; font-weight: 600;">Nathan James Stella</td>
+                                <td style="padding: 1rem;">Industrial Reclaimed Oak</td>
+                                <td style="padding: 1rem;">Large: 31.6" Dia × 18.1" H<br>Small: 23.6" Dia × 13.0" H</td>
+                                <td style="padding: 1rem;"><em>Not applicable</em></td>
+                                <td style="padding: 1rem;">50 lbs / table<br><small style="color:var(--text-muted);">(100 lbs total)</small></td>
+                                <td style="padding: 1rem;">Modular nesting design (smaller table slides fully beneath)</td>
+                                <td style="padding: 1rem;"><small>Manufacturer Spec</small></td>
                             </tr>
                             <tr>
-                                <td style="padding: 1rem;">Honyee</td>
-                                <td style="padding: 1rem;">Statement Piece</td>
-                                <td style="padding: 1rem;">4.7</td>
+                                <td style="padding: 1rem; font-weight: 600;">Honyee Triangle Glass</td>
+                                <td style="padding: 1rem;">Mid-Century Sculptural</td>
+                                <td style="padding: 1rem;">42.5" W × 28.5" D × 16.1" H</td>
+                                <td style="padding: 1rem;"><em>Not applicable</em></td>
+                                <td style="padding: 1rem;">Total: 220 lbs</td>
+                                <td style="padding: 1rem;">Tempered safety glass top; solid wood tripod base</td>
+                                <td style="padding: 1rem;"><small>Amazon-Listed</small></td>
                             </tr>
                         </tbody>
                     </table>
@@ -2041,7 +2357,7 @@
                 <h2 id="storage-guide" class="fade-in">The Storage Guide for Small Apartments</h2>
                 <p class="fade-in">In 2026, a <em>coffee table with storage</em> is practically mandatory for urban living. Do not waste the cubic volume sitting in the center of your room.</p>
                 <ul class="product-features fade-in">
-                    <li><strong>Lift-Top Mechanics:</strong> The holy grail for remote workers. Pneumatic struts elevate the table to desk/dining height while revealing massive hidden bays underneath.</li>
+                    <li><strong>Lift-Top Mechanics:</strong> Highly practical for remote work and dining. Modern mechanisms vary by design: dual pneumatic gas struts (like the LINSY) provide smooth, cushioned motion; hydraulic-assisted scissor lifts (like the JOINICE) offer controlled damping; and heavy-duty steel spring-assist hinges (like the Rolanstar) deliver robust, high-leverage elevation with crossbar stabilization.</li>
                     <li><strong>Seamless Drawers:</strong> Perfect for hiding remotes, charging cables, and coasters without breaking the sleek exterior silhouette.</li>
                     <li><strong>Tambour Doors:</strong> Sliding slatted doors that provide hidden storage while adding incredible architectural texture to the room.</li>
                     <li><strong>Open Shelving:</strong> Ideal for displaying curated design books or beautiful catch-all trays, though it requires strict styling discipline to avoid looking messy.</li>
@@ -2056,7 +2372,7 @@
                     <li><strong>Dark Academia Apartments:</strong> A black round coffee table or a rich walnut piece with brass accents instantly grounds moody, book-filled interiors.</li>
                 </ul>
 <h2 id="styling-guide" class="fade-in">How Interior Designers Style Coffee Tables</h2>
-                <p class="fade-in">Purchasing a designer piece is only half the battle; knowing <em>how to decorate a round coffee table</em> (or any shape) is what finalizes the expensive aesthetic. Many people buy a beautiful modern coffee table and accidentally ruin it by either leaving it entirely bare (making it look like a waiting room) or burying it under visual clutter.</p>
+                <p class="fade-in">Purchasing a designer piece is only half the battle; knowing <a href="how-to-style-a-round-coffee-table-like-a-designer-2026.html" style="color: var(--accent); text-decoration: underline;"><em>how to decorate a round coffee table</em></a> (or any shape) is what finalizes the expensive aesthetic. Many people buy a beautiful modern coffee table and accidentally ruin it by either leaving it entirely bare (making it look like a waiting room) or burying it under visual clutter.</p>
                 
                 <h3 class="fade-in">The Coffee Table Styling Formula</h3>
                 <p class="fade-in">Our foolproof formula for sophisticated <strong>coffee table styling ideas</strong> revolves around "curated restraint" and the <strong>Rule of Threes</strong>. Here is the exact blueprint designers use:</p>
@@ -2070,8 +2386,8 @@
 
                 
                 <h2 id="layout-guide" class="fade-in">Small Apartment Layout Guide</h2>
-                <p class="fade-in">When dealing with limited square footage, your living room furniture placement must be highly intentional. A <strong>nesting coffee table</strong> is arguably the greatest invention for small apartments. You can expand them when hosting guests to provide ample surface area, and tuck them away to reclaim valuable floor space during your daily routine.</p>
-                <p class="fade-in">If you opt for a traditional <strong>modern coffee table</strong>, ensure it doesn't create a "bottleneck." In a narrow room, an oval or round shape allows you to navigate around it smoothly without bumping your hips. Anchor the seating arrangement with a rug that is large enough so the front legs of your sofa and any accent chairs rest on it. This creates a defined "zone" that makes a small studio feel like it has distinct rooms.</p>
+                <p class="fade-in">When dealing with limited square footage, your living room furniture placement must be highly intentional. A <strong><a href="#table-6" style="color: var(--accent); text-decoration: underline;">nesting coffee table</a></strong> is an effective space-saving solution for small apartments, allowing you to expand your surface area when hosting guests and tuck it away to reclaim floor space during daily routines.</p>
+                <p class="fade-in">If you opt for a traditional <strong>modern coffee table</strong>, ensure it doesn't create a "bottleneck." In a narrow room, an oval or round shape allows you to navigate around it smoothly without bumping your hips. Anchor the seating arrangement with a rug that is large enough so the front legs of your sofa and any accent chairs rest on it. In open-concept studios where living and sleeping areas merge, pairing an intentional coffee table anchor with <a href="studio-apartment-room-divider-ideas.html" style="color: var(--accent); text-decoration: underline;">practical studio apartment room dividers</a> creates distinct functional zones without obstructing natural light.</p>
 <h2 id="mistakes" class="fade-in">7 Coffee Table Mistakes That Make Apartments Look Cheap</h2>
                 <ul class="product-features fade-in">
                     <li><strong>Matching Furniture Sets:</strong> Buying a coffee table that perfectly matches your TV stand and end tables screams "catalog room." Luxury is curated, collected over time, and mixed. Pair a wood table with metal accents, or a marble table with a velvet sofa.</li>
@@ -2307,18 +2623,90 @@
         document.addEventListener('DOMContentLoaded', () => {
             const progressBar = document.getElementById('progress-bar');
             const stickyCta = document.getElementById('sticky-cta');
-            window.addEventListener('scroll', () => {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                progressBar.style.width = scrolled + '%';
+            const siteFooter = document.querySelector('.site-footer');
+            const comparisonHeading = document.getElementById('quick-comparison');
+            const productCards = document.querySelectorAll('.product-card');
+            const faqHeading = document.getElementById('faq');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const relatedSection = document.querySelector('.related-articles');
+            const newsletterSection = document.querySelector('.newsletter-block');
 
-                if (winScroll > 800) {
+            function isElementInView(el) {
+                if (!el) return false;
+                const rect = el.getBoundingClientRect();
+                const vh = window.innerHeight || document.documentElement.clientHeight;
+                return rect.top < vh && rect.bottom > 0;
+            }
+
+            function isAnyProductCardInView() {
+                for (let i = 0; i < productCards.length; i++) {
+                    if (isElementInView(productCards[i])) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function isTableInView() {
+                if (isElementInView(comparisonHeading)) return true;
+                const compWrapper = comparisonHeading ? (comparisonHeading.nextElementSibling?.nextElementSibling || comparisonHeading.parentElement?.querySelector('div[style*="overflow-x: auto"]')) : document.querySelector('div[style*="overflow-x: auto"]');
+                if (isElementInView(compWrapper)) return true;
+                return false;
+            }
+
+            function isFaqInView() {
+                if (isElementInView(faqHeading)) return true;
+                for (let i = 0; i < faqItems.length; i++) {
+                    if (isElementInView(faqItems[i])) return true;
+                }
+                return false;
+            }
+
+            function isRelatedOrFooterInView() {
+                if (isElementInView(relatedSection)) return true;
+                if (isElementInView(newsletterSection)) return true;
+                if (isElementInView(siteFooter)) return true;
+                return false;
+            }
+
+            function updateStickyCtaVisibility() {
+                if (!stickyCta) return;
+                
+                // Requirement 2: Restore CTA only when user has scrolled beyond product-card content
+                const lastCard = productCards.length > 0 ? productCards[productCards.length - 1] : null;
+                const hasPassedProductCards = lastCard ? (lastCard.getBoundingClientRect().bottom <= 0) : false;
+
+                // Requirement 1: Hide sticky CTA whenever a product card is intersecting viewport
+                const productInView = isAnyProductCardInView();
+
+                // Requirement 3: Keep CTA hidden throughout comparison table & horizontal scrolling
+                const tableInView = isTableInView();
+
+                // Requirement 4: Do not let CTA cover FAQ, related articles or footer
+                const faqInView = isFaqInView();
+                const relatedOrFooterInView = isRelatedOrFooterInView();
+
+                // Restore CTA only when beyond product cards and in suitable article section
+                const shouldShow = hasPassedProductCards && !productInView && !tableInView && !faqInView && !relatedOrFooterInView;
+
+                if (shouldShow) {
                     stickyCta.classList.add('visible');
                 } else {
                     stickyCta.classList.remove('visible');
                 }
-            });
+            }
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                if (progressBar) progressBar.style.width = scrolled + '%';
+
+                updateStickyCtaVisibility();
+            }, { passive: true });
+
+            window.addEventListener('resize', updateStickyCtaVisibility, { passive: true });
+            updateStickyCtaVisibility();
 
             const themeToggle = document.getElementById('theme-toggle');
             themeToggle.addEventListener('click', () => {
